@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Advanced Form Elements | Nifty - Admin Template</title>
+    <title>Data User | Admin </title>
 
 
     <!--STYLESHEET-->
@@ -38,38 +38,10 @@
     <script src="plugins/pace/pace.min.js"></script>
 
 
-
         
-    <!--Switchery [ OPTIONAL ]-->
-    <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
-
-
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-
-
-    <!--Bootstrap Tags Input [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.css" rel="stylesheet">
-
-
-    <!--Chosen [ OPTIONAL ]-->
-    <link href="plugins/chosen/chosen.min.css" rel="stylesheet">
-
-
-    <!--noUiSlider [ OPTIONAL ]-->
-    <link href="plugins/noUiSlider/nouislider.min.css" rel="stylesheet">
-
-
-    <!--Select2 [ OPTIONAL ]-->
-    <link href="plugins/select2/css/select2.min.css" rel="stylesheet">
-
-
-    <!--Bootstrap Timepicker [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
-
-
-    <!--Bootstrap Datepicker [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
+    <!--DataTables [ OPTIONAL ]-->
+    <link href="plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
+	<link href="plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
 
     
     <!--=================================================
@@ -139,47 +111,8 @@
                         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                         <!--End Navigation toogle button-->
 
-
-
-                        <!--Search-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li></li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Search-->
-
                     </ul>
                     <ul class="nav navbar-top-links">
-
-
-                        <!--Mega dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="mega-dropdown"></li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End mega dropdown-->
-
-
-
-                        <!--Notification dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="dropdown"></li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End notifications dropdown-->
-
-
-
-                        <!--User dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li id="dropdown-user" class="dropdown"></li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End user dropdown-->
- 
-                        
-                        <li></li>
-                    </ul>
-                </div>
-                <!--================================-->
-                <!--End Navbar Dropdown-->
-
             </div>
         </header>
         <!--===================================================-->
@@ -195,7 +128,7 @@
                     <!--Page Title-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <div id="page-title">
-                        <h1 class="page-header text-overflow">Treatment</h1>
+                        <h1 class="page-header text-overflow">Data User</h1>
                     </div>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End page title-->
@@ -204,9 +137,9 @@
                     <!--Breadcrumb-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <ol class="breadcrumb">
-					<li><a href="index.html"><i class="demo-pli-home"></i></a></li>
-					<li><a href="index.html">peraturan</a></li>
-					<li class="active">Treatment</li>
+					<li><a href="#"><i class="demo-pli-home"></i></a></li>
+					<li><a href="#">Data User</a></li>
+					<li class="active">Data User</li>
                     </ol>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End breadcrumb-->
@@ -217,64 +150,65 @@
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-                     <div class="panel">
+                    
+					<!-- Basic Data Tables -->
+					<!--===================================================-->
+					<div class="panel">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Peraturan</h3>
+                            <h3 class="panel-title">Data User</h3>
                         </div>
                         <div class="panel-body">
                             <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>
-                                        <th class="min-desktop">Treatment</th>
-                                        <th class="min-desktop">Point</th>
+                                        <th class="min-tablet">Nama</th>
+                                        <th class="min-tablet">User Name</th>
+                                        <th class="min-tablet">Password</th>
+                                        <th class="min-tablet">Role</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Membersihkan toilet</td>
-                                        <td>6</td>
+                                        <td>Tiger Nixon</td>
+                                        <td>nixon</td>
+                                        <td>tiger123</td>
+                                        <td>Admin</td>
+                                        <td>
+                                            <button class="btn btn-warning">Edit</button>
+                                            <button class="btn btn-danger">hapus</button>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>push up</td>
-                                        <td>2</td>
+                                        <td>Garrett Winters</td>
+                                        <td>winters</td>
+                                        <td>Garrett123</td>
+                                        <td>Guru</td>
+                                        <td>
+                                            <button class="btn btn-warning">Edit</button>
+                                            <button class="btn btn-danger">hapus</button>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>Membersihkan kelas</td>
-                                        <td>2</td>
+                                     <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Ashton</td>
+                                        <td>cox123</td>
+                                        <td>Guru</td>
+                                        <td>
+                                            <button class="btn btn-warning">Edit</button>
+                                            <button class="btn btn-danger">hapus</button>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>Membersihkan perpus</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>barang di sita</td>
-                                        <td>5</td>
-                                    </tr>
-                                    <tr>
-                                        <td>membantu guru</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>berlari memutari lapangan</td>
-                                        <td>3</td>
-                                    </tr>
-                                    <tr>
-                                        <td>minta tanda tgn seluruh guru</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <td>membantu petugas kebersihan</td>
-                                        <td>4</td>
-                                    </tr>
-                                         </tr>
                                 </tbody>
                             </table>
+                            <button class="btn btn-success">Tambah Data</button>
                         </div>
                     </div>
+					<!--===================================================-->
+					<!-- End Striped Table -->
                 </div>
                 <!--===================================================-->
                 <!--End page content-->
-
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
@@ -672,10 +606,10 @@
 						
 						                <!--Submenu-->
 						                <ul class="collapse">
-                                            <li><a href="index.html">Beranda</a></li>
-                                        </ul>
-                                    </li>
-                        
+						                    <li><a href="index.html">Beranda</a></li>
+                                            <li><a href="user.html">User</a></li>
+						                </ul>
+						            </li>
 						
 						            <!--Menu list item-->
 						            <li>
@@ -743,35 +677,36 @@
 						
 						            <!--Menu list item-->
 						            <li>
-                                        <a href="#">
-                                            <i class="demo-pli-pen-5"></i>
-                                            <span class="menu-title">Peraturan</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                        
-                                        <!--Submenu-->
-                                        <ul class="collapse">
-                                            <li><a href="forms-general.html">pelanggaran</a></li>
-                                            <li><a href="forms-components.html">treatment</a></li>
-                                        </ul>
-                                    </li>
+						                <a href="#">
+						                    <i class="demo-pli-pen-5"></i>
+						                    <span class="menu-title">Peraturan</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse">
+						                    <li><a href="forms-general.html">Pelanggaran</a></li>
+											<li><a href="forms-components.html">Treatment</a></li>
+						                </ul>
+						            </li>
 						
 						            <!--Menu list item-->
-						            <li>
-                                        <a href="#">
-                                            <i class="demo-pli-receipt-4"></i>
-                                            <span class="menu-title">data </span>
-                                            <i class="arrow"></i>
-                                        </a>
-                        
-                                        <!--Submenu-->
-                                        <ul class="collapse">
-                                            <li><a href="tables-Kelasx.html">kelas x</a></li>
-                                            <li><a href="tables-kelaSxi.html">kelas xi</a></li>
-                                            <li><a href="tables-kelasxii.html">kelas xii</a></li> 
-                                            <li><a href="tables-user.html">user</a></li> 
-                                        </ul>
-                                    </li>
+						            <li class="active-sub">
+						                <a href="#">
+						                    <i class="demo-pli-receipt-4"></i>
+						                    <span class="menu-title">Data</span>
+											<i class="arrow"></i>
+						                </a>
+						
+						                <!--Submenu-->
+						                <ul class="collapse in">
+                                            <li><a href="tables-kelasx.html">Kelas X</a></li>
+						                    <li><a href="tables-kelasxi.html">Kelas XI</a></li>
+											<li><a href="tables-kelasxii.html">Kelas XII</a></li>
+                                            <li class="active-link"><a href="tables-user.html">User</a></li>
+						                </ul>
+						            </li>
+						
 						            <!--Menu list item-->
 						            <li>
 						                <a href="#">
@@ -993,15 +928,10 @@
                                         </ul>
                                     </li>
 
-                               </ul>
-
-
-                                <!--Widget-->
-                                <!--================================-->
-                                <div class="mainnav-widget"></div>
-                                <!--================================-->
-                                <!--End widget-->
-
+						
+						            <li class="list-divider"></li>
+						
+						        
                             </div>
                         </div>
                     </div>
@@ -1019,7 +949,31 @@
 
         <!-- FOOTER -->
         <!--===================================================-->
-        <footer id="footer"></footer>
+        <footer id="footer">
+
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            
+
+
+
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">
+               
+            </div>
+
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft">&#0169; 2021 Ruang BK</p>
+
+
+
+        </footer>
         <!--===================================================-->
         <!-- END FOOTER -->
 
@@ -1061,43 +1015,18 @@
     <script src="js/demo/nifty-demo.min.js"></script>
 
     
-    <!--Switchery [ OPTIONAL ]-->
-    <script src="plugins/switchery/switchery.min.js"></script>
+    <!--DataTables [ OPTIONAL ]-->
+    <script src="plugins/datatables/media/js/jquery.dataTables.js"></script>
+	<script src="plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+	<script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
 
 
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
-
-
-    <!--Bootstrap Tags Input [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-
-
-    <!--Chosen [ OPTIONAL ]-->
-    <script src="plugins/chosen/chosen.jquery.min.js"></script>
-
-
-    <!--noUiSlider [ OPTIONAL ]-->
-    <script src="plugins/noUiSlider/nouislider.min.js"></script>
-
-
-    <!--Select2 [ OPTIONAL ]-->
-    <script src="plugins/select2/js/select2.min.js"></script>
-
-
-    <!--Bootstrap Timepicker [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-
-
-    <!--Bootstrap Datepicker [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-
-
-    <!--Form Component [ SAMPLE ]-->
-    <script src="js/demo/form-component.js"></script>
+    <!--DataTables Sample [ SAMPLE ]-->
+    <script src="js/demo/tables-datatables.js"></script>
 
 
     
 
 </body>
 </html>
+
