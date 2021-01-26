@@ -181,7 +181,7 @@
 
                 <div class="pad-all text-center">
                     <img src="img/asd.png" height="70px" width="70px">
-                    <h3>Daftar Siswa</h3>
+                    <h3>Edit Akun User</h3>
                     <p1>SMK BISA SMK HEBAT</p>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
 
                                 <!--Nav tabs-->
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a data-toggle="tab" href="#demo-tabs-box-1">Daftar</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#demo-tabs-box-1">Edit</a></li>
                                 </ul>
 
                             </div>
@@ -215,20 +215,10 @@
 
                             <div class="tab-content">
                              <form id="demo-bv-bsc-tabs" class="form-horizontal" action="#" method="post">
-
-
                                 <div class="tab-content">
                                     <div class="tab-pane pad-btm fade in active" id="demo-bsc-tab-1">
-                                        <p class="text-main text-bold panel-primary">Daftar Siswa</p>
+                                        <p class="text-main text-bold panel-primary">Edit Akun User</p>
                                         <hr>
-
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label">Foto</label>
-                                            <div class="col-lg-7">
-                                                <input type="file" class="form-control" name="foto" placeholder="Foto" required="" height="50" size="20" >
-                                            </div>
-                                        </div>
-
                                         <div class="form-group">
                                             <label class="col-lg-3 control-label">Nama</label>
                                             <div class="col-lg-7">
@@ -236,132 +226,108 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label">Alamat</label>
-                                            <div class="col-lg-7">
-                                                <input type="text" class="form-control" name="almat" placeholder="Alamat" required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label">Tanggal Lahir</label>
-                                            <div class="col-lg-7">
-                                                <input type="text" class="form-control" name="tanggal_lahir" placeholder="Tanggal Lahir" required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-lg-3 control-label">Kelas</label>
-                                            <div class="col-lg-7">
-                                                <select name="kelas" id="kelas" class="form-control" required="">
-                                                    <option value="">Kelas</option>
-                                                    <option value="X">X</option>
-                                                    <option value="XI">XI</option>
-                                                    <option value="XII">XII</option>
-                                                </select>
-                                            </div>
 
-                                        </div>
+
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label">Jurusan</label>
+                                            <label class="col-lg-3 control-label">Username</label>
                                             <div class="col-lg-7">
-                                                <select name="jurusan" id="jurusan" class="form-control" required="">
-                                                    <option value="">Jurusan</option>
-                                                    <option value="RPL">RPL</option>
-                                                    <option value="TKJ">TKJ</option>
-                                                    <option value="TPM">TPM</option>
-                                                    <option value="MULTIMEDIA">MULTIMEDIA</option>
-                                                </select>
+                                                <input type="text" class="form-control" name="username" placeholder="Username" required="">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-lg-3 control-label">Agama</label>
+                                            <label class="col-lg-3 control-label">Password</label>
                                             <div class="col-lg-7">
-                                                <select name="agama" id="agama" class="form-control" required="">
-                                                    <option value="">Agama</option>
-                                                    <option value="Islam">Islam</option>
-                                                    <option value="Hindu">Hindu</option>
-                                                    <option value="Budha">Budha</option>
-                                                    <option value="Konghucu">Konghucu</option>
-                                                    <option value="Kristen">Kristen</option>
-                                                </select>
+                                                <input type="text" class="form-control" name="password" placeholder="Password" required="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-3 control-label">Role</label>
+                                            <div class="col-lg-7">
+                                                <div class="radio">
+                                                    <input id="demo-radio-1" class="magic-radio" type="radio" name="Role" value="Admin" required="">
+                                                    <label for="demo-radio-1">Admin</label>
+
+                                                    <input id="demo-radio-2" class="magic-radio" type="radio" name="Role" value="Guru">
+                                                    <label for="demo-radio-2">Guru</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="tab-footer clearfix">
-                                    <div class="col-lg-7 col-lg-offset-3">
-                                        <button type="submit" class="btn btn-primary">Tambah Data</button>
+                                    <div class="tab-footer clearfix">
+                                        <div class="col-lg-7 col-lg-offset-3">
+                                            <button type="submit" class="btn btn-primary">Simpan Akun</button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </form>
-                        <!--Tabs content-->
-                        <div class="tab-content">
-                            <div id="demo-tabs-box-1" class="tab-pane fade in active">
+                            </form>
+                            <!--Tabs content-->
+                            <div class="tab-content">
+                                <div id="demo-tabs-box-1" class="tab-pane fade in active">
 
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <!--Item 1-->
+
+
+                    
                 </div>
-                <!--Item 1-->
-
-
+                <!--===================================================-->
+                <!--End page content-->
 
             </div>
             <!--===================================================-->
-            <!--End page content-->
-
-        </div>
-        <!--===================================================-->
-        <!--END CONTENT CONTAINER-->
+            <!--END CONTENT CONTAINER-->
 
 
+            
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
 
-        <!--ASIDE-->
-        <!--===================================================-->
-        <aside id="aside-container">
-            <div id="aside">
-                <div class="nano">
-                    <div class="nano-content">
-
-                        <!--Nav tabs-->
-                        <!--================================-->
-                        <ul class="nav nav-tabs nav-justified"></ul>
-                        <!--================================-->
-                        <!--End nav tabs-->
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified"></ul>
+                            <!--================================-->
+                            <!--End nav tabs-->
 
 
 
-                        <!-- Tabs Content -->
-                        <!--================================-->
-                        <div class="tab-content">
+                            <!-- Tabs Content -->
+                            <!--================================-->
+                            <div class="tab-content">
 
-                            <!--First tab (Contact list)-->
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <div class="tab-pane fade in active" id="demo-asd-tab-1"></div>
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <!--End first tab (Contact list)-->
+                                <!--First tab (Contact list)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade in active" id="demo-asd-tab-1"></div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--End first tab (Contact list)-->
 
 
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <!--Third tab (Settings)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--Third tab (Settings)-->
 
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </aside>
-        <!--===================================================-->
-        <!--END ASIDE-->
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
 
 
-        <!--MAIN NAVIGATION-->
-        <!--===================================================-->
-        <nav id="mainnav-container">
-            <div id="mainnav">
-
-
-                <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
-                <!--It will only appear on small screen devices.-->
+                    <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+                    <!--It will only appear on small screen devices.-->
                     <!--================================
                     <div class="mainnav-brand">
                         <a href="index.html" class="brand">
@@ -457,7 +423,7 @@
                                   <!--Submenu-->
                                   <ul>
                                       <li><a href="index.html">Beranda</a></li>
-                                      <li class="active-link"><a href="user.html">User</a></li>
+                                      <li><a href="user.html">User</a></li>
                                   </ul>
                               </li>
 
