@@ -21,7 +21,7 @@ $(document).on('nifty.ready', function() {
 
     var plot = $.plot('#demo-chart-network', [
         {
-            label: 'Download Speed',
+            label: 'Tidak Melanggar',
             data: dwData,
             lines: {
                 show: true,
@@ -40,7 +40,7 @@ $(document).on('nifty.ready', function() {
             }
         },
         {
-            label: 'Upload Speed',
+            label: 'Melanggar',
             data: upData,
             lines: {
                 show: true,

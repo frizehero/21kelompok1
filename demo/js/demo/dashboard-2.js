@@ -22,13 +22,13 @@ $(document).on('nifty.ready', function() {
 
     $.plot("#demo-bar-chart", [
         {
-            label: "Students",
+            label: "Laki - Laki",
             data: d1
         },{
-            label: "Parents",
+            label: "Perempuan",
             data: d2
         },{
-            label: "Teachers",
+            label: "Tidak Pernah",
             data: d3
         }],{
         series: {

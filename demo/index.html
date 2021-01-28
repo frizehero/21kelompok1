@@ -41,6 +41,8 @@
     <!--Demo [ DEMONSTRATION ]-->
     <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
 
+    <link href="plugins/morris-js/morris.min.css" rel="stylesheet">
+
 
             
     <!--=================================================
@@ -422,39 +424,316 @@
                 <!--===================================================-->
                 <div id="page-content">
                    <div class="panel">
-                    
-                                <!--Panel heading-->
-                                <div class="panel-heading">
-                                    <div class="panel-control">
-                                        <ul class="nav nav-tabs">
-                                            <li class="active"><a href="#demo-tabs-box-1" data-toggle="tab">First Tab</a></li>
-                                            <li><a href="#demo-tabs-box-2" data-toggle="tab">Second Tab</a></li>
-                                        </ul>
-                                    </div>
-                                    <h3 class="panel-title">Panel With tabs</h3>
-                                </div>
-                    
-                                <!--Panel body-->
-                                <div class="panel-body">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade in active" id="demo-tabs-box-1">
-                                            <p class="text-main text-semibold">First Tab Content</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    <div id="demo-panel-network" class="panel">
+                                    <div class="panel-heading">
+                                        <div class="panel-control">
+                                            <button id="demo-panel-network-refresh" class="btn btn-default btn-active-primary" data-toggle="panel-overlay" data-target="#demo-panel-network"><i class="demo-psi-repeat-2"></i></button>
+                                            <div class="dropdown">
+                                                <button class="dropdown-toggle btn btn-default btn-active-primary" data-toggle="dropdown" aria-expanded="false"><i class="demo-psi-dot-vertical"></i></button>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="tab-pane fade" id="demo-tabs-box-2">
-                                            <p class="text-main text-semibold">Second Tab Content</p>
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                        </div>
+                                        <h3 class="panel-title">Jumlah Siswa Bermasalah</h3>
                                     </div>
+                    
+                    
+                                    <!--chart placeholder-->
+                                    <div class="pad-all">
+                                        <div id="demo-chart-network" style="height: 255px"></div>
+                                    </div>
+                    
+                    
+                                    <!--Chart information-->
+                                    <div class="panel-body">
+                    
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <p class="text-semibold text-uppercase text-main">Jumlah Siswa</p>
+                                                <div class="row">
+                                                    <div class="col-xs-5">
+                                                        <div class="media">
+                                                            <div class="media-left">
+                                                                <span class="text-3x text-thin text-main">1125</span>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-7 text-sm">
+                                                        <p>
+                                                            <span>Jumlah Siswa Laki - Laki</span>
+                                                            <span class="pad-lft text-semibold">
+                                                            <span class="text-lg">774</span>
+                                                            </span>
+                                                        </p>
+                                                        <p>
+                                                            <span>Jumlah Siswa Perempuan</span>
+                                                            <span class="pad-lft text-semibold">
+                                                            <span class="text-lg">351</span>
+                                                            
+                                                            </span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                    
+                                                <hr>
+                    
+                                                
+                                            </div>
+                    
+                                            <div class="col-lg-4">
+                                                
+                                                <ul class="list-unstyled">
+                                                    
+                                                    <li class="pad-btm">
+                                                        <div class="clearfix">
+                                                            <p class="pull-left mar-no">Siswa Melanggar</p>
+                                                            <p class="pull-right mar-no">70%</p>
+                                                        </div>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar progress-bar-info" style="width: 70%;">
+                                                                <span class="sr-only">70% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="clearfix">
+                                                            <p class="pull-left mar-no">Siswa Tidak Melanggar</p>
+                                                            <p class="pull-right mar-no">50%</p>
+                                                        </div>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar progress-bar-primary" style="width: 50%;">
+                                                                <span class="sr-only">50% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h3>Pelanggaran Dalam 1 Minggu</h3>
+                                    <div id="demo-bar-chart" style="height:250px"></div>
+                                    <hr class="new-section-xs bord-no">
+                                    <ul class="list-inline text-center">
+                                        <li><span class="label label-info">354</span> Laki - Laki</li>
+                                        <li><span class="label label-warning">74</span> Perempuan</li>
+                                        <li><span class="label label-default">25</span> Tidak Pernah</li>
+                                    </ul>
                                 </div>
+                                    </div>
+                    
+                    
+                                </div>
+
+                               
                             </div> 
 					   
 					
-					    
+					    <div class="row">
+                            <div class="col-md-3">
+                                <div class="panel panel-warning panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <i class="demo-pli-file-word icon-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">241</p>
+                                        <p class="mar-no">Documents</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-info panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <i class="demo-pli-file-zip icon-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">241</p>
+                                        <p class="mar-no">Zip Files</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-mint panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <i class="demo-pli-camera-2 icon-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">241</p>
+                                        <p class="mar-no">Photos</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-danger panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <i class="demo-pli-video icon-3x"></i>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">241</p>
+                                        <p class="mar-no">Videos</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
 					
-					    
+					    <div id="page-content">
+                    
+                    
+                    <div class="row">
+                        <div class="col-lg-5 ">
+                            <div class="panel panel-body text-center">
+                                <div class="nano-content">
+                            <p class="pad-all text-main text-sm text-uppercase text-bold">
+                               <h3>Pelanggar Baru Ini</h3> 
+                            </p><hr>
+
+                            <!--Family-->
+                            <div class="list-group bg-trans bord-btm">
+                                <div class="list-group-item list-item-sm">
+                                    <div class="media-center pos-rel">
+                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="text-main">
+                                            <p>Dhimas Endra</p>
+                                        </a>
+                                        <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="media-center pos-rel">
+                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="text-main">
+                                            <p>Achmad Muhajir</p>
+                                        </a>
+                                        <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="media-center pos-rel">
+                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="text-main">
+                                            <p>Donald Brown</p>
+                                        </a>
+                                        <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="media-center pos-rel">
+                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="text-main">
+                                            <p>Betty Murphy</p>
+                                        </a>
+                                        <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                    </div>
+                                </div>
+                                <div class="list-group-item">
+                                    <div class="media-center pos-rel">
+                                        <a href="#"><img class="img-circle img-xs" src="img/profile-photos/7.png" alt="Profile Picture"></a>
+                                    </div>
+                                    <div class="media-body">
+                                        <a href="#" class="text-main">
+                                            <p>Samantha Reid</p>
+                                        </a>
+                                        <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-7">
+                    
+                    
+                                <!-- Area Chart -->
+                                <!---------------------------------->
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Jumlah Pelanggaran Hari Ini</h3>
+                                    </div>
+                                    <div class="pad-all">
+                                        <div id="demo-morris-area-legend" class="text-center"></div>
+                                        <div id="demo-morris-area" style="height:250px"></div>
+                                    </div>
+                                </div>
+                                <!---------------------------------->
+                    
+                    <div class="col-sm-12">
+                            <div class="panel">
+                    
+                                <!--Carousel-->
+                                <!--===================================================-->
+                                <div id="demo-carousel" class="carousel slide" data-ride="carousel">
+                    
+                                    <!--Indicators-->
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <ol class="carousel-indicators out">
+                                        <li class="active" data-slide-to="0" data-target="#demo-carousel"></li>
+                                        <li data-slide-to="1" data-target="#demo-carousel"></li>
+                                        <li data-slide-to="2" data-target="#demo-carousel"></li>
+                                    </ol>
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    
+                                    <div class="carousel-inner text-center">
+                    
+                                        <!--Item 1-->
+                                        <div class="item active">
+                                            <h4 class="text-main">Visi Misi</h4>
+                                            <p>SMK BISA SMK HEBAT</p>
+                                        </div>
+                    
+                                        <!--Item 2-->
+                                        <div class="item">
+                                            <h4 class="text-main">VISI</h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </div>
+                    
+                                        <!--Item 3-->
+                                        <div class="item">
+                                            <h4 class="text-main">MISI</h4>
+                                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                                        </div>
+                                    </div>
+                    
+                                    <!--carousel-control-->
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <a class="carousel-control left" data-slide="prev" href="#demo-carousel"><i class="demo-pli-arrow-left icon-2x"></i></a>
+                                    <a class="carousel-control right" data-slide="next" href="#demo-carousel"><i class="demo-pli-arrow-right icon-2x"></i></a>
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    
+                                </div>
+                                <!--===================================================-->
+                                <!--End Carousel-->
+                    
+                    
+                            </div>
+                        </div>
+                            </div>
+
+                </div>
 					
-					    
+					  
 					
 					
 					    
@@ -1378,8 +1657,21 @@
 
     <!--Specify page [ SAMPLE ]-->
     <script src="js/demo/dashboard.js"></script>
+    <!--Flot Chart [ OPTIONAL ]-->
+    <script src="plugins/flot-charts/jquery.flot.min.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.categories.min.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.orderBars.min.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.tooltip.min.js"></script>
+    <script src="plugins/flot-charts/jquery.flot.resize.min.js"></script>
+
+    <script src="js/demo/dashboard-2.js"></script>
+
+    <script src="plugins/morris-js/morris.min.js"></script>
+    <script src="plugins/morris-js/raphael-js/raphael.min.js"></script>
 
 
+    <!--Morris.js Sample [ SAMPLE ]-->
+    <script src="js/demo/morris-js.js"></script>
     
 
 </body>
