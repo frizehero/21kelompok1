@@ -19,153 +19,153 @@ $(document).on('nifty.ready', function () {
     var chart = Morris.Area({
         element: 'demo-morris-area',
         data: [{
-            period: 'January 16',
-            dl: 77,
-            up: 25
+            period: 'Senin',
+            dl: 27,
+            up: 5
             }, {
-            period: 'February 16',
-            dl: 127,
-            up: 58
+            period: 'Senin',
+            dl: 27,
+            up: 5
             }, {
-            period: 'March 16',
-            dl: 115,
-            up: 46
+            period: 'Senin',
+            dl: 27,
+            up: 5
             }, {
-            period: 'April 16',
-            dl: 239,
-            up: 57
+            period: 'Senin',
+            dl: 27,
+            up: 5
             }, {
-            period: 'May 16',
-            dl: 46,
-            up: 75
+            period: 'Selasa',
+            dl: 17,
+            up: 8
             }, {
-            period: 'June 16',
-            dl: 97,
-            up: 57
+            period: 'Selasa',
+            dl: 17,
+            up: 8
             }, {
-            period: 'July 16',
-            dl: 105,
-            up: 70
+            period: 'Selasa',
+            dl: 17,
+            up: 8
             }, {
-            period: 'August 16',
-            dl: 115,
-            up: 106
+            period: 'Selasa',
+            dl: 17,
+            up: 8
             }, {
-            period: 'September 16',
-            dl: 239,
-            up: 187
+            period: 'Selasa',
+            dl: 17,
+            up: 8
             }, {
-            period: 'October 16',
-            dl: 97,
-            up: 57
+            period: 'Rabu',
+            dl: 12,
+            up: 7
             }, {
-            period: 'November 16',
-            dl: 189,
-            up: 70
+            period: 'Rabu',
+            dl: 12,
+            up: 7
             }, {
-            period: 'December 16',
-            dl: 65,
-            up: 30
+            period: 'Rabu',
+            dl: 12,
+            up: 7
             }, {
-            period: 'January 17',
+            period: 'Rabu',
+            dl: 12,
+            up: 7
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Kamis',
+            dl: 27,
+            up: 6
+            }, {
+            period: 'Jumat',
             dl: 35,
-            up: 90
+            up: 15
             }, {
-            period: 'February 17',
-            dl: 127,
-            up: 58
-            }, {
-            period: 'March 17',
-            dl: 115,
-            up: 46
-            }, {
-            period: 'April 17',
-            dl: 239,
-            up: 57
-            }, {
-            period: 'May 17',
-            dl: 46,
-            up: 75
-            }, {
-            period: 'June 17',
-            dl: 97,
-            up: 57
-            }, {
-            period: 'July 17',
-            dl: 105,
-            up: 70
-            }, {
-            period: 'August 17',
-            dl: 115,
-            up: 106
-            }, {
-            period: 'September 17',
-            dl: 239,
-            up: 187
-            }, {
-            period: 'October 17',
-            dl: 97,
-            up: 57
-            }, {
-            period: 'November 17',
-            dl: 189,
-            up: 70
-            }, {
-            period: 'December 17',
-            dl: 65,
-            up: 30
-            }, {
-            period: 'January 18',
+            period: 'Jumat',
             dl: 35,
-            up: 90
+            up: 15
             }, {
-            period: 'February 18',
-            dl: 127,
-            up: 58
-            }, {
-            period: 'March 18',
-            dl: 115,
-            up: 46
-            }, {
-            period: 'April 18',
-            dl: 239,
-            up: 57
-            }, {
-            period: 'May 18',
-            dl: 46,
-            up: 75
-            }, {
-            period: 'June 18',
-            dl: 97,
-            up: 57
-            }, {
-            period: 'July 18',
-            dl: 105,
-            up: 70
-            }, {
-            period: 'August 18',
-            dl: 115,
-            up: 106
-            }, {
-            period: 'September 18',
-            dl: 239,
-            up: 187
-            }, {
-            period: 'October 18',
-            dl: 97,
-            up: 57
-            }, {
-            period: 'November 18',
-            dl: 189,
-            up: 70
-            }, {
-            period: 'December 18',
-            dl: 65,
-            up: 30
-            }, {
-            period: 'January 19',
+            period: 'Jumat',
             dl: 35,
-            up: 90
+            up: 15
+            }, {
+            period: 'Senin',
+            dl: 20,
+            up: 8
+            }, {
+            period: 'Senin',
+            dl: 20,
+            up: 8
+            }, {
+            period: 'Senin',
+            dl: 20,
+            up: 8
+            }, {
+            period: 'Senin',
+            dl: 20,
+            up: 8
+            }, {
+            period: 'Selasa',
+            dl: 10,
+            up: 6
+            }, {
+            period: 'Selasa',
+            dl: 10,
+            up: 6
+            }, {
+            period: 'Selasa',
+            dl: 10,
+            up: 6
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up: 3
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Rabu',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Kamis',
+            dl: 8,
+            up: 0
+            }, {
+            period: 'Kamis',
+            dl: 8,
+            up: 0
             }],
         gridEnabled: true,
         gridLineColor: 'rgba(0,0,0,.1)',
@@ -175,8 +175,8 @@ $(document).on('nifty.ready', function () {
         smooth: true,
         xkey: 'period',
         ykeys: ['dl', 'up'],
-        labels: ['Visitor', 'Pageview'],
-        lineColors: ['#b5bfc5', '#78c855'],
+        labels: ['Laki - Laki', 'Perempuan'],
+        lineColors: ['#0000FF', '#00FF00'],
         pointSize: 0,
         pointStrokeColors : ['#045d97'],
         lineWidth: 0,
