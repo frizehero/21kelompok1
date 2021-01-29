@@ -68,7 +68,7 @@ $(document).on('nifty.ready', function() {
             },
             shadowSize: 0 // Drawing is faster without shadows
         },
-        colors: ['#00BFFF','#FF1493'],
+        colors: ['#00BFFF','#FF00FF'],
         legend: {
             show: true,
             position: 'nw',
@@ -91,7 +91,7 @@ $(document).on('nifty.ready', function() {
         },
         tooltip: {
             show: true,
-            content: "<div class='flot-tooltip text-center'><h5 class='text-main'>%s</h5>%y.0 Mbps</div>"
+            content: "<div class='flot-tooltip text-center'><h5 class='text-main'>%s</h5>%y.0 Siswa</div>"
         }
     });
 
