@@ -29,9 +29,9 @@ $(document).on('nifty.ready', function() {
                 fill: true,
                 fillColor: {
                     colors: [{
-                        opacity: 0.2
+                        opacity: 0.9
                     }, {
-                        opacity: 0.2
+                        opacity: 0.9
                     }]
                 }
             },
@@ -68,7 +68,7 @@ $(document).on('nifty.ready', function() {
             },
             shadowSize: 0 // Drawing is faster without shadows
         },
-        colors: ['#b5bfc5','#25476a'],
+        colors: ['#00BFFF','#FF1493'],
         legend: {
             show: true,
             position: 'nw',
