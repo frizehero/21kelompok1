@@ -123,7 +123,7 @@ $(document).on('nifty.ready', function () {
             dl: 20,
             up: 8
             }, {
-            period: 'Selasa',
+            period: 'Senin',
             dl: 10,
             up: 6
             }, {
@@ -135,11 +135,15 @@ $(document).on('nifty.ready', function () {
             dl: 10,
             up: 6
             }, {
-            period: 'Rabu',
+            period: 'Selasa',
             dl: 6,
             up: 3
             }, {
-            period: 'Rabu',
+            period: 'Selasa',
+            dl: 6,
+            up:  3
+            }, {
+            period: 'Selasa',
             dl: 6,
             up:  3
             }, {
@@ -156,14 +160,10 @@ $(document).on('nifty.ready', function () {
             up:  3
             }, {
             period: 'Rabu',
-            dl: 6,
-            up:  3
-            }, {
-            period: 'Kamis',
             dl: 8,
             up: 0
             }, {
-            period: 'Kamis',
+            period: 'Rabu',
             dl: 8,
             up: 0
             }],
