@@ -76,7 +76,7 @@
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-    <div id="container" class="effect aside-float aside-bright mainnav-lg">
+    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
 
         <!--NAVBAR-->
         <!--===================================================-->
@@ -162,123 +162,126 @@
 
             <!--Page content-->
             <!--===================================================-->
-            <div id="page-content">
+            <div id="page-content ">
+                <div class="col-md-12">
 
-
-               <!-- Basic Data Tables -->
-               <!--===================================================-->
-               <div class="panel">
-                <div class="panel-body">
-                    <div class="panel-heading">
-                     <a class="btn btn-success" type="button" href="tambah-siswa.html">Tambah</a>
-                 </div>
-                 <!-- Toolbar -->
+                 <!-- Basic Data Tables -->
                  <!--===================================================-->
-                 <div class="pad-all text-center text-bold">
-                    <div class="box-inline mar-btm pad-rgt">
-                       Jurusan :
-                       <div class="select">
-                        <select id="demo-ease">
-                            <option value="">Jurusan</option>
-                            <option value="RPL">RPL</option>
-                            <option value="TKJ">TKJ</option>
-                            <option value="TPM">TPM</option>
-                            <option value="TITL">TITL</option>
-                            <option value="TIPK">TIPK</option>
-                            <option value="BB">BB</option>
-                            <option value="TKR">TKR</option>
-                        </select>
+                 <div class="panel">
+                    <div class="panel-body ">
+                        <div class="panel-heading">
+                           <a class="btn btn-primary" type="button" href="tambah-siswa.html">Tambah</a>
+                       </div>
+                       <!-- Toolbar -->
+                       <!--===================================================-->
+                       <div class="pad-all text-center text-bold">
+                        <div class="box-inline mar-btm pad-rgt">
+                         Jurusan :
+                         <div class="select">
+                            <select id="demo-ease">
+                                <option value="">Jurusan</option>
+                                <option value="RPL">RPL</option>
+                                <option value="TKJ">TKJ</option>
+                                <option value="TPM">TPM</option>
+                                <option value="TITL">TITL</option>
+                                <option value="TIPK">TIPK</option>
+                                <option value="BB">BB</option>
+                                <option value="TKR">TKR</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="box-inline mar-btm pad-rgt">
-                   Kelas :
-                   <div class="select">
-                    <select id="demo-ease">
-                     <option value="">Kelas</option>
-                     <option value="X">X</option>
-                     <option value="XI">XI</option>
-                     <option value="XII">XII</option>
-                 </select>
-             </div>
-         </div>
-         <button class="btn btn-default bg-gray-dark text-bold">Filter</button>
-     </div>
-     <div class="panel">
-        <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th>Foto</th>
-                    <th class="min-tablet">NIS</th>
-                    <th class="min-tablet">Nama</th>
-                    <th class="min-tablet">Alamat</th>
-                    <th class="min-tablet">Tanggal lahir</th>
-                    <th class="min-tablet">Kelas</th>
-                    <th class="min-tablet">Jenis Kelamin</th>
-                    <th class="min-tablet">Jurusan</th>
-                    <th class="min-tablet">Agama</th>
-                    <th class="min-tablet">Point</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>-</td>
-                    <td>12345</td>
-                    <td>Tiger Nixon</td>
-                    <td>tuban</td>
-                    <td>1-1-2004</td>
-                    <td>XI</td>
-                    <td>Laki-Laki</td>
-                    <td>RPL</td>
-                    <td>Islam</td>
-                    <td>0</td>
-                    <td>
-                        <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
-                        <a class="btn btn-danger" type="button" href="l">Hapus</a>
-                        <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>54321</td>
-                    <td>Garrett Winters</td>
-                    <td>tuban</td>
-                    <td>3-1-2004</td>
-                    <td>X</td>
-                    <td>Laki-Laki</td>
-                    <td>RPL</td>
-                    <td>Islam</td>
-                    <td>0</td>
-                    <td>
-                        <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
-                        <a class="btn btn-danger" type="button" href="l">Hapus</a>
-                        <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>-</td>
-                    <td>8264289</td>
-                    <td>ashton</td>
-                    <td>tuban</td>
-                    <td>2-1-2004</td>
-                    <td>XII</td>
-                    <td>Perempuan</td>
-                    <td>RPL</td>
-                    <td>Kristen</td>
-                    <td>0</td>
-                    <td>
-                        <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
-                        <a class="btn btn-danger" type="button" href="l">Hapus</a>
-                        <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                    <div class="box-inline mar-btm pad-rgt">
+                     Kelas :
+                     <div class="select">
+                        <select id="demo-ease">
+                           <option value="">Kelas</option>
+                           <option value="X">X</option>
+                           <option value="XI">XI</option>
+                           <option value="XII">XII</option>
+                       </select>
+                   </div>
+               </div>
+               <button class="btn btn-default bg-gray-dark text-bold">Filter</button>
+           </div>
+           <div class="panel">
+            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th class="min-tablet">NIS</th>
+                        <th class="min-tablet">Nama</th>
+                        <th class="min-tablet">Alamat</th>
+                        <th class="min-tablet">Tanggal lahir</th>
+                        <th class="min-tablet">Kelas</th>
+                        <th class="min-tablet">Jenis Kelamin</th>
+                        <th class="min-tablet">Jurusan</th>
+                        <th class="min-tablet">Agama</th>
+                        <th class="min-tablet">Point</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img class="img-sm" src="img/shared-img-3.jpg"></td>
+                        <td>12345</td>
+                        <td>Tiger Nixon</td>
+                        <td>tuban</td>
+                        <td>1-1-2004</td>
+                        <td>XI</td>
+                        <td>Laki-Laki</td>
+                        <td>RPL</td>
+                        <td>Islam</td>
+                        <td>0</td>
+                        <td>
+                            <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
+                            <a class="btn btn-danger" type="button" href="l">Hapus</a>
+                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>54321</td>
+                        <td>Garrett Winters</td>
+                        <td>tuban</td>
+                        <td>3-1-2004</td>
+                        <td>X</td>
+                        <td>Laki-Laki</td>
+                        <td>RPL</td>
+                        <td>Islam</td>
+                        <td>0</td>
+                        <td>
+                            <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
+                            <a class="btn btn-danger" type="button" href="l">Hapus</a>
+                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>8264289</td>
+                        <td>ashton</td>
+                        <td>tuban</td>
+                        <td>2-1-2004</td>
+                        <td>XII</td>
+                        <td>Perempuan</td>
+                        <td>RPL</td>
+                        <td>Kristen</td>
+                        <td>0</td>
+                        <td>
+                            <a class="btn btn-warning" type="button" href="edit-siswa.html">Edit</a>
+                            <a class="btn btn-danger" type="button" href="l">Hapus</a>
+                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
+        </div>
     </div>
+    <!--===================================================-->
+    <!-- End Striped Table -->
 </div>
-<!--===================================================-->
-<!-- End Striped Table -->
+</div>
+
 
 </div>
 <!--===================================================-->
