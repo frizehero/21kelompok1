@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Detail Siswa | Admin </title>
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="css/nifty.min.css" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+
+
+    <!--=================================================-->
+
+
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="plugins/pace/pace.min.js"></script>
+
+
+    <!--DataTables [ OPTIONAL ]-->
+    <link href="plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
+
+
+
+    <!--=================================================
+
+    REQUIRED
+    You must include this in your project.
+
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+
+    DEMONSTRATION
+    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
+
+
+    SAMPLE
+    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
+
+
+    Detailed information and more samples can be found in the document.
+
+    =================================================-->
+
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+<body>
+    <div id="container" class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
+
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar">
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">SMK</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content">
+                    <ul class="nav navbar-top-links">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-list-view"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+                    </ul>
+                    <ul class="nav navbar-top-links">
+
+
+
+                        <li>
+
+                        </li>
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
+                <div id="page-head">
+
+                    <!--Page Title-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <div id="page-title">
+                        <h1 class="page-header text-overflow">Detail Siswa</h1>
+                    </div>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End page title-->
+
+
+                    <!--Breadcrumb-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+                        <li><a href="#">Data</a></li>
+                        <li>Data Siswa</li>
+                        <li class="active">Detail Siswa</li>
+                    </ol>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End breadcrumb-->
+
+                </div>
+
+
+
+                <!--Fixedbar-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div class="page-fixedbar-container">
+                    <div class="page-fixedbar-content">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <p class="pad-all text-main text-sm text-uppercase text-bold">
+                                    Pelanggar Baru Ini
+                                </p>
+
+                                <!--Family-->
+                                <div class="list-group bg-trans bord-btm">
+                                    <div class="list-group-item list-item-sm">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Dhimas</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Hajir</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Donald Brown</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Betty Murphy</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/7.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Samantha Reid</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item list-item-sm">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Dhimas</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Hajir</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Donald Brown</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    <div class="list-group-item">
+                                        <div class="media-left pos-rel">
+                                            <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
+                                        </div>
+                                        <div class="media-body">
+                                            <a href="#" class="text-main">
+                                                <p>Betty Murphy</p>
+                                            </a>
+                                            <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End Fixedbar-->
+
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
+                    <div class="panel">
+                     <div class="panel-body">
+                         <div class="fixed-fluid">
+                             <div class="fixed-md-200 pull-sm-left fixed-right-border">
+
+                                 <!-- Simple profile -->
+                                 <div class="text-center">
+                                     <div class="pad-ver">
+                                         <img src="img/profile-photos/1.png" class="img-lg img-circle" alt="Profile Picture">
+                                     </div>
+                                     <h4 class="text-lg text-overflow mar-no">Tiger Nixon</h4>
+                                     <p><b>POINT : </b>17</p>
+                                 </div>
+                                 <hr>
+
+                                 <!-- Profile Details -->
+                                 <p class="pad-ver text-main text-sm text-uppercase text-bold">Data Siswa</p>
+                                 <p><b>NIS : </b>12345</p>
+                                 <p><b>ALAMAT : </b>Tuban</p>
+                                 <p><b>TGL LAHIR : </b>1-1-2001</p>
+                                 <p><b>JENIS KELAMIN : </b>Laki-Laki</p>
+                                 <p><b>KELAS : </b>X</p>
+                                 <p><b>JURUSAN : </b>RPL</p>
+                                 <p><b>AGAMA : </b>Islam</p>
+                                 <hr>
+
+                             </div>
+                             <div class="fluid">
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="panel panel-warning panel-colorful media middle pad-all">
+                                            <div class="media-left">
+                                                <div class="pad-hor">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                                                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="text-2x mar-no text-semibold">400</p>
+                                                <p class="mar-no">Jumlah Pelanggar</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="panel panel-info panel-colorful media middle pad-all">
+                                            <div class="media-left">
+                                                <div class="pad-hor">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
+                                                        <path d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h8zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+                                                        <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="media-body">
+                                                <p class="text-2x mar-no text-semibold">400</p>
+                                                <p class="mar-no">Jumlah Treatment</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <a class="btn btn-sm btn-primary" href="tables-siswa.html">Kembali</a>
+                                    </div>
+                                    <br><br><br>
+
+                                    <hr>
+                                    <h3>Riwayat Pelanggaran/Treatment Siswa</h3>
+                                    <div class="pad-all text-center text-bold">
+                                        <div class="box-inline mar-btm pad-rgt">
+                                           Riwayat :
+                                           <div class="select">
+                                            <select id="demo-ease">
+                                                <option value="">Semua</option>
+                                                <option value="RPL">Pelanggaran</option>
+                                                <option value="TKJ">Treatment</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                             <button class="btn btn-default bg-gray-dark text-bold">Filter</button>
+                         </div>
+
+                         <div class="panel-body">
+
+                            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Pelanggaran/treatment</th>
+                                        <th>point</th>
+                                        <th>Keterangan</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2-2-2020</td>
+                                        <td>Merokok</td>
+                                        <td>+12</td>
+                                        <td><p>merokok saat istirahat di kelas</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2-3-2020</td>
+                                        <td>Alpha</td>
+                                        <td>+10</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2-3-2020</td>
+                                        <td>Membersihkan toilet</td>
+                                        <td>-7</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--===================================================-->
+    <!--End page content-->
+
+</div>
+<!--===================================================-->
+<!--END CONTENT CONTAINER-->
+
+
+
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+    <div id="mainnav">
+
+
+        <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+        <!--It will only appear on small screen devices.-->
+                    <!--================================
+                    <div class="mainnav-brand">
+                        <a href="index.html" class="brand">
+                            <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                            <span class="brand-text">Nifty</span>
+                        </a>
+                        <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
+                    </div>
+                -->
+
+
+
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+
+                            <!--Profile Widget-->
+                            <!--================================-->
+                            <div id="mainnav-profile" class="mainnav-profile">
+                                <div class="profile-wrap text-center">
+                                    <div class="pad-btm">
+                                        <img class="img-circle img-md" src="img/profile-photos/1.png" alt="Profile Picture">
+                                    </div>
+                                    <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                        <span class="pull-right dropdown-toggle">
+                                            <i class="dropdown-caret"></i>
+                                        </span>
+                                        <p class="mnp-name">Aaron Chavez</p>
+                                        <span class="mnp-desc">aaron.cha@themeon.net</span>
+                                    </a>
+                                </div>
+                                <div id="profile-nav" class="collapse list-group bg-trans">
+
+                                    <a href="pages-login.html" class="list-group-item">
+                                        <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+
+
+                            <!--Shortcut buttons-->
+                            <!--================================-->
+                            <div id="mainnav-shortcut" class="hidden">
+                                <ul class="list-unstyled shortcut-wrap">
+                                    <li class="col-xs-3" data-content="My Profile">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
+                                                <i class="demo-pli-male"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Messages">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
+                                                <i class="demo-pli-speech-bubble-3"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Activity">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                                <i class="demo-pli-thunder"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Lock Screen">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
+                                                <i class="demo-pli-lock-2"></i>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!--================================-->
+                            <!--End shortcut buttons-->
+
+
+                            <ul id="mainnav-menu" class="list-group">
+
+                              <!--Category name-->
+                              <li class="list-header">Navigation</li>
+
+                              <!--Menu list item-->
+                              <li>
+                                  <a href="index.html">
+                                      <i class="demo-pli-home"></i>
+                                      <span class="menu-title">Beranda</span>
+                                  </a>
+
+                                  
+                              </li>
+
+
+                            <!--Menu list item-->
+                            <li class="active-sub">
+                                <a href="#">
+                                    <i class="demo-pli-receipt-4"></i>
+                                    <span class="menu-title">Data</span>
+                                    <i class="arrow"></i>
+                                </a>
+
+                                <!--Submenu-->
+                                <ul>
+                                    <li><a href="tables-siswa.html">Data Siswa</a></li>
+                                    <li><a href="data-user.html">Data User</a></li>
+                                </ul>
+                            </li>
+
+                            <!--Menu list item-->
+                            <li>
+                              <a href="#">
+                                  <i class="demo-pli-warning-window"></i>
+                                  <span class="menu-title">Peraturan</span>
+                                  <i class="arrow"></i>
+                              </a>
+                              
+
+                              <!--Submenu-->
+                              <ul class="collapse">
+                                  <li><a href="grid-bootstrap.html">Peraturan</a></li>
+                                  <li><a href="grid-liquid-fixed.html">Treatment</a></li> 
+                              </ul>
+                          </li>
+
+                          <li >
+                              <a href="pages-blank.html">
+                                 <i class="demo-pli-file-html"></i>
+                                 <span class="menu-title">Laporan</span>
+                             </a>  
+                         </li> 
+                      </div>
+                  </div>
+              </div>
+              <!--================================-->
+              <!--End menu-->
+
+          </div>
+      </nav>
+      <!--===================================================-->
+      <!--END MAIN NAVIGATION-->
+
+  </div>
+
+
+
+  <!-- FOOTER -->
+  <!--===================================================-->
+  <footer id="footer">
+
+    <p class="pad-lft">&#0169; 2021 Ruang BK</p>
+
+
+
+</footer>
+<!--===================================================-->
+<!-- END FOOTER -->
+
+
+<!-- SCROLL PAGE BUTTON -->
+<!--===================================================-->
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button>
+<!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+
+
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="js/jquery.min.js"></script>
+
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!--NiftyJS [ RECOMMENDED ]-->
+<script src="js/nifty.min.js"></script>
+
+
+
+
+<!--=================================================-->
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="js/demo/nifty-demo.min.js"></script>
+
+
+<!--DataTables [ OPTIONAL ]-->
+<script src="plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+
+
+<!--DataTables Sample [ SAMPLE ]-->
+<script src="js/demo/tables-datatables.js"></script>
+
+
+
+
+</body>
+</html>
