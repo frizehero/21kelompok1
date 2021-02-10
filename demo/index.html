@@ -266,22 +266,42 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="col-lg-"></div>
+                                    <script>
+                                window.onload = function () {
 
+                                var chart = new CanvasJS.Chart("chartContainer", {
+                                    animationEnabled: true,
+                                    title:{
+                                        text: "Pelanggaran Perjurusan Perhari",
+                                        horizontalAlign: "left"
+                                    },
+                                    data: [{
+                                        type: "doughnut",
+                                        startAngle: 60,
+                                        //innerRadius: 60,
+                                        indexLabelFontSize: 17,
+                                        indexLabel: "{label} - #percent%",
+                                        toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+                                        dataPoints: [
+                                            { y: 36, label: "RPL" },
+                                            { y: 70, label: "TKR" },
+                                            { y: 65, label: "TPM" },
+                                            { y: 60, label: "TIPK"},
+                                            { y: 10, label: "TB"},
+                                            { y: 40, label: "TKJ"},
+                                            { y: 45, label: "TITL"}
+                                        ]
+                                    }]
+                                });
+                                chart.render();
 
-                                    <!-- Pie Chart -->
-                                    <!---------------------------------->
-                                    <div class="panel">
-                                        <div class="panel-heading">
-                                            <h3 class="panel-title">Pelanggaran Perjurusan Perhari</h3>
-                                        </div>
-                                        <div class="panel-body">
-                                            <div id="demo-flot-pie" style="height: 250px"></div>
-                                        </div>
-                                    </div>
-                                    <!---------------------------------->
+                                }
+                                </script>
+                                <div id="chartContainer" style="height: 340px; width: 100%;"></div>
+                                <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                            </div>
 
-
-                                </div>
                                 <div class="col-md-6">
 
 
