@@ -263,167 +263,23 @@
                         </div>
 
                     <div class="panel">
-                    <div class="panel-body">
-                        <div class="col-lg-12">
-                            <hr class="new-section-sm bord-no">
-                            <h4 class="text-main pad-btm bord-btm">Laporkan Siswa</h4>
-                            <div class="panel">
-                    
-                                <!-- Bubble Numbers Form Wizard -->
-                                <!--===================================================-->
-                                <div id="demo-step-wz">
-                                    <div class="wz-heading wz-w-label bg-info">
-                    
-                                        <!--Progress bar-->
-                                        <div class="progress progress-xs">
-                                            <div style="width: 15%;" class="progress-bar progress-bar-dark"></div>
-                                        </div>
-                    
-                                        <!--Nav-->
-                                        <ul class="wz-steps wz-icon-bw wz-nav-off text-lg">
-                                            <li class="col-xs-3">
-                                                <a data-toggle="tab" href="#demo-step-tab1">
-                                                    <span class="icon-wrap icon-wrap-xs icon-circle bg-dark mar-ver">
-                                                        <span class="wz-icon icon-txt text-bold">1</span>
-                                                        <i class="wz-icon-done demo-psi-like"></i>
-                                                    </span>
-                                                    <small class="wz-desc box-block text-semibold">Data</small>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-3">
-                                                <a data-toggle="tab" href="#demo-step-tab2">
-                                                    <span class="icon-wrap icon-wrap-xs icon-circle bg-dark mar-ver">
-                                                        <span class="wz-icon icon-txt text-bold">2</span>
-                                                        <i class="wz-icon-done demo-psi-like"></i>
-                                                    </span>
-                                                    <small class="wz-desc box-block text-semibold">Profil</small>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-3">
-                                                <a data-toggle="tab" href="#demo-step-tab3">
-                                                    <span class="icon-wrap icon-wrap-xs icon-circle bg-dark mar-ver">
-                                                        <span class="wz-icon icon-txt text-bold">3</span>
-                                                        <i class="wz-icon-done demo-psi-like"></i>
-                                                    </span>
-                                                    <small class="wz-desc box-block text-semibold">Pelanggaran/Treatment</small>
-                                                </a>
-                                            </li>
-                                            <li class="col-xs-3">
-                                                <a data-toggle="tab" href="#demo-step-tab4">
-                                                    <span class="icon-wrap icon-wrap-xs icon-circle bg-dark mar-ver">
-                                                        <span class="wz-icon icon-txt text-bold">4</span>
-                                                        <i class="wz-icon-done demo-psi-like"></i>
-                                                    </span>
-                                                    <small class="wz-desc box-block text-semibold">Selesai</small>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div><br>
-                    
-                                    <!--Form-->
-                                    <form class="form-horizontal">
-                                        <div class="panel-body">
-                                            <div class="tab-content">
-                    
-                                                <!--First tab-->
-                                                <div id="demo-step-tab1" class="tab-pane">
-                                                    <div class="form-group"><br><br>
-                                                        <label class="col-lg-3 control-label">NIS</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" class="form-control" name="NIS" placeholder="NIS">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                    
-                                                <!--Second tab-->
-                                                <div id="demo-step-tab2" class="tab-pane fade">
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Nama</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" placeholder="Achmad Muhajir" class="form-control" disabled="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Kelas</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" placeholder="XI"  class="form-control" disabled="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Jurusan</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" placeholder="RPL"  class="form-control" disabled="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                    
-                                                <!--Third tab-->
-                                                <div id="demo-step-tab3" class="tab-pane">
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Pelanggaran</label>
-                                                        <div class="col-lg-7">
-                                                            <select class="form-control">
-                                                                <option>Search</option>
-                                                                <option>Merokok</option>
-                                                                <option>Bolos Sekolah</option>
-                                                                <option>Minum Minuman Keras</option>
-                                                            </select>
-                                                        </div>
-                                                        </div>
-                                                    <div class="form-group">
-                                                    
-                                                        <label class="col-lg-3 control-label">Treatment</label>
-                                                        <div class="col-lg-7">
-                                                             <select class="form-control">
-                                                                <option>Search</option>
-                                                                <option>Membersihkan Kelas</option>
-                                                                <option>Membantu Petugas Kebersihan</option>
-                                                                <option>Membersihkan Toilet</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Tanggal</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="date" placeholder="Tanggal"  name="Tanggal" class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label class="col-lg-3 control-label">Keterangan</label>
-                                                        <div class="col-lg-7">
-                                                            <input type="text" placeholder="Keterangan"  name="Keterangan" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                    
-                                                </div>
-                    
-                                                <!--Fourth tab-->
-                                                <div id="demo-step-tab4" class="tab-pane mar-btm text-center">
-                                                    <h4>Terima Kasih</h4>
-                                                    <p>Atas Laporan Anda Semoga Siswa Menjadi Lebih Baik Kedepannya</p>
-                                                </div>
+                    <form class="form-horizontal">
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label" for="demo-hor-inputemail">Masukkan Nis/Nama</label>
+                                            <div class="col-sm-5">
+                                                <input type="Masukkan Nis/Nama" placeholder="Masukkan Nis/Nama" class="form-control">
                                             </div>
-                                        </div>
-                    
-                                        <!--Footer button-->
-                                        <div class="panel-footer text-right">
-                                            <div class="box-inline">
-                                                <button type="button" class="previous btn btn-info">Previous</button>
-                                                <button type="button" class="next btn btn-info">Next</button>
-                                                <button type="button" class="finish btn btn-info" disabled>Finish</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!--===================================================-->
-                                <!-- End Bubble Numbers Form Wizard -->
-                    
-                            </div>
-                        </div>
-                    </div>
+                                        </div> 
+                                    <div class="col-lg-7 col-lg-offset-4">
+                                        <button class="btn btn-primary" type="submit">Cari</button>
+                                    </div>
+                                    </div>
+                                   
+                                </form>
                         
                     </div>
-
+                </div>
                     </div>
                     <!--===================================================-->
                     <!--End page content-->
