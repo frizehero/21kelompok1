@@ -266,21 +266,19 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <div class="col-lg-"></div>
+                                    <div class="panel">
+                                        <div class="panel-heading">
+                                    <h4 class="panel-title"> Pelanggaran Perjurusan Perhari</h4>
                                     <script>
                                 window.onload = function () {
 
                                 var chart = new CanvasJS.Chart("chartContainer", {
                                     animationEnabled: true,
-                                    title:{
-                                        text: "Pelanggaran Perjurusan Perhari",
-                                        horizontalAlign: "left"
-                                    },
                                     data: [{
                                         type: "doughnut",
                                         startAngle: 60,
                                         //innerRadius: 60,
-                                        indexLabelFontSize: 17,
+                                        indexLabelFontSize: 13,
                                         indexLabel: "{label} - #percent%",
                                         toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                                         dataPoints: [
@@ -298,8 +296,10 @@
 
                                 }
                                 </script>
-                                <div id="chartContainer" style="height: 340px; width: 100%;"></div>
+                                <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                                 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                            </div>
+                            </div>
                             </div>
 
                                 <div class="col-md-6">
@@ -321,146 +321,219 @@
                                 </div>
                                 <!---------------------------------->
 
-
-                                <div class="col-md-7">
-
-
-
-
-                                </div>
-
                             </div>
 
                             <!-- Basic Data Tables -->
                             <!--===================================================-->
+                            <div class="col-md-6">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h2 class="panel-title text-center"><b>Siswa Bermasalah</b></h2>
+                                    <h3 class="panel-title">Siswa Bermasalah</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Foto</th>
-                                                <th>Nis</th>
-                                                <th>Nama</th>
-                                                <th>Kelas</th>
-                                                <th class="text-center">Point</th>
-                                                <th class="text-center">Detail</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Steve N. Horton</td>
-                                                <td>TKJ</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info bg-warning">170</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Charles S Boyle</td>
-                                                <td>TITL</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info bg-warning">146</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Lucy Doe</td>
-                                                <td>TITL</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info bg-warning">130</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>eresa L. Doe</td>
-                                                <td>TKR</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info bg-warning">110</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
+                                    <!-- Timeline -->
+                                    <!--===================================================-->
+                                    <div class="timeline">
+                    
+                                        <!-- Timeline header -->
+                                        <div class="timeline-header">
+                                            <div class="timeline-header-title bg-info"><a href=""> Lihat Semua</a></div>
+                                        </div>
+                    
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/1.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >100</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Achmad Muhajir</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/2.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >100</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Imam Mulkhakim</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                               <div class="timeline-icon"><img src="img/profile-photos/10.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >100</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Santi Saputri</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/5.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >100</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Muhammad Davino Budiarto</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/4.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >100</div>
+                                            </div>
+                                                
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Dhimas Endra Kumara</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--===================================================-->
+                                    <!-- End Timeline -->
                                 </div>
                             </div>
+                        </div>
                             <!--===================================================-->
                             <!-- End Striped Table -->
                             
                             <!-- Basic Data Tables -->
                             <!--===================================================-->
+                            <div class="col-md-6">
                             <div class="panel">
                                 <div class="panel-heading">
-                                    <h2 class="panel-title text-center"><b>Pelanggaran Hari Ini</b></h2>
+                                    <h3 class="panel-title">Pelanggar Hari Ini</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <table id="demo-dt-selection" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Foto</th>
-                                                <th>Nis</th>
-                                                <th>Nama</th>
-                                                <th>Kelas</th>
-                                                <th class="text-center">Point</th>
-                                                <th class="text-center">Detail</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Steve N. Horton</td>
-                                                <td>TKJ</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info">70</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Charles S Boyle</td>
-                                                <td>TITL</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info">16</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>Lucy Doe</td>
-                                                <td>TITL</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info">10</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>-</td>
-                                                <td>15473</td>
-                                                <td>eresa L. Doe</td>
-                                                <td>TKR</td>
-                                                <td class="text-center">
-                                                    <div class="label label-table label-info">11</div>
-                                                </td>
-                                                <td class="text-center"><a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                    <!-- Timeline -->
+                                    <!--===================================================-->
+                                    <div class="timeline">
+                    
+                                        <!-- Timeline header -->
+                                        <div class="timeline-header">
+                                            <div class="timeline-header-title bg-info"><a href="#">Lihat Semua</a> </div>
+                                        </div>
+                    
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/1.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >150</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Achmad Muhajir</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/2.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >180</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Imam Mulkhakim</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                               <div class="timeline-icon"><img src="img/profile-photos/10.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >120</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Santi Saputri</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/5.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >190</div>
+                                            </div>
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Muhammad Davino Budiarto</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-entry">
+                                            <div class="timeline-stat">
+                                                <div class="timeline-icon"><img src="img/profile-photos/4.png" alt="Profile picture">
+                                                </div>
+                                            <div class="timeline-time">
+                                                <div >Point</div>
+                                                <div >200</div>
+                                            </div>
+                                                
+                                            </div>
+                                            <div class="timeline-label">
+                                                <p class="text-bold"><a href="#" class="text-info">Dhimas Endra Kumara</a></p>
+                                                <p>NIS      : 243562</p>
+                                                <p>Kelas    : XI</p>
+                                                <p>Jurusan  : RPL</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--===================================================-->
+                                    <!-- End Timeline -->
                                 </div>
                             </div>
+                        </div>
                             <!--===================================================-->
                             <!-- End Striped Table -->
                         </div>
