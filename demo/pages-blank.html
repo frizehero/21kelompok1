@@ -39,7 +39,7 @@
 
 
     <!--Demo [ DEMONSTRATION ]-->
-    <link href="css/demo/nifty-demo.min.css" rel="stylesheet">
+    
 
     
 
@@ -76,7 +76,7 @@
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
-        
+
         <!--NAVBAR-->
         <!--===================================================-->
         <header id="navbar">
@@ -143,7 +143,7 @@
             <!--===================================================-->
             <div id="content-container">
                 <div id="page-head">
-                    
+
                     <!--Page Title-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <div id="page-title">
@@ -156,238 +156,289 @@
                     <!--Breadcrumb-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <ol class="breadcrumb">
-                       <li><a href="#"><i class="demo-pli-home"></i></a></li>
-                       <li><a href="#">Pages</a></li>
-                       <li class="active">Laporan</li>
-                   </ol>
-                   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                   <!--End breadcrumb-->
-
-               </div>
-
-               
-               <!--Page content-->
-               <!--===================================================-->
-               <div id="page-content">
-                
-                   
-
-
-                 <!-- Basic Data Tables -->
-                 <!--===================================================-->
-                 <div class="panel">
-                    <div class="panel-body">
-                        <center><h3>Siswa Bermasalah</h3></center>
-                        <!-- Toolbar -->
-                        <!--===================================================-->
-                        <div class="pad-all text-left text-bold">
-                         
-                            <div class="box-inline mar-btm pad-rgt">
-                             
-                             <div class="date">
-                                <div>Tanggal :<input type="date" class="form-control" placeholder="tanggal" autofocus name="tanggal" id="tanggal"></div>
-                                
-                            </div>
+                     <li><a href="#"><i class="demo-pli-home"></i></a></li>
+                     <li><a href="#">Pages</a></li>
+                     <li class="active">Laporan</li>
+                 </ol>
+                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                 <!--End breadcrumb-->
+                 <div class="pad-all text-center ">
+                    <div class="box-inline mar-btm pad-rgt">
+                        Pilih Tanggal :
+                        <div class="select">
+                            <input class="btn btn-default" type="date" name="tanggal1">
                         </div>
-                        <button class="btn btn-default bg-gray-dark text-bold">Filter</button>
                     </div>
-                    
-                    <div class="panel">
-                        
-                        <!--Bordered Table-->
-                        <!--===================================================-->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Jurusan</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>REKAYASA PERANGKAT LUNAK</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TEKNIK KOMPUTER DAN JARINGAN</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TEKNIK KENDARAAN RINGAN</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TATA BUSANA</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TEKNIK PEMESINAN </td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TEKNIK PEMESINAN KAPAL</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>TEKNIK INSTALASI TENAGA LISTRIK</td>
-                                            <td><a href="laporan-siswa.html" class="btn-link">Detail</a></td>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!--===================================================-->
-                            <!--End Bordered Table-->
-                            
-                        </div>
-
-                        
+                    <div class="box-inline mar-btm">
+                       Sampai Dengan :
+                       <div class="select">
+                        <input class="btn btn-default" type="date" name="tanggal2">
                     </div>
-                    <!--===================================================-->
-                    <!-- End Striped Table -->
-
                 </div>
+                <button class="btn btn-default">Filter</button>
+            </div>
+        </div>
 
-                <!--===================================================-->
-                <!--End page content-->
 
-                <div class="panel-body">
-                    
-                    
-                    <!--Network Line Chart-->
-                    <!--===================================================-->
-                    <div id="demo-panel-network" class="panel">
-                        <div class="panel-heading">
-                            <div class="panel-control">
-                                
-                             
-                            </div>
-                            <h3 class="panel-title">Pelanggaran Dalam 1 Tahun</h3>
-                        </div>
-                        
-                        
-                        <!--chart placeholder-->
-                        <div class="pad-all">
-                            <div id="demo-chart-network" style="height: 255px"></div>
-                        </div>
-                        
-                        
-                        <!--Chart information-->
-                        <div class="panel-body">
-                            
-                            <div class="row">
-                                <div class="col-lg-8">
-                                    <p class="text-semibold text-uppercase text-main">Jumlah Siswa</p>
-                                    <div class="row">
-                                        <div class="col-xs-5">
-                                            <div class="media">
-                                                <div class="media-left">
-                                                    <span class="text-3x text-thin text-main">1250</span>
-                                                </div>
-                                                
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-7 text-sm">
-                                            <p>
-                                                <span>Laki - Laki</span>
-                                                <span class="pad-lft text-semibold">
-                                                    <span class="text-lg">771</span>
-                                                    <span class="labellabel-success mar-lft">
-                                                    </span>
-                                                </span>
-                                            </p>
-                                            <p>
-                                                <span>Perempuan</span>
-                                                <span class="pad-lft text-semibold">
-                                                    <span class="text-lg">229</span>
-                                                    <span class="labellabel-danger mar-lft">
-                                                    </span>
-                                                </span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                
-                                <div class="col-lg-4">
-                                    
-                                 
-                                    <ul class="list-unstyled">
-                                        
-                                        <li class="pad-btm">
-                                            <div class="clearfix">
-                                                <p class="pull-left mar-no">Tidak Melanggar</p>
-                                                <p class="pull-right mar-no">70%</p>
-                                            </div>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar progress-bar-info" style="width: 70%;">
-                                                    <span class="sr-only">70% Complete</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="clearfix">
-                                                <p class="pull-left mar-no">Melanggar</p>
-                                                <p class="pull-right mar-no">10%</p>
-                                            </div>
-                                            <div class="progress progress-sm">
-                                                <div class="progress-bar progress-bar-primary" style="width: 10%;">
-                                                    <span class="sr-only">10% Complete</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        
-                    </div>
-                    <!--===================================================-->
-                    <!--End network line chart-->
-                    
-                </div>
-                <div class="panel">
-                    <div class="panel-body">
-                        <h4>Pelanggaran Dalam 1 Bulan</h4>
-                        <div class="col-md-12">
-                            <div id="demo-bar-chart" style="height:250px"></div>
-                            <hr class="new-section-xs bord-no">
-                            <ul class="list-inline text-center">
-                                <li><span class="label label-info">771</span> Laki - Laki</li>
-                                <li><span class="label label-warning">229</span> Perempuan</li>
-                                <li><span class="label label-default">25</span> Tidak Pernah</li>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
+        <!--Page content-->
+        <!--===================================================-->
+        <div id="page-content">
 
-                <!--===================================================-->
-                <!--End page content-->
+
+
+
+           <!-- Basic Data Tables -->
+           <!--===================================================-->
+           <div class="panel">
+            <div class="panel-body">
+                <center><h3>Siswa Bermasalah</h3></center>
 
             </div>
-            <!--===================================================-->
-            <!--END CONTENT CONTAINER-->
 
 
-            
-            <!--ASIDE-->
-            <!--===================================================-->
-            
-            <!--===================================================-->
-            <!--END ASIDE-->
+             <div class="row">
+                            <div class="col-md-3">
+                                <div class="panel panel-info panel-colorful media middle pad-all ">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">132</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">RPL</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-success panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">13</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">TPM</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-danger panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">30</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">TKR</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <div class="panel panel-warning panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">15</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">TITL</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <div class="panel panel-primary panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">20</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">TPK</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-md-3">
+                                <div class="panel panel-pink panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">10</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">BB</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="panel panel-info panel-colorful media middle pad-all">
+                                    <div class="media-left">
+                                        <div class="pad-hor">
+                                            <p class="text-3x mar-no text-bold">4</p>
+                                        </div>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="text-2x mar-no text-semibold">TKJ</p>
+                                        <a href="laporan-siswa.html" class="mar-no text-light">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
 
-            
-            <!--MAIN NAVIGATION-->
-            <!--===================================================-->
-            <nav id="mainnav-container">
-                <div id="mainnav">
+                        </div>
 
 
-                    <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
-                    <!--It will only appear on small screen devices.-->
+        </div>
+        <!--===================================================-->
+        <!-- End Striped Table -->
+
+    
+
+    <!--===================================================-->
+    <!--End page content-->
+
+    <div class="panel-body">
+
+
+        <!--Network Line Chart-->
+        <!--===================================================-->
+        <div id="demo-panel-network" class="panel">
+            <div class="panel-heading">
+                <div class="panel-control">
+
+
+                </div>
+                <h3 class="panel-title">Pelanggaran Dalam 1 Tahun</h3>
+            </div>
+
+
+            <!--chart placeholder-->
+            <div class="pad-all">
+                <div id="demo-chart-network" style="height: 255px"></div>
+            </div>
+
+
+            <!--Chart information-->
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <p class="text-semibold text-uppercase text-main">Jumlah Siswa</p>
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <span class="text-3x text-thin text-main">1250</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-7 text-sm">
+                                <p>
+                                    <span>Laki - Laki</span>
+                                    <span class="pad-lft text-semibold">
+                                        <span class="text-lg">771</span>
+                                        <span class="labellabel-success mar-lft">
+                                        </span>
+                                    </span>
+                                </p>
+                                <p>
+                                    <span>Perempuan</span>
+                                    <span class="pad-lft text-semibold">
+                                        <span class="text-lg">229</span>
+                                        <span class="labellabel-danger mar-lft">
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4">
+
+
+                        <ul class="list-unstyled">
+
+                            <li class="pad-btm">
+                                <div class="clearfix">
+                                    <p class="pull-left mar-no">Tidak Melanggar</p>
+                                    <p class="pull-right mar-no">70%</p>
+                                </div>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar progress-bar-info" style="width: 70%;">
+                                        <span class="sr-only">70% Complete</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="clearfix">
+                                    <p class="pull-left mar-no">Melanggar</p>
+                                    <p class="pull-right mar-no">10%</p>
+                                </div>
+                                <div class="progress progress-sm">
+                                    <div class="progress-bar progress-bar-primary" style="width: 10%;">
+                                        <span class="sr-only">10% Complete</span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--===================================================-->
+        <!--End network line chart-->
+
+    </div>
+    <div class="panel">
+        <div class="panel-body">
+            <h4>Pelanggaran Dalam 1 Bulan</h4>
+            <div class="col-md-12">
+                <div id="demo-bar-chart" style="height:250px"></div>
+                <hr class="new-section-xs bord-no">
+                <ul class="list-inline text-center">
+                    <li><span class="label label-info">771</span> Laki - Laki</li>
+                    <li><span class="label label-warning">229</span> Perempuan</li>
+                    <li><span class="label label-default">25</span> Tidak Pernah</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--===================================================-->
+<!--End page content-->
+
+</div>
+<!--===================================================-->
+<!--END CONTENT CONTAINER-->
+
+
+
+<!--ASIDE-->
+<!--===================================================-->
+
+<!--===================================================-->
+<!--END ASIDE-->
+
+
+<!--MAIN NAVIGATION-->
+<!--===================================================-->
+<nav id="mainnav-container">
+    <div id="mainnav">
+
+
+        <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+        <!--It will only appear on small screen devices.-->
                     <!--================================
                     <div class="mainnav-brand">
                         <a href="index.html" class="brand">
@@ -436,7 +487,7 @@
 
 
                             <ul id="mainnav-menu" class="list-group">
-                              
+
                               <!--Category name-->
                               <li class="list-header">Navigation</li>
                               
@@ -458,10 +509,8 @@
 
                                   <!--Submenu-->
                                   <ul class="collapse">
-                                      <li><a href="tables-siswa.html">Data Siswa</a></li>
+                                      <li><a href="data-siswa.html">Data Siswa</a></li>
                                       <li><a href="data-user.html">Data User</a></li>
-
-
                                   </ul>
                               </li>
                               
@@ -487,73 +536,73 @@
                               <!--Menu list item-->
                               <li class="active-sub">
                                   <a href="pages-blank.html">
-                                   <i class="demo-pli-file-html"></i>
-                                   <span class="menu-title">Laporan</span>
-                               </a>
+                                     <i class="demo-pli-file-html"></i>
+                                     <span class="menu-title">Laporan</span>
+                                 </a>
 
-                               
-                           </li>
-                           
-                           <!--Menu list item-->
-                           
-                           
-                           <!--Menu list item-->
-                           
-                           <!--================================-->
-                           <!--End widget-->
 
-                       </div>
-                   </div>
-               </div>
-               <!--================================-->
-               <!--End menu-->
+                             </li>
 
-           </div>
-       </nav>
-       <!--===================================================-->
-       <!--END MAIN NAVIGATION-->
+                             <!--Menu list item-->
 
-   </div>
 
-   
+                             <!--Menu list item-->
 
-   <!-- FOOTER -->
-   <!--===================================================-->
-   <footer id="footer">
+                             <!--================================-->
+                             <!--End widget-->
 
-    <!-- Visible when footer positions are fixed -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div class="show-fixed pad-rgt pull-right">
-        You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
-    </div>
+                         </div>
+                     </div>
+                 </div>
+                 <!--================================-->
+                 <!--End menu-->
+
+             </div>
+         </nav>
+         <!--===================================================-->
+         <!--END MAIN NAVIGATION-->
+
+     </div>
 
 
 
-    <!-- Visible when footer positions are static -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    
+     <!-- FOOTER -->
+     <!--===================================================-->
+     <footer id="footer">
+
+        <!-- Visible when footer positions are fixed -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <div class="show-fixed pad-rgt pull-right">
+            You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
+        </div>
 
 
 
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-    <p class="pad-lft">&#0169;  2021 Ruang BK</p>
+        <!-- Visible when footer positions are static -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
 
 
-</footer>
-<!--===================================================-->
-<!-- END FOOTER -->
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <p class="pad-lft">&#0169;  2021 Ruang BK</p>
 
 
-<!-- SCROLL PAGE BUTTON -->
-<!--===================================================-->
-<button class="scroll-top btn">
-    <i class="pci-chevron chevron-up"></i>
-</button>
-<!--===================================================-->
+
+    </footer>
+    <!--===================================================-->
+    <!-- END FOOTER -->
+
+
+    <!-- SCROLL PAGE BUTTON -->
+    <!--===================================================-->
+    <button class="scroll-top btn">
+        <i class="pci-chevron chevron-up"></i>
+    </button>
+    <!--===================================================-->
 </div>
 <!--===================================================-->
 <!-- END OF CONTAINER -->
