@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Data Siswa | BK- Guru Piket</title>
+    <title>Data Siswa | BK-Guru Piket </title>
 
 
     <!--STYLESHEET-->
@@ -40,11 +40,6 @@
 
 
 
-    <!--DataTables [ OPTIONAL ]-->
-    <link href="plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
-    <link href="plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
-
-    
     <!--=================================================
 
     REQUIRED
@@ -114,174 +109,276 @@
 
 
 
-
+                        
 
                     </ul>
-
-                    <li>
-
-                    </li>
-                </ul>
-            </div>
-            <!--================================-->
-            <!--End Navbar Dropdown-->
-
-        </div>
-    </header>
-    <!--===================================================-->
-    <!--END NAVBAR-->
-
-    <div class="boxed">
-
-        <!--CONTENT CONTAINER-->
-        <!--===================================================-->
-        <div id="content-container">
-            <div id="page-head">
-
-                <!--Page Title-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div id="page-title">
-                    <h1 class="page-header text-overflow">Data Siswa</h1>
+                    <ul class="nav navbar-top-links">
+                    </ul>
                 </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
-
-
-                <!--Breadcrumb-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="demo-pli-home"></i></a></li>
-                    <li><a href="#">Data</a></li>
-                    <li class="active">Data Siswa</li>
-                </ol>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End breadcrumb-->
+                <!--================================-->
+                <!--End Navbar Dropdown-->
 
             </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
 
+        <div class="boxed">
 
-            <!--Page content-->
+            <!--CONTENT CONTAINER-->
             <!--===================================================-->
-            <div id="page-content ">
-                <div class="col-md-12">
-
-                 <!-- Basic Data Tables -->
-                 <!--===================================================-->
-                 <div class="panel">
-                    <div class="panel-body ">
-                        <div class="panel-heading">
-                           
-                       </div>
-                       <!-- Toolbar -->
-                       <!--===================================================-->
-                       <div class="pad-all text-center text-bold">
-                        <div class="box-inline mar-btm pad-rgt">
-                         <div class="select">
-                            <select id="demo-ease">
-                                <option value="">Jurusan</option>
-                                <option value="RPL">RPL</option>
-                                <option value="TKJ">TKJ</option>
-                                <option value="TPM">TPM</option>
-                                <option value="TITL">TITL</option>
-                                <option value="TIPK">TIPK</option>
-                                <option value="BB">BB</option>
-                                <option value="TKR">TKR</option>
-                            </select>
-                        </div>
+            <div id="content-container">
+                <div id="page-head">
+                    <!--Page Title-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <div id="page-title">
+                        <h1 class="page-header text-overflow">Data Siswa</h1>
                     </div>
-                    <div class="box-inline mar-btm pad-rgt">
-                     <div class="select">
-                        <select id="demo-ease">
-                           <option value="">Kelas</option>
-                           <option value="X">X</option>
-                           <option value="XI">XI</option>
-                           <option value="XII">XII</option>
-                       </select>
-                   </div>
-               </div>
-               <button class="btn btn-default bg-gray-dark text-bold">Filter</button>
-           </div>
-           <div class="panel">
-            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                    <tr>
-                        <th>Foto</th>
-                        <th class="min-tablet">NIS</th>
-                        <th class="min-tablet">Nama</th>
-                        <th class="min-tablet">Alamat</th>
-                        <th class="min-tablet">Tanggal lahir</th>
-                        <th class="min-tablet">Kelas</th>
-                        <th class="min-tablet">Jenis Kelamin</th>
-                        <th class="min-tablet">Jurusan</th>
-                        <th class="min-tablet">Agama</th>
-                        <th class="min-tablet">Point</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img class="img-sm" src="img/shared-img-3.jpg"></td>
-                        <td>12345</td>
-                        <td>Tiger Nixon</td>
-                        <td>tuban</td>
-                        <td>1-1-2004</td>
-                        <td>XI</td>
-                        <td>Laki-Laki</td>
-                        <td>RPL</td>
-                        <td>Islam</td>
-                        <td>0</td>
-                        <td>
-                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>54321</td>
-                        <td>Garrett Winters</td>
-                        <td>tuban</td>
-                        <td>3-1-2004</td>
-                        <td>X</td>
-                        <td>Laki-Laki</td>
-                        <td>RPL</td>
-                        <td>Islam</td>
-                        <td>0</td>
-                        <td>
-                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>8264289</td>
-                        <td>ashton</td>
-                        <td>tuban</td>
-                        <td>2-1-2004</td>
-                        <td>XII</td>
-                        <td>Perempuan</td>
-                        <td>RPL</td>
-                        <td>Kristen</td>
-                        <td>0</td>
-                        <td>
-                            <a class="btn btn-success" type="button" href="detail-siswa.html">Detail</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End page title-->
 
+
+                    <!--Breadcrumb-->
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <ol class="breadcrumb">
+                        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+                        <li><a href="#">Data</a></li>
+                        <li class="active">Data Siswa</li>
+                    </ol>
+                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                    <!--End breadcrumb-->
+
+                    <div class="text-right breadcrumb">
+                        <center>
+                         <form action="#" method="post" class="col-xs-8 col-sm-3 text-right">
+                            <div class="input-group text-right">
+                               <input type="text" placeholder="Search" class="form-control">
+                               <span class="input-group-btn text-right">
+                                   <button class="btn btn-default" type="button">Search</button>
+                               </span>
+                           </div> 
+                       </center>
+                       
+                   </form>
+                   <div class="select">
+                    <select id="demo-ease">
+                        <option value="">Jurusan</option>
+                        <option value="RPL">RPL</option>
+                        <option value="TKJ">TKJ</option>
+                        <option value="TPM">TPM</option>
+                        <option value="TITL">TITL</option>
+                        <option value="TIPK">TIPK</option>
+                        <option value="BB">BB</option>
+                        <option value="TKR">TKR</option>
+                    </select>
+                </div>
+                <div class="select">
+                    <select id="demo-ease">
+                       <option value="">Kelas</option>
+                       <option value="X">X</option>
+                       <option value="XI">XI</option>
+                       <option value="XII">XII</option>
+                   </select>
+               </div>
+               <button class="btn btn-default">Filter</button>  
+           </div>
+       </div>
+
+
+       <!--Page content-->
+       <!--===================================================-->
+       <div id="page-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="panel">
+                            <div class="panel-body text-center">
+                                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/1.png">
+                                <p class="text-lg text-semibold mar-no text-main">Aaron Chavez</p>
+                                <p class="text-muted">2875687265</p>
+                                <p>
+                                    KELAS : X <br>
+                                    JURUSAN : RPL <br>
+                                </p>
+                                <a class="btn btn-primary mar-ver" href="detail-siswa.html">Detail</a>
+                                <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                                    <li class="col-xs-5">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Pelanggaran</p>
+                                    </li>
+                                    <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Treatment</p>
+                                    </li>
+                                    <li class="col-xs-3">
+                                        <span class="text-lg text-semibold text-main">0</span>
+                                        <p class="text-muted mar-no">Point</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
+
     </div>
     <!--===================================================-->
-    <!-- End Striped Table -->
-</div>
-</div>
-
-
-</div>
-<!--===================================================-->
-<!--End page content-->
+    <!--End page content-->
 
 </div>
 <!--===================================================-->
 <!--END CONTENT CONTAINER-->
+
 
 
 <!--MAIN NAVIGATION-->
@@ -377,7 +474,7 @@
                                 <li class="list-header">Navigation</li>
 
                                 <!--Menu list item-->
-                               <li>
+                                <li>
                                   <a href="index.html">
                                       <i class="demo-pli-home"></i>
                                       <span class="menu-title">Beranda</span>
@@ -385,115 +482,142 @@
 
                                   
                               </li>
-                                
-                                <!--Menu list item-->
-                                <li class="active-sub">
+
+                              <!--Menu list item-->
+                              <li class="active-sub">
                                     <a href="tables-siswa.html">
                                         <i class="demo-pli-receipt-4"></i>
                                         <span class="menu-title">Data Siswa</span>
                                     </a>
                                 </li>
 
-                                <!--Menu list item-->
-                                <li>
-                                    <a href="#">
-                                        <i class="demo-pli-warning-window"></i>
-                                        <span class="menu-title">Peraturan</span>
-                                        <i class="arrow"></i>
-                                    </a>
+                            <!--Menu list item-->
+                            <li>
+                                <a href="#">
+                                    <i class="demo-pli-warning-window"></i>
+                                    <span class="menu-title">Peraturan</span>
+                                    <i class="arrow"></i>
+                                </a>
 
-                                    <!--Submenu-->
-                                    <ul class="collapse">
-                                        <li><a href="grid-bootstrap.html">Pelanggaran</a></li>
-                                        <li><a href="grid-liquid-fixed.html">Treatment</a></li>
-                                    </ul>
-                                </li>
+                                <!--Submenu-->
+                                <ul class="collapse">
+                                    <li><a href="grid-bootstrap.html">Pelanggaran</a></li>
+                                    <li><a href="grid-liquid-fixed.html">Treatment</a></li>
+                                </ul>
+                            </li>
 
-                                <li >
+                            <li >
                               <a href="pages-blank.html">
                                  <i class="demo-pli-file-html"></i>
                                  <span class="menu-title">Laporan</span>
                              </a>  
                          </li>
 
-                            </div>
-                        </div>
-                    </div>
-                    <!--================================-->
-                    <!--End menu-->
+                     </div>
+                 </div>
+             </div>
+             <!--================================-->
+             <!--End menu-->
 
-                </div>
-            </nav>
-            <!--===================================================-->
-            <!--END MAIN NAVIGATION-->
+         </div>
+     </nav>
+     <!--===================================================-->
+     <!--END MAIN NAVIGATION-->
 
-        </div>
-
-        
-
-        <!-- FOOTER -->
-        <!--===================================================-->
-        <footer id="footer">
-
-
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-            <p class="pad-lft">&#0169; 2021 Ruang BK</p>
+ </div>
 
 
 
-        </footer>
-        <!--===================================================-->
-        <!-- END FOOTER -->
+ <!-- FOOTER -->
+ <!--===================================================-->
+ <footer id="footer">
 
-
-        <!-- SCROLL PAGE BUTTON -->
-        <!--===================================================-->
-        <button class="scroll-top btn">
-            <i class="pci-chevron chevron-up"></i>
-        </button>
-        <!--===================================================-->
+    <!-- Visible when footer positions are fixed -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="show-fixed pad-rgt pull-right">
     </div>
-    <!--===================================================-->
-    <!-- END OF CONTAINER -->
-
-
-    
-    
-    
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
-
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery.min.js"></script>
-
-
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="js/bootstrap.min.js"></script>
-
-
-    <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
 
 
 
-
-    <!--=================================================-->
-    
-    
-    <!--DataTables [ OPTIONAL ]-->
-    <script src="plugins/datatables/media/js/jquery.dataTables.js"></script>
-    <script src="plugins/datatables/media/js/dataTables.bootstrap.js"></script>
-    <script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    <!-- Visible when footer positions are static -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="hide-fixed pull-right pad-rgt">
+    </div>
 
 
-    <!--DataTables Sample [ SAMPLE ]-->
-    <script src="js/demo/tables-datatables.js"></script>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <p class="pad-lft">&#0169; 2021 Ruang BK</p>
 
 
-    
+
+</footer>
+<!--===================================================-->
+<!-- END FOOTER -->
+
+
+<!-- SCROLL PAGE BUTTON -->
+<!--===================================================-->
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button>
+<!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+
+
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="js/jquery.min.js"></script>
+
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!--NiftyJS [ RECOMMENDED ]-->
+<script src="js/nifty.min.js"></script>
+
+
+
+
+<!--=================================================-->
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="js/demo/nifty-demo.min.js"></script>
+
+
+<!--Flot Chart [ OPTIONAL ]-->
+<script src="plugins/flot-charts/jquery.flot.min.js"></script>
+<script src="plugins/flot-charts/jquery.flot.resize.min.js"></script>
+
+
+<!--Gauge js [ OPTIONAL ]-->
+<script src="plugins/gauge-js/gauge.min.js"></script>
+
+
+<!--Skycons [ OPTIONAL ]-->
+<script src="plugins/skycons/skycons.min.js"></script>
+
+
+<!--Easy Pie Chart [ OPTIONAL ]-->
+<script src="plugins/easy-pie-chart/jquery.easypiechart.min.js"></script>
+
+
+<!--Widget [ SAMPLE ]-->
+<script src="js/demo/widgets.js"></script>
+
+
+
 
 </body>
 </html>
