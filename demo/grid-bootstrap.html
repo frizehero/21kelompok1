@@ -42,7 +42,7 @@
     
 
 
-        
+
     <!--DataTables [ OPTIONAL ]-->
     <link href="plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
     <link href="plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
@@ -73,14 +73,14 @@
     Detailed information and more samples can be found in the document.
 
     =================================================-->
-        
+
 </head>
 
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
-        
+
         <!--NAVBAR-->
         <!--===================================================-->
         <header id="navbar">
@@ -140,7 +140,7 @@
             <!--===================================================-->
             <div id="content-container">
                 <div id="page-head">
-                    
+
                     <!--Page Title-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <div id="page-title">
@@ -153,9 +153,9 @@
                     <!--Breadcrumb-->
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <ol class="breadcrumb">
-                    <li><a href="#"><i class="demo-pli-home"></i></a></li>
-                    <li><a href="#">Peraturan</a></li>
-                    <li class="active">Pelanggaran</li>
+                        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+                        <li><a href="#">Peraturan</a></li>
+                        <li class="active">Pelanggaran</li>
                     </ol>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End breadcrumb-->
@@ -166,248 +166,91 @@
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-                    
-                    <!-- Basic Data Tables -->
+
+                    <!--Default Tabs (Left Aligned)-->
                     <!--===================================================-->
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Semua Pelanggaran</h3>
-                        </div>
-                        <div class="panel-heading">
-                            <div class="col-lg-7">         
-                                <a class="btn btn-primary" type="button" href="grid-masonry.html">Tambah</a>
+                    <div class="tab-base">
+
+                        <!--Nav Tabs-->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#demo-lft-tab-1">Home <span class="badge badge-purple">27</span></a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-lft-tab-2">Profile</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-lft-tab-3">Setting</a>
+                            </li>
+                        </ul>
+
+                        <!--Tabs Content-->
+                        <div class="tab-content">
+                            <div id="demo-lft-tab-1" class="tab-pane fade active in">
+                                <p class="text-main text-semibold">First Tab Content</p>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-center">
+                                                        <img alt="Profile Picture" class="img-md img-circle mar-btm" src="img/profile-photos/2.png">
+                                                        <p class="text-lg text-semibold">Stephen Tran</p>
+
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            <a href="#" class="btn btn-icon bord-no demo-psi-facebook icon-lg add-tooltip" data-original-title="Facebook" data-container="body"></a>
+                                                            <a href="#" class="btn btn-icon bord-no demo-psi-twitter icon-lg add-tooltip" data-original-title="Twitter" data-container="body"></a>
+                                                            <a href="#" class="btn btn-icon bord-no demo-psi-google-plus icon-lg add-tooltip" data-original-title="Google+" data-container="body"></a>
+                                                            <a href="#" class="btn btn-icon bord-no demo-psi-instagram icon-lg add-tooltip" data-original-title="Instagram" data-container="body"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="demo-lft-tab-2" class="tab-pane fade">
+                                    <p class="text-main text-semibold">Second Tab Content</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                </div>
+                                <div id="demo-lft-tab-3" class="tab-pane fade">
+                                    <p class="text-main text-semibold">Third Tab Content</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                </div>
                             </div>
-                        </div>                  
-                        <div class="panel-body">
-                            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>Pelanggaran</th>
-                                        <th>Point</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>merokok</td>
-                                        <td>12</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>  
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                        <td>
-                                            <a class="btn btn-warning" type="button" href="edit-pelanggaran.html">Edit</a>
-                                            <a class="btn btn-danger" type="button" href="#">Hapus</a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
+                        <!--===================================================-->
+                        <!--End Default Tabs (Left Aligned)-->
+
+
                     </div>
                     <!--===================================================-->
-                    <!-- End Striped Table -->
-                    
-                    
-                    <!-- Row selection (single row) -->
-                    <!--===================================================-->
-                    
-                    <!--===================================================-->
-                    <!-- End Row selection (single row) -->
-                    
-                    
-                    <!-- Row selection and deletion (multiple rows) -->
-                    <!--===================================================-->
-                                        <!--===================================================-->
-                    <!-- End Row selection and deletion (multiple rows) -->
-                    
-                    
-                    <!-- Add Row -->
-                    <!--===================================================-->
-                    
-                    <!--===================================================-->
-                    <!-- End Add Row -->
-                    
-                    
-                    
+                    <!--End page content-->
+
                 </div>
                 <!--===================================================-->
-                <!--End page content-->
-
-            </div>
-            <!--===================================================-->
-            <!--END CONTENT CONTAINER-->
+                <!--END CONTENT CONTAINER-->
 
 
-            
-            <!--ASIDE-->
-            <!--===================================================-->
-            <aside id="aside-container"></aside>
-            <!--===================================================-->
-            <!--END ASIDE-->
 
-            
-            <!--MAIN NAVIGATION-->
-            <!--===================================================-->
-            <nav id="mainnav-container">
-                <div id="mainnav">
+                <!--ASIDE-->
+                <!--===================================================-->
+                <aside id="aside-container"></aside>
+                <!--===================================================-->
+                <!--END ASIDE-->
 
 
-                    <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
-                    <!--It will only appear on small screen devices.-->
+                <!--MAIN NAVIGATION-->
+                <!--===================================================-->
+                <nav id="mainnav-container">
+                    <div id="mainnav">
+
+
+                        <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+                        <!--It will only appear on small screen devices.-->
                     <!--================================
                     <div class="mainnav-brand">
                         <a href="index.html" class="brand">
@@ -416,240 +259,240 @@
                         </a>
                         <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
                     </div>
-                    -->
+                -->
 
 
 
-                    <!--Menu-->
-                    <!--================================-->
-                    <div id="mainnav-menu-wrap">
-                        <div class="nano">
-                            <div class="nano-content">
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
 
-                                <!--Profile Widget-->
-                                <!--================================-->
-                                <div id="mainnav-profile" class="mainnav-profile">
-                                    <div class="profile-wrap text-center">
-                                        <div class="pad-btm">
-                                            <img class="img-circle img-md" src="img/profile-photos/1.png" alt="Profile Picture">
-                                        </div>
-                                        <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
-                                            <span class="pull-right dropdown-toggle">
-                                                <i class="dropdown-caret"></i>
-                                            </span>
-                                            <p class="mnp-name">Aaron Chavez</p>
-                                            <span class="mnp-desc">aaron.cha@themeon.net</span>
-                                        </a>
+                            <!--Profile Widget-->
+                            <!--================================-->
+                            <div id="mainnav-profile" class="mainnav-profile">
+                                <div class="profile-wrap text-center">
+                                    <div class="pad-btm">
+                                        <img class="img-circle img-md" src="img/profile-photos/1.png" alt="Profile Picture">
                                     </div>
-                                    <div id="profile-nav" class="collapse list-group bg-trans">
-                                        <a href="pages-login.html" class="list-group-item">
-                                            <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
-                                        </a>
-                                    </div>
+                                    <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                        <span class="pull-right dropdown-toggle">
+                                            <i class="dropdown-caret"></i>
+                                        </span>
+                                        <p class="mnp-name">Aaron Chavez</p>
+                                        <span class="mnp-desc">aaron.cha@themeon.net</span>
+                                    </a>
                                 </div>
+                                <div id="profile-nav" class="collapse list-group bg-trans">
+                                    <a href="pages-login.html" class="list-group-item">
+                                        <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
 
 
-                                <!--Shortcut buttons-->
-                                <!--================================-->
-                                <div id="mainnav-shortcut" class="hidden">
-                                    <ul class="list-unstyled shortcut-wrap">
-                                        <li class="col-xs-3" data-content="My Profile">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
+                            <!--Shortcut buttons-->
+                            <!--================================-->
+                            <div id="mainnav-shortcut" class="hidden">
+                                <ul class="list-unstyled shortcut-wrap">
+                                    <li class="col-xs-3" data-content="My Profile">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
                                                 <i class="demo-pli-male"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Messages">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Messages">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
                                                 <i class="demo-pli-speech-bubble-3"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Activity">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Activity">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
                                                 <i class="demo-pli-thunder"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Lock Screen">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="col-xs-3" data-content="Lock Screen">
+                                        <a class="shortcut-grid" href="#">
+                                            <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
                                                 <i class="demo-pli-lock-2"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--================================-->
-                                <!--End shortcut buttons-->
-
-
-                                <ul id="mainnav-menu" class="list-group">
-                        
-                                    <!--Category name-->
-                                    <li class="list-header">Navigation</li>
-                        
-                                    <!--Menu list item-->
-                                    <li>
-                                        <a href="index.html">
-                                            <i class="demo-pli-home"></i>
-                                            <span class="menu-title">Beranda</span>
-                                            
+                                            </div>
                                         </a>
-                        
-                                        <!--Submenu-->
-                                        
-                                    </li>
-                        
-                                    <!--Menu list item-->
-                          
-                        
-                                    <!--Menu list item-->
-                               
-                                    <!--Menu list item-->
-                                    <li>
-                                        <a href="#">
-                                            <i class="demo-pli-receipt-4"></i>
-                                            <span class="menu-title">Data</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                        
-                                        <!--Submenu-->
-                                        <ul class="collapse">
-                                            <li><a href="data-siswa.html">Data Siswa</a></li>
-                                            <li><a href="data-user.html">Data User</a></li>
-                                        </ul>
-                                    </li>
-                                    <!--Menu list item-->
-                                    <li class="active-sub">
-                                        <a href="#">
-                                            <i class="demo-pli-warning-window"></i>
-                                            <span class="menu-title">Peraturan</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                        
-                                        <!--Submenu-->
-                                        <ul class="collapse in">
-                                            <li class="active-link"><a href="grid-bootstrap.html">Pelanggaran</a></li>
-                                            <li><a href="grid-liquid-fixed.html">Treatment</a></li>
-                                        </ul>
                                     </li>
                                 </ul>
-                                <li >
-                                  <a href="pages-blank.html">
-                                     <i class="demo-pli-file-html"></i>
-                                      <span class="menu-title">Laporan</span>
-                                  </a>
-
-                                  
-                              </li>
-
-
-                                <!--Widget-->
-                                <!--================================-->
-                                <div class="mainnav-widget"></div>
-                                <!--================================-->
-                                <!--End widget-->
-
                             </div>
-                        </div>
-                    </div>
-                    <!--================================-->
-                    <!--End menu-->
-
-                </div>
-            </nav>
-            <!--===================================================-->
-            <!--END MAIN NAVIGATION-->
-
-        </div>
-
-        
-
-        <!-- FOOTER -->
-        <!--===================================================-->
-        <footer id="footer">
-
-            <!-- Visible when footer positions are fixed -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="show-fixed pad-rgt pull-right">
-                You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
-            </div>
+                            <!--================================-->
+                            <!--End shortcut buttons-->
 
 
+                            <ul id="mainnav-menu" class="list-group">
 
-            <!-- Visible when footer positions are static -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="hide-fixed pull-right pad-rgt">
-        
-            </div>
+                                <!--Category name-->
+                                <li class="list-header">Navigation</li>
 
+                                <!--Menu list item-->
+                                <li>
+                                    <a href="index.html">
+                                        <i class="demo-pli-home"></i>
+                                        <span class="menu-title">Beranda</span>
 
+                                    </a>
 
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+                                    <!--Submenu-->
 
-            <p class="pad-lft">&#0169; SMK BISA SMK HEBAT</p>
+                                </li>
 
-
-
-        </footer>
-        <!--===================================================-->
-        <!-- END FOOTER -->
+                                <!--Menu list item-->
 
 
-        <!-- SCROLL PAGE BUTTON -->
-        <!--===================================================-->
-        <button class="scroll-top btn">
-            <i class="pci-chevron chevron-up"></i>
-        </button>
-        <!--===================================================-->
+                                <!--Menu list item-->
+
+                                <!--Menu list item-->
+                                <li>
+                                    <a href="#">
+                                        <i class="demo-pli-receipt-4"></i>
+                                        <span class="menu-title">Data</span>
+                                        <i class="arrow"></i>
+                                    </a>
+
+                                    <!--Submenu-->
+                                    <ul class="collapse">
+                                        <li><a href="data-siswa.html">Data Siswa</a></li>
+                                        <li><a href="data-user.html">Data User</a></li>
+                                    </ul>
+                                </li>
+                                <!--Menu list item-->
+                                <li class="active-sub">
+                                    <a href="#">
+                                        <i class="demo-pli-warning-window"></i>
+                                        <span class="menu-title">Peraturan</span>
+                                        <i class="arrow"></i>
+                                    </a>
+
+                                    <!--Submenu-->
+                                    <ul class="collapse in">
+                                        <li class="active-link"><a href="grid-bootstrap.html">Pelanggaran</a></li>
+                                        <li><a href="grid-liquid-fixed.html">Treatment</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <li >
+                              <a href="pages-blank.html">
+                                 <i class="demo-pli-file-html"></i>
+                                 <span class="menu-title">Laporan</span>
+                             </a>
+
+
+                         </li>
+
+
+                         <!--Widget-->
+                         <!--================================-->
+                         <div class="mainnav-widget"></div>
+                         <!--================================-->
+                         <!--End widget-->
+
+                     </div>
+                 </div>
+             </div>
+             <!--================================-->
+             <!--End menu-->
+
+         </div>
+     </nav>
+     <!--===================================================-->
+     <!--END MAIN NAVIGATION-->
+
+ </div>
+
+
+
+ <!-- FOOTER -->
+ <!--===================================================-->
+ <footer id="footer">
+
+    <!-- Visible when footer positions are fixed -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="show-fixed pad-rgt pull-right">
+        You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
     </div>
-    <!--===================================================-->
-    <!-- END OF CONTAINER -->
-
-
-    
-    
-    
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
-
-    <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery.min.js"></script>
-
-
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="js/bootstrap.min.js"></script>
-
-
-    <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
 
 
 
+    <!-- Visible when footer positions are static -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="hide-fixed pull-right pad-rgt">
 
-    <!--=================================================-->
-    
-    <!--Demo script [ DEMONSTRATION ]-->
-    <script src="js/demo/nifty-demo.min.js"></script>
-
-    
-    <!--DataTables [ OPTIONAL ]-->
-    <script src="plugins/datatables/media/js/jquery.dataTables.js"></script>
-    <script src="plugins/datatables/media/js/dataTables.bootstrap.js"></script>
-    <script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+    </div>
 
 
-    <!--DataTables Sample [ SAMPLE ]-->
-    <script src="js/demo/tables-datatables.js"></script>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <p class="pad-lft">&#0169; SMK BISA SMK HEBAT</p>
 
 
-    
+
+</footer>
+<!--===================================================-->
+<!-- END FOOTER -->
+
+
+<!-- SCROLL PAGE BUTTON -->
+<!--===================================================-->
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button>
+<!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+
+
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="js/jquery.min.js"></script>
+
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!--NiftyJS [ RECOMMENDED ]-->
+<script src="js/nifty.min.js"></script>
+
+
+
+
+<!--=================================================-->
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="js/demo/nifty-demo.min.js"></script>
+
+
+<!--DataTables [ OPTIONAL ]-->
+<script src="plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+
+
+<!--DataTables Sample [ SAMPLE ]-->
+<script src="js/demo/tables-datatables.js"></script>
+
+
+
 
 </body>
 </html>
