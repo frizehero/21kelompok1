@@ -159,6 +159,18 @@
                     </ol>
                     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                     <!--End breadcrumb-->
+                    <div class="text-right breadcrumb">
+                       
+                         <form action="#" method="post" class="col-xs-8 col-sm-3 text-right">
+                            <div class="input-group text-right">
+                               <input type="text" placeholder="Search" class="form-control">
+                               <span class="input-group-btn text-right">
+                                   <button class="btn btn-default" type="button">Search</button>
+                               </span>
+                           </div> 
+               
+                   </form>
+               </div>
 
                 </div>
 
@@ -166,156 +178,580 @@
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
+                     <div class="text-right breadcrumb">
                     
-                    <!-- Basic Data Tables -->
-                    <!--===================================================-->
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Semua Pelanggaran</h3>
-                        </div>                  
-                        <div class="panel-body">
-                            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                                <thead>
-                                    <tr>
-                                        <th>Pelanggaran</th>
-                                        <th>Point</th>
-                                        
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>merokok</td>
-                                        <td>12</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                                                          
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                                                         
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>membuang sampah sembarang</td>
-                                        <td>5</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>main hp saat pelajaran</td>
-                                        <td>10</td>
-                                        
-                                    </tr>
-                                    <tr>
-                                        <td>bolos pelajaran</td>
-                                        <td>7</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>alpha</td>
-                                        <td>10</td>
-                                       
-                                    </tr>
-                                    <tr>
-                                        <td>keluar sekolah tanpa izin</td>
-                                        <td>7</td>
-                                     
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
+                    <!--Default Tabs (Left Aligned)-->
                     <!--===================================================-->
-                    <!-- End Striped Table -->
-                    
-                    
-                    <!-- Row selection (single row) -->
-                    <!--===================================================-->
-                    
-                    <!--===================================================-->
-                    <!-- End Row selection (single row) -->
-                    
-                    
-                    <!-- Row selection and deletion (multiple rows) -->
-                    <!--===================================================-->
-                                        <!--===================================================-->
-                    <!-- End Row selection and deletion (multiple rows) -->
-                    
-                    
-                    <!-- Add Row -->
-                    <!--===================================================-->
-                    
-                    <!--===================================================-->
-                    <!-- End Add Row -->
-                    
-                    
-                    
-                </div>
+                    <div class="tab-base">
+
+                        <!--Nav Tabs-->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#demo-lft-tab-1">Etika</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-lft-tab-2">Kerapian</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#demo-lft-tab-3">Pelanggaran Berat</a>
+                            </li>
+                        </ul>
+
+                        <!--Tabs Content-->
+                        <div class="tab-content">
+                            <div id="demo-lft-tab-1" class="tab-pane fade active in">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                          
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                           
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div id="demo-lft-tab-2" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-purple panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                           
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div id="demo-lft-tab-3" class="tab-pane fade">
+                                    <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <div class="row">
+                                            <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                    
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row"> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> <div class="col-sm-3">
+
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-danger panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                        <span class="pull-right">15</span>
+                                                        Toxic
+                                                        <div class="btn-group btn-group-justified pad-top">
+                                                            
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--===================================================-->
+                        <!--End Default Tabs (Left Aligned)-->
+
+
+                    </div>
                 <!--===================================================-->
                 <!--End page content-->
 
