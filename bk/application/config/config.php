@@ -24,7 +24,7 @@ date_default_timezone_set("Asia/Jakarta");
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/corehmvc/';
+$config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/21kelompok1/bk/';
 /*
 |--------------------------------------------------------------------------
 | Index File
