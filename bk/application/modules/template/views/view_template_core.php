@@ -588,6 +588,38 @@
                                 </li>
                             <?php } ?>
 
+                                    <?php if($this->uri->segment('1') == 'data_treatment'){ ?>
+                                    <li class="active-sub">
+                                        <a href="<?php echo base_url('data_treatment'); ?>">
+                                            <i class="fa fa-list"></i>
+                                            <span class="menu-title">Peraturan</span>
+                                            <i class="arrow"></i>
+                                        </a>
+                                        <ul class="collapse">
+                                      <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
+                                      <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
+
+
+                                  </ul>
+                                        <!--Submenu-->
+                                    </li>
+                                    <?php } else{ ?>
+                                        <li>
+                                        <a href="<?php echo base_url('data_treatment'); ?>">
+                                            <i class="fa fa-list"></i>
+                                            <span class="menu-title">Peraturan</span>
+                                            <i class="arrow"></i>
+                                        </a>
+                                        <ul class="collapse">
+                                      <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
+                                      <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
+
+
+                                  </ul>
+                                        <!--Submenu-->
+                                    </li>
+                                    <?php } ?>
+
 
                             
                         </ul>
