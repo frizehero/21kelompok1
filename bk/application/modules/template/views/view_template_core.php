@@ -458,8 +458,8 @@
                             <!--================================-->
                             <div id="mainnav-profile" class="mainnav-profile">
                                 
-                             
-                               <div class="profile-wrap text-center">
+                               
+                             <div class="profile-wrap text-center">
                                 <div class="pad-btm">
                                     <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
                                 </div>
@@ -588,59 +588,59 @@
                                 </li>
                             <?php } ?>
 
-                                    <?php if($this->uri->segment('1') == 'data_treatment'){ ?>
-                                    <li class="active-sub">
-                                        <a href="<?php echo base_url('data_treatment'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Peraturan</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <ul class="collapse">
+                            <?php if($this->uri->segment('1') == 'data_treatment'){ ?>
+                                <li class="active-sub">
+                                    <a href="<?php echo base_url('data_treatment'); ?>">
+                                        <i class="fa fa-list"></i>
+                                        <span class="menu-title">Peraturan</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                    <ul class="collapse">
                                       <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
                                       <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
 
 
                                   </ul>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } else{ ?>
-                                        <li>
-                                        <a href="<?php echo base_url('data_treatment'); ?>">
-                                            <i class="fa fa-list"></i>
-                                            <span class="menu-title">Peraturan</span>
-                                            <i class="arrow"></i>
-                                        </a>
-                                        <ul class="collapse">
-                                      <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
-                                      <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
+                                  <!--Submenu-->
+                              </li>
+                          <?php } else{ ?>
+                            <li>
+                                <a href="<?php echo base_url('data_treatment'); ?>">
+                                    <i class="fa fa-list"></i>
+                                    <span class="menu-title">Peraturan</span>
+                                    <i class="arrow"></i>
+                                </a>
+                                <ul class="collapse">
+                                  <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
+                                  <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
 
 
-                                  </ul>
-                                        <!--Submenu-->
-                                    </li>
-                                    <?php } ?>
+                              </ul>
+                              <!--Submenu-->
+                          </li>
+                      <?php } ?>
 
 
-                            
-                        </ul>
-                        
+                      
+                  </ul>
+                  
 
-                        <!--Widget-->
-                        <!--================================-->
+                  <!--Widget-->
+                  <!--================================-->
 
-                        <!--================================-->
-                        <!--End widget-->
+                  <!--================================-->
+                  <!--End widget-->
 
-                    </div>
-                </div>
-            </div>
-            <!--================================-->
-            <!--End menu-->
+              </div>
+          </div>
+      </div>
+      <!--================================-->
+      <!--End menu-->
 
-        </div>
-    </nav>
-    <!--===================================================-->
-    <!--END MAIN NAVIGATION-->
+  </div>
+</nav>
+<!--===================================================-->
+<!--END MAIN NAVIGATION-->
 
 </div>
 
@@ -661,16 +661,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-     Hummasoft Technologhy
- </div>
+       Hummasoft Technologhy
+   </div>
 
 
 
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
- <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+   <p class="pad-lft">&#0169; 2019 HummaPOS</p>
 
 
 
