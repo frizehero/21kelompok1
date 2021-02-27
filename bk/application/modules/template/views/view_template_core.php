@@ -546,24 +546,28 @@
                             
                             <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_siswa'); ?>">
+                                    <a href="">
                                         <i class="demo-pli-receipt-4"></i>
                                         <span class="menu-title">Data</span>
                                         <i class="arrow"></i>
                                     </a>
                                     <ul class="collapse in">
-                                        <li class="active-link"><a href="data-siswa.html">Data Siswa</a></li>
-                                        <li><a href="data-user.html">Data User</a></li>
+                                        <li class="active-link"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                                        <li><a href="<?php echo base_url('data_user'); ?>">Data User</a></li>
                                     </ul>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
-                                <li>
-                                    <a href="<?php echo base_url('data_siswa'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Siswa</span>
+                                <li class="active-sub">
+                                    <a href="">
+                                        <i class="demo-pli-receipt-4"></i>
+                                        <span class="menu-title">Data</span>
                                         <i class="arrow"></i>
                                     </a>
+                                    <ul class="collapse in">
+                                        <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                                        <li class="active-link"><a href="<?php echo base_url('data_user'); ?>">Data User</a></li>
+                                    </ul>
                                     <!--Submenu-->
                                 </li>
                             <?php } ?>

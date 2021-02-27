@@ -184,32 +184,32 @@
 
     <!-- hapus -->
     <div class="modal fade" id="demo-default-modal2<?php echo $res->id_sekolah?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-                <!--Modal header-->
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                    <h4 class="modal-title">Hapus</h4>
-                </div>
+          <!--Modal header-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Hapus</h4>
+          </div>
 
-                <!--Modal body-->
-                <div class="modal-body">
-                    <p class="text-semibold text-main"></p>
-                    <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_sekolah ?></b> ? </p>
-                    <br>
-                   
-                   
-                    
-                </div>
+          <!--Modal body-->
+          <div class="modal-body">
+            <p class="text-semibold text-main"></p>
+            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_sekolah ?></b> ? </p>
+            <br>
 
-                <!--Modal footer-->
-                <div class="modal-footer">
-                    <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-                    <a class="btn btn-danger" href="<?php echo base_url('data_sekolah/hapus/'. $res->id_sekolah) ?>">Hapus Sekolah</a>
-                </div>
-            </div>
+
+
+          </div>
+
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+            <a class="btn btn-danger" href="<?php echo base_url('data_sekolah/hapus/'. $res->id_sekolah) ?>">Hapus Sekolah</a>
+          </div>
         </div>
+      </div>
     </div>
     <!-- end hapus -->
         
