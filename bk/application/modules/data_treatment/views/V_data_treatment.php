@@ -1,73 +1,78 @@
-  <div id="page-content"> 
+  <!--CONTENT CONTAINER-->
+  <!--===================================================-->
 
-  <div class="form-group" style="padding-bottom: 2%">
-                          <form method="post" action="<?php echo site_url('data_treatment/cari') ?>" >
-                            <div class="col-md-2" style="padding: 0px">
-                                <div id="demo-dp-txtinput">
-                                    <?php if($this->uri->segment(2) != 'cari'){?>
-                                        <input type="text" autocomplete="off" name="cari" class="form-control input-sm " placeholder="treatment">
-                                    <?php } ?>
-                                    <?php if($this->uri->segment(2) == 'cari'){
-                                        $cari = $this->input->post('cari'); ?>
-                                        <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control input-sm " placeholder="Outlet">
-                                    <?php } ?> 
-                                </div>
-                            </div>
-                            
-                          
-                            <div class="col-md-2" style="">
-                      
-                        <button class="btn btn-success btn-sm">
-                          <span class="fa fa-filter"></span>
-                         Cari
-                        </button>
-                        <a class="btn btn-default btn-sm" href="<?php echo base_url('data_treatment'); ?>">
-                            <i class="fa fa-refresh" ></i>
-                        </a>
-                               </div>
-                            </form>
-
-
-                        <div class="col-md-2" style="float: right;">
-                        
-                            <button style="float: right;" class="btn btn-success btn-sm"   data-toggle="modal" data-target="#demo-default-tambah">
-                              <span class="fa fa-plus"></span>
-                             Tambah
-                            </button>
-                        </div>
-                           
-                           
+  <div id="page-head">
+    <!--Page Title-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="page-title">
+      <h1 class="page-header text-overflow">Treatment</h1>
     </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End page title-->
 
+
+    <!--Breadcrumb-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="demo-pli-home"></i></a></li>
+      <li><a href="#">Peraturan</a></li>
+      <li class="active">Treatment</li>
+    </ol>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End breadcrumb-->
+
+    <div class="text-right breadcrumb">
+      <div id="demo-custom-toolbar5" class="table-toolbar-left">
+        <a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah</a>
+      </div>
+      <form action="<?php echo site_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+        <div class="input-group text-right"  style="padding-left: : 5px">
+          <?php if($this->uri->segment(2) != 'cari'){?>
+            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
+          <?php } ?>
+          <?php if($this->uri->segment(2) == 'cari'){
+            $cari = $this->input->post('cari'); ?>
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+          <?php } ?> 
+          <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+            <button class="btn btn-default" type="submit">cari</button>
+          </div>
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_treatment'); ?>">
+            <i class="fa fa-refresh" ></i>
+          </a>
+      </div> 
+    </center>
+
+  </form>
+</div>
+</div>
+
+<div id="page-content">
     <?php foreach($tampil as $res) {
         $id = $res->id_treatment;
     ?>
-    <div class="col-lg-3" style="margin-top: 2%">
+    <div class="col-lg-3" style="margin-top: 4%">
         
             <div class="panel panel-info panel-colorful widget" style="height:110px">
-                <div class ="text-center"  style="margin-top:15px;">
-                    <p class="text" style="height:20px;">
-                    <b><?= $res->nama_treatment ?></b>
-
-                    </p>
-                    <p class="text" style="height:20px;">
-                        <?= substr($res->point,0,35) ?>
-                    </p>
-                </div>
-                <div class="pad-all text-center">
-                   <span>
-                            <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-success btn-sm">
-                            <span class="fa fa-edit"></span>
-                            &nbsp;Edit
-                            </a>
-                          </span>
-                          <span>
-                          <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_treatment?>" class=" btn btn-danger btn-sm">
-                          <span class="fa fa-trash"></span>
-                          &nbsp;Hapus
-                          </a>
-                         </span>           
-                </div>
+                                                <!--Profile Widget-->
+                                                <!--===================================================-->
+                                                <div class="panel panel-info panel-colorful">
+                                                    <div class="pad-all text-left">
+                                                         <?= $res->nama_treatment ?>
+                                                         <span class="pull-right" style="float: right;"></span><?= $res->point ?><br><br><br>
+                                                        <div class="btn-group">
+                                                          <span>
+                                                            <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-warning btn-sm">
+                                                            <span class="fa fa-edit"></span>&nbsp;Edit</a>
+                                                          </span>
+                                                          <span>
+                                                            <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_treatment?>" class=" btn btn-danger btn-sm">
+                                                            <span class="fa fa-trash"></span>&nbsp;Hapus</a>
+                                                          </span>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                          
             </div>
 
             <!-- update -->
@@ -176,9 +181,9 @@
                                             <input type="text" name="nama_treatment" placeholder="Nama treatment" class="form-control">
                                         </div>
                                          
-                                         <div class="col-md-6" style="margin-top: 2%">
+                                         <div class="col-md-6">
                                             <label for="" class="control-label">point</label>
-                                            <textarea type="text" name="point" rows="5" placeholder="point" class="form-control"></textarea>
+                                            <input type="text" name="point" rows="5" placeholder="point" class="form-control">
                                         </div>
                                         
                                         
