@@ -54,7 +54,7 @@
     <option value="TPM">TPM</option>
     <option value="TITL">TITL</option>
     <option value="TIPK">TIPK</option>
-    <option value="BB">BB</option>
+    <option value="TB">TB</option>
     <option value="TKR">TKR</option>
   </select>
 </div>
@@ -189,7 +189,7 @@
 							<option value="TPM">TPM</option>
 							<option value="TITL">TITL</option>
 							<option value="TIPK">TIPK</option>
-							<option value="BB">TB</option>
+							<option value="TB">TB</option>
 							<option value="TKR">TKR</option>
 						</select>
 					</div>
