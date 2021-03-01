@@ -5,14 +5,18 @@ class M_data_user extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->get('data_user')->result();
+		return $this->db->from('data_user')
+		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+		->get()
+		->result();
+
 	}
 
 	function tambah()
 	{
 		$nip 						= $this->input->post('nip');
 		$nama_guru					= $this->input->post('nama_guru');
-		$tanggal_lahir_guru			= $this->input->post('tanggal_lahir_guru');
+		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
 		$alamat_guru				= $this->input->post('alamat_guru');
 		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
 		$username					= $this->input->post('username');
@@ -29,7 +33,7 @@ class M_data_user extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['foto_user']['name'])
+		if($_FILES['foto_guru']['name'])
         {
             if ($this->upload->do_upload('foto_guru'))
             {
@@ -37,7 +41,7 @@ class M_data_user extends CI_Model {
 				$data = array(
 					'nip'					=> $nip,
 					'nama_guru'				=> $nama_guru,
-					'tanggal_lahir_guru'	=> $tanggal_lahir_guru,
+					'tgl_lahir_guru'		=> $tgl_lahir_guru,
 					'alamat_guru'			=> $alamat_guru,
 					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
 					'username'				=> $username,
@@ -53,10 +57,10 @@ class M_data_user extends CI_Model {
 		else{
 				$data = array(
 					'nip'					=> $nip,
-					'nama_guru'				=> $nama_user,
-					'tanggal_lahir_guru'	=> $tanggal_lahir_user,
-					'alamat_guru'			=> $alamat_user,
-					'jenis_kelamin_guru'	=> $jenis_kelamin_user,
+					'nama_guru'				=> $nama_guru,
+					'tgl_lahir_guru'		=> $tgl_lahir_guru,
+					'alamat_guru'			=> $alamat_guru,
+					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
 					'username'				=> $username,
 					'password'				=> $password,
 					'foto_guru' 			=> 'kosong1.png',
@@ -69,7 +73,7 @@ class M_data_user extends CI_Model {
 		$id_user					= $this->input->post('id_user');
 		$nip 						= $this->input->post('nip');
 		$nama_guru					= $this->input->post('nama_guru');
-		$tanggal_lahir_guru			= $this->input->post('tanggal_lahir_guru');
+		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
 		$alamat_guru				= $this->input->post('alamat_guru');
 		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
 		$username					= $this->input->post('username');
@@ -86,7 +90,7 @@ class M_data_user extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['foto_user']['name'])
+		if($_FILES['foto_guru']['name'])
         {
             if ($this->upload->do_upload('foto_guru'))
             {
@@ -94,7 +98,7 @@ class M_data_user extends CI_Model {
 				$data = array(
 					'nip'					=> $nip,
 					'nama_guru'				=> $nama_guru,
-					'tanggal_lahir_guru'	=> $tanggal_lahir_guru,
+					'tgl_lahir_guru'		=> $tgl_lahir_guru,
 					'alamat_guru'			=> $alamat_guru,
 					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
 					'username'				=> $username,
@@ -110,10 +114,10 @@ class M_data_user extends CI_Model {
 		else{
 				$data = array(
 					'nip'					=> $nip,
-					'nama_guru'				=> $nama_user,
-					'tanggal_lahir_guru'	=> $tanggal_lahir_user,
-					'alamat_guru'			=> $alamat_user,
-					'jenis_kelamin_guru'	=> $jenis_kelamin_user,
+					'nama_guru'				=> $nama_guru,
+					'tgl_lahir_guru'		=> $tgl_lahir_guru,
+					'alamat_guru'			=> $alamat_guru,
+					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
 					'username'				=> $username,
 					'password'				=> $password,
 					'foto_guru' 			=> 'kosong1.png',

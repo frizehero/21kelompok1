@@ -32,7 +32,7 @@
           <?php } ?>
           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
@@ -45,29 +45,29 @@
 
   </form>
 
-
+<form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
   <div class="select">
-   <select id="demo-ease">
+   <select name="jurusan" id="demo-ease">
     <option value="">Jurusan</option>
     <option value="RPL">RPL</option>
     <option value="TKJ">TKJ</option>
     <option value="TPM">TPM</option>
     <option value="TITL">TITL</option>
     <option value="TIPK">TIPK</option>
-    <option value="BB">BB</option>
+    <option value="TB">TB</option>
     <option value="TKR">TKR</option>
   </select>
 </div>
 <div class="select">
- <select id="demo-ease">
+ <select name="kelas" id="demo-ease">
   <option value="">Kelas</option>
   <option value="X">X</option>
   <option value="XI">XI</option>
   <option value="XII">XII</option>
 </select>
 </div>
-<button class="btn btn-default">Filter</button>  
-</div>
+<button class="btn btn-default" type="submit">Filter</button>  
+</form>
 
 <div id="page-content text-black">
 
@@ -84,12 +84,12 @@
           <div class="panel-body text-center">
             <a href="detail-siswa.html">
               <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
-              <p class="text-lg text-semibold mar-no "><?= $res->nama_siswa ?></p>
+              <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
             </a>
             <p class="text-muted"><?= $res->nis ?></p>
             <p class="text-muted mar-no">
-              KELAS : X <br>
-              JURUSAN : RPL <br>
+              KELAS : <?= $res->kelas ?> <br>
+              JURUSAN : <?= $res->jurusan ?> <br>
             </p>
             <ul class="list-unstyled text-center bord-top pad-top mar-no row">
               <li class="col-xs-5">
@@ -189,7 +189,7 @@
 							<option value="TPM">TPM</option>
 							<option value="TITL">TITL</option>
 							<option value="TIPK">TIPK</option>
-							<option value="BB">TB</option>
+							<option value="TB">TB</option>
 							<option value="TKR">TKR</option>
 						</select>
 					</div>
