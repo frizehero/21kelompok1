@@ -58,7 +58,7 @@
        <?php foreach($tampil as $res) {
         $id = $res->id_treatment;
         ?>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
           <!--Profile Widget-->
           <!--===================================================-->
@@ -219,7 +219,7 @@
 </div>
 <!-- end tambah -->
 
-</div>
+
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
