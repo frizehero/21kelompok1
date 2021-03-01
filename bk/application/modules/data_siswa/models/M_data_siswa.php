@@ -5,7 +5,13 @@ class M_data_siswa extends CI_Model {
 
 	function tampil()
 	{
-		return $this->db->get('data_siswa')->result();
+		return $this->db->from('data_siswa')
+		->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_kelas.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->get()
+		->result();
 	}
 
 	function tambah()
@@ -15,6 +21,9 @@ class M_data_siswa extends CI_Model {
 		$tanggal_lahir_siswa 		= $this->input->post('tanggal_lahir_siswa');
 		$alamat_siswa				= $this->input->post('alamat_siswa');
 		$jenis_kelamin_siswa 		= $this->input->post('jenis_kelamin_siswa');
+		$kelas 						= $this->input->post('kelas');
+		$jurusan 					= $this->input->post('jurusan');
+		$agama 						= $this->input->post('agama');
 
 
 		$this->load->library('upload');
@@ -39,6 +48,9 @@ class M_data_siswa extends CI_Model {
 					'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 					'alamat_siswa'			=> $alamat_siswa,
 					'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+					'kelas'					=> $kelas,
+					'jurusan'				=> $jurusan,
+					'agama'					=> $agama,
 					'foto_siswa' 			=> $gbr['file_name'],
 					
 					
@@ -54,6 +66,9 @@ class M_data_siswa extends CI_Model {
 					'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 					'alamat_siswa'			=> $alamat_siswa,
 					'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+					'kelas'					=> $kelas,
+					'jurusan'				=> $jurusan,
+					'agama'					=> $agama,
 					'foto_siswa' 			=> 'kosong1.png',
 				);
 				$this->db->insert('data_siswa', $data);
@@ -64,6 +79,22 @@ class M_data_siswa extends CI_Model {
 	function cari()
 	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_siswa',$cari)->get('data_siswa')->result();
+		return $this->db->like('nama_siswa',$cari)
+		->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_kelas.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->get('data_siswa')->result();
+	}
+
+	function filter()
+	{
+		$filter 		= $this->input->post('filter');
+		return $this->db->like('nama_siswa',$filter)
+		->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_kelas.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->get('data_siswa')->result();
 	}
 }
