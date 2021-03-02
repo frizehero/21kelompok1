@@ -49,7 +49,7 @@
   <div class="select">
    <select name="jurusan" id="demo-ease">
     <option value="">Jurusan</option>
-    <option value="RPL">RPL</option>
+    <option value="1">RPL</option>
     <option value="TKJ">TKJ</option>
     <option value="TPM">TPM</option>
     <option value="TITL">TITL</option>
@@ -61,7 +61,7 @@
 <div class="select">
  <select name="kelas" id="demo-ease">
   <option value="">Kelas</option>
-  <option value="X">X</option>
+  <option value="1">X</option>
   <option value="XI">XI</option>
   <option value="XII">XII</option>
 </select>

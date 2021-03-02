@@ -38,9 +38,9 @@ class M_data_siswa extends CI_Model {
 		$this->upload->initialize($config);
 		
 		if($_FILES['foto_siswa']['name'])
-        {
-            if ($this->upload->do_upload('foto_siswa'))
-            {
+		{
+			if ($this->upload->do_upload('foto_siswa'))
+			{
 				$gbr = $this->upload->data();
 				$data = array(
 					'nis'					=> $nis,
@@ -56,23 +56,23 @@ class M_data_siswa extends CI_Model {
 					
 				);
 				$this->db->insert('data_siswa', $data);
-			
+
 			}	 
 		}
 		else{
-				$data = array(
-					'nis'					=> $nis,
-					'nama_siswa'			=> $nama_siswa,
-					'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
-					'alamat_siswa'			=> $alamat_siswa,
-					'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
-					'kelas'					=> $kelas,
-					'jurusan'				=> $jurusan,
-					'agama'					=> $agama,
-					'foto_siswa' 			=> 'kosong1.png',
-				);
-				$this->db->insert('data_siswa', $data);
-			}
+			$data = array(
+				'nis'					=> $nis,
+				'nama_siswa'			=> $nama_siswa,
+				'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
+				'alamat_siswa'			=> $alamat_siswa,
+				'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+				'kelas'					=> $kelas,
+				'jurusan'				=> $jurusan,
+				'agama'					=> $agama,
+				'foto_siswa' 			=> 'kosong1.png',
+			);
+			$this->db->insert('data_siswa', $data);
+		}
 	}
 
 
@@ -87,14 +87,19 @@ class M_data_siswa extends CI_Model {
 		->get('data_siswa')->result();
 	}
 
-	function filter()
-	{
-		$filter 		= $this->input->post('filter');
-		return $this->db->like('nama_siswa',$filter)
-		->select('*')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_kelas.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->get('data_siswa')->result();
+	function filter($filter_siswa)
+	{	
+		$this->db->select('td.*')
+		->join('data_kelas ON data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan ON data_jurusan.id_jurusan = data_kelas.id_jurusan','left')
+		->join('data_agama ON data_agama.id_agama = data_siswa.id_agama','left');
+
+		if($filter_siswa['jurusan'] !="")
+			$this->db->like('td.jurusan',$filter_siswa['jurusan'],'both');
+		if($filter_siswa['kelas'] !="")
+			$this->db->like('td.kelas', $filter_siswa['kelas'], 'both');
+
+		$query=$this->db->get()->result(); 
+		return $query;
 	}
 }

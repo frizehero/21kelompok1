@@ -53,10 +53,12 @@ class Data_siswa extends MX_Controller {
 	
 	function filter()
 	{
+        $filter_siswa['jurusan'] = $this->input->post('jurusan');
+        $filter_siswa['kelas']  = $this->input->post('kelas');
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
-			'tampil'		=> $this->m_data_siswa->filter(),
+			'tampil'		=> $this->m_data_siswa->filter($filter_siswa),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
