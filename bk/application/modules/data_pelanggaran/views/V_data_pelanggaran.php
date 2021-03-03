@@ -50,27 +50,26 @@
 </div><br><br><br>
 
 <div id="page-content">
-
-
- <div class="tab-base">
+     <div class="tab-base">
                         <ul class="nav nav-tabs tabs-right">
                             <li class="active">
-                                <a data-toggle="tab" href="#demo-rgt-tab-1">Etika</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-1">etika</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#demo-rgt-tab-2">Kerapian</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-2">kerapian</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#demo-rgt-tab-3">Pelanggaran Berat</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-3">pelanggaran_berat</a>
                             </li>
                         </ul>
     <div class="tab-content">
                             <div id="demo-rgt-tab-1" class="tab-pane fade active in">
-                                <div class="row">
+     <div class="row">                           
     <div class="col-sm-12">
       <div class="row">
        <?php foreach($tampil as $res) {
         $id = $res->id_pelanggaran;
+        $etika = $res->kategori;
         ?>
         <div class="col-sm-3">
 
@@ -78,13 +77,13 @@
           <!--===================================================-->
           <div class="panel panel-info panel-colorful">
             <div class="pad-all text-left">
-              
-              <p><?php echo $res->nama_pelanggaran ?><span class="pull-right" style="margin-left: 2%"><?php echo $res->point ?></span><br></p>
+              <span class="pull-right"><?php echo $res->point ?></span><br>
+              <p><?php echo $res->nama_pelanggaran ?></p>
 
               <div class="btn-group btn-group-justified pad-top">
 
                <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran?>" class=" btn btn-warning btn-sm">
+                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran?>" class=" btn btn-success btn-sm">
                   <span class="fa fa-edit"></span>
                   &nbsp;Edit
                 </a>
@@ -98,172 +97,112 @@
           </div>
         </div>
       </div>
-      </div>  <?php } ?>
-    </div>
-    </div>
-  </div>
-</div>
-                            <div id="demo-rgt-tab-2" class="tab-pane fade">
-                                <div class="row">
-    <div class="col-sm-12">
-      <div class="row">
-       <?php foreach($tampil as $res) {
-        $id = $res->id_pelanggaran;
-        ?>
-        <div class="col-sm-3">
-
-          <!--Profile Widget-->
-          <!--===================================================-->
-          <div class="panel panel-purple panel-colorful">
-            <div class="pad-all text-left">
-              
-              <p><?php echo $res->nama_pelanggaran ?><span class="pull-right" style="margin-left: 2%"><?php echo $res->point ?></span><br></p>
-
-              <div class="btn-group btn-group-justified pad-top">
-
-               <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran?>" class=" btn btn-warning btn-sm">
-                  <span class="fa fa-edit"></span>
-                  &nbsp;Edit
-                </a>
-              </span>
-              <span>
-               <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran?>" class=" btn btn-danger btn-sm">
-                <span class="fa fa-trash"></span>
-                &nbsp;Hapus
-              </a>
-            </span> 
-          </div>
-        </div>
-      </div>
-      </div> <?php } ?>
-    </div>
     </div> 
-  </div>
 </div>
-                            <div id="demo-rgt-tab-3" class="tab-pane fade">
-                                <div class="row">
-    <div class="col-sm-12">
-      <div class="row">
-       <?php foreach($tampil as $res) {
-        $id = $res->id_pelanggaran;
-        ?>
-        <div class="col-sm-3">
+    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-          <!--Profile Widget-->
-          <!--===================================================-->
-          <div class="panel panel-dark panel-colorful">
-            <div class="pad-all text-left">
-              
-              <p><?php echo $res->nama_pelanggaran ?><span class="pull-right" style="margin-left: 2%"><?php echo $res->point ?></span><br></p>
-
-              <div class="btn-group btn-group-justified pad-top">
-
-               <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran?>" class=" btn btn-warning btn-sm">
-                  <span class="fa fa-edit"></span>
-                  &nbsp;Edit
-                </a>
-              </span>
-              <span>
-               <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran?>" class=" btn btn-danger btn-sm">
-                <span class="fa fa-trash"></span>
-                &nbsp;Hapus
-              </a>
-            </span> 
+          <!--Modal Update-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Update</h4>
           </div>
+          <?= form_open_multipart('data_pelanggaran/edit'); ?>
+          <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
+
+          <!--Modal body--> 
+          <div class="modal-body">
+
+            <div class="panel-body">
+
+              <div class="col-md-6">
+                <label for="" class="control-label">Nama pelanggaran</label>
+                <input type="text" name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran ?>">
+              </div>
+
+              <div class="col-md-6">
+                <label for="" class="control-label">point</label>
+                <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+              </div>
+
+                <div class="col-md-6">
+        <label for="" class="control-label">Kategori</label><br>
+        <?php $kategori = $res->kategori; ?>
+        <div class="form-check">
+        <input <?php echo ($kategori == "etika") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios1" value="etika" checked>
+        <label class="form-check-label" for="exampleRadios1">
+        etika
+        </label>
         </div>
-      </div>
-      </div>  <?php } ?>
-    </div>
-    </div>
-  </div>
-</div>
-</div>
-</div>
-<!-- update -->
-<<div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-      <!--Modal Update-->
-      <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                    <h4 class="modal-title">Update</h4>
-                </div>
-                  <?= form_open_multipart('data_pelanggaran/edit'); ?>
-                <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
-
-      <!--Modal body--> 
-      <div class="modal-body">
-
-        <div class="panel-body">
-
-          <div class="col-md-6">
-            <label for="" class="control-label">Nama pelanggaran</label>
-            <input type="text" name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran ?>">
-          </div>
-
-          <div class="col-md-6">
-            <label for="" class="control-label">point</label>
-            <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-          </div>
+        <div class="form-check">
+        <input <?php echo ($kategori == "kerapian") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios2" value="kerapian">
+        <label class="form-check-label" for="exampleRadios2">
+        kerapian
+        </label>
+        </div>
+        <div class="form-check">
+        <input <?php echo ($kategori == "pelanggaran_berat") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios2" value="pelanggaran_berat">
+        <label class="form-check-label" for="exampleRadios2">
+        pelanggaran_berat
+        </label>
+        </div>
 
 
         </div>
 
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
-      <?= form_close(); ?>
-    </div>
-  </div>
-</div>
-<!-- end update -->
-
-<!-- detail -->
+            </div>
 
 
-<!-- end detail -->
+          </div>
 
-<!-- hapus -->
-<div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!--Modal header-->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Hapus</h4>
-      </div>
-
-      <!--Modal body-->
-      <div class="modal-body">
-        <p class="text-semibold text-main"></p>
-        <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_pelanggaran ?></b> ? </p>
-        <br>
-
-
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-        <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran/hapus/'. $res->id_pelanggaran) ?>">Hapus pelanggaran</a>
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+            <button class="btn btn-primary" type="submit">Simpan</button>
+          </div>
+          <?= form_close(); ?>
+        </div>
       </div>
     </div>
-  </div>
+
+    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!--Modal header-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Hapus</h4>
+          </div>
+
+          <!--Modal body-->
+          <div class="modal-body">
+            <p class="text-semibold text-main"></p>
+            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_pelanggaran ?></b> ? </p>
+            <br>
+
+
+
+          </div>
+
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+            <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran/hapus/'. $res->id_pelanggaran) ?>">Hapus pelanggaran</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <?php } ?> 
 </div>
-<!-- end hapus -->
 
 </div>
+</div>
 
+</div>
 
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
@@ -292,8 +231,7 @@
             <input type="text" name="point" rows="5" placeholder="point" class="form-control">
           </div>
 
-
-        </div>
+          
 
 
       </div>
@@ -310,7 +248,7 @@
 </div>
 <!-- end tambah -->
 
-</div>
+
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
