@@ -84,95 +84,87 @@
           </div>
         </div>
       </div>
-      </div> <?php } ?> 
-    </div>
+    </div> 
+    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-  </div>
-</div>
+          <!--Modal Update-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Update</h4>
+          </div>
+          <?= form_open_multipart('data_treatment/edit'); ?>
+          <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment?>">
 
-<!-- update -->
-<div class="modal fade" id="demo-default-modal1<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
+          <!--Modal body--> 
+          <div class="modal-body">
 
-      <!--Modal Update-->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Update</h4>
-      </div>
-      <?= form_open_multipart('data_treatment/edit'); ?>
-      <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment?>">
+            <div class="panel-body">
 
-      <!--Modal body--> 
-      <div class="modal-body">
+              <div class="col-md-6">
+                <label for="" class="control-label">Nama treatment</label>
+                <input type="text" name="nama_treatment" placeholder="Nama treatment" class="form-control" value="<?= $res->nama_treatment ?>">
+              </div>
 
-        <div class="panel-body">
+              <div class="col-md-6">
+                <label for="" class="control-label">point</label>
+                <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+              </div>
 
-          <div class="col-md-6">
-            <label for="" class="control-label">Nama treatment</label>
-            <input type="text" name="nama_treatment" placeholder="Nama treatment" class="form-control" value="<?= $res->nama_treatment ?>">
+
+            </div>
+
+
           </div>
 
-          <div class="col-md-6">
-            <label for="" class="control-label">point</label>
-            <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+            <button class="btn btn-primary" type="submit">Simpan</button>
           </div>
-
-
+          <?= form_close(); ?>
         </div>
-
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
-      <?= form_close(); ?>
-    </div>
-  </div>
-</div>
-<!-- end update -->
-
-<!-- detail -->
-
-
-<!-- end detail -->
-
-<!-- hapus -->
-<div class="modal fade" id="demo-default-modal2<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!--Modal header-->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Hapus</h4>
-      </div>
-
-      <!--Modal body-->
-      <div class="modal-body">
-        <p class="text-semibold text-main"></p>
-        <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_treatment ?></b> ? </p>
-        <br>
-
-
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-        <a class="btn btn-danger" href="<?php echo base_url('data_treatment/hapus/'. $res->id_treatment) ?>">Hapus treatment</a>
       </div>
     </div>
-  </div>
+
+    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!--Modal header-->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+            <h4 class="modal-title">Hapus</h4>
+          </div>
+
+          <!--Modal body-->
+          <div class="modal-body">
+            <p class="text-semibold text-main"></p>
+            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_treatment ?></b> ? </p>
+            <br>
+
+
+
+          </div>
+
+          <!--Modal footer-->
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+            <a class="btn btn-danger" href="<?php echo base_url('data_treatment/hapus/'. $res->id_treatment) ?>">Hapus treatment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <?php } ?> 
 </div>
-<!-- end hapus -->
 
 </div>
+</div>
 
+</div>
 
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
