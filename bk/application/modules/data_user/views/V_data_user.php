@@ -61,7 +61,7 @@
       <!--===================================================-->
       <div class="panel widget">
         <div class="widget-header bg-warning text-center">
-          <h4 class="mar-no pad-top"><?php $res->nama_guru?></h4>
+          <h4 class="mar-no pad-top"><?= $res->nama_guru?></h4>
           <p class="mar-btm">Admin</p>
         </div>
         <div class="widget-body">
@@ -69,12 +69,12 @@
 
           <div class="list-group bg-trans mar-no">
             <p class="text-muted mar-no">
-              <b>Nip </b><?php $res->nip?><br>
-              <b>Tgl Lahir </b><?php $res->tgl_lahir_guru?><br>
-              <b>Alamat </b><?php $res->alamat_guru?><br>
+              <b>Nip </b><?= $res->nip?><br>
+              <b>Tgl Lahir </b><?= $res->tgl_lahir_guru?><br>
+              <b>Alamat </b><?= $res->alamat_guru?><br>
               <b>Jenis Kelamin </b><?php $res->jenis_kelamin_guru?><br>
-              <b>User Name </b><?php $res->username?><br>
-              <b>password </b><?php $res->password?>
+              <b>User Name </b><?= $res->username?><br>
+              <b>password </b><?= $res->password?>
             </p>
             <div class="text-center pad-to">
               <div class="btn-group">
@@ -98,7 +98,7 @@
     <!--===================================================-->
     <div class="panel widget">
       <div class="widget-header bg-info text-center">
-        <h4 class="text-light mar-no pad-top"><?php $res->nama_guru?></h4>
+        <h4 class="text-light mar-no pad-top"><?= $res->nama_guru?></h4>
         <p class="mar-btm">Guru</p>
       </div>
       <div class="widget-body">
@@ -106,12 +106,12 @@
 
         <div class="list-group bg-trans mar-no">
           <p class="text-muted mar-no">
-            <b>Nip </b><?php $res->nip?><br>
-              <b>Tgl Lahir </b><?php $res->tgl_lahir_guru?><br>
-              <b>Alamat </b><?php $res->alamat_guru?><br>
-              <b>Jenis Kelamin </b><?php $res->jenis_kelamin_guru?><br>
-              <b>User Name </b><?php $res->username?><br>
-              <b>password </b><?php $res->password?>
+            <b>Nip </b><?= $res->nip?><br>
+            <b>Tgl Lahir </b><?= $res->tgl_lahir_guru?><br>
+            <b>Alamat </b><?= $res->alamat_guru?><br>
+            <b>Jenis Kelamin </b><?= $res->jenis_kelamin_guru?><br>
+            <b>User Name </b><?= $res->username?><br>
+            <b>password </b><?= $res->password?>
           </p>
           <div class="text-center pad-to">
             <div class="btn-group">
@@ -145,50 +145,50 @@
     <!--Modal body--> 
     <div class="modal-body">
 
-        <div class="panel-body">
+      <div class="panel-body">
 
-          <div class="col-md-6">
-            <label for="" class="control-label">NIP</label>
-            <input type="text" name="nip" placeholder="NIP" class="form-control" required="">
-          </div>
-          <div class="col-md-6">
-            <label for="" class="control-label">Nama Guru</label>
-            <input type="text" name="nama_guru" placeholder="Nama Guru" class="form-control" required="">
-          </div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">Tgl Lahir Guru</label>
-            <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" required="">
-          </div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">Alamat Guru</label>
-            <input type="text" name="alamat_guru" placeholder="Alamat Guru" class="form-control" required=""><br>
-          </div>
-          <div class="col-md-6" >
-            <label for="jk" required="" class="control-label">Jenis Kelamin Guru</label><br>
-            <input id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
-            <input id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
-          </div>
-          <div>
-            <label for="" class="control-label">Username</label>
-            <input type="text" name="username" placeholder="Username" class="form-control" required=""><br>
-          </div>
-          <div>
-            <label for="" class="control-label">Password</label>
-            <input type="text" name="password" placeholder="Password" class="form-control" required=""><br>
-          </div>
-          <div class="col-md-6" >
-            <label for="" class="control-label">Foto Guru</label>
-            <input type="file" name="foto_guru" placeholder="Foto Guru" class="form-control"  onchange="tampilkanPreview(this,'preview')">
-          </div>
-          <div class="col-md-6 " style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile</label>
-            <img id="preview" width="150px" />
-          </div>
-
+        <div class="col-md-6">
+          <label for="" class="control-label">NIP</label>
+          <input type="text" name="nip" placeholder="NIP" class="form-control" required="">
+        </div>
+        <div class="col-md-6">
+          <label for="" class="control-label">Nama Guru</label>
+          <input type="text" name="nama_guru" placeholder="Nama Guru" class="form-control" required="">
+        </div>
+        <div class="col-md-6" style="margin-top: 2%">
+          <label for="" class="control-label">Tgl Lahir Guru</label>
+          <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" required="">
+        </div>
+        <div class="col-md-6" style="margin-top: 2%">
+          <label for="" class="control-label">Alamat Guru</label>
+          <input type="text" name="alamat_guru" placeholder="Alamat Guru" class="form-control" required=""><br>
+        </div>
+        <div class="col-md-6" >
+          <label for="jk" required="" class="control-label">Jenis Kelamin Guru</label><br>
+          <input id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
+          <input id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
+        </div>
+        <div>
+          <label for="" class="control-label">Username</label>
+          <input type="text" name="username" placeholder="Username" class="form-control" required=""><br>
+        </div>
+        <div>
+          <label for="" class="control-label">Password</label>
+          <input type="text" name="password" placeholder="Password" class="form-control" required=""><br>
+        </div>
+        <div class="col-md-6" >
+          <label for="" class="control-label">Foto Guru</label>
+          <input type="file" name="foto_guru" placeholder="Foto Guru" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+        </div>
+        <div class="col-md-6 " style="margin-top: 2%">
+          <label for="" class="control-label">Preview Foto Profile</label>
+          <img id="preview" width="150px" />
         </div>
 
-
       </div>
+
+
+    </div>
 
     <!--Modal footer-->
     <div class="modal-footer">

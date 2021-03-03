@@ -132,9 +132,9 @@
 <!--TIPS-->
 <!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
 <body>
-    
+
     <div id="container" class="effect aside-float aside-bright mainnav-lg">
-        
+
 
         <!--NAVBAR-->
         <!--===================================================-->
@@ -206,7 +206,7 @@
 
                             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
                                 <ul class="head-list">
-                                    
+
                                     <li>
                                         <a href="<?php echo base_url('login/logoutApp') ?>"><i class="demo-pli-unlock icon-lg icon-fw"></i> Logout</a>
                                     </li>
@@ -453,13 +453,13 @@
                 <div id="mainnav-menu-wrap">
                     <div class="nano">
                         <div class="nano-content">
-                            
+
                             <!--Profile Widget-->
                             <!--================================-->
                             <div id="mainnav-profile" class="mainnav-profile">
-                                
-                               
-                             <div class="profile-wrap text-center">
+
+
+                               <div class="profile-wrap text-center">
                                 <div class="pad-btm">
                                     <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
                                 </div>
@@ -474,7 +474,7 @@
                             
                             
                             <div id="profile-nav" class="collapse list-group bg-trans">
-                                
+
                                 <a href="<?php echo base_url('login/logoutApp'); ?>" class="list-group-item">
                                     <i class="demo-pli-unlock icon-lg icon-fw"></i> Logout
                                 </a>
@@ -523,7 +523,7 @@
 
                         
                         <ul id="mainnav-menu" class="list-group">
-                          
+
                             <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
                                 <li class="active-sub">
                                     <a href="<?php echo base_url('data_sekolah'); ?>">
@@ -624,24 +624,42 @@
                           </li>
                       <?php } ?>
 
+                      <?php if($this->uri->segment('1') == 'data_laporan'){ ?>
+                        <li class="active-sub">
+                            <a href="<?php echo base_url('data_laporan'); ?>">
+                                <i class="demo-pli-file-html"></i>
+                                <span class="menu-title">Laporan</span>
+                            </a>
+                            <!--Submenu-->
+                        </li>
+                    <?php } else{ ?>
+                        <li>
+                            <a href="<?php echo base_url('data_laporan'); ?>">
+                                <i class="demo-pli-file-html"></i>
+                                <span class="menu-title">Laporan</span>
+                            </a>
+                            <!--Submenu-->
+                        </li>
+                    <?php } ?>
 
-                      
-                  </ul>
-                  
 
-                  <!--Widget-->
-                  <!--================================-->
 
-                  <!--================================-->
-                  <!--End widget-->
+                </ul>
 
-              </div>
-          </div>
-      </div>
-      <!--================================-->
-      <!--End menu-->
 
-  </div>
+                <!--Widget-->
+                <!--================================-->
+
+                <!--================================-->
+                <!--End widget-->
+
+            </div>
+        </div>
+    </div>
+    <!--================================-->
+    <!--End menu-->
+
+</div>
 </nav>
 <!--===================================================-->
 <!--END MAIN NAVIGATION-->
@@ -665,16 +683,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-       Hummasoft Technologhy
-   </div>
+     Hummasoft Technologhy
+ </div>
 
 
 
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-   <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+ <p class="pad-lft">&#0169; 2019 HummaPOS</p>
 
 
 
