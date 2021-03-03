@@ -50,20 +50,20 @@
    <select name="jurusan" id="demo-ease">
     <option value="">Jurusan</option>
     <option value="1">RPL</option>
-    <option value="TKJ">TKJ</option>
-    <option value="TPM">TPM</option>
-    <option value="TITL">TITL</option>
-    <option value="TIPK">TIPK</option>
-    <option value="TB">TB</option>
-    <option value="TKR">TKR</option>
+    <option value="2">TKJ</option>
+    <option value="3">TPM</option>
+    <option value="4">TITL</option>
+    <option value="5">TIPK</option>
+    <option value="6">TB</option>
+    <option value="7">TKR</option>
   </select>
 </div>
 <div class="select">
  <select name="kelas" id="demo-ease">
   <option value="">Kelas</option>
   <option value="1">X</option>
-  <option value="XI">XI</option>
-  <option value="XII">XII</option>
+  <option value="2">XI</option>
+  <option value="3">XII</option>
 </select>
 </div>
 <button class="btn btn-default" type="submit">Filter</button>  
@@ -164,33 +164,33 @@
 						<label for="kelas" class="control-label">Kelas Siswa</label>
 						<select name="kelas" id="kelas" class="form-control" required="">
 							<option value="">Kelas</option>
-							<option value="X">X</option>
-							<option value="XI">XI</option>
-							<option value="XII">XII</option>
+							<option value="1">X</option>
+							<option value="2">XI</option>
+							<option value="3">XII</option>
 						</select>
 					</div>
 					<div class="col-md-6" style="margin-top: 2%">
 						<label for="agama" class="control-label">Agama Siswa</label>
 						<select name="agama" id="agama" class="form-control" required="">
 							<option value="">Agama</option>
-							<option value="Islam">Islam</option>
-							<option value="Hindu">Hindu</option>
-							<option value="Budha">Budha</option>
-							<option value="Konghucu">Konghucu</option>
-							<option value="Kristen">Kristen</option>
+							<option value="1">Islam</option>
+							<option value="2">Hindu</option>
+							<option value="3">Budha</option>
+							<option value="4">Konghucu</option>
+							<option value="5">Kristen</option>
 						</select>
 					</div>
 					<div class="col-md-6" style="margin-top: 2%">
 						<label for="jurusan" class="control-label">Jurusan Siswa</label>
 						<select name="jurusan" id="jurusan" class="form-control" required="">
 							<option value="">Jurusan</option>
-							<option value="RPL">RPL</option>
-							<option value="TKJ">TKJ</option>
-							<option value="TPM">TPM</option>
-							<option value="TITL">TITL</option>
-							<option value="TIPK">TIPK</option>
-							<option value="TB">TB</option>
-							<option value="TKR">TKR</option>
+							<option value="1">RPL</option>
+							<option value="2">TKJ</option>
+							<option value="3">TPM</option>
+							<option value="4">TITL</option>
+							<option value="5">TIPK</option>
+							<option value="6">TB</option>
+							<option value="7">TKR</option>
 						</select>
 					</div>
 					<div class="col-md-6" >
