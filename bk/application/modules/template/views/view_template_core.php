@@ -553,7 +553,7 @@
                                     </a>
                                     <ul class="collapse in">
                                         <li class="active-link"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li><a href="<?php echo base_url('data_user'); ?>">Data User</a></li>
+                                        <li><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                                     </ul>
                                     <!--Submenu-->
                                 </li>
@@ -566,15 +566,15 @@
                                     </a>
                                     <ul class="collapse in">
                                         <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li class="active-link"><a href="<?php echo base_url('data_user'); ?>">Data User</a></li>
+                                        <li class="active-link"><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                                     </ul>
                                     <!--Submenu-->
                                 </li>
                             <?php } ?>
 
-                            <?php if($this->uri->segment('1') == 'data_guru'){ ?>
+                            <?php if($this->uri->segment('1') == ''){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_guru'); ?>">
+                                    <a href="<?php echo base_url(''); ?>">
                                         <i class="fa fa-list"></i>
                                         <span class="menu-title">Data Guru</span>
                                         <i class="arrow"></i>
@@ -583,7 +583,7 @@
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_guru'); ?>">
+                                    <a href="<?php echo base_url(''); ?>">
                                         <i class="fa fa-list"></i>
                                         <span class="menu-title">Data Guru</span>
                                         <i class="arrow"></i>
