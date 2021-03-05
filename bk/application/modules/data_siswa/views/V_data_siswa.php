@@ -82,7 +82,7 @@
       <div class="col-sm-3">
         <div class="panel">
           <div class="panel-body text-center">
-            <a href="detail-siswa.html">
+            <a href="<?php echo base_url('detail_siswa/index/'.$res->id_siswa); ?>">
               <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
               <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
             </a>
