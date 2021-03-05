@@ -14,13 +14,12 @@
 
  	function tambah()
  	{
+ 		$id_guru					= $this->input->post('id_guru');
  		$nip 						= $this->input->post('nip');
  		$nama_guru					= $this->input->post('nama_guru');
  		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
  		$alamat_guru				= $this->input->post('alamat_guru');
  		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
- 		$username					= $this->input->post('username');
- 		$password 					= $this->input->post('password');
 
  		$this->load->library('upload');
  		$nmfile = "file_".time();
@@ -44,8 +43,6 @@
  					'tgl_lahir_guru'		=> $tgl_lahir_guru,
  					'alamat_guru'			=> $alamat_guru,
  					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
- 					'username'				=> $username,
- 					'password'				=> $password,
  					'foto_guru' 			=> $gbr['file_name'],
 
 
@@ -61,12 +58,24 @@
  				'tgl_lahir_guru'		=> $tgl_lahir_guru,
  				'alamat_guru'			=> $alamat_guru,
  				'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
- 				'username'				=> $username,
- 				'password'				=> $password,
  				'foto_guru' 			=> 'kosong1.png',
  			);
  			$this->db->insert('data_guru', $data);
  		}
+
+ 		$id_user					= $this->input->post('id_user');
+ 		$username					= $this->input->post('username');
+ 		$password 					= $this->input->post('password');
+ 		$level 						= $this->input->post('level');
+
+ 		$data1 = array(
+ 					'username'				=> $username,
+ 					'password'				=> $password,
+ 					'level'					=> $level,
+
+ 				);
+
+ 		$this->db->insert('data_user', $data1);
  	}
  	function edit()
  	{
@@ -108,6 +117,7 @@
 
  				);
  				$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
+ 				$this->db->where('id_user',$id_user)->update('data_user', $data);
 
  			}	 
  		}
@@ -123,6 +133,7 @@
  				'foto_guru' 			=> 'kosong1.png',
  			);
  			$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
+ 			$this->db->where('id_user',$id_user)->update('data_user', $data);
  		}
  	}
 
@@ -135,6 +146,9 @@
  	function cari()
  	{
 		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_guru',$cari)->get('data_guru')->result();
+		return $this->db->like('nama_guru',$cari)
+		->select('*')
+		->join('data_user','data_user.id_user = data_guru.id_user')
+		->get('data_guru')->result();
 	}
  }
