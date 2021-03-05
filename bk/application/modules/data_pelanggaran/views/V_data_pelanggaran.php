@@ -50,28 +50,30 @@
 </div><br><br><br>
 
 <div id="page-content">
-     <div class="tab-base">
+
+<div class="tab-base">
                         <ul class="nav nav-tabs tabs-right">
                             <li class="active">
-                                <a data-toggle="tab" href="#demo-rgt-tab-1">etika</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-1">Etika</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#demo-rgt-tab-2">kerapian</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-2">Kerapian</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#demo-rgt-tab-3">pelanggaran_berat</a>
+                                <a data-toggle="tab" href="#demo-rgt-tab-3">Pelanggaran Berat</a>
                             </li>
                         </ul>
     <div class="tab-content">
+        <div class="row">
+
                             <div id="demo-rgt-tab-1" class="tab-pane fade active in">
-     <div class="row">                           
+                                
     <div class="col-sm-12">
       <div class="row">
        <?php foreach($tampil as $res) {
         $id = $res->id_pelanggaran;
-        $etika = $res->kategori;
         ?>
-        <div class="col-sm-3">
+        <div class="col-sm-4">
 
           <!--Profile Widget-->
           <!--===================================================-->
@@ -98,7 +100,6 @@
         </div>
       </div>
     </div> 
-</div>
     <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -126,30 +127,6 @@
                 <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
               </div>
 
-                <div class="col-md-6">
-        <label for="" class="control-label">Kategori</label><br>
-        <?php $kategori = $res->kategori; ?>
-        <div class="form-check">
-        <input <?php echo ($kategori == "etika") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios1" value="etika" checked>
-        <label class="form-check-label" for="exampleRadios1">
-        etika
-        </label>
-        </div>
-        <div class="form-check">
-        <input <?php echo ($kategori == "kerapian") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios2" value="kerapian">
-        <label class="form-check-label" for="exampleRadios2">
-        kerapian
-        </label>
-        </div>
-        <div class="form-check">
-        <input <?php echo ($kategori == "pelanggaran_berat") ? "checked" : "" ?> class="form-check-input" type="radio" name="kategori" id="exampleRadios2" value="pelanggaran_berat">
-        <label class="form-check-label" for="exampleRadios2">
-        pelanggaran_berat
-        </label>
-        </div>
-
-
-        </div>
 
             </div>
 
@@ -231,7 +208,8 @@
             <input type="text" name="point" rows="5" placeholder="point" class="form-control">
           </div>
 
-          
+
+        </div>
 
 
       </div>
@@ -245,6 +223,9 @@
 
     </div>
   </div>
+</div>
+</div>
+</div>
 </div>
 <!-- end tambah -->
 

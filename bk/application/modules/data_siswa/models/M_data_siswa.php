@@ -66,9 +66,9 @@ class M_data_siswa extends CI_Model {
 				'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 				'alamat_siswa'			=> $alamat_siswa,
 				'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
-				'id_kelas'					=> $kelas,
-				'id_jurusan'				=> $jurusan,
-				'id_agama'					=> $agama,
+				'id_kelas'				=> $kelas,
+				'id_jurusan'			=> $jurusan,
+				'id_agama'				=> $agama,
 				'foto_siswa' 			=> 'kosong1.png',
 			);
 			$this->db->insert('data_siswa', $data);
@@ -87,9 +87,14 @@ class M_data_siswa extends CI_Model {
 		->get('data_siswa')->result();
 	}
 
-
-	function filter()
-	{	
-		
-	}
+	function filter($kelas,$jurusan){
+		$this->db->where("id_kelas",$kelas);
+		$this->db->where("id_jurusan",$jurusan);
+		$query = $this->db->like($kelas, $jurusan)
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->get('data_siswa');
+		return $query->result();
+	} 
 }
