@@ -29,12 +29,6 @@ class M_data_treatment extends CI_Model {
 		$id_treatment 			= $this->input->post('id_treatment');
 		$nama_treatment			= $this->input->post('nama_treatment');
 		$point					= $this->input->post('point');
-
-
-		
-		
-		
-        
             
 				$data = array(
 					'nama_treatment'	=> $nama_treatment,

@@ -10,37 +10,39 @@ class M_data_pelanggaran extends CI_Model {
 
 	function tambah()
 	{
-		$nama_pelanggaran 		= $this->input->post('nama_pelanggaran');
-		$point	= $this->input->post('point');
+		$nama_pelanggaran	= $this->input->post('nama_pelanggaran');
+		$point			= $this->input->post('point');
 
 				$data = array(
-					'nama_pelanggaran'		=> $nama_pelanggaran,
-					'point'		=> $point,
+					'nama_pelanggaran' 	=> $nama_pelanggaran,
+					'point'				=> $point,
 					
 					
 				);
-				$this->db->insert('data_pelanggaran', $data);
-			
-			}	 
-	
+				$this->db->insert('data_pelanggaran', $data);	 
+		
+
+	}
 
 	function edit()
 	{
-		$id_pelanggaran = $this->input->post('id_pelanggaran');
-		$nama_pelanggaran		= $this->input->post('nama_pelanggaran');
-		$point	= $this->input->post('point');
+		$id_pelanggaran 			= $this->input->post('id_pelanggaran');
+		$nama_pelanggaran			= $this->input->post('nama_pelanggaran');
+		$point					= $this->input->post('point');
 
 
-
+		
+		
+		
+        
+            
 				$data = array(
-					'nama_pelanggaran'		=> $nama_pelanggaran,
-					'point'		=> $point,
-
+					'nama_pelanggaran'	=> $nama_pelanggaran,
+					'point'				=> $point,
 				);
 				$this->db->where('id_pelanggaran',$id_pelanggaran)->update('data_pelanggaran', $data);
 			
-			}	
-	
+			}	 
 
 	function hapus($id)
 	{
