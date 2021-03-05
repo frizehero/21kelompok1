@@ -5,8 +5,11 @@
 
  	function tampil()
  	{
- 		return $this->db->get('data_guru')->result();
-
+ 		return $this->db->from('data_guru')
+		->select('*')
+		->join('data_user','data_user.id_user = data_guru.id_user')
+		->get()
+		->result();
  	}
 
  	function tambah()
@@ -16,6 +19,8 @@
  		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
  		$alamat_guru				= $this->input->post('alamat_guru');
  		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
+ 		$username					= $this->input->post('username');
+ 		$password 					= $this->input->post('password');
 
  		$this->load->library('upload');
  		$nmfile = "file_".time();
@@ -39,6 +44,8 @@
  					'tgl_lahir_guru'		=> $tgl_lahir_guru,
  					'alamat_guru'			=> $alamat_guru,
  					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
+ 					'username'				=> $username,
+ 					'password'				=> $password,
  					'foto_guru' 			=> $gbr['file_name'],
 
 
@@ -54,6 +61,8 @@
  				'tgl_lahir_guru'		=> $tgl_lahir_guru,
  				'alamat_guru'			=> $alamat_guru,
  				'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
+ 				'username'				=> $username,
+ 				'password'				=> $password,
  				'foto_guru' 			=> 'kosong1.png',
  			);
  			$this->db->insert('data_guru', $data);

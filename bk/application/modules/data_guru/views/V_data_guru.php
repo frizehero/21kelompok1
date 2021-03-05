@@ -72,7 +72,9 @@
               <b>Nip :</b><?= $res->nip?><br>
               <b>Tgl Lahir :</b><?= $res->tgl_lahir_guru?><br>
               <b>Alamat :</b><?= $res->alamat_guru?><br>
-              <b>Jenis Kelamin :</b><?php $res->jenis_kelamin_guru?><br>
+              <b>Jenis Kelamin :</b><?= $res->jenis_kelamin_guru?><br>
+              <b>Username :</b><?= $res->username?><br>
+              <b>Password :</b><?= $res->password?><br>
               
             </p>
             <div class="text-center pad-to">
@@ -112,32 +114,33 @@
 
         <div class="panel-body">
 
-          <div class="col-md-6">
+          <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">NIP</label>
             <input type="text" name="nip" placeholder="NIP" class="form-control" value="<?= $res->nip?>" required="">
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Nama Guru</label>
             <input type="text" name="nama_guru" placeholder="Nama Guru" class="form-control" value="<?= $res->nama_guru?>" required="">
           </div>
           <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">Tgl Lahir Guru</label>
-            <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" value="<?= $res->tgl_lahir_guru?>" required="">
+            <label for="" class="control-label text-muted mar-no">Tgl Lahir Guru</label>
+            <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" value="<?= $res->tgl_lahir_guru?>" required=""><br>
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Alamat Guru</label>
-            <input type="text" name="alamat_guru" placeholder="Alamat Guru" class="form-control" value="<?= $res->alamat_guru?>" required=""> <br>
+            <input type="text" name="alamat_guru" placeholder="Alamat Guru" class="form-control" value="<?= $res->alamat_guru?>" required="">
           </div>
           <div class="col-md-6" >
+            <?php $jenis_kelamin_guru = $res->jenis_kelamin_guru; ?>
             <label for="jk" required="" class="control-label text-muted mar-no">Jenis Kelamin Guru</label><br>
-            <input id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
-            <input id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
+            <input <?php echo ($jenis_kelamin_guru == 'Laki-Laki') ? "checked": ""?> id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
+            <input <?php echo ($jenis_kelamin_guru == 'Perempuan') ? "checked": ""?> id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
           </div>
-          <div style="margin-top: 2%">
+          <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Username</label>
             <input type="text" name="username" placeholder="Username" class="form-control" required=""><br>
           </div>
-          <div style="margin-top: 2%">
+          <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Password</label>
             <input type="text" name="password" placeholder="Password" class="form-control" required=""><br>
           </div>
@@ -145,12 +148,10 @@
             <label for="" class="control-label text-muted mar-no">Foto Guru</label>
             <input type="file" name="foto_guru" placeholder="Foto Guru" class="form-control"  onchange="tampilkanPreview(this,'preview')">
           </div>
-          <div class="col-lg-4" style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile :</label>
-          </div>
-          <div class="col-md-8 " style="margin-top: 2%">
-            <img   src="<?= base_url(); ?>assets/img/<?= $res->foto_guru ?>" width="150px" />
-         </div>
+            <div class="col-md-6 " style="margin-top: 2%">
+              <label for="" class="control-label">Preview Foto Profile</label>
+              <img src="<?= base_url(); ?>assets/img/<?= $res->foto_guru ?>" width="150px" />
+            </div>
 
        </div>
 
@@ -174,13 +175,13 @@
       <!--Modal header-->
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Hapus</h4>
+        <p class="modal-title text-2x text-bold">Hapus</p>
       </div>
 
       <!--Modal body-->
       <div class="modal-body">
-        <p class="text-semibold text-main text-muted mar-no"></p>
-        <p >Anda Yakin Ingin Menghapus <b><?php echo $res->nama_guru ?></b> ? </p>
+        <p class="text-semibold text-muted mar-no"></p>
+        <p class="text-semibold text-muted mar-no">Anda Yakin Ingin Menghapus <b><?php echo $res->nama_guru ?></b> ? </p>
         <br>
 
 
