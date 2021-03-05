@@ -544,33 +544,16 @@
                                 </li>
                             <?php } ?>
                             
-                            <?php if($this->uri->segment('1') == 'data_siswa'){ ?>
-                                <li class="active-sub">
-                                    <a href="">
-                                        <i class="demo-pli-receipt-4"></i>
-                                        <span class="menu-title">Data</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <ul class="collapse in">
-                                        <li class="active-link"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
+                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' ? "active-sub" : ''?>">
+                                <a href="">
+                                    <i class="fa fa-list"></i>
+                                    <span>Data Siswa</span>
+                                </a>
+                                <ul class="collapse in">
+                                        <li <?=$this->uri->segment('1') == 'data_siswa' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                                     </ul>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } else{ ?>
-                                <li class="active-sub">
-                                    <a href="">
-                                        <i class="demo-pli-receipt-4"></i>
-                                        <span class="menu-title">Data</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <ul class="collapse in">
-                                        <li><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li class="active-link"><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
-                                    </ul>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
+                            </li>
 
                             <?php if($this->uri->segment('1') == ''){ ?>
                                 <li class="active-sub">
@@ -601,7 +584,7 @@
                                     </a>
                                     <ul class="collapse">
                                       <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
-                                      <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
+                                      <li class="active-link"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
 
 
                                   </ul>
@@ -616,7 +599,7 @@
                                 </a>
                                 <ul class="collapse">
                                   <li><a href="<?php echo base_url('data_treatment'); ?>">Pelanggaran</a></li>
-                                  <li class="active-sub"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
+                                  <li class="active-link"><a href="<?php echo base_url('data_treatment'); ?>">Treatment</a></li>
 
 
                               </ul>
