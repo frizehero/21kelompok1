@@ -11,6 +11,7 @@ class Data_siswa extends MX_Controller {
 		$this->load->model('login/m_session');
 	}
 
+
 	
 	// index
 	function index()
@@ -19,15 +20,48 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->tampil(),
+			''
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+
+
+	function details($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_detail_siswa",
+			'tampil'		=> $this->m_data_siswa->tampildetail($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
+
 
 	function tambah()
 	{
 		$this->m_data_siswa->tambah();
 		redirect('data_siswa');
 	}
+
+
+
+	function edit()
+ 	{
+ 		$this->m_data_siswa->edit($id);
+ 		redirect('data_siswa');
+ 	}
+
+
+
+ 	function hapus($id)
+ 	{
+ 		$this->m_data_siswa->hapus($id);
+ 		redirect('data_siswa');
+ 	}
+
+
 
 	function cari()
 	{
@@ -39,6 +73,8 @@ class Data_siswa extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
+
+
 	function filter(){
 		$kelas=$this->input->post('kelas');
 		$jurusan=$this->input->post('jurusan');
@@ -49,7 +85,12 @@ class Data_siswa extends MX_Controller {
 			'tampil'		=> $this->m_data_siswa->filter($kelas,$jurusan),
 		);
 		echo Modules::run('template/tampilCore', $data);
-
 	}
+
+	function tampil_jurusan()
+	{
+		$this->m_data_siswa->tampil_jurusan();
+	}
+
 
 }

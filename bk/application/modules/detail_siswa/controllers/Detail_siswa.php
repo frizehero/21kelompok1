@@ -26,7 +26,7 @@ class Detail_siswa extends MX_Controller {
 	function edit($id)
  	{
  		$this->m_detail_siswa->edit($id);
- 		redirect('data_siswa');
+ 		redirect('detail_siswa');
  	}
 
  	function hapus($id)
