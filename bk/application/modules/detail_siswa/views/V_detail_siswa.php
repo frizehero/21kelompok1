@@ -33,123 +33,7 @@
 
 <!--Fixedbar-->
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<div class="page-fixedbar-container">
-  <div class="page-fixedbar-content">
-    <div class="nano">
-      <div class="nano-content">
-        <p class="pad-all text-main text-sm text-uppercase text-bold">
-          Pelanggar Baru Ini
-        </p>
 
-        <!--Family-->
-        <div class="list-group bg-trans bord-btm">
-          <div class="list-group-item list-item-sm">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Dhimas</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Hajir</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Donald Brown</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Betty Murphy</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/7.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Samantha Reid</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item list-item-sm">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Dhimas</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Hajir</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Donald Brown</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-          <div class="list-group-item">
-            <div class="media-left pos-rel">
-              <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
-            </div>
-            <div class="media-body">
-              <a href="#" class="text-main">
-                <p>Betty Murphy</p>
-              </a>
-              <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
-            </div>
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
-  </div>
-</div>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <!--End Fixedbar-->
 
@@ -278,15 +162,15 @@
               </tr>
             </tbody>
           </table>
-
         </div>
-
         <hr>
-
       </div>
     </div>
   </div>
 </div>
+
+
+
 <!-- hapus -->
 <div class="modal fade" id="demo-default-modal2<?php echo $tampil['id_siswa']?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
@@ -303,9 +187,6 @@
         <p class="text-semibold text-main text-muted mar-no"></p>
         <p >Anda Yakin Ingin Menghapus <b><?php echo  $tampil['nama_siswa'] ?></b> ? </p>
         <br>
-
-
-
       </div>
 
       <!--Modal footer-->
@@ -318,6 +199,10 @@
 </div>
 <!-- end hapus -->
 
+
+
+
+<!-- modal edit -->
 <div class="modal fade" id="demo-default-modal1<?php echo $tampil['id_siswa']?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -393,9 +278,7 @@
             <label for="" class="control-label">Preview Foto Profile :</label>
             <img   src="<?= base_url(); ?>assets/img/<?= $tampil['foto_siswa'] ?>" width="150px" />
           </div>
-
         </div>
-
       </div>
 
       <!--Modal footer-->
@@ -407,6 +290,8 @@
     </div>
   </div>
 </div>
+<!-- end modal edit -->
+
 
 </div>
 <!--===================================================-->

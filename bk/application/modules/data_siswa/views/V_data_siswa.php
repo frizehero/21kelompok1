@@ -21,6 +21,7 @@
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->
 
+
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
@@ -37,39 +38,41 @@
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
           </div>
-        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
-      </div> 
-    </center>
+        </div> 
+      </center>
 
-  </form>
+    </form>
 
-<form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
-  <div class="select">
-   <select name="jurusan" id="demo-ease">
-    <option value="">Jurusan</option>
-    <option value="1">RPL</option>
-    <option value="2">TKJ</option>
-    <option value="3">TPM</option>
-    <option value="4">TITL</option>
-    <option value="5">TIPK</option>
-    <option value="6">TB</option>
-    <option value="7">TKR</option>
-  </select>
-</div>
-<div class="select">
- <select name="kelas" id="demo-ease">
-  <option value="">Kelas</option>
-  <option value="1">X</option>
-  <option value="2">XI</option>
-  <option value="3">XII</option>
-</select>
-</div>
-<button class="btn btn-default" type="submit">Filter</button>  
+    <form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
+      <div class="select">
+       <select name="jurusan" id="demo-ease">
+        <option value="">Jurusan</option>
+        <option value="1">RPL</option>
+        <option value="2">TKJ</option>
+        <option value="3">TPM</option>
+        <option value="4">TITL</option>
+        <option value="5">TIPK</option>
+        <option value="6">TB</option>
+        <option value="7">TKR</option>
+      </select>
+    </div>
+    <div class="select">
+     <select name="kelas" id="demo-ease">
+      <option value="">Kelas</option>
+      <option value="1">X</option>
+      <option value="2">XI</option>
+      <option value="3">XII</option>
+    </select>
+  </div>
+  <button class="btn btn-default" type="submit">Filter</button>  
 </form>
+</div>
 
-<div id="page-content text-black">
+
+<div id="page-content text-black"><br><br><br>
 
   <div class="row">
    <div class="col-sm-12">
@@ -82,7 +85,7 @@
       <div class="col-sm-3">
         <div class="panel">
           <div class="panel-body text-center">
-            <a href="<?php echo base_url('detail_siswa/index/'.$res->id_siswa); ?>">
+            <a href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
               <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
               <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
             </a>
@@ -114,12 +117,12 @@
   </div>
 </div>
 </div>
-
 </div>
 </div>
-
-
 </div>
+
+
+
 <!--===================================================-->
 <!--End page content-->	
 <!-- tambah -->
@@ -218,6 +221,9 @@
 	</div>
 </div>
 <!-- end tambah -->
+
+
+
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
