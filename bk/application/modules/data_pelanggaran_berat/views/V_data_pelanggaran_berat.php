@@ -5,7 +5,7 @@
     <!--Page Title-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <div id="page-title">
-      <h1 class="page-header text-overflow">pelanggaran</h1>
+      <h1 class="page-header text-overflow">pelanggaran_berat</h1>
     </div>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End page title-->
@@ -16,7 +16,7 @@
     <ol class="breadcrumb">
       <li><a href="#"><i class="demo-pli-home"></i></a></li>
       <li><a href="#">Peraturan</a></li>
-      <li class="active">pelanggaran</li>
+      <li class="active">pelanggaran_berat</li>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
@@ -27,7 +27,7 @@
           Tambah
         </button>
       </div>
-      <form action="<?php echo site_url('data_pelanggaran/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_pelanggaran_berat/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){?>
             <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
@@ -39,7 +39,7 @@
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
           </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran_berat'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
         </div> 
@@ -53,45 +53,45 @@
 
 <div class="tab-base">
                         <ul class="nav nav-tabs tabs-right">
-                            <li class="active">
+                            <li>
                                 <a href="data_pelanggaran">Etika</a>
                             </li>
                             <li>
                                 <a href="data_pelanggaran_kerapian">Kerapian</a>
                             </li>
-                            <li>
-                                <a  href="data_pelanggaran_berat">Pelanggaran Berat</a>
+                            <li class="active">
+                                <a  href="data_pelanggaran_berat">pelanggaran Berat</a>
                             </li>
                         </ul>
     <div class="tab-content">
         <div class="row">
 
-                            <div id="demo-rgt-tab-1" class="tab-pane fade active in">
+                            <div id="demo-rgt-tab-3" class="tab-pane fade active in">
                                 
     <div class="col-sm-12">
       <div class="row">
        <?php foreach($tampil as $res) {
-        $id = $res->id_pelanggaran;
+        $id = $res->id_pelanggaran_berat;
         ?>
         <div class="col-sm-4">
 
           <!--Profile Widget-->
           <!--===================================================-->
-          <div class="panel panel-info panel-colorful">
+          <div class="panel panel-dark panel-colorful">
             <div class="pad-all text-left">
               <span class="pull-right"><?php echo $res->point ?></span><br>
-              <p><?php echo $res->nama_pelanggaran ?></p>
+              <p><?php echo $res->nama_pelanggaran_berat ?></p>
 
               <div class="btn-group btn-group-justified pad-top">
 
                <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran?>" class=" btn btn-warning btn-sm">
+                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_berat?>" class=" btn btn-warning btn-sm">
                   <span class="fa fa-edit"></span>
                   &nbsp;Edit
                 </a>
               </span>
               <span>
-               <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran?>" class=" btn btn-danger btn-sm">
+               <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" class=" btn btn-danger btn-sm">
                 <span class="fa fa-trash"></span>
                 &nbsp;Hapus
               </a>
@@ -100,7 +100,7 @@
         </div>
       </div>
     </div> 
-    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -109,8 +109,8 @@
             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
             <h4 class="modal-title">Update</h4>
           </div>
-          <?= form_open_multipart('data_pelanggaran/edit'); ?>
-          <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
+          <?= form_open_multipart('data_pelanggaran_berat/edit'); ?>
+          <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
 
           <!--Modal body--> 
           <div class="modal-body">
@@ -118,8 +118,8 @@
             <div class="panel-body">
 
               <div class="col-md-6">
-                <label for="" class="control-label">Nama pelanggaran</label>
-                <input type="text" name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran ?>">
+                <label for="" class="control-label">Nama pelanggaran_berat</label>
+                <input type="text" name="nama_pelanggaran_berat" placeholder="Nama pelanggaran_berat" class="form-control" value="<?= $res->nama_pelanggaran_berat ?>">
               </div>
 
               <div class="col-md-6">
@@ -143,7 +143,7 @@
       </div>
     </div>
 
-    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
 
@@ -156,7 +156,7 @@
           <!--Modal body-->
           <div class="modal-body">
             <p class="text-semibold text-main"></p>
-            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_pelanggaran ?></b> ? </p>
+            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_pelanggaran_berat ?></b> ? </p>
             <br>
 
 
@@ -166,7 +166,7 @@
           <!--Modal footer-->
           <div class="modal-footer">
             <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran/hapus/'. $res->id_pelanggaran) ?>">Hapus pelanggaran</a>
+            <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran_berat/hapus/'. $res->id_pelanggaran_berat) ?>">Hapus pelanggaran_berat</a>
           </div>
         </div>
       </div>
@@ -192,15 +192,15 @@
         <h4 class="modal-title">Tambah</h4>
       </div>
 
-      <?= form_open_multipart('data_pelanggaran/tambah'); ?>
+      <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
       <!--Modal body--> 
       <div class="modal-body">
 
         <div class="panel-body">
 
           <div class="col-md-6">
-            <label for="" class="control-label">Nama pelanggaran</label>
-            <input type="text" name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control">
+            <label for="" class="control-label">Nama pelanggaran_berat</label>
+            <input type="text" name="nama_pelanggaran_berat" placeholder="Nama pelanggaran_berat" class="form-control">
           </div>
 
           <div class="col-md-6">
