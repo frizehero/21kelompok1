@@ -2,6 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_siswa extends MX_Controller {
+	
 
 	function __construct()
 	{
