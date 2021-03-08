@@ -52,6 +52,7 @@
 <div id="page-content">
  <?php foreach($tampil as $res) {
   $id = $res->id_guru;
+  $level = $res->level;
   $gambar = $res->foto_guru;
   ?>
   <div class="row-12">
@@ -60,10 +61,17 @@
       <!--Profile Widget-->
       <!--===================================================-->
       <div class="panel widget">
-        <div class="widget-header bg-warning text-center">
+
+        <?php if($res->level == 'admin'){ ?>
+          <div class="widget-header bg-warning text-center">
+        <?php } else{ ?>
+          <div class="widget-header bg-info text-center">
+        <?php } ?>
+
+
           <h4 class="mar-no pad-top"><?= $res->nama_guru?></h4>
           <p class="mar-btm"><?= $res->level?></p>
-        </div>
+        </div> 
         <div class="widget-body">
           <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_guru ?>">
 
@@ -124,47 +132,57 @@
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Tgl Lahir Guru</label>
-            <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" value="<?= $res->tgl_lahir_guru?>" required=""><br>
+            <input type="date" name="tgl_lahir_guru" placeholder="Tgl Lahir Guru" class="form-control" value="<?= $res->tgl_lahir_guru?>" required="">
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Alamat Guru</label>
             <input type="text" name="alamat_guru" placeholder="Alamat Guru" class="form-control" value="<?= $res->alamat_guru?>" required="">
           </div>
-          <div class="col-md-6" style="margin-top: 2%">
+          <div class="col-md-6" style="margin-top: 2% ">
+            <?php $level = $res->level; ?>
+            <label for="" class="control-label text-muted mar-no">Level</label>
+            <select name="level" required="" class="form-control">
+              <option <?php echo ($level == 'admin') ? "selected": ""?> value="admin">Admin
+              </option>
+              <option <?php echo ($level == 'guru') ? "selected": ""?> value="guru">Guru
+              </option>
+            </select>
+          </div>
+          <div class="col-md-6 text-muted" style="margin-top: 2%">
+            <label for="" class="control-label text-muted mar-no">Username</label>
+            <input type="text" name="username" placeholder="Username" value="<?= $res->username?>" class="form-control" required="">
+          </div>
+          <div class="col-md-6 text-muted" style="margin-top: 2%">
             <?php $jenis_kelamin_guru = $res->jenis_kelamin_guru; ?>
             <label for="jk" required="" class="control-label text-muted mar-no">Jenis Kelamin Guru</label><br>
-            <input <?php echo ($jenis_kelamin_guru == 'Laki-Laki') ? "checked": ""?> id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
-            <input <?php echo ($jenis_kelamin_guru == 'Perempuan') ? "checked": ""?> id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
-          </div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label text-muted mar-no">Username</label>
-            <input type="text" name="username" placeholder="Username" value="<?= $res->username?>" class="form-control" required=""><br>
+            <input <?php echo ($jenis_kelamin_guru == 'Laki-Laki') ? "checked": ""?>  id="jk" type="radio" name="jenis_kelamin_guru" value="Laki-Laki" > Laki-Laki
+            <input <?php echo ($jenis_kelamin_guru == 'Perempuan') ? "checked": ""?>  id="jk" type="radio" name="jenis_kelamin_guru" value="Perempuan" > Perempuan
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Password</label>
-            <input type="text" name="password" placeholder="Password" value="<?= $res->password?>" class="form-control" required=""><br>
+            <input type="text" name="password" placeholder="Password" value="<?= $res->password?>" class="form-control" required="">
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label text-muted mar-no">Foto Guru</label>
             <input type="file" name="foto_guru" placeholder="Foto Guru" class="form-control"  onchange="tampilkanPreview(this,'preview')">
           </div>
-            <div class="col-md-6 " style="margin-top: 2%" >
-              <label for="" class="control-label text-muted">Preview Foto Profile</label>
-              <img src="<?= base_url(); ?>assets/img/<?= $res->foto_guru ?>" width="150px" />
-            </div>
-       </div>
+          <div class="col-md-6 " style="margin-top: 2%" >
+            <label for="" class="control-label text-muted">Preview Foto Profile</label>
+            <img src="<?= base_url(); ?>assets/img/<?= $res->foto_guru ?>" width="150px" />
+          </div>
+        </div>
 
 
-     </div>
+      </div>
 
-     <!--Modal footer-->
-     <div class="modal-footer">
-      <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-      <button class="btn btn-primary" type="submit">Simpan</button>
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <button class="btn btn-primary" type="submit">Simpan</button>
+      </div>
+      <?= form_close(); ?>
     </div>
-    <?= form_close(); ?>
   </div>
-</div>
 </div>
 <!-- hapus -->
 <div class="modal fade" id="demo-default-modal2<?php echo $res->id_guru?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
