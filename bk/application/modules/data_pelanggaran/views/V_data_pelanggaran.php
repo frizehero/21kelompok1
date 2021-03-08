@@ -34,7 +34,7 @@
           <?php } ?>
           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="cari">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
@@ -54,13 +54,13 @@
 <div class="tab-base">
                         <ul class="nav nav-tabs tabs-right">
                             <li class="active">
-                                <a href="data_pelanggaran">Etika</a>
+                                <a href="<?php echo base_url('data_pelanggaran/index/'); ?>">Etika</a>
                             </li>
                             <li>
-                                <a href="data_pelanggaran_kerapian">Kerapian</a>
+                                <a href="<?php echo base_url('data_pelanggaran/tampil1/'); ?>">Kerapian</a>
                             </li>
                             <li>
-                                <a  href="data_pelanggaran_berat">Pelanggaran Berat</a>
+                                <a  href="<?php echo base_url('data_pelanggaran/tampil2/'); ?>">Pelanggaran Berat</a>
                             </li>
                         </ul>
     <div class="tab-content">
@@ -73,13 +73,13 @@
        <?php foreach($tampil as $res) {
         $id = $res->id_pelanggaran;
         ?>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
 
           <!--Profile Widget-->
           <!--===================================================-->
           <div class="panel panel-info panel-colorful">
             <div class="pad-all text-left">
-              <span class="pull-right"><?php echo $res->point ?></span><br>
+              <span class="pull-right">+ <?php echo $res->point ?> point</span><br>
               <p><?php echo $res->nama_pelanggaran ?></p>
 
               <div class="btn-group btn-group-justified pad-top">

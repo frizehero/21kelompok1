@@ -27,19 +27,19 @@
           Tambah
         </button>
       </div>
-      <form action="<?php echo site_url('data_pelanggaran_berat/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_pelanggaran/cari2/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
-          <?php if($this->uri->segment(2) != 'cari'){?>
-            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
+          <?php if($this->uri->segment(2) != 'cari2'){?>
+            <input type="text" autocomplete="off" name="cari2" class="form-control" placeholder="Cari">
           <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
-            $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+          <?php if($this->uri->segment(2) == 'cari2'){
+            $cari2 = $this->input->post('cari2'); ?>
+            <input type="text" autocomplete="off" value="<?= $cari2 ?>" name="cari2" class="form-control " placeholder="Outlet">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
           </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran_berat'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran_kerapian'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
         </div> 
@@ -54,13 +54,13 @@
 <div class="tab-base">
                         <ul class="nav nav-tabs tabs-right">
                             <li>
-                                <a href="data_pelanggaran">Etika</a>
+                                <a href="<?php echo base_url('data_pelanggaran/index/'); ?>">Etika</a>
                             </li>
                             <li>
-                                <a href="data_pelanggaran_kerapian">Kerapian</a>
+                               <a href="<?php echo base_url('data_pelanggaran/tampil1/'); ?>">Kerapian</a>
                             </li>
                             <li class="active">
-                                <a  href="data_pelanggaran_berat">pelanggaran Berat</a>
+                                <a  href="<?php echo base_url('data_pelanggaran/tampil2/'); ?>">Pelanggaran Berat</a>
                             </li>
                         </ul>
     <div class="tab-content">
@@ -70,10 +70,10 @@
                                 
     <div class="col-sm-12">
       <div class="row">
-       <?php foreach($tampil as $res) {
+       <?php foreach($tampil2 as $res) {
         $id = $res->id_pelanggaran_berat;
         ?>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
 
           <!--Profile Widget-->
           <!--===================================================-->
@@ -109,7 +109,7 @@
             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
             <h4 class="modal-title">Update</h4>
           </div>
-          <?= form_open_multipart('data_pelanggaran_berat/edit'); ?>
+          <?= form_open_multipart('data_pelanggaran/edit2'); ?>
           <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
 
           <!--Modal body--> 
@@ -166,7 +166,7 @@
           <!--Modal footer-->
           <div class="modal-footer">
             <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran_berat/hapus/'. $res->id_pelanggaran_berat) ?>">Hapus pelanggaran_berat</a>
+            <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran/hapus2/'. $res->id_pelanggaran_berat) ?>">Hapus pelanggaran_berat</a>
           </div>
         </div>
       </div>
@@ -192,7 +192,7 @@
         <h4 class="modal-title">Tambah</h4>
       </div>
 
-      <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
+      <?= form_open_multipart('data_pelanggaran/tambah2'); ?>
       <!--Modal body--> 
       <div class="modal-body">
 
