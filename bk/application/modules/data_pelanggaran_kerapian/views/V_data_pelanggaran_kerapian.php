@@ -47,7 +47,7 @@
 
     </form>
   </div>
-</div><br><br><br>
+</div>
 
 <div id="page-content">
 
