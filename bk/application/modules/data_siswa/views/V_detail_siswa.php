@@ -360,33 +360,33 @@
                 <input <?php echo ($tampil['jenis_kelamin_siswa'] == 'Perempuan') ? "checked": "" ?> id="jk" type="radio" name="jenis_kelamin_siswa" value="Perempuan" > Perempuan
               </div>
               <div class="col-md-6" >
-                <label for="kelas" class="control-label">Kelas Siswa</label>
+                <label for="kelas" class="control-label">Kelas Siswa </label>
                 <select name="kelas" id="kelas" class="form-control" required="">
-                  <option <?php echo ($tampil['kelas'] == '1') ? "selected": "" ?> value="1">X</option>
-                  <option <?php echo ($tampil['kelas'] == '2') ? "selected": "" ?> value="2">XI</option>
-                  <option <?php echo ($tampil['kelas'] == '3') ? "selected": "" ?> value="3">XII</option>
+                  <option <?php echo ($tampil['kelas'] == 'X') ? "selected": "" ?> value="1">X</option>
+                  <option <?php echo ($tampil['kelas'] == 'XI') ? "selected": "" ?> value="2">XI</option>
+                  <option <?php echo ($tampil['kelas'] == 'XII') ? "selected": "" ?> value="3">XII</option>
                 </select>
               </div>
               <div class="col-md-6" style="margin-top: 2%">
                 <label for="agama" class="control-label">Agama Siswa</label>
                 <select name="agama" id="agama" class="form-control" required="">
-                  <option <?php echo ($tampil['agama'] == '1') ? "selected": "" ?> value="1">Islam</option>
-                  <option <?php echo ($tampil['agama'] == '2') ? "selected": "" ?> value="2">Hindu</option>
-                  <option <?php echo ($tampil['agama'] == '3') ? "selected": "" ?> value="3">Budha</option>
-                  <option <?php echo ($tampil['agama'] == '4') ? "selected": "" ?> value="4">Konghucu</option>
-                  <option <?php echo ($tampil['agama'] == '5') ? "selected": "" ?> value="5">Kristen</option>
+                  <option <?php echo ($tampil['agama'] == 'ISLAM') ? "selected": "" ?> value="1">ISLAM</option>
+                  <option <?php echo ($tampil['agama'] == 'HINDU') ? "selected": "" ?> value="2">HINDU</option>
+                  <option <?php echo ($tampil['agama'] == 'BUDHA') ? "selected": "" ?> value="3">BUDHA</option>
+                  <option <?php echo ($tampil['agama'] == 'KONGHUCU') ? "selected": "" ?> value="4">KONGHUCU</option>
+                  <option <?php echo ($tampil['agama'] == 'KRISTEN') ? "selected": "" ?> value="5">KRISTEN</option>
                 </select>
               </div>
               <div class="col-md-6" style="margin-top: 2%">
                 <label for="jurusan" class="control-label">Jurusan Siswa</label>
                 <select name="jurusan" id="jurusan" class="form-control" required="">
-                  <option <?php echo ($tampil['jurusan'] == '1') ? "selected": "" ?> value="1">RPL</option>
-                  <option <?php echo ($tampil['jurusan'] == '2') ? "selected": "" ?> value="2">TKJ</option>
-                  <option <?php echo ($tampil['jurusan'] == '3') ? "selected": "" ?> value="3">TPM</option>
-                  <option <?php echo ($tampil['jurusan'] == '4') ? "selected": "" ?> value="4">TITL</option>
-                  <option <?php echo ($tampil['jurusan'] == '5') ? "selected": "" ?> value="5">TIPK</option>
-                  <option <?php echo ($tampil['jurusan'] == '6') ? "selected": "" ?> value="6">TB</option>
-                  <option <?php echo ($tampil['jurusan'] == '7') ? "selected": "" ?> value="7">TKR</option>
+                  <option <?php echo ($tampil['jurusan'] == 'RPL') ? "selected": "" ?> value="1">RPL</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TKJ') ? "selected": "" ?> value="2">TKJ</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TPM') ? "selected": "" ?> value="3">TPM</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TITL') ? "selected": "" ?> value="4">TITL</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TIPK') ? "selected": "" ?> value="5">TIPK</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TB') ? "selected": "" ?> value="6">TB</option>
+                  <option <?php echo ($tampil['jurusan'] == 'TKR') ? "selected": "" ?> value="7">TKR</option>
                 </select>
               </div>
               <div class="col-md-6" >

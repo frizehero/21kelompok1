@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_siswa extends MX_Controller {
-	
+
 
 	function __construct()
 	{
@@ -21,7 +21,9 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->tampil(),
-			''
+			'filter_jur'		=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'		=> $this->m_data_siswa->filter_kel(),
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -74,11 +76,11 @@ class Data_siswa extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
+	function filter()
+	{
 
-
-	function filter(){
-		$kelas=$this->input->post('kelas');
-		$jurusan=$this->input->post('jurusan');
+		$kelas 						= $this->input->post('kelas');
+		$jurusan 					= $this->input->post('jurusan');
 
 		$data = array(
 			'namamodule' 	=> "data_siswa",
@@ -86,11 +88,6 @@ class Data_siswa extends MX_Controller {
 			'tampil'		=> $this->m_data_siswa->filter($kelas,$jurusan),
 		);
 		echo Modules::run('template/tampilCore', $data);
-	}
-
-	function tampil_jurusan()
-	{
-		$this->m_data_siswa->tampil_jurusan();
 	}
 
 

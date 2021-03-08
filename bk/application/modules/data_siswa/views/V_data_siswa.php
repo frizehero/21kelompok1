@@ -49,22 +49,18 @@
     <form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
       <div class="select">
        <select name="jurusan" id="demo-ease">
-        <option value="">Jurusan</option>
-        <option value="1">RPL</option>
-        <option value="2">TKJ</option>
-        <option value="3">TPM</option>
-        <option value="4">TITL</option>
-        <option value="5">TIPK</option>
-        <option value="6">TB</option>
-        <option value="7">TKR</option>
+         <option  value="">Jurusan</option>
+        <?php  foreach($filter_jur as $jur) { ?>
+          <option  value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
+        <?php } ?>
       </select>
     </div>
     <div class="select">
      <select name="kelas" id="demo-ease">
-      <option value="">Kelas</option>
-      <option value="1">X</option>
-      <option value="2">XI</option>
-      <option value="3">XII</option>
+       <option  value="">kelas</option>
+      <?php  foreach($filter_kel as $kel) { ?>
+      <option value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+    <?php }?>
     </select>
   </div>
   <button class="btn btn-default" type="submit">Filter</button>  
@@ -218,7 +214,7 @@
 			<?= form_close(); ?>
 
 		</div>
-	</div>
+	
 </div>
 <!-- end tambah -->
 
