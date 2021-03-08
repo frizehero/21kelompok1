@@ -79,7 +79,7 @@
           <!--===================================================-->
           <div class="panel panel-purple panel-colorful">
             <div class="pad-all text-left">
-              <span class="pull-right"><?php echo $res->point ?></span><br>
+              <span class="pull-right">+ <?php echo $res->point ?> point</span><br>
               <p><?php echo $res->nama_pelanggaran_kerapian ?></p>
 
               <div class="btn-group btn-group-justified pad-top">
