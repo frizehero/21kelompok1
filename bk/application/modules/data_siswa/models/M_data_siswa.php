@@ -187,12 +187,11 @@ class M_data_siswa extends CI_Model {
 		->from('data_kelas');
 		$query = $this->db->get();
 		return $query->result();
-		
+
 		
 	}
 	function filter($kelas,$jurusan){
-		
-		
+
 		$this->db->select('*')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
