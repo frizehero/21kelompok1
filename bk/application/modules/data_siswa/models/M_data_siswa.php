@@ -16,19 +16,6 @@ class M_data_siswa extends CI_Model {
 
 
 
-	function tampildetail($id)
-	{
-		$this->db->select('*')
-		->from('data_siswa')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->where('id_siswa',$id);
-		$query = $this->db->get();
-		return $query->row_array();
-	}
-
-
 	function tambah()
 	{
 		$nis 						= $this->input->post('nis');
@@ -88,6 +75,87 @@ class M_data_siswa extends CI_Model {
 			);
 			$this->db->insert('data_siswa', $data);
 		}
+	}
+
+
+	function cari()
+	{
+		$cari 		= $this->input->post('cari');
+		return $this->db->like('nama_siswa',$cari)
+		->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->get('data_siswa')->result();
+	}
+
+
+
+	function filter_jur(){
+		$this->db->select('*')
+		->from('data_jurusan');
+		$query = $this->db->get();
+		return $query->result();
+		
+		
+	}
+	function filter_kel(){
+		$this->db->select('*')
+		->from('data_kelas');
+		$query = $this->db->get();
+		return $query->result();
+
+		
+	}
+	function filter($kelas,$jurusan){
+
+		if ($kelas=="") 
+		{
+			$this->db->select('*')
+			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+			->where('data_siswa.id_jurusan',$jurusan);
+			$query = $this->db->get('data_siswa');
+			return $query->result();
+
+		}
+		elseif ($jurusan=="") 
+		{
+			$this->db->select('*')
+			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+			->where('data_siswa.id_kelas',$kelas);
+			$query = $this->db->get('data_siswa');
+			return $query->result();
+		}
+		else
+		{
+			$this->db->select('*')
+			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+			->where('data_siswa.id_jurusan',$jurusan)
+			->where('data_siswa.id_kelas',$kelas);
+			$query = $this->db->get('data_siswa');
+			return $query->result();
+
+		}
+	}
+
+	/*bagian view detail*/
+
+	function tampildetail($id)
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->where('id_siswa',$id);
+		$query = $this->db->get();
+		return $query->row_array();
 	}
 
 
@@ -159,49 +227,10 @@ class M_data_siswa extends CI_Model {
 		$this->db->where('id_siswa', $id)->delete('data_siswa');
 	}
 
+	/*akhir model v detail*/
 
 
-	function cari()
-	{
-		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_siswa',$cari)
-		->select('*')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->get('data_siswa')->result();
-	}
-
-
-
-	function filter_jur(){
-		$this->db->select('*')
-		->from('data_jurusan');
-		$query = $this->db->get();
-		return $query->result();
-		
-		
-	}
-	function filter_kel(){
-		$this->db->select('*')
-		->from('data_kelas');
-		$query = $this->db->get();
-		return $query->result();
-
-		
-	}
-	function filter($kelas,$jurusan){
-
-		$this->db->select('*')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->where('data_siswa.id_jurusan',$jurusan)
-		->where('data_siswa.id_kelas',$kelas);
-		$query = $this->db->get('data_siswa');
-		return $query->result();
-
-	}
+	/*model bagian v tambah treatment*/
 
 	function tampiltreatment($id)
 	{
