@@ -92,5 +92,13 @@ class Data_siswa extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
-
+	function tampiltreatment($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_tambah_treatment",
+			'tampil'		=> $this->m_data_siswa->tampiltreatment($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }

@@ -523,22 +523,21 @@
 
                         
                         <ul id="mainnav-menu" class="list-group">
+                            <li class="list-header">MENU</li>
 
-                            <?php if($this->uri->segment('1') == 'data_sekolah'){ ?>
+                            <?php if($this->uri->segment('1') == '#'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_sekolah'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Sekolah</span>
-                                        <i class="arrow"></i>
+                                    <a href="<?php echo base_url('#'); ?>">
+                                        <i class="demo-pli-home"></i>
+                                        <span class="menu-title">Beranda</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_sekolah'); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Sekolah</span>
-                                        <i class="arrow"></i>
+                                    <a href="<?php echo base_url('#'); ?>">
+                                       <i class="demo-pli-home"></i>
+                                        <span class="menu-title">Beranda</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
@@ -555,26 +554,6 @@
                                         <li <?=$this->uri->segment('1') == 'data_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                                     </ul>
                             </li>
-
-                            <?php if($this->uri->segment('1') == ''){ ?>
-                                <li class="active-sub">
-                                    <a href="<?php echo base_url(''); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Guru</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } else{ ?>
-                                <li>
-                                    <a href="<?php echo base_url(''); ?>">
-                                        <i class="fa fa-list"></i>
-                                        <span class="menu-title">Data Guru</span>
-                                        <i class="arrow"></i>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
 
                            <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
                                 <a href="">

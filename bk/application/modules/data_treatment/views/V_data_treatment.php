@@ -70,7 +70,7 @@
               <div class="btn-group btn-group-justified pad-top">
 
                <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-success btn-sm">
+                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-warning btn-sm">
                   <span class="fa fa-edit"></span>
                   &nbsp;Edit
                 </a>

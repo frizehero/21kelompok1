@@ -63,9 +63,9 @@ class M_data_siswa extends CI_Model {
 					'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 					'alamat_siswa'			=> $alamat_siswa,
 					'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
-					'id_kelas'					=> $kelas,
-					'id_jurusan'				=> $jurusan,
-					'id_agama'					=> $agama,
+					'id_kelas'				=> $kelas,
+					'id_jurusan'			=> $jurusan,
+					'id_agama'				=> $agama,
 					'foto_siswa' 			=> $gbr['file_name'],
 					
 					
@@ -203,4 +203,16 @@ class M_data_siswa extends CI_Model {
 
 	}
 
+	function tampiltreatment($id)
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->where('id_siswa',$id);
+		$query = $this->db->get('data_treatment');
+		return $query->result();
+
+	}
 }
