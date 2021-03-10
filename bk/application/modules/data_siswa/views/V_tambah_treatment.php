@@ -118,10 +118,11 @@
                 <label>Keterangan Pelanggaran Siswa</label>
                 <input type="text" placeholder="Keterangan" class="form-control" height="100%"><br>
                 <p>Pilih Treatment :</p>
-                <div class="col-sm-3">
-                 <?php foreach($tampil as $res) {
+                <?php foreach($tampil as $res) {
                   $id = $res->id_treatment;
                   ?>
+                <div class="col-sm-3">
+                 
                   <!--Profile Widget-->
                   <!--===================================================-->
                   <div class="panel panel-info panel-colorful">
@@ -131,9 +132,9 @@
                       <p><?php echo  $res->nama_treatment?></p>
 
                     </div>
-                  </div>
+                  </div>                
                 </div>
-              <?php  } ?>
+                <?php  } ?>
             </div>
           </form>
 
