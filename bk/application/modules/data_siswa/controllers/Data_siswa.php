@@ -19,7 +19,7 @@ class Data_siswa extends MX_Controller {
 	{
 		$data = array(
 			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_data_siswa",
+			'namafileview' 	=> "V_data_siswa_utama",
 			'tampil'		=> $this->m_data_siswa->tampil(),
 			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
 			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
