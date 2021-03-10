@@ -39,10 +39,8 @@
         <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_guru'); ?>">
           <i class="fa fa-refresh" ></i>
         </a>
-      </div> 
-    </center>
-
-  </form>
+      </div>
+    </form>
 
 </div><br><br><br>
 
@@ -171,6 +169,7 @@
             <label for="" class="control-label text-muted">Preview Foto Profile</label>
             <img src="<?= base_url(); ?>assets/img/<?= $res->foto_guru ?>" width="150px" />
           </div>
+
         </div>
 
 
@@ -287,7 +286,6 @@
           </div>
 
         </div>
-
 
       </div>
 
