@@ -107,4 +107,13 @@ class Data_siswa extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function tampilpelanggaran($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_tambah_pelanggaran",
+			'tampil'		=> $this->m_data_siswa->tampilpelanggaran($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }

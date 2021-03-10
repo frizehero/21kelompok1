@@ -166,7 +166,7 @@
                <p><b>NIS : </b><?php echo $tampil['nis']?></p>
              </div><hr>
              <div class="text-center">
-              <p width="50"><a class="btn btn-sm bg-danger" href="pelanggaran.html">Tambah Pelanggaran</a></p>
+              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$tampil['id_siswa']); ?>">Tambah Pelanggaran</a></p>
               <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$tampil['id_siswa']); ?>">Tambah Treatment</a></p>
             </div>
             <hr>
