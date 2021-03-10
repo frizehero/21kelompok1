@@ -29,12 +29,9 @@
       <form action="<?php echo site_url('data_siswa/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){?>
-            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari Siswa">
+            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari Siswa" required="">
           <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
-            $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa">
-          <?php } ?> 
+
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
           </div>
@@ -170,7 +167,7 @@
 			<?= form_close(); ?>
 
 		</div>
-   
+
   </div>
   <!-- end tambah -->
 
