@@ -49,8 +49,8 @@
         <div class="col-lg-12">
           <div class="panel panel-body">
             <div class="panel-heading">
-              <h4>Mengurangi Point</h4>
-              <p>Memilih Data Point yang digunakan untuk memperbaiki point Siswa</p>
+              <h4>Menambah Point</h4>
+              <p>Memilih Data Point yang digunakan untuk menambahkan point Siswa</p>
             </div><hr>
             <div class="panel-body">
               <div class="col-sm-3 pull-right">
@@ -118,29 +118,65 @@
                 <label>Keterangan Pelanggaran Siswa</label>
                 <input type="text" placeholder="Keterangan" class="form-control" height="100%"><br>
                 <p>Pilih pelanggaran :</p>
-                <div class="col-sm-3">
-                 <?php foreach($tampil as $res) {
+                <?php foreach($tampil as $res) {
                   $id = $res->id_pelanggaran;
                   ?>
+                <div class="col-sm-3">
+                 
                   <!--Profile Widget-->
                   <!--===================================================-->
                   <div class="panel panel-info panel-colorful">
                     <div class="pad-all text-left">
                       <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
-                      <?php echo  $res->point?>
-                      <p ><?php echo  $res->nama_pelanggaran?></p>
+                      + <?php echo  $res->point?> point
+                      <p><?php echo  $res->nama_pelanggaran?></p>
 
                     </div>
-                  </div>
+                  </div>                
                 </div>
-              <?php  } ?>
+                <?php  } ?><br>
+                <?php foreach($tampil1 as $res) {
+                  $id = $res->id_pelanggaran_kerapian;
+                  ?>
+                <div class="col-sm-3">
+                 
+                  <!--Profile Widget-->
+                  <!--===================================================-->
+                  <div class="panel panel-info panel-colorful">
+                    <div class="pad-all text-left">
+                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
+                      + <?php echo  $res->point?> point
+                      <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
+
+                    </div>
+                  </div>                
+                </div>
+                <?php  } ?><br>
+                <?php foreach($tampil2 as $res) {
+                  $id = $res->id_pelanggaran_berat;
+                  ?>
+                <div class="col-sm-3">
+                 
+                  <!--Profile Widget-->
+                  <!--===================================================-->
+                  <div class="panel panel-info panel-colorful">
+                    <div class="pad-all text-left">
+                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
+                      + <?php echo  $res->point?> point
+                      <p><?php echo  $res->nama_pelanggaran_berat?></p>
+
+                    </div>
+                  </div>                
+                </div>
+                <?php  } ?>
             </div>
           </form>
 
         </div>
     </div>
   </div>
-
+</div>
+</div>
 
 
   <!-- hapus -->
@@ -151,9 +187,9 @@
 
   <!-- modal edit -->
   <!-- end modal edit -->
-</div>
 
-</div>
+
+
 <!--===================================================-->
 <!--End page content-->
 
