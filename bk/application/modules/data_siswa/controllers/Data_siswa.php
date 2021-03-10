@@ -97,7 +97,7 @@ class Data_siswa extends MX_Controller {
 	/*akhir controler detail siswa*/
 
 
-
+	/*controler tambah treatment*/
 	function tampiltreatment($id)
 	{
 		$data = array(
@@ -107,6 +107,10 @@ class Data_siswa extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	/*akhir controler tambah treatment*/
+
+
+	/*controler tambah pelanggaran*/
 	function tampilpelanggaran($id)
 	{
 		$data = array(

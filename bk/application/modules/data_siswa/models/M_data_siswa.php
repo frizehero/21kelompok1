@@ -244,6 +244,10 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
+	/*akhir model bagian v tambah treatment*/
+
+
+	/*model bagian v tambah pelanggaran*/
 	function tampilpelanggaran($id)
 	{
 		$this->db->select('*')
