@@ -54,7 +54,6 @@
                   <a href="#" class="text-main">
                     <p>Dhimas</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -65,7 +64,6 @@
                   <a href="#" class="text-main">
                     <p>Hajir</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -74,9 +72,8 @@
                 </div>
                 <div class="media-body">
                   <a href="#" class="text-main">
-                    <p>Donald Brown</p>
+                    <p>muhammad davino budiarto</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -87,7 +84,6 @@
                   <a href="#" class="text-main">
                     <p>Betty Murphy</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -98,7 +94,6 @@
                   <a href="#" class="text-main">
                     <p>Samantha Reid</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item list-item-sm">
@@ -109,7 +104,6 @@
                   <a href="#" class="text-main">
                     <p>Dhimas</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -120,7 +114,6 @@
                   <a href="#" class="text-main">
                     <p>Hajir</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -131,7 +124,6 @@
                   <a href="#" class="text-main">
                     <p>Donald Brown</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
               <div class="list-group-item">
@@ -142,7 +134,6 @@
                   <a href="#" class="text-main">
                     <p>Betty Murphy</p>
                   </a>
-                  <a class="btn btn-xs btn-default" href="detail-siswa.html">Detail</a>
                 </div>
               </div>
 

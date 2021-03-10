@@ -128,7 +128,7 @@
                     <div class="pad-all text-left">
                       <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
                       <?php echo  $res->point?>
-                      <p ><?php echo  $res->nama_treatment?></p>
+                      <p><?php echo  $res->nama_treatment?></p>
 
                     </div>
                   </div>
@@ -140,7 +140,8 @@
         </div>
     </div>
   </div>
-
+</div>
+</div>
 
 
   <!-- hapus -->
@@ -151,9 +152,9 @@
 
   <!-- modal edit -->
   <!-- end modal edit -->
-</div>
 
-</div>
+
+
 <!--===================================================-->
 <!--End page content-->
 
