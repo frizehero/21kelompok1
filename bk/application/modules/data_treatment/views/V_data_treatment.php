@@ -58,19 +58,19 @@
        <?php foreach($tampil as $res) {
         $id = $res->id_treatment;
         ?>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
 
           <!--Profile Widget-->
           <!--===================================================-->
           <div class="panel panel-info panel-colorful">
             <div class="pad-all text-left">
-              <span class="pull-right"><?php echo $res->point ?></span><br>
+              <span class="pull-right"><?php echo $res->point ?> Point</span><br>
               <p><?php echo $res->nama_treatment ?></p>
 
               <div class="btn-group btn-group-justified pad-top">
 
                <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-success btn-sm">
+                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_treatment?>" class=" btn btn-warning btn-sm">
                   <span class="fa fa-edit"></span>
                   &nbsp;Edit
                 </a>

@@ -21,48 +21,12 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->tampil(),
-			'filter_jur'		=> $this->m_data_siswa->filter_jur(),
-			'filter_kel'		=> $this->m_data_siswa->filter_kel(),
+			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-
-
-
-	function details($id)
-	{
-		$data = array(
-			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_detail_siswa",
-			'tampil'		=> $this->m_data_siswa->tampildetail($id),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-
-
-
-	function tambah()
-	{
-		$this->m_data_siswa->tambah();
-		redirect('data_siswa');
-	}
-
-
-
-	function edit()
- 	{
- 		$this->m_data_siswa->edit($id);
- 		redirect('data_siswa');
- 	}
-
-
-
- 	function hapus($id)
- 	{
- 		$this->m_data_siswa->hapus($id);
- 		redirect('data_siswa');
- 	}
 
 
 
@@ -72,6 +36,8 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
 			'tampil'		=> $this->m_data_siswa->cari(),
+			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -93,4 +59,52 @@ class Data_siswa extends MX_Controller {
 	}
 
 
+
+	function tambah()
+	{
+		$this->m_data_siswa->tambah();
+		redirect('data_siswa');
+	}
+
+
+	/*controler detail siswa*/
+
+	function details($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_detail_siswa",
+			'tampil'		=> $this->m_data_siswa->tampildetail($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
+
+	function edit()
+	{
+		$this->m_data_siswa->edit($id);
+		redirect('data_siswa');
+	}
+
+
+
+	function hapus($id)
+	{
+		$this->m_data_siswa->hapus($id);
+		redirect('data_siswa');
+	}
+
+	/*akhir controler detail siswa*/
+
+
+
+	function tampiltreatment($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_tambah_treatment",
+			'tampil'		=> $this->m_data_siswa->tampiltreatment($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }
