@@ -116,6 +116,7 @@
       </div>
       <?= form_open_multipart('data_guru/edit'); ?>
       <input type="hidden" name="id_guru" value="<?php echo $res->id_guru?>">
+      <input type="hidden" name="id_user" value="<?php echo $res->id_user?>">
 
       <!--Modal body--> 
       <div class="modal-body">
