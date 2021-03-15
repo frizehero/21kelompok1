@@ -154,254 +154,262 @@
     <div id="page-content">
       <div class="panel">
        <div class="panel-body">
-         <div class="fixed-fluid">
+        <div class="row">
+        
+          <div class="fixed-fluid">
+            <?php foreach($tampil as $res) {
+          $id = $res->id_siswa;
+          $gambar = $res->foto_siswa;
+          ?>
            <div class="fixed-md-200 pull-sm-left fixed-right-border">
 
              <!-- Simple profile -->
              <div class="text-center">
                <div class="pad-ver">
-                 <img src="<?php echo base_url ()?>assets/img/<?php echo $tampil['foto_siswa'] ?>" class="img-lg img-circle" alt="Profile Picture">
+                <img src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>" class="img-lg img-circle" alt="Profile Picture">
                </div>
-               <p><h4 class="text-lg text-overflow"><?php echo $tampil['nama_siswa']?></h4></p>
-               <p><b>NIS : </b><?php echo $tampil['nis']?></p>
+               <p><h4 class="text-lg text-overflow"><?php echo $res->nama_siswa?></h4></p>
+               <p><b>NIS : </b><?php echo $res->nis?></p>
              </div><hr>
              <div class="text-center">
-              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$tampil['id_siswa']); ?>">Tambah Pelanggaran</a></p>
-              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$tampil['id_siswa']); ?>">Tambah Treatment</a></p>
+              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
+              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
             </div>
             <hr>
 
             <!-- Profile Details -->
             <p class="pad-ver text-main text-sm text-uppercase text-bold">Data Siswa</p>
-            <p><b>ALAMAT : </b><?php echo $tampil['alamat_siswa']?></p>
-            <p><b>TGL LAHIR : </b><?php echo $tampil['tanggal_lahir_siswa']?></p>
-            <p><b>JENIS KELAMIN : </b><?php echo $tampil['jenis_kelamin_siswa']?></p>
-            <p><b>KELAS : </b><?php echo $tampil['kelas']?></p>
-            <p><b>JURUSAN : </b><?php echo $tampil['jurusan']?></p>
-            <p><b>AGAMA : </b><?php echo $tampil['agama']?></p>
+            <p><b>ALAMAT : </b><?php echo $res->alamat_siswa?></p>
+            <p><b>TGL LAHIR : </b><?php echo $res->tanggal_lahir_siswa?></p>
+            <p><b>JENIS KELAMIN : </b><?php echo $res->jenis_kelamin_siswa?></p>
+            <p><b>KELAS : </b><?php echo $res->kelas?></p>
+            <p><b>JURUSAN : </b><?php echo $res->jurusan?></p>
+            <p><b>AGAMA : </b><?php echo $res->agama?></p>
             <hr>
 
           </div>
-          <div class="fluid">
+        <?php }?>
+        <div class="fluid">
 
-            <div class="row">
-              <div class="col-md-4">
-                <div class="panel panel-danger panel-colorful media middle pad-all">
-                  <div class="media-left">
-                    <div class="pad-hor ti-agenda icon-3x">
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="text-2x mar-no text-semibold ">2</p>
-                    <p class="mar-no">Pelanggaran</p>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="panel panel-danger panel-colorful media middle pad-all">
+                <div class="media-left">
+                  <div class="pad-hor ti-agenda icon-3x">
                   </div>
                 </div>
-              </div>
-              <div class="col-md-3">
-                <div class="panel panel-info panel-colorful media middle pad-all">
-                  <div class="media-left">
-                    <div class="pad-hor ion-ios-paper-outline icon-3x">
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">1</p>
-                    <p class="mar-no">Treatment</p>
-                  </div>
+                <div class="media-body">
+                  <p class="text-2x mar-no text-semibold ">2</p>
+                  <p class="mar-no">Pelanggaran</p>
                 </div>
               </div>
-              <div class="col-md-3">
-                <div class="panel panel-primary panel-colorful media middle pad-all">
-                  <div class="media-left">
-                    <div class="pad-hor">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">17</p>
-                    <p class="mar-no">Point</p>
-                  </div>
-                </div>
-              </div>
-              <div class="text-right">
-                <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $tampil['id_siswa']?>" class="btn btn-sm btn-danger">
-                  <span class="fa fa-edit"></span>
-                &nbsp;Hapus</a>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $tampil['id_siswa']?>" class="btn btn-sm btn-success">
-                  <span class="fa fa-trash"></span>
-                &nbsp;Edit</a>
-              </div>
-              <br><br><br>
-
-              <hr>
-              <h3>Riwayat Pelanggaran/Treatment Siswa</h3>
-
-
             </div>
-
-            <div class="panel-body">
-
-              <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                <thead>
-                  <tr>
-                    <th>Tanggal</th>
-                    <th>Pelanggaran/treatment</th>
-                    <th>point</th>
-                    <th>Keterangan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2-2-2020</td>
-                    <td>Merokok</td>
-                    <td>+12</td>
-                    <td><p>merokok saat istirahat di kelas</p></td>
-                  </tr>
-                  <tr>
-                    <td>2-3-2020</td>
-                    <td>Alpha</td>
-                    <td>+10</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td>2-3-2020</td>
-                    <td>Membersihkan toilet</td>
-                    <td>-7</td>
-                    <td></td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="col-md-3">
+              <div class="panel panel-info panel-colorful media middle pad-all">
+                <div class="media-left">
+                  <div class="pad-hor ion-ios-paper-outline icon-3x">
+                  </div>
+                </div>
+                <div class="media-body">
+                  <p class="text-2x mar-no text-semibold">1</p>
+                  <p class="mar-no">Treatment</p>
+                </div>
+              </div>
             </div>
+            <div class="col-md-3">
+              <div class="panel panel-primary panel-colorful media middle pad-all">
+                <div class="media-left">
+                  <div class="pad-hor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                      <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="media-body">
+                  <p class="text-2x mar-no text-semibold">17</p>
+                  <p class="mar-no">Point</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>" class="btn btn-sm btn-danger">
+                <span class="fa fa-edit"></span>
+              &nbsp;Hapus</a>
+              <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
+                <span class="fa fa-trash"></span>
+              &nbsp;Edit</a>
+            </div>
+            <br><br><br>
+
             <hr>
+            <h3>Riwayat Pelanggaran/Treatment Siswa</h3>
+
+
           </div>
+
+          <div class="panel-body">
+
+            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+              <thead>
+                <tr>
+                  <th>Tanggal</th>
+                  <th>Pelanggaran/treatment</th>
+                  <th>point</th>
+                  <th>Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2-2-2020</td>
+                  <td>Merokok</td>
+                  <td>+12</td>
+                  <td><p>merokok saat istirahat di kelas</p></td>
+                </tr>
+                <tr>
+                  <td>2-3-2020</td>
+                  <td>Alpha</td>
+                  <td>+10</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>2-3-2020</td>
+                  <td>Membersihkan toilet</td>
+                  <td>-7</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr>
         </div>
       </div>
     </div>
-
-
-
-    <!-- hapus -->
-    <div class="modal fade" id="demo-default-modal2<?php echo $tampil['id_siswa']?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal header-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Hapus</h4>
-          </div>
-
-          <!--Modal body-->
-          <div class="modal-body">
-            <p class="text-semibold text-main text-muted mar-no"></p>
-            <p >Anda Yakin Ingin Menghapus <b><?php echo  $tampil['nama_siswa'] ?></b> ? </p>
-            <br>
-          </div>
-
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <a class="btn btn-danger" href="<?php echo base_url('data_siswa/hapus/'. $tampil['id_siswa']) ?>">Hapus Data</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- end hapus -->
-
-
-
-
-    <!-- modal edit -->
-    <div class="modal fade" id="demo-default-modal1<?php echo $tampil['id_siswa']?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal Update-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Update</h4>
-          </div>
-          <?= form_open_multipart('data_siswa/edit/'); ?>
-          <input type="hidden" name="id_siswa" value="<?php echo $tampil['id_siswa']?>">
-
-          <!--Modal body--> 
-          <div class="modal-body">
-            <div class="panel-body">
-
-              <div class="col-md-6">
-                <label for="" class="control-label">NIS</label>
-                <input type="text" name="nis" placeholder="NIS" class="form-control" required="" value="<?php echo $tampil['nis']?>">
-              </div>
-              <div class="col-md-6">
-                <label for="" class="control-label">Nama siswa</label>
-                <input type="text" name="nama_siswa" placeholder="Nama siswa" class="form-control" required="" value="<?php echo $tampil['nama_siswa']?>">
-              </div>
-              <div class="col-md-6" style="margin-top: 2%">
-                <label for="" class="control-label">Tgl Lahir Siswa</label>
-                <input type="date" name="tanggal_lahir_siswa" placeholder="Tgl Lahir Siswa" class="form-control" required="" value="<?php echo $tampil['tanggal_lahir_siswa']?>">
-              </div>
-              <div class="col-md-6" style="margin-top: 2%">
-                <label for="" class="control-label">Alamat Siswa</label>
-                <input type="text" name="alamat_siswa" placeholder="Alamat Siswa" class="form-control" required="" value="<?php echo $tampil['alamat_siswa']?>"><br>
-              </div>
-              <div class="col-md-6" >
-                <label for="jk" required="" class="control-label">Jenis Kelamin Siswa</label><br>
-                <input <?php echo ($tampil['jenis_kelamin_siswa'] == 'Laki-Laki') ? "checked": "" ?> id="jk" type="radio" name="jenis_kelamin_siswa" value="Laki-Laki" > Laki-Laki
-                <input <?php echo ($tampil['jenis_kelamin_siswa'] == 'Perempuan') ? "checked": "" ?> id="jk" type="radio" name="jenis_kelamin_siswa" value="Perempuan" > Perempuan
-              </div>
-              <div class="col-md-6" >
-                <label for="kelas" class="control-label">Kelas Siswa </label>
-                <select name="kelas" id="kelas" class="form-control" required="">
-                  <option <?php echo ($tampil['kelas'] == 'X') ? "selected": "" ?> value="1">X</option>
-                  <option <?php echo ($tampil['kelas'] == 'XI') ? "selected": "" ?> value="2">XI</option>
-                  <option <?php echo ($tampil['kelas'] == 'XII') ? "selected": "" ?> value="3">XII</option>
-                </select>
-              </div>
-              <div class="col-md-6" style="margin-top: 2%">
-                <label for="agama" class="control-label">Agama Siswa</label>
-                <select name="agama" id="agama" class="form-control" required="">
-                  <option <?php echo ($tampil['agama'] == 'ISLAM') ? "selected": "" ?> value="1">ISLAM</option>
-                  <option <?php echo ($tampil['agama'] == 'HINDU') ? "selected": "" ?> value="2">HINDU</option>
-                  <option <?php echo ($tampil['agama'] == 'BUDHA') ? "selected": "" ?> value="3">BUDHA</option>
-                  <option <?php echo ($tampil['agama'] == 'KONGHUCU') ? "selected": "" ?> value="4">KONGHUCU</option>
-                  <option <?php echo ($tampil['agama'] == 'KRISTEN') ? "selected": "" ?> value="5">KRISTEN</option>
-                </select>
-              </div>
-              <div class="col-md-6" style="margin-top: 2%">
-                <label for="jurusan" class="control-label">Jurusan Siswa</label>
-                <select name="jurusan" id="jurusan" class="form-control" required="">
-                  <option <?php echo ($tampil['jurusan'] == 'RPL') ? "selected": "" ?> value="1">RPL</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TKJ') ? "selected": "" ?> value="2">TKJ</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TPM') ? "selected": "" ?> value="3">TPM</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TITL') ? "selected": "" ?> value="4">TITL</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TIPK') ? "selected": "" ?> value="5">TIPK</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TB') ? "selected": "" ?> value="6">TB</option>
-                  <option <?php echo ($tampil['jurusan'] == 'TKR') ? "selected": "" ?> value="7">TKR</option>
-                </select>
-              </div>
-              <div class="col-md-6" >
-                <label for="" class="control-label">Gambar siswa</label>
-                <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
-              </div>
-              <div class="col-lg-4" style="margin-top: 2%">
-                <label for="" class="control-label">Preview Foto Profile :</label>
-                <img   src="<?= base_url(); ?>assets/img/<?= $tampil['foto_siswa'] ?>" width="150px" />
-              </div>
-            </div>
-          </div>
-
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-            <button class="btn btn-primary" type="submit">Simpan</button>
-          </div>
-          <?= form_close(); ?>
-        </div>
-      </div>
-    </div>
-    <!-- end modal edit -->
   </div>
+
+
+
+  <!-- hapus -->
+  <div class="modal fade" id="demo-default-modal2<?php echo $res->id_siswa?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal header-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Hapus</h4>
+        </div>
+
+        <!--Modal body-->
+        <div class="modal-body">
+          <p class="text-semibold text-main text-muted mar-no"></p>
+          <p >Anda Yakin Ingin Menghapus siswa <b><?php echo  $res->nama_siswa ?></b> ? </p>
+          <br>
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
+          <a class="btn btn-danger" href="<?php echo base_url('data_siswa/hapus/'. $res->id_siswa) ?>">Hapus Data</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end hapus -->
+
+
+
+
+  <!-- modal edit -->
+  <div class="modal fade" id="demo-default-modal1<?php echo $res->id_siswa?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!--Modal Update-->
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+          <h4 class="modal-title">Update</h4>
+        </div>
+        <?= form_open_multipart('data_siswa/edit/'); ?>
+        <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
+
+        <!--Modal body--> 
+        <div class="modal-body">
+          <div class="panel-body">
+
+            <div class="col-md-6">
+              <label for="" class="control-label">NIS</label>
+              <input type="text" name="nis" placeholder="NIS" class="form-control" required="" value="<?php echo $res->nis?>">
+            </div>
+            <div class="col-md-6">
+              <label for="" class="control-label">Nama siswa</label>
+              <input type="text" name="nama_siswa" placeholder="Nama siswa" class="form-control" required="" value="<?php echo $res->nama_siswa?>">
+            </div>
+            <div class="col-md-6" style="margin-top: 2%">
+              <label for="" class="control-label">Tgl Lahir Siswa</label>
+              <input type="date" name="tanggal_lahir_siswa" placeholder="Tgl Lahir Siswa" class="form-control" required="" value="<?php echo $res->tanggal_lahir_siswa?>">
+            </div>
+            <div class="col-md-6" style="margin-top: 2%">
+              <label for="" class="control-label">Alamat Siswa</label>
+              <input type="text" name="alamat_siswa" placeholder="Alamat Siswa" class="form-control" required="" value="<?php echo $res->alamat_siswa?>"><br>
+            </div>
+            <div class="col-md-6" >
+              <label for="jk" required="" class="control-label">Jenis Kelamin Siswa</label><br>
+              <input <?php echo ($res->jenis_kelamin_siswa == 'Laki-Laki') ? "checked": "" ?> id="jk" type="radio" name="jenis_kelamin_siswa" value="Laki-Laki" > Laki-Laki
+              <input <?php echo ($res->jenis_kelamin_siswa == 'Perempuan') ? "checked": "" ?> id="jk" type="radio" name="jenis_kelamin_siswa" value="Perempuan" > Perempuan
+            </div>
+            <div class="col-md-6" >
+              <label for="kelas" class="control-label">Kelas Siswa </label>
+              <select name="kelas" id="kelas" class="form-control" required="">
+                <option <?php echo ($res->kelas == 'X') ? "selected": "" ?> value="1">X</option>
+                <option <?php echo ($res->res->kelas == 'XI') ? "selected": "" ?> value="2">XI</option>
+                <option <?php echo ($res->kelas == 'XII') ? "selected": "" ?> value="3">XII</option>
+              </select>
+            </div>
+            <div class="col-md-6" style="margin-top: 2%">
+              <label for="agama" class="control-label">Agama Siswa</label>
+              <select name="agama" id="agama" class="form-control" required="">
+                <option <?php echo ($res->agama == 'ISLAM') ? "selected": "" ?> value="1">ISLAM</option>
+                <option <?php echo ($res->agama == 'HINDU') ? "selected": "" ?> value="2">HINDU</option>
+                <option <?php echo ($res->agama == 'BUDHA') ? "selected": "" ?> value="3">BUDHA</option>
+                <option <?php echo ($res->agama == 'KONGHUCU') ? "selected": "" ?> value="4">KONGHUCU</option>
+                <option <?php echo ($res->agama == 'KRISTEN') ? "selected": "" ?> value="5">KRISTEN</option>
+              </select>
+            </div>
+            <div class="col-md-6" style="margin-top: 2%">
+              <label for="jurusan" class="control-label">Jurusan Siswa</label>
+              <select name="jurusan" id="jurusan" class="form-control" required="">
+                <option <?php echo ($res->jurusan == 'RPL') ? "selected": "" ?> value="1">RPL</option>
+                <option <?php echo ($res->jurusan == 'TKJ') ? "selected": "" ?> value="2">TKJ</option>
+                <option <?php echo ($res->jurusan == 'TPM') ? "selected": "" ?> value="3">TPM</option>
+                <option <?php echo ($res->jurusan == 'TITL') ? "selected": "" ?> value="4">TITL</option>
+                <option <?php echo ($res->jurusan == 'TIPK') ? "selected": "" ?> value="5">TIPK</option>
+                <option <?php echo ($res->jurusan == 'TB') ? "selected": "" ?> value="6">TB</option>
+                <option <?php echo ($res->jurusan == 'TKR') ? "selected": "" ?> value="7">TKR</option>
+              </select>
+            </div>
+            <div class="col-md-6" >
+              <label for="" class="control-label">Gambar siswa</label>
+              <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+            </div>
+            <div class="col-lg-4" style="margin-top: 2%">
+              <label for="" class="control-label">Preview Foto Profile :</label>
+              <img   src="<?= base_url(); ?>assets/img/<?= $res->foto_siswa ?>" width="150px" />
+            </div>
+          </div>
+        </div>
+
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          <button class="btn btn-primary" type="submit">Simpan</button>
+        </div>
+        <?= form_close(); ?>
+      </div>
+    </div>
+  </div>
+  <!-- end modal edit -->
+</div>
+</div>
 
 </div>
 <!--===================================================-->

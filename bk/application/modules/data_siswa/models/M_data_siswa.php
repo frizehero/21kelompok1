@@ -155,7 +155,7 @@ class M_data_siswa extends CI_Model {
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get();
-		return $query->row_array();
+		return $query->result();
 	}
 
 
@@ -257,30 +257,6 @@ class M_data_siswa extends CI_Model {
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran');
-		return $query->result();
-
-	}
-	function tampil1($id)
-	{
-		$this->db->select('*')
-		->from('data_siswa')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->where('id_siswa',$id);
-		$query = $this->db->get('data_pelanggaran_kerapian');
-		return $query->result();
-
-	}
-	function tampil2($id)
-	{
-		$this->db->select('*')
-		->from('data_siswa')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->where('id_siswa',$id);
-		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
 
 	}
