@@ -90,6 +90,7 @@
  		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
  		$alamat_guru				= $this->input->post('alamat_guru');
  		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
+ 		
 
  		$this->load->library('upload');
  		$nmfile = "file_".time();
@@ -108,7 +109,6 @@
  			{
  				$gbr = $this->upload->data();
  				$data = array(
- 					'id_guru'				=> $id_guru,
  					'nip'					=> $nip,
  					'nama_guru'				=> $nama_guru,
  					'tgl_lahir_guru'		=> $tgl_lahir_guru,
@@ -124,26 +124,21 @@
  		}
  		else{
  			$data = array(
- 				'id_guru'				=> $id_guru,
  				'nip'					=> $nip,
  				'nama_guru'				=> $nama_guru,
  				'tgl_lahir_guru'		=> $tgl_lahir_guru,
  				'alamat_guru'			=> $alamat_guru,
  				'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
- 				'foto_guru' 			=> 'kosong1.png',
  			);
  			$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
  		}
 
- 		$insert_id = $this->db->insert_id();
  		$id_user					= $this->input->post('id_user');
  		$username					= $this->input->post('username');
  		$password 					= $this->input->post('password');
  		$level 						= $this->input->post('level');
 
  		$data = array(
- 			'id_user'				=> $id_user,
- 			'id_guru'				=> $insert_id,
  			'username'				=> $username,
  			'password'				=> $password,
  			'level'					=> $level,
@@ -151,7 +146,6 @@
  		);
 
  		$this->db->where('id_user',$id_user)->update('data_user', $data);
- 		$insert_id = $this->db->insert_id();
  	}
 
  	function hapus($id)
