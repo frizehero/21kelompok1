@@ -115,89 +115,152 @@
               </form><br><br><hr>
 
               <form action="#" method="post">
-                <label>Keterangan Pelanggaran Siswa</label>
-                <input type="text" placeholder="Keterangan" class="form-control" height="100%"><br>
                 <p>Pilih Treatment :</p>
                 <?php foreach($tampil as $res) {
                   $id = $res->id_treatment;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-info panel-colorful">
-                    <div class="pad-all text-left">
-                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
-                      <?php echo  $res->point?>
-                      <p><?php echo  $res->nama_treatment?></p>
+                  <div class="col-sm-3">
 
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-info panel-colorful">
+                      <div class="pad-all text-left">
+                        <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_treatment?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
+                          <?php echo  $res->point?>
+                          <p><?php echo  $res->nama_treatment?></p>
+
+                        </div>
+                      </div>                
                     </div>
-                  </div>                
+                    <div class="modal fade" id="demo-default-modal<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!--Modal Update-->
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                          </div>
+                          <?= form_open_multipart('data_treatment/tambah'); ?>
+                          <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment?>">
+
+                          <!--Modal body--> 
+                          <div class="modal-body">
+
+                            <div class="panel-body">
+
+                              <div><h5>Penjelasan Menu :</h5>
+                                <p></p>
+                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu treatment supaya dapat memperbaiki nilai sikap siswa.</p>
+                              </div><hr>
+
+                              <div>
+                                <p>
+                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Kelas :</b> <?php echo $res->kelas?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
+                               </p>
+                             </div><hr>
+
+                             <div class="col-md-6">
+                              <label for="" class="control-label"><b>Nama treatment</b></label>
+                              <input type="text" disabled name="nama_treatment" placeholder="Nama Treatment" class="form-control" value="<?= $res->nama_treatment ?>">
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="" class="control-label"><b>point</b> </label>
+                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                            </div>
+
+                            <div class="col-md-12">
+                              <label for="" class="control-label"><b>keterangan</b></label>
+                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              </div>
+
+                            </div>
+
+
+                          </div>
+
+                          <!--Modal footer-->
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Simpan</button>
+                          </div>
+                          <?= form_close(); ?>
+                        </div>
+                      </div>
+                    </div>
+                  <?php  } ?>
                 </div>
-                <?php  } ?>
+              </form>
+
             </div>
-          </form>
-
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
 
 
-  <!-- hapus -->
-  <!-- end hapus -->
+    <!-- hapus -->
+    <!-- end hapus -->
 
 
 
 
-  <!-- modal edit -->
-  <!-- end modal edit -->
+    <!-- modal edit -->
+    <!-- end modal edit -->
 
 
 
-<!--===================================================-->
-<!--End page content-->
+    <!--===================================================-->
+    <!--End page content-->
 
-<!--jQuery [ REQUIRED ]-->
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<script>
-  $(document).ready(function () {
-
-
-    $('#demo-dp-txtinputmasukkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
-
-    $('#demo-dp-txtinputakhirkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
+    <script>
+      $(document).ready(function () {
 
 
+        $('#demo-dp-txtinputmasukkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
-  });
-</script>
+        $('#demo-dp-txtinputakhirkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
 
-<script type="text/javascript">
+
+      });
+    </script>
 
 
-  function tampilkanPreview(userfile,idpreview)
-  {
-    var gb = userfile.files;
-    for (var i = 0; i < gb.length; i++)
-    {
-      var gbPreview = gb[i];
-      var imageType = /image.*/;
-      var preview=document.getElementById(idpreview);
-      var reader = new FileReader();
-      if (gbPreview.type.match(imageType))
+    <script type="text/javascript">
+
+
+      function tampilkanPreview(userfile,idpreview)
       {
+        var gb = userfile.files;
+        for (var i = 0; i < gb.length; i++)
+        {
+          var gbPreview = gb[i];
+          var imageType = /image.*/;
+          var preview=document.getElementById(idpreview);
+          var reader = new FileReader();
+          if (gbPreview.type.match(imageType))
+          {
       //jika tipe data sesuai
       preview.file = gbPreview;
       reader.onload = (function(element)
