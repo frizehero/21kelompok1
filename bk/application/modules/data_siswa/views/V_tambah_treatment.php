@@ -67,7 +67,7 @@
                       $gambar = $res->foto_siswa;
                       ?>
                       <div class="pad-ver">
-                        <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa?>" height="180"  width="180" class="img-lg- img-box" alt="Profile Picture">
+                        <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa?>" style="height: 180px " style="width: 180px" class="img-lg- img-box" alt="Profile Picture">
                         </div><?php } ?>
                       </div>
                       <div class="col-sm-3"><br>
