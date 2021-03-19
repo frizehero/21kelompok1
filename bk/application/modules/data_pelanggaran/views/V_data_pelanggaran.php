@@ -77,8 +77,8 @@
 
           <!--Profile Widget-->
           <!--===================================================-->
-          <div class="panel panel-info panel-colorful">
-            <div class="pad-all text-left">
+          <div class="panel panel-info panel-colorful" style="height: 150px ">
+            <div class="pad-all text-left"><br>
               <span class="pull-right">+ <?php echo $res->point ?> point</span><br>
               <p><?php echo $res->nama_pelanggaran ?></p>
 

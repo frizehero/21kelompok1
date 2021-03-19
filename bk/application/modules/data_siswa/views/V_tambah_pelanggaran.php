@@ -153,7 +153,7 @@
 
                               <div><h5>Penjelasan Menu :</h5>
                                 <p></p>
-                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
                               </div><hr>
 
                               <table>
