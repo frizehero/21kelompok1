@@ -80,10 +80,10 @@ class Data_siswa extends MX_Controller {
 	}
 
 
-	function edit()
+	function edit($id)
 	{
 		$this->m_data_siswa->edit($id);
-		redirect('data_siswa');
+		redirect('data_siswa/details/'. $id);
 	}
 
 

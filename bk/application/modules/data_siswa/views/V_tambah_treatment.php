@@ -154,24 +154,25 @@
                                 <p></p>
                                 <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu treatment supaya dapat memperbaiki nilai sikap siswa.</p>
                               </div><hr>
-
-                              <div>
-                                <p>
-                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Kelas :</b> <?php echo $res->kelas?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
-                               </p>
-                             </div><hr>
+                              <table border="0">
+                                <tr>
+                                  <td><b>Nama</b></td>
+                                  <td> :  <?php echo $res->nama_siswa?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Kelas</b></td>
+                                  <td> :  <?php echo $res->kelas?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Jenis Kelamin </b></td>
+                                  <td> :  <?php echo $res->jenis_kelamin_siswa?></td>
+                                </tr>
+                              </table>
+                             <hr>
 
                              <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama treatment</b></label>
-                              <input type="text" disabled name="nama_treatment" placeholder="Nama Treatment" class="form-control" value="<?= $res->nama_treatment ?>">
+                              <textarea type="text" disabled name="nama_treatment" placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
                             </div>
 
                             <div class="col-md-6">

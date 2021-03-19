@@ -51,7 +51,7 @@
        <select name="jurusan" id="demo-ease">
          <option  value="">Jurusan</option>
         <?php  foreach($filter_jur as $jur) { ?>
-          <option  value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
+          <option <?php echo ($jur->jurusan == $jur->id_jurusan) ? "selected": "" ?> value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
         <?php } ?>
       </select>
     </div>
@@ -59,7 +59,7 @@
      <select name="kelas" id="demo-ease">
        <option  value="">kelas</option>
       <?php  foreach($filter_kel as $kel) { ?>
-      <option value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+      <option <?php echo ($kel->kelas == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
     <?php }?>
     </select>
   </div>

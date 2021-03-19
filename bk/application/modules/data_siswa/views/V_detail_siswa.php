@@ -329,7 +329,7 @@
           <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
           <h4 class="modal-title">Update</h4>
         </div>
-        <?= form_open_multipart('data_siswa/edit/'); ?>
+        <?= form_open_multipart('data_siswa/edit/'.$res->id_siswa); ?>
         <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa?>">
 
         <!--Modal body--> 
@@ -361,7 +361,7 @@
               <label for="kelas" class="control-label">Kelas Siswa </label>
               <select name="kelas" id="kelas" class="form-control" required="">
                 <option <?php echo ($res->kelas == 'X') ? "selected": "" ?> value="1">X</option>
-                <option <?php echo ($res->res->kelas == 'XI') ? "selected": "" ?> value="2">XI</option>
+                <option <?php echo ($res->kelas == 'XI') ? "selected": "" ?> value="2">XI</option>
                 <option <?php echo ($res->kelas == 'XII') ? "selected": "" ?> value="3">XII</option>
               </select>
             </div>
