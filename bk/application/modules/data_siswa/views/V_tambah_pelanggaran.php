@@ -133,7 +133,7 @@
 
                     </div>
                   </div>                
-                </div>
+                </div><br>
                 <?php  } ?><br>
                 <?php foreach($tampil1 as $res) {
                   $id = $res->id_pelanggaran_kerapian;
@@ -142,7 +142,7 @@
                  
                   <!--Profile Widget-->
                   <!--===================================================-->
-                  <div class="panel panel-info panel-colorful">
+                  <div class="panel panel-purple panel-colorful">
                     <div class="pad-all text-left">
                       <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
                       + <?php echo  $res->point?> point
@@ -150,7 +150,7 @@
 
                     </div>
                   </div>                
-                </div>
+                </div><br>
                 <?php  } ?><br>
                 <?php foreach($tampil2 as $res) {
                   $id = $res->id_pelanggaran_berat;
@@ -159,7 +159,7 @@
                  
                   <!--Profile Widget-->
                   <!--===================================================-->
-                  <div class="panel panel-info panel-colorful">
+                  <div class="panel panel-dark panel-colorful">
                     <div class="pad-all text-left">
                       <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
                       + <?php echo  $res->point?> point

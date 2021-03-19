@@ -284,4 +284,14 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
+	function cari1()
+	{
+		$cari1 		= $this->input->post('cari1');
+		return $this->db->like('nama_pelanggaran',$cari1)
+		->select('*')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = data_pelanggaran.id_pelanggaran')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = data_pelanggaran.id_pelanggaran_berat')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = data_pelanggaran.id_pelanggaran_kerapian')
+		->get('data_pelanggaran')->result();
+	}
 }

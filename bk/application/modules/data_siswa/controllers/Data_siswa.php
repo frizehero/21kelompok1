@@ -122,4 +122,15 @@ class Data_siswa extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function cari1()
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_tambah_pelanggaran",
+			'cari1'			=> $this->m_data_siswa->cari1($id),
+			'tampil1'		=> $this->m_data_siswa->cari2($id),
+			'tampil2'		=> $this->m_data_siswa->cari3($id),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }
