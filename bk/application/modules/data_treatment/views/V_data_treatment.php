@@ -62,9 +62,9 @@
 
           <!--Profile Widget-->
           <!--===================================================-->
-          <div class="panel panel-info panel-colorful">
+          <div class="panel panel-info panel-colorful" style="height: 150px">
             <div class="pad-all text-left">
-              <span class="pull-right"><?php echo $res->point ?> Point</span><br>
+              <span class="pull-right">- <?php echo $res->point ?> Point</span><br>
               <p><?php echo $res->nama_treatment ?></p>
 
               <div class="btn-group btn-group-justified pad-top">

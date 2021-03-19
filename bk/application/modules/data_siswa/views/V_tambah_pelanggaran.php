@@ -93,7 +93,8 @@
                 </div>
                 <hr>
 
-                <td>Cari pelanggaran</td><br>
+                <td>Cari pelanggaran</td>
+                <p></p>
                 <form action="<?php echo site_url('data_pelanggaran/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
@@ -115,8 +116,6 @@
               </form><br><br><hr>
 
               <form action="#" method="post">
-                <label>Keterangan Pelanggaran Siswa</label>
-                <input type="text" placeholder="Keterangan" class="form-control" height="100%"><br>
                 <p>Pilih pelanggaran :</p>
                 <?php foreach($tampil as $res) {
                   $id = $res->id_pelanggaran;
@@ -125,11 +124,11 @@
                  
                   <!--Profile Widget-->
                   <!--===================================================-->
-                  <div class="panel panel-info panel-colorful">
+                  <div class="panel panel-info panel-colorful" style="height: 150px">
                     <div class="pad-all text-left">
                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
-                      + <?php echo  $res->point?> point
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                      + <?php echo  $res->point?> point<br>
                       <p><?php echo  $res->nama_pelanggaran?></p>
 
                     </div>
@@ -157,33 +156,34 @@
                                 <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
                               </div><hr>
 
-                              <div>
-                                <p>
-                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Kelas :</b> <?php echo $res->kelas?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
-                               </p>
-                             </div><hr>
+                              <table>
+                                <tr>
+                                  <td><b>Nama</b></td>
+                                  <td>:  <?php echo $res->nama_siswa?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Kelas</b></td>
+                                  <td>:  <?php echo $res->kelas?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Jenis Kelamin</b></td>
+                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                </tr>
+                              </table><hr>
 
                              <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <input type="text" disabled name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran ?>">
+                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
                             </div>
 
                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>point</b> </label>
+                              <label for="" class="control-label"><b>Point</b> </label>
                               <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                             </div>
 
                             <div class="col-md-12">
-                              <label for="" class="control-label"><b>keterangan</b></label>
-                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <label for="" class="control-label"><b>Keterangan</b></label>
+                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
@@ -199,7 +199,7 @@
                         </div>
                       </div>
                     </div>
-                <?php  } ?><br>
+                <?php  } ?>
                 <?php foreach($tampil1 as $res) {
                   $id = $res->id_pelanggaran_kerapian;
                   ?>
@@ -207,10 +207,10 @@
                  
                   <!--Profile Widget-->
                   <!--===================================================-->
-                  <div class="panel panel-purple panel-colorful">
+                  <div class="panel panel-purple panel-colorful" style="height: 150px">
                     <div class="pad-all text-left">
-                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran_kerapian?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
+                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
                       + <?php echo  $res->point?> point
                       <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
 
@@ -239,33 +239,34 @@
                                 <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
                               </div><hr>
 
-                              <div>
-                                <p>
-                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Kelas :</b> <?php echo $res->kelas?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
-                               </p>
-                             </div><hr>
+                              <table>
+                                <tr>
+                                  <td><b>Nama</b></td>
+                                  <td>:  <?php echo $res->nama_siswa?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Kelas</b></td>
+                                  <td>:  <?php echo $res->kelas?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Jenis Kelamin</b></td>
+                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                </tr>
+                              </table><hr>
 
                              <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <input type="text" disabled name="nama_pelanggaran_kerapian" placeholder="Nama pelanggaran Kerapian" class="form-control" value="<?= $res->nama_pelanggaran_kerapian ?>">
+                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
                             </div>
 
                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>point</b> </label>
+                              <label for="" class="control-label"><b>Point</b> </label>
                               <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                             </div>
 
                             <div class="col-md-12">
-                              <label for="" class="control-label"><b>keterangan</b></label>
-                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <label for="" class="control-label"><b>Keterangan</b></label>
+                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
@@ -281,7 +282,7 @@
                         </div>
                       </div>
                     </div>
-                <?php  } ?><br>
+                <?php  } ?>
                 <?php foreach($tampil2 as $res) {
                   $id = $res->id_pelanggaran_berat;
                   ?>
@@ -289,10 +290,10 @@
                  
                   <!--Profile Widget-->
                   <!--===================================================-->
-                  <div class="panel panel-dark panel-colorful">
+                  <div class="panel panel-dark panel-colorful" style="height: 150px">
                     <div class="pad-all text-left">
                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
                       + <?php echo  $res->point?> point
                       <p><?php echo  $res->nama_pelanggaran_berat?></p>
 
@@ -321,33 +322,34 @@
                                 <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
                               </div><hr>
 
-                              <div>
-                                <p>
-                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Kelas :</b> <?php echo $res->kelas?>
-                               </p>
-                               <p></p>
-                               <p>
-                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
-                               </p>
-                             </div><hr>
+                              <table>
+                                <tr>
+                                  <td><b>Nama</b></td>
+                                  <td>:  <?php echo $res->nama_siswa?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Kelas</b></td>
+                                  <td>:  <?php echo $res->kelas?></td>
+                                </tr>
+                                <tr>
+                                  <td><b>Jenis Kelamin</b></td>
+                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                </tr>
+                              </table><hr>
 
                              <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <input type="text" disabled name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran_berat ?>">
+                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
                             </div>
 
                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>point</b> </label>
+                              <label for="" class="control-label"><b>Point</b> </label>
                               <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                             </div>
 
                             <div class="col-md-12">
-                              <label for="" class="control-label"><b>keterangan</b></label>
-                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <label for="" class="control-label"><b>Keterangan</b></label>
+                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>

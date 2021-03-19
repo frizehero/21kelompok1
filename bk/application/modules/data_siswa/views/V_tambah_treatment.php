@@ -93,7 +93,8 @@
                 </div>
                 <hr>
 
-                <td>Cari Treatment</td><br>
+                <td>Cari Treatment</td>
+                <p></p>
                 <form action="<?php echo site_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
@@ -123,11 +124,11 @@
 
                     <!--Profile Widget-->
                     <!--===================================================-->
-                    <div class="panel panel-info panel-colorful">
+                    <div class="panel panel-info panel-colorful" style="height: 150px">
                       <div class="pad-all text-left">
                         <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_treatment?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
-                          <?php echo  $res->point?>
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                          - <?php echo  $res->point?>
                           <p><?php echo  $res->nama_treatment?></p>
 
                         </div>
@@ -137,7 +138,7 @@
                       <div class="modal-dialog">
                         <div class="modal-content">
 
-                          <!--Modal Update-->
+                          <!--Modal Perbaikan-->
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Perbaikan Siswa</h4>
@@ -154,35 +155,35 @@
                                 <p></p>
                                 <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu treatment supaya dapat memperbaiki nilai sikap siswa.</p>
                               </div><hr>
-                              <table border="0">
+                              <table>
                                 <tr>
                                   <td><b>Nama</b></td>
-                                  <td> :  <?php echo $res->nama_siswa?></td>
+                                  <td>:  <?php echo $res->nama_siswa?></td>
                                 </tr>
                                 <tr>
                                   <td><b>Kelas</b></td>
-                                  <td> :  <?php echo $res->kelas?></td>
+                                  <td>:  <?php echo $res->kelas?></td>
                                 </tr>
                                 <tr>
-                                  <td><b>Jenis Kelamin </b></td>
-                                  <td> :  <?php echo $res->jenis_kelamin_siswa?></td>
+                                  <td><b>Jenis Kelamin</b></td>
+                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
                                 </tr>
                               </table>
-                             <hr>
+                              <hr>
 
                              <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama treatment</b></label>
-                              <textarea type="text" disabled name="nama_treatment" placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
+                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
                             </div>
 
                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>point</b> </label>
-                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                              <label for="" class="control-label"><b>Point</b> </label>
+                              <input type="text" disabled name="Point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                             </div>
 
                             <div class="col-md-12">
-                              <label for="" class="control-label"><b>keterangan</b></label>
-                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <label for="" class="control-label"><b>Keterangan</b></label>
+                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
