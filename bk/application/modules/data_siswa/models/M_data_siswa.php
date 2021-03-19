@@ -155,7 +155,7 @@ class M_data_siswa extends CI_Model {
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get();
-		return $query->row_array();
+		return $query->result();
 	}
 
 
@@ -283,15 +283,5 @@ class M_data_siswa extends CI_Model {
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
 
-	}
-	function cari1()
-	{
-		$cari1 		= $this->input->post('cari1');
-		return $this->db->like('nama_pelanggaran',$cari1)
-		->select('*')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = data_pelanggaran.id_pelanggaran')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = data_pelanggaran.id_pelanggaran_berat')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = data_pelanggaran.id_pelanggaran_kerapian')
-		->get('data_pelanggaran')->result();
 	}
 }

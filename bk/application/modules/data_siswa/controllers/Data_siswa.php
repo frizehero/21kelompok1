@@ -83,7 +83,7 @@ class Data_siswa extends MX_Controller {
 	function edit()
 	{
 		$this->m_data_siswa->edit($id);
-		redirect('data_siswa/details/',$id);
+		redirect('data_siswa');
 	}
 
 
@@ -119,17 +119,6 @@ class Data_siswa extends MX_Controller {
 			'tampil'		=> $this->m_data_siswa->tampilpelanggaran($id),
 			'tampil1'		=> $this->m_data_siswa->tampil1($id),
 			'tampil2'		=> $this->m_data_siswa->tampil2($id),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	function cari1()
-	{
-		$data = array(
-			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_tambah_pelanggaran",
-			'cari1'			=> $this->m_data_siswa->cari1($id),
-			'tampil1'		=> $this->m_data_siswa->cari2($id),
-			'tampil2'		=> $this->m_data_siswa->cari3($id),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
