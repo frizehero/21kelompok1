@@ -127,13 +127,78 @@
                   <!--===================================================-->
                   <div class="panel panel-info panel-colorful">
                     <div class="pad-all text-left">
-                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
+                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
                       + <?php echo  $res->point?> point
                       <p><?php echo  $res->nama_pelanggaran?></p>
 
                     </div>
                   </div>                
-                </div><br>
+                </div>
+                <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!--Modal Update-->
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                          </div>
+                          <?= form_open_multipart('data_pelanggaran/tambah'); ?>
+                          <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
+
+                          <!--Modal body--> 
+                          <div class="modal-body">
+
+                            <div class="panel-body">
+
+                              <div><h5>Penjelasan Menu :</h5>
+                                <p></p>
+                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                              </div><hr>
+
+                              <div>
+                                <p>
+                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Kelas :</b> <?php echo $res->kelas?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
+                               </p>
+                             </div><hr>
+
+                             <div class="col-md-6">
+                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                              <input type="text" disabled name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran ?>">
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="" class="control-label"><b>point</b> </label>
+                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                            </div>
+
+                            <div class="col-md-12">
+                              <label for="" class="control-label"><b>keterangan</b></label>
+                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              </div>
+
+                            </div>
+
+
+                          </div>
+
+                          <!--Modal footer-->
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Simpan</button>
+                          </div>
+                          <?= form_close(); ?>
+                        </div>
+                      </div>
+                    </div>
                 <?php  } ?><br>
                 <?php foreach($tampil1 as $res) {
                   $id = $res->id_pelanggaran_kerapian;
@@ -144,13 +209,78 @@
                   <!--===================================================-->
                   <div class="panel panel-purple panel-colorful">
                     <div class="pad-all text-left">
-                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
+                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran_kerapian?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
                       + <?php echo  $res->point?> point
                       <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
 
                     </div>
                   </div>                
-                </div><br>
+                </div>
+                <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!--Modal Update-->
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                          </div>
+                          <?= form_open_multipart('data_pelanggaran_kerapian/tambah'); ?>
+                          <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian?>">
+
+                          <!--Modal body--> 
+                          <div class="modal-body">
+
+                            <div class="panel-body">
+
+                              <div><h5>Penjelasan Menu :</h5>
+                                <p></p>
+                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                              </div><hr>
+
+                              <div>
+                                <p>
+                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Kelas :</b> <?php echo $res->kelas?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
+                               </p>
+                             </div><hr>
+
+                             <div class="col-md-6">
+                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                              <input type="text" disabled name="nama_pelanggaran_kerapian" placeholder="Nama pelanggaran Kerapian" class="form-control" value="<?= $res->nama_pelanggaran_kerapian ?>">
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="" class="control-label"><b>point</b> </label>
+                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                            </div>
+
+                            <div class="col-md-12">
+                              <label for="" class="control-label"><b>keterangan</b></label>
+                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              </div>
+
+                            </div>
+
+
+                          </div>
+
+                          <!--Modal footer-->
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Simpan</button>
+                          </div>
+                          <?= form_close(); ?>
+                        </div>
+                      </div>
+                    </div>
                 <?php  } ?><br>
                 <?php foreach($tampil2 as $res) {
                   $id = $res->id_pelanggaran_berat;
@@ -161,13 +291,78 @@
                   <!--===================================================-->
                   <div class="panel panel-dark panel-colorful">
                     <div class="pad-all text-left">
-                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span><br>
+                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br>
                       + <?php echo  $res->point?> point
                       <p><?php echo  $res->nama_pelanggaran_berat?></p>
 
                     </div>
                   </div>                
                 </div>
+                <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+
+                          <!--Modal Update-->
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                          </div>
+                          <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
+                          <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
+
+                          <!--Modal body--> 
+                          <div class="modal-body">
+
+                            <div class="panel-body">
+
+                              <div><h5>Penjelasan Menu :</h5>
+                                <p></p>
+                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                              </div><hr>
+
+                              <div>
+                                <p>
+                                 <b>Nama :</b> <?php echo $res->nama_siswa?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Kelas :</b> <?php echo $res->kelas?>
+                               </p>
+                               <p></p>
+                               <p>
+                                 <b>Jenis Kelamin :</b> <?php echo $res->jenis_kelamin_siswa?>
+                               </p>
+                             </div><hr>
+
+                             <div class="col-md-6">
+                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                              <input type="text" disabled name="nama_pelanggaran" placeholder="Nama pelanggaran" class="form-control" value="<?= $res->nama_pelanggaran_berat ?>">
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="" class="control-label"><b>point</b> </label>
+                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                            </div>
+
+                            <div class="col-md-12">
+                              <label for="" class="control-label"><b>keterangan</b></label>
+                              <textarea type="text" name="keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              </div>
+
+                            </div>
+
+
+                          </div>
+
+                          <!--Modal footer-->
+                          <div class="modal-footer">
+                            <button class="btn btn-primary" type="submit">Simpan</button>
+                          </div>
+                          <?= form_close(); ?>
+                        </div>
+                      </div>
+                    </div>
                 <?php  } ?>
             </div>
           </form>
