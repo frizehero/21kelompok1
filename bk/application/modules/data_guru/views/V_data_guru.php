@@ -74,14 +74,46 @@
                 <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_guru ?>">
 
                 <div class="list-group bg-trans mar-no">
-                  <p>
-                   <b>Nip :</b><?= $res->nip?><br>
-                   <b>Tgl Lahir :</b><?= $res->tgl_lahir_guru?><br>
-                   <b>Alamat :</b><?= $res->alamat_guru?><br>
-                   <b>Jenis Kelamin :</b><?= $res->jenis_kelamin_guru?><br>
-                   <b>Username :</b><?= $res->username?><br>
-                   <b>Password :</b><?= $res->password?><br>
-                 </p>
+                    <p class="pull-right"><?= $res->nip?></p>
+                    <p class="text-semibold">Nip</p>
+                    <p class="pull-right"><?= $res->tgl_lahir_guru?></p>
+                    <p class="text-semibold">Tgl Lahir</p>
+                    <p class="pull-right"><?= $res->alamat_guru?></p>
+                    <p class="text-semibold">Alamat</p>
+                    <p class="pull-right"><?= $res->jenis_kelamin_guru?></p>
+                    <p class="text-semibold">Jenis Kelamin</p>
+                    <p class="pull-right"><?= $res->username?></p>
+                    <p class="text-semibold">Username</p>
+                    <p class="pull-right"><?= $res->password?></p>
+                    <p class="text-semibold">Password</p>
+
+                    <!-- <table border="0">
+                      <tr>
+                        <td><b>Nip</b></td>
+                        <td class="text-right"><?= $res->nip?></td>
+                      </tr>
+                      <tr>
+                        <td><b>Tgl Lahir</b></td>
+                        <td class="text-right"><?= $res->tgl_lahir_guru?></td>
+                      </tr>
+                      <tr>
+                        <td><b>Alamat</b></td>
+                        <td class="text-right"><?= $res->alamat_guru?></td>
+                      </tr>
+                      <tr>
+                        <td><b>Jenis Kelamin </b></td>
+                        <td class="text-right"><?= $res->jenis_kelamin_guru?></td>
+                      </tr>
+                      <tr>
+                        <td><b>Username</b></td>
+                        <td class="text-right"><?= $res->username?></td>
+                      </tr>
+                      <tr>
+                        <td><b>Password</b></td>
+                        <td class="text-right"><?= $res->password?></td>
+                      </tr>
+                    </table> -->
+                   
                  <div class="text-center pad-to">
                   <div class="btn-group">
                     <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_guru?>" class="btn btn-sm btn-danger">
