@@ -109,8 +109,8 @@
                 <p class="modal-title text-1x text-semibold">Update</p>
               </div>
               <?= form_open_multipart('data_guru/edit'); ?>
-              <input type="text" name="id_guru" value="<?php echo $res->id_guru?>">
-              <input type="text" name="id_user" value="<?php echo $res->id_user?>">
+              <input type="hidden" name="id_guru" value="<?php echo $res->id_guru?>">
+              <input type="hidden" name="id_user" value="<?php echo $res->id_user?>">
 
               <!--Modal body--> 
               <div class="modal-body">
