@@ -1,9 +1,5 @@
   <!--CONTENT CONTAINER-->
   <!--===================================================-->
-<?php 
-$fkel = $kelas_fil;
-$fjur = $jur_fil;
- ?>
   <div id="page-head">
   	<!--Page Title-->
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -53,7 +49,7 @@ $fjur = $jur_fil;
       <div class="select">
        <select name="jurusan" id="demo-ease">
          <option  value="">Jurusan</option>
-        <?php  foreach($filter_jur as $jur) { ?>
+        <?php  foreach($filter_jur as $jur) { $fjur = $jur_fil;  ?>
           <option <?php echo ($fjur == $jur->id_jurusan) ? "selected": "" ?> value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
         <?php } ?>
       </select>
@@ -61,7 +57,7 @@ $fjur = $jur_fil;
     <div class="select">
      <select name="kelas" id="demo-ease">
        <option  value="">kelas</option>
-      <?php  foreach($filter_kel as $kel) { ?>
+      <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
       <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
     <?php }?>
     </select>
