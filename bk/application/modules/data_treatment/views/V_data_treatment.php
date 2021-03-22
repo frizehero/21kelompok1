@@ -34,7 +34,7 @@
           <?php } ?>
           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Treatment">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" type="submit">cari</button>
@@ -157,10 +157,24 @@
       </div>
     </div>
 
-
   <?php } ?> 
-</div>
 
+</div><hr>
+<nav>
+  <ul class="pagination  justify-content-end<span style="color: #ff0000;></span>
+    <li class="page-item">
+      <span class="page-link">Sebelumnya</span>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Selanjutnya</a>
+    </li>
+  </ul>
+</nav>
 </div>
 </div>
 

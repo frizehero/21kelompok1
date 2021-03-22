@@ -95,14 +95,14 @@
 
                 <td>Cari Treatment</td>
                 <p></p>
-                <form action="<?php echo site_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
                       <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
                     <?php } ?>
                     <?php if($this->uri->segment(2) == 'cari'){
                       $cari = $this->input->post('cari'); ?>
-                      <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+                      <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Treatment">
                     <?php } ?> 
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
@@ -193,7 +193,7 @@
 
                           <!--Modal footer-->
                           <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
+                            <button class="btn btn-primary" type="submit">Tambah</button>
                           </div>
                           <?= form_close(); ?>
                         </div>
@@ -208,7 +208,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- hapus -->
     <!-- end hapus -->
