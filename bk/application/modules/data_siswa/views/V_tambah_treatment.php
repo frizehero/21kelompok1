@@ -24,7 +24,7 @@
   <!--End breadcrumb-->
   <div class="text-left breadcrumb">
     <div id="demo-custom-toolbar5" class="table-toolbar-left">
-      <a class="btn btn-default text-left" type="button" href="<?php echo base_url('data_siswa') ?>">Kembali</a>
+      <a class="btn btn-default text-left" type="button" href="javascript:window.history.go(-1);">Kembali</a>
     </div>  
   </div><br>
 
@@ -95,7 +95,7 @@
 
                 <td>Cari Treatment</td>
                 <p></p>
-                <form action="<?php echo base_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_treatment/tampiltreatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
                       <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
@@ -171,19 +171,19 @@
                               </table>
                               <hr>
 
-                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>Nama treatment</b></label>
-                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Nama treatment</b></label>
+                                <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
+                              </div>
 
-                            <div class="col-md-6">
-                              <label for="" class="control-label"><b>Point</b> </label>
-                              <input type="text" disabled name="Point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Point</b> </label>
+                                <input type="text" disabled name="Point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                              </div>
 
-                            <div class="col-md-12">
-                              <label for="" class="control-label"><b>Keterangan</b></label>
-                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <div class="col-md-12">
+                                <label for="" class="control-label"><b>Keterangan</b></label>
+                                <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
