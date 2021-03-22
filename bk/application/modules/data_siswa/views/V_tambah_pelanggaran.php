@@ -5,7 +5,7 @@
   <!--Page Title-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <div id="page-title">
-    <h1 class="page-header text-overflow">Perbaikan Siswa</h1>
+    <h1 class="page-header text-overflow">Penambahan point Siswa</h1>
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End page title-->
@@ -18,7 +18,7 @@
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
-    <li class="active">Perbaikan Siswa</li>
+    <li class="active">Penambahan point Siswa</li>
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
