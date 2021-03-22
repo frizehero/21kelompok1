@@ -22,34 +22,6 @@ class Data_laporan extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-
-	function tambah()
-	{
-		$this->m_data_laporan->tambah();
-		redirect('data_laporan');
-	}
-
-	function edit()
-	{
-		$this->m_data_laporan->edit();
-		redirect('data_laporan');
-	}
-
-	function hapus($id)
-	{
-		$this->m_data_laporan->hapus($id);
-		redirect('data_laporan');
-	}
-
-	function cari()
-	{
-		$data = array(
-			'namamodule' 	=> "data_laporan",
-			'namafileview' 	=> "V_data_laporan",
-			'tampil'		=> $this->m_data_laporan->cari(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
 	
 }
  

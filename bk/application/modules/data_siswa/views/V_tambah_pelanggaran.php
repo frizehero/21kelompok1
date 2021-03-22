@@ -5,7 +5,7 @@
   <!--Page Title-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <div id="page-title">
-    <h1 class="page-header text-overflow">Perbaikan Siswa</h1>
+    <h1 class="page-header text-overflow">Penambahan point Siswa</h1>
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End page title-->
@@ -18,13 +18,13 @@
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
-    <li class="active">Perbaikan Siswa</li>
+    <li class="active">Penambahan point Siswa</li>
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
   <div class="text-left breadcrumb">
     <div id="demo-custom-toolbar5" class="table-toolbar-left">
-      <a class="btn btn-default text-left" type="button" href="<?php echo base_url('data_siswa') ?>">Kembali</a>
+      <a class="btn btn-default text-left" type="button" href="javascript:window.history.go(-1);">Kembali</a>
     </div>  
   </div><br>
 
@@ -95,7 +95,7 @@
 
                 <td>Cari pelanggaran</td>
                 <p></p>
-                <form action="<?php echo site_url('data_pelanggaran/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo site_url('data_siswa/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
                       <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
@@ -107,7 +107,7 @@
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran'); ?>">
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">
                       <i class="fa fa-refresh" ></i>
                     </a>
                   </div> 
@@ -141,7 +141,7 @@
                           <!--Modal Update-->
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                            <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
                           <?= form_open_multipart('data_pelanggaran/tambah'); ?>
                           <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
@@ -224,7 +224,7 @@
                           <!--Modal Update-->
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                            <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
                           <?= form_open_multipart('data_pelanggaran_kerapian/tambah'); ?>
                           <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian?>">
@@ -236,7 +236,7 @@
 
                               <div><h5>Penjelasan Menu :</h5>
                                 <p></p>
-                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
                               </div><hr>
 
                               <table>
@@ -307,7 +307,7 @@
                           <!--Modal Update-->
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Perbaikan Siswa</h4>
+                            <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
                           <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
                           <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
@@ -319,7 +319,7 @@
 
                               <div><h5>Penjelasan Menu :</h5>
                                 <p></p>
-                                <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu pelanggaran supaya dapat memperbaiki nilai sikap siswa.</p>
+                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
                               </div><hr>
 
                               <table>
