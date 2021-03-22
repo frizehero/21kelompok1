@@ -14,12 +14,12 @@
         <!--Breadcrumb-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <ol class="breadcrumb">
-           <li><a href="#"><i class="demo-pli-home"></i></a></li>
-           <li><a href="#">Laporan</a></li>
-       </ol>
-       <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-       <!--End breadcrumb-->
-       <div class="pad-all text-center ">
+         <li><a href="#"><i class="demo-pli-home"></i></a></li>
+         <li><a href="#">Laporan</a></li>
+     </ol>
+     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+     <!--End breadcrumb-->
+     <div class="pad-all text-center ">
         <div class="box-inline mar-btm pad-rgt">
             Pilih Tanggal :
             <div class="select">
@@ -34,114 +34,117 @@
             <button class="btn btn-default">Filter</button>
         </div>
     </div>
-
-
-
-    <div id="page-content">
+</div>
+</div>
 
 
 
 
-     <!-- Basic Data Tables -->
-     <!--===================================================-->
+<div id="page-content">
 
 
-     <div class="row">
-        <div class="col-md-3">
-            <div class="panel panel-info panel-colorful media middle pad-all ">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">132</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">RPL</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
+
+
+   <!-- Basic Data Tables -->
+   <!--===================================================-->
+
+
+   <div class="row">
+    <div class="col-md-3">
+        <div class="panel panel-info panel-colorful media middle pad-all ">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">132</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-success panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">13</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TPM</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
-                </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">RPL</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="panel panel-danger panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">30</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TKR</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-success panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">13</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-warning panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">15</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TITL</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
-                </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TPM</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="panel panel-primary panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">20</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TPK</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-danger panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">30</p>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-pink panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">10</p>
-                    </div>
-                </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TB</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
-                </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TKR</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="panel panel-info panel-colorful media middle pad-all">
-                <div class="media-left">
-                    <div class="pad-hor">
-                        <p class="text-3x mar-no text-bold">4</p>
-                    </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-warning panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">15</p>
                 </div>
-                <div class="media-body">
-                    <center><p class="text-2x mar-no text-semibold">TKJ</p></center>
-                    <center><a href="laporan-siswa.html" class="mar-no btn">Klik Untuk Detail</a></center>
+            </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TITL</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-primary panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">20</p>
                 </div>
+            </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TPK</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-pink panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">10</p>
+                </div>
+            </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TB</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-info panel-colorful media middle pad-all">
+            <div class="media-left">
+                <div class="pad-hor">
+                    <p class="text-3x mar-no text-bold">4</p>
+                </div>
+            </div>
+            <div class="media-body">
+                <center><p class="text-2x mar-no text-semibold">TKJ</p></center>
+                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
 </div>
-
 </div>
+
+
 
 
 
@@ -250,6 +253,7 @@
     <!--End network line chart-->
 
 </div>
+
 <!-- <div class="panel">
         <div class="panel-heading">
             <div class="panel-control">
@@ -299,4 +303,4 @@
 
 </div>
 
-</div>
+

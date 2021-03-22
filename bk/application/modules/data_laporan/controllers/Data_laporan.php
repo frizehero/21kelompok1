@@ -22,6 +22,16 @@ class Data_laporan extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+	// function laporan_siswa($id)
+	// {
+	// 	$data = array(
+	// 		'namamodule' 	=> "data_siswa",
+	// 		'namafileview' 	=> "V_detail_siswa",
+	// 		'tampil'		=> $this->m_data_siswa->tampildetail($id),
+	// 	);
+	// 	echo Modules::run('template/tampilCore', $data);
+	// }
 	
 }
  

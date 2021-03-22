@@ -5,7 +5,7 @@ class M_data_laporan extends CI_Model {
 
 	function tampil()
 	{
-		return $this->load->view('V_data_laporan');
+		$this->load->view('V_data_laporan');
 	}
 
 }
