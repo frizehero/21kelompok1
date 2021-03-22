@@ -95,19 +95,19 @@
 
                 <td>Cari pelanggaran</td>
                 <p></p>
-                <form action="<?php echo site_url('data_siswa/cari1') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo site_url('data_siswa/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
-                    <?php if($this->uri->segment(2) != 'cari1'){?>
-                      <input type="text" autocomplete="off" name="cari1" class="form-control" placeholder="Cari">
+                    <?php if($this->uri->segment(2) != 'cari'){?>
+                      <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
                     <?php } ?>
-                    <?php if($this->uri->segment(2) == 'cari1'){
-                      $cari1 = $this->input->post('cari1'); ?>
-                      <input type="text" autocomplete="off" value="<?= $cari1 ?>" name="cari1" class="form-control " placeholder="Outlet">
+                    <?php if($this->uri->segment(2) == 'cari'){
+                      $cari = $this->input->post('cari'); ?>
+                      <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
                     <?php } ?> 
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran'); ?>">
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">
                       <i class="fa fa-refresh" ></i>
                     </a>
                   </div> 
