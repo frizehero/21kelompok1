@@ -5,7 +5,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Magang - Hummasoft</title>
+        <title>BK-2021</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta content="width=device-width, initial-scale=1" name="viewport" />
 
@@ -42,16 +42,16 @@
         <div class="user-login-5">
             <div class="row bs-reset">
                 <div class="col-md-6 bs-reset mt-login-5-bsfix">
-                    <div class="login-bg" style="background-image:url(<?php echo base_url(); ?>assets/login/pages/img/login/1.jpg)">
+                    <div class="login-bg" style="background-image:url(<?php echo base_url(); ?>assets/login/pages/img/login/images12.jpg)">
                         </div>
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="col-md-12">
-                        <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/magang1.png" style="width:200px"/> 
+                        <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/logo-ori.png" style="width:200px"/> 
                     </div>
                     <div class="login-content">
-                        <h1>CORE Hummasoft </h1>
-                        <p> Selamat datang di Hummasoft , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
+                        <h1>BK-2021 </h1>
+                        <p> Selamat datang di website BK-2021 , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
                         <?php if($cekAdmin){ 
                         
                      }
@@ -86,7 +86,7 @@
                         <form class="forget-form" action="javascript:;" method="post">
                             <h3 class="font-green">Lupa Password ?</h3>
                             <p id="pemberitahuan"> Masukkan data anda. </p>
-                             <p id="pemberitahuan2"> Anda Bukan Direktur / Admin Perusahaan. </p>
+                             <p id="pemberitahuan2"> Guru / Admin. </p>
                             <div class="form-group">
                                 <input class="form-control placeholder-no-fix form-group" id="username" type="text" autocomplete="off" placeholder="Username" name="username" /> 
                             </div>
@@ -253,11 +253,9 @@
 
                     // init background slide images
                     $('.login-bg').backstretch([
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/1.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/2.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/3.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/4.jpg",
-                        "<?php echo base_url(); ?>assets/login/pages/img/login/5.jpg"
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/images(9).jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/images(10).jpg",
+                        "<?php echo base_url(); ?>assets/login/pages/img/login/images(11).jpg"
                         ], {
                           fade: 1000,
                           duration: 5000
