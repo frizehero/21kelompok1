@@ -60,7 +60,7 @@
           <!--Profile Widget-->
           <!--===================================================-->
           <div class="panel widget">
-            <?php if($res->level == 'admin'){ ?>
+            <?php if($res->level == '1'){ ?>
               <div class="widget-header bg-warning text-center">
               <?php } else{ ?>
                 <div class="widget-header bg-info text-center">
@@ -68,7 +68,12 @@
 
 
                 <h4 class="text-light mar-no pad-top"><?= $res->nama_guru?></h4>
-                <p class="mar-btm"><?= $res->level?></p>
+                <?php if ($res->level=='1') {?>
+               <p class="mar-btm">admin</p>
+                <?php } else{ ?>
+                  <p class="mar-btm">guru</p>
+                <?php }?>
+
               </div> 
               <div class="widget-body">
                 <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_guru ?>">
@@ -84,7 +89,7 @@
                     <p class="text-semibold">Jenis Kelamin</p>
                     <p class="pull-right"><?= $res->username?></p>
                     <p class="text-semibold">Username</p>
-                    <p class="pull-right"><?= $res->password?></p>
+                    <p class="pull-right">*********</p>
                     <p class="text-semibold">Password</p>
 
                     <!-- <table border="0">
@@ -169,9 +174,9 @@
                     <?php $level = $res->level; ?>
                     <label for="" class="control-label text-muted mar-no">Level</label>
                     <select name="level" required="" class="form-control">
-                      <option <?php echo ($level == 'admin') ? "selected": ""?> value="admin">Admin
+                      <option <?php echo ($level == '1') ? "selected": ""?> value="1">Admin
                       </option>
-                      <option <?php echo ($level == 'guru') ? "selected": ""?> value="guru">Guru
+                      <option <?php echo ($level == '2') ? "selected": ""?> value="2">Guru
                       </option>
                     </select>
                   </div>
@@ -285,9 +290,9 @@
             <div class="col-md-6" style="margin-top: 2% ">
               <label for="" class="control-label">Level</label>
               <select name="level" required="" class="form-control">
-                <option  value="admin">Admin
+                <option  value="1">Admin
                 </option>
-                <option  value="guru">Guru
+                <option  value="2">Guru
                 </option>
               </select>
             </div>
