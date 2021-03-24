@@ -59,7 +59,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">RPL</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -72,7 +72,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TPM</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TKR</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -98,7 +98,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TITL</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -111,7 +111,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TPK</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -124,7 +124,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TB</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
@@ -137,7 +137,7 @@
             </div>
             <div class="media-body">
                 <center><p class="text-2x mar-no text-semibold">TKJ</p></center>
-                <center><a href="<?php  echo base_url('v_data_laporan_siswa')  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
+                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
