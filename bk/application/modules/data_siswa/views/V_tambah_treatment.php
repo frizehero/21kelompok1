@@ -93,9 +93,9 @@
                 </div>
                 <hr>
 
-                <td>Cari Treatment <?php echo $id ?></td>
+                <td>Cari Treatment</td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/').$id ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_treatment/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'cari'){?>
                       <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">

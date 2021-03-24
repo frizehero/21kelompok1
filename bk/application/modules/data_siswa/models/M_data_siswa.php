@@ -244,13 +244,6 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
-	function caritreatment()
-	{
-		$caritreatment 		= $this->input->post('$id');
-		return $this->db->like('nama_treatment',$cari)->get('data_treatment')->result();
-	}
-
-
 	/*akhir model bagian v tambah treatment*/
 
 

@@ -106,21 +106,6 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_tambah_treatment",
 			'tampil'		=> $this->m_data_siswa->tampiltreatment($id),
-			'id'			=> $id,
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	/*akhir controler tambah treatment*/
-
-
-	/*controler tambah treatment*/
-	function caritreatment($id)
-	{
-		$data = array(
-			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_tambah_treatment",
-			'tampil'		=> $this->m_data_siswa->tampiltreatment($id),
-			'id'			=> $id,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
