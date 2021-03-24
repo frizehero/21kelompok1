@@ -136,6 +136,22 @@ class Data_siswa extends MX_Controller {
 			'tampil'		=> $this->m_data_siswa->tampilpelanggaran($id),
 			'tampil1'		=> $this->m_data_siswa->tampil1($id),
 			'tampil2'		=> $this->m_data_siswa->tampil2($id),
+			'id'			=> $id,
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+	function caripelanggaran($id)
+	{
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_tambah_pelanggaran",
+			'tampil'		=> $this->m_data_siswa->tampilpelanggaran($id),
+			'tampil1'		=> $this->m_data_siswa->tampil1($id),
+			'tampil2'		=> $this->m_data_siswa->tampil2($id),
+			'caripelanggaran'		=> $this->m_data_siswa->caripelanggaran($id),
+			'caripelanggaran1'		=> $this->m_data_siswa->caripelanggaran1($id),
+			'caripelanggaran2'		=> $this->m_data_siswa->caripelanggaran2($id),
+			'id'					=> $id,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

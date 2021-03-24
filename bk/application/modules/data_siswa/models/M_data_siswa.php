@@ -249,6 +249,21 @@ class M_data_siswa extends CI_Model {
 		$caritreatment 		= $this->input->post('$id');
 		return $this->db->like('nama_treatment',$cari)->get('data_treatment')->result();
 	}
+	function caripelanggaran()
+	{
+		$caripelanggaran 		= $this->input->post('$id');
+		return $this->db->like('nama_pelanggaran',$caripelanggaran)->get('data_pelanggaran')->result();
+	}
+	function caripelanggaran1()
+	{
+		$caripelanggaran1 		= $this->input->post('$id');
+		return $this->db->like('nama_pelanggaran_kerapian',$caripelanggaran1)->get('data_pelanggaran_kerapian')->result();
+	}
+	function caripelanggaran2()
+	{
+		$caripelanggaran2 		= $this->input->post('$id');
+		return $this->db->like('nama_pelanggaran_berat',$caripelanggaran2)->get('data_pelanggaran_berat')->result();
+	}
 
 
 	/*akhir model bagian v tambah treatment*/

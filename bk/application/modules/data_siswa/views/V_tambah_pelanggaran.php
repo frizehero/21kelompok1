@@ -95,14 +95,14 @@
 
                 <td>Cari pelanggaran</td>
                 <p></p>
-                <form action="<?php echo site_url('data_siswa/cari') ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo site_url('data_siswa/caripelanggaran/').$id ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
-                    <?php if($this->uri->segment(2) != 'cari'){?>
-                      <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
+                    <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
+                      <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
                     <?php } ?>
-                    <?php if($this->uri->segment(2) == 'cari'){
-                      $cari = $this->input->post('cari'); ?>
-                      <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Outlet">
+                    <?php if($this->uri->segment(2) == 'caripelanggaran'){
+                      $caripelanggaran = $this->input->post('caripelanggaran'); ?>
+                      <input type="text" autocomplete="off" value="<?= $caripelanggaran ?>" name="caripelanggaran" class="form-control " placeholder="Outlet">
                     <?php } ?> 
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
@@ -319,7 +319,7 @@
 
                               <div><h5>Penjelasan Menu :</h5>
                                 <p></p>
-                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
+                                <p>Pelanggaran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
                               </div><hr>
 
                               <table>
