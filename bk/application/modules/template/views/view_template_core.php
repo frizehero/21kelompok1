@@ -705,7 +705,7 @@
 <script src="<?php echo base_url(); ?>assets/plugins/bootstrap-timepicker/bootstrap-timepicker.min.js"></script>
 
 <!--Demo script [ DEMONSTRATION ]-->
-<script src="<?php echo base_url(); ?>assets/js/demo/nifty-demo.min.js"></script>
+
 
 
 <!--Unite Gallery [ OPTIONAL ]-->
