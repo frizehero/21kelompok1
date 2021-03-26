@@ -13,7 +13,7 @@ class M_session extends CI_Model {
 	function getCek()
 	{
 		$this->db->select('*')
-				 ->from('tb_login');
+				 ->from('data_user');
 		$query = $this->db->get();
 		return $query;
 	}

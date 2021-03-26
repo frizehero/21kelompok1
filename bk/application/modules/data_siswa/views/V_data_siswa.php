@@ -20,12 +20,11 @@
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->
 
-
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
   		</div>
-      <form action="<?php echo site_url('data_siswa/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){?>
             <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari Siswa" required="">
@@ -35,7 +34,7 @@
             <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-            <button class="btn btn-default" type="submit">cari</button>
+            <button class="btn btn-default" name="submit" type="submit">cari</button>
           </div>
           <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
             <i class="fa fa-refresh" ></i>
@@ -49,7 +48,7 @@
       <div class="select">
        <select name="jurusan" id="demo-ease">
          <option  value="">Jurusan</option>
-        <?php  foreach($filter_jur as $jur) { $fjur = $jur_fil;  ?>
+         <?php  foreach($filter_jur as $jur) { $fjur = $jur_fil;  ?>
           <option <?php echo ($fjur == $jur->id_jurusan) ? "selected": "" ?> value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
         <?php } ?>
       </select>
@@ -57,12 +56,12 @@
     <div class="select">
      <select name="kelas" id="demo-ease">
        <option  value="">kelas</option>
-      <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
-      <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
-    <?php }?>
+       <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
+        <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+      <?php }?>
     </select>
   </div>
-  <button class="btn btn-default" type="submit">Filter</button>  
+  <button class="btn btn-default"  type="submit">Filter</button>  
 </form>
 </div>
 
@@ -72,7 +71,7 @@
   <div class="row">
    <div class="col-sm-12">
     <div class="row">
-     <?php foreach($tampil as $res) {
+     <?php foreach($row as $res) {
       $id = $res->id_siswa;
       $gambar = $res->foto_siswa;
       ?>
@@ -115,7 +114,7 @@
 </div>
 </div>
 </div>
-
+<?php echo $pagination; ?>
 
 
 <!--===================================================-->
@@ -213,39 +212,39 @@
 			<?= form_close(); ?>
 
 		</div>
-	
-</div>
-<!-- end tambah -->
+
+  </div>
+  <!-- end tambah -->
+ 
 
 
 
-<!--jQuery [ REQUIRED ]-->
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+  <!--jQuery [ REQUIRED ]-->
+  <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<script>
-	$(document).ready(function () {
-
-
-		$('#demo-dp-txtinputmasukkerja input').datepicker({
-			format: "yyyy-m-d",
-			todayBtn: "linked",
-			todayHighlight: true
-		});
-
-		$('#demo-dp-txtinputakhirkerja input').datepicker({
-			format: "yyyy-m-d",
-			todayBtn: "linked",
-			todayHighlight: true
-		});
+  <script>
+   $(document).ready(function () {
 
 
+    $('#demo-dp-txtinputmasukkerja input').datepicker({
+     format: "yyyy-m-d",
+     todayBtn: "linked",
+     todayHighlight: true
+   });
 
-	});
+    $('#demo-dp-txtinputakhirkerja input').datepicker({
+     format: "yyyy-m-d",
+     todayBtn: "linked",
+     todayHighlight: true
+   });
+
+
+
+  });
 </script>
 
 
 <script type="text/javascript">
-
 
 	function tampilkanPreview(userfile,idpreview)
 	{

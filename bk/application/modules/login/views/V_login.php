@@ -51,7 +51,7 @@
                     </div>
                     <div class="login-content">
                         <h1>BK-2021 </h1>
-                        <p> Selamat datang di website BK-2021 , silahkan login terlebih dahulu sebelum melanjutkan ke halaman dasboard . </p>
+                        <p> Selamat datang di website BK-2021 , silahkan login terlebih dahulu sebelum melanjutkan ke menu awal . </p>
                         <?php if($cekAdmin){ 
                         
                      }

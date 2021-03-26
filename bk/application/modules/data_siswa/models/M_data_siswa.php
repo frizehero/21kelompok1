@@ -3,18 +3,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_siswa extends CI_Model {
 
-	function tampil()
+	function tampil($limit, $start)
 	{
-		return $this->db->from('data_siswa')
-		->select('*')
+		$this->db->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama');
+		$query = $this->db->get('data_siswa', $limit, $start);
+		return $query->result();
+
+	}
+
+	function get_siswa($limit, $start, $st = NULL)
+	{
+		
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->get()
-		->result();
+		->like('nama_siswa',$st);
+		$query = $this->db->get('data_siswa',$limit, $start);
+		return $query->result();
+	}
+
+	function get_siswa_count($st = NULL)
+	{
+
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->like('nama_siswa',$st);
+		$query = $this->db->get('data_siswa');
+		return $query->num_rows();
 	}
 
 
+	
 
 	function tambah()
 	{
@@ -78,16 +105,9 @@ class M_data_siswa extends CI_Model {
 	}
 
 
-	function cari()
-	{
-		$cari 		= $this->input->post('cari');
-		return $this->db->like('nama_siswa',$cari)
-		->select('*')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->get('data_siswa')->result();
-	}
+
+
+	
 
 
 
