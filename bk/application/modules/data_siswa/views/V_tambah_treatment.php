@@ -93,16 +93,16 @@
                 </div>
                 <hr>
 
-                <td>Cari Treatment <?php echo $id ?></td>
+                <td>Cari Treatment </td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/').$id ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_siswa/caritreatment/')?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
-                    <?php if($this->uri->segment(2) != 'cari'){?>
-                      <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
+                    <?php if($this->uri->segment(2) != 'caritreatment'){?>
+                      <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
                     <?php } ?>
-                    <?php if($this->uri->segment(2) == 'cari'){
-                      $cari = $this->input->post('cari'); ?>
-                      <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Treatment">
+                    <?php if($this->uri->segment(2) == 'caritreatment'){
+                      $carit = $this->input->post('caritreatment'); ?>
+                      <input type="text" autocomplete="off" value="<?= $carit ?>" name="caritreatment" class="form-control " placeholder="Treatment">
                     <?php } ?> 
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
