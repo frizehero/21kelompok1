@@ -5,7 +5,7 @@ class M_data_beranda extends CI_Model {
 
 	function tampil()
 	{
-
+		
 	}
 
 }

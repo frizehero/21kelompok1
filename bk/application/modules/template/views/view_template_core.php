@@ -525,9 +525,9 @@
                         <ul id="mainnav-menu" class="list-group">
                             <li class="list-header">MENU</li>
 
-                            <?php if($this->uri->segment('1') == '#'){ ?>
+                            <?php if($this->uri->segment('1') == 'data_beranda'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('#'); ?>">
+                                    <a href="<?php echo base_url('data_beranda'); ?>">
                                         <i class="demo-pli-home"></i>
                                         <span class="menu-title">Beranda</span>
                                     </a>
@@ -535,7 +535,7 @@
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('#'); ?>">
+                                    <a href="<?php echo base_url('data_beranda'); ?>">
                                        <i class="demo-pli-home"></i>
                                         <span class="menu-title">Beranda</span>
                                     </a>
