@@ -264,10 +264,19 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
-	function caritreatment()
+	function caritreatment($carit)
 	{
-		$caritreatment 		= $this->input->post('$id');
-		return $this->db->like('nama_treatment',$cari)->get('data_treatment')->result();
+		$carit 	= $this->input->post('caritreatment');
+		$this->db->select('*')
+		->from('data_siswa')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		// ->join('data_treatment','data_treatment.id_treatment = data_siswa.id_treatment')
+		->like('nama_treatment',$carit);
+		$query = $this->db->get('data_treatment');
+		return $query->result();
+
 	}
 	function caripelanggaran()
 	{
