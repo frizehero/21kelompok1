@@ -47,20 +47,22 @@ class Login extends MX_Controller {
 		// check
 		if ( ! empty($getData) )
 		{
+			$this->M_session->store_session( $getData->id_user );
+
+			// flashdata
+			$this->session->set_flashdata('msg', 'greeting');
+
 			if ($getData->level==1 ) 
 			{
 				// masukan ke  dalam session
 			
-			redirect('data_pelanggaran');
+			redirect('data_beranda');
 			}
 			elseif ($getData->level==2) 
 			{
 				redirect('data_guru');
 			}
-			$this->M_session->store_session( $getData->id_admin );
-
-			// flashdata
-			$this->session->set_flashdata('msg', 'greeting');
+			
 
 			
 		} else { // gagal login
