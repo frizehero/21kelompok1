@@ -130,7 +130,7 @@
                     </div>
                     <div class="pad-all">
                         <div id="demo-morris-area-legend" class="text-center"></div>
-                        <div id="demo-morris-area" style="height:250px"></div>
+                        <div id="demo-morris-area" style="height:270px"></div>
                     </div>
                 </div>
                 <!---------------------------------->
@@ -157,7 +157,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/1.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/1.png" alt="Profile picture">
                                         </div> 
                                     </a>
                                     <div class="timeline-time">
@@ -183,7 +183,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/2.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/2.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -209,7 +209,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/10.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/10.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -235,7 +235,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/5.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/5.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -261,7 +261,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/4.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/4.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -312,7 +312,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/1.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/1.png" alt="Profile picture">
                                         </div> 
                                     </a>
                                     <div class="timeline-time">
@@ -338,7 +338,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/2.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/2.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -364,7 +364,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/10.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/10.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -390,7 +390,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/5.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/5.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
@@ -416,7 +416,7 @@
                                 <div class="timeline-stat">
                                     <a href="detail-siswa.html">
                                         <div class="timeline-icon">
-                                            <img src="img/profile-photos/4.png" alt="Profile picture">
+                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/4.png" alt="Profile picture">
                                         </div>
                                     </a>
                                     <div class="timeline-time">
