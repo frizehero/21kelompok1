@@ -142,16 +142,17 @@ class Data_siswa extends MX_Controller {
 	}
 	function caripelanggaran($id)
 	{
+
+		$carip			= $this->input->post('caripelanggaran');
+		$carip1			= $this->input->post('caripelanggaran1');
+		$carip2			= $this->input->post('caripelanggaran2');
 		$data = array(
 			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_tambah_pelanggaran",
-			'tampil'		=> $this->m_data_siswa->tampilpelanggaran($id),
-			'tampil1'		=> $this->m_data_siswa->tampil1($id),
-			'tampil2'		=> $this->m_data_siswa->tampil2($id),
-			'caripelanggaran'		=> $this->m_data_siswa->caripelanggaran($id),
-			'caripelanggaran1'		=> $this->m_data_siswa->caripelanggaran1($id),
-			'caripelanggaran2'		=> $this->m_data_siswa->caripelanggaran2($id),
-			'id'					=> $id,
+			'namafileview' 	=> "caripelanggaran",
+			'tampil'		=> $this->m_data_siswa->caripelanggaran($carip),
+			'tampil1'		=> $this->m_data_siswa->caripelanggaran1($carip1),
+			'tampil2'		=> $this->m_data_siswa->caripelanggaran2($carip2),
+			
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
