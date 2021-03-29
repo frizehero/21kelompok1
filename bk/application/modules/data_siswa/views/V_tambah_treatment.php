@@ -41,7 +41,6 @@
     <!--End Fixedbar-->
 
 
-
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
@@ -128,7 +127,7 @@
                       <div class="pad-all text-left">
                         <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_treatment?>">
                           <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                          - <?php echo  $res->point?>
+                          - <?php echo  $res->point?> Point
                           <p><?php echo  $res->nama_treatment?></p>
 
                         </div>

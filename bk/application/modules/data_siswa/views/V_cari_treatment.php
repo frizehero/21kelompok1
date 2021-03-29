@@ -94,7 +94,7 @@
 
                 <td>Cari Treatment </td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/')?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_siswa/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caritreatment'){?>
                       <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
