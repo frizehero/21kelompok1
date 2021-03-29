@@ -149,7 +149,7 @@
 
                             <!-- Timeline header -->
                             <div class="timeline-header">
-                                <div class="timeline-header-title bg-info"><a href="forms-validation.html"> Lihat Semua</a>
+                                <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_pelanggaran_siswa/');  ?>"> Lihat Semua</a>
                                 </div>
                             </div>
 
@@ -304,7 +304,7 @@
 
                             <!-- Timeline header -->
                             <div class="timeline-header">
-                                <div class="timeline-header-title bg-info"><a href="forms-validation.html"> Lihat Semua</a>
+                                <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_pelanggaran_siswa_hari_ini/');  ?>"> Lihat Semua</a>
                                 </div>
                             </div>
 
