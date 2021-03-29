@@ -290,9 +290,9 @@ class Data_siswa extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "caripelanggaran",
-			'tampil'		=> $this->m_data_siswa->caripelanggaran($carip),
-			'tampil1'		=> $this->m_data_siswa->caripelanggaran1($carip1),
-			'tampil2'		=> $this->m_data_siswa->caripelanggaran2($carip2),
+			'tampil'		=> $this->m_data_siswa->caripelanggaran($carip,$id),
+			'tampil1'		=> $this->m_data_siswa->caripelanggaran1($carip1,$id),
+			'tampil2'		=> $this->m_data_siswa->caripelanggaran2($carip2,$id),
 			
 		);
 		echo Modules::run('template/tampilCore', $data);

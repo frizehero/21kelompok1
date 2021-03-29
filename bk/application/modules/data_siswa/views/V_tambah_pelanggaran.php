@@ -95,7 +95,7 @@
 
                 <td>Cari pelanggaran</td>
                 <p></p>
-                <form action="<?php echo site_url('data_siswa/caripelanggaran/').$id ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo site_url('data_siswa/caripelanggaran/'.$res->id_siswa) ?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
                       <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
