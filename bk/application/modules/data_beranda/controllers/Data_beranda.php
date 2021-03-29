@@ -22,4 +22,24 @@ class Data_beranda extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+	function tampil_pelanggaran_siswa()
+	{
+		$data = array(
+			'namamodule' 	=> "data_beranda",
+			'namafileview' 	=> "V_pelanggaran_siswa",
+			'tampil'		=> $this->m_data_beranda->tampil_pelanggaran_siswa(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
+	function tampil_pelanggaran_siswa_hari_ini()
+	{
+		$data = array(
+			'namamodule' 	=> "data_beranda",
+			'namafileview' 	=> "V_pelanggaran_siswa_hari_ini",
+			'tampil'		=> $this->m_data_beranda->tampil_pelanggaran_siswa_hari_ini(),
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 }
