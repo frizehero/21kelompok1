@@ -26,7 +26,8 @@
   		</div>
       <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
-          <?php if($this->uri->segment(2) != 'cari'){?>
+          <?php if($this->uri->segment(2) != 'cari'){
+             $cari = $this->input->post('cari');?>
             <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
           <?php } ?>
           <?php if($this->uri->segment(2) == 'cari'){
