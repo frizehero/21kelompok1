@@ -66,11 +66,13 @@ class Data_siswa extends MX_Controller {
 
 	function cariku()
     {
+
+    	$nyari = $this->input->post("cari");
+    
         // get search string
         $search = ($this->input->post("cari"))? $this->input->post("cari") : "NIL";
 
         $search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
-        $caris = $this->input->post("cari");
 
         // pagination settings
         $config = array();
@@ -112,8 +114,7 @@ class Data_siswa extends MX_Controller {
 			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
 			'row'			=> $this->m_data_siswa->get_siswa($config["per_page"], $data['page'],$search),
 			'pagination' 	=> $this->pagination->create_links(),
-			'cari'			=> $caris,
-
+			'cari'			=> $nyari,
 		);
 		echo Modules::run('template/tampilCore', $data);
     }
