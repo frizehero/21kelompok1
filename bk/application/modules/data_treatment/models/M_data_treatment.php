@@ -3,10 +3,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_treatment extends CI_Model {
 
-	function tampil()
+	function tampil($limit, $start)
 	{
-		return $this->db->get('data_treatment')->result();
+		
+		$query = $this->db->get('data_treatment', $limit, $start);
+		return $query->result();
 	}
+	function get_treatment($limit, $start, $st = NULL)
+	{
+		
+		if ($st == "NIL") $st = "";
+		// $this->db->select('*')
+		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		// ->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		// ->like('nama_treatment',$st);
+		$query = $this->db->get('data_treatment',$limit, $start);
+		return $query->result();
+	}
+
+	function get_treatment_count($st = NULL)
+	{
+
+		if ($st == "NIL") $st = "";
+		// $this->db->select('*')
+		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		// ->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		// ->like('nama_treatment',$st);
+		$query = $this->db->get('data_treatment');
+		return $query->num_rows();
+	}
+
 
 	function tambah()
 	{
