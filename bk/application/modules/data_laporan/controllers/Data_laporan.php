@@ -19,6 +19,10 @@ class Data_laporan extends MX_Controller {
 			'namamodule' 	=> "data_laporan",
 			'namafileview' 	=> "V_data_laporan",
 			'tampil'		=> $this->m_data_laporan->tampil(),
+			'jum_sis'		=> $this->m_data_laporan->jum_sis(),
+			'jum_laki'		=> $this->m_data_laporan->jum_laki(),
+			'jum_perempuan'	=> $this->m_data_laporan->jum_perempuan(),
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -29,6 +33,7 @@ class Data_laporan extends MX_Controller {
 			'namamodule' 	=> "data_laporan",
 			'namafileview' 	=> "V_data_laporan_siswa",
 			'tampil'		=> $this->m_data_laporan->tampil_siswa(),
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

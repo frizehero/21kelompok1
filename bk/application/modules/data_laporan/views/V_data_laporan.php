@@ -187,7 +187,7 @@
                         <div class="col-xs-5">
                             <div class="media">
                                 <div class="media-left">
-                                    <span class="text-3x text-thin text-main">1250</span>
+                                    <span class="text-3x text-thin text-main"><?php echo $jum_sis; ?></span>
                                 </div>
 
                             </div>
@@ -196,7 +196,7 @@
                             <p>
                                 <span>Laki - Laki</span>
                                 <span class="pad-lft text-semibold">
-                                    <span class="text-lg">771</span>
+                                    <span class="text-lg"><?php echo $jum_laki; ?></span>
                                     <span class="labellabel-success mar-lft">
                                     </span>
                                 </span>
@@ -204,7 +204,7 @@
                             <p>
                                 <span>Perempuan</span>
                                 <span class="pad-lft text-semibold">
-                                    <span class="text-lg">229</span>
+                                    <span class="text-lg"><?php echo $jum_perempuan; ?></span>
                                     <span class="labellabel-danger mar-lft">
                                     </span>
                                 </span>
