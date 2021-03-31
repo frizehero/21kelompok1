@@ -259,24 +259,15 @@
                 </tr>
               </thead>
               <tbody>
+                <!-- <?php foreach ($tampil_treatment as $treatment) {
+                   $id = $treatment->id_riwayat_treatment;?>
                 <tr>
-                  <td>2-2-2020</td>
-                  <td>Merokok</td>
-                  <td>+12</td>
-                  <td><p>merokok saat istirahat di kelas</p></td>
+                  <td><?php echo $treatment->tanggal_treatment; ?></td>
+                  <td><?php echo $treatment->nama_treatment; ?></td>
+                  <td>+<?php echo $treatment->point; ?></td>
+                  <td><p><?php echo $treatment->Keterangan_treatment; ?></p></td>
                 </tr>
-                <tr>
-                  <td>2-3-2020</td>
-                  <td>Alpha</td>
-                  <td>+10</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>2-3-2020</td>
-                  <td>Membersihkan toilet</td>
-                  <td>-7</td>
-                  <td></td>
-                </tr>
+              <?php } ?> -->
               </tbody>
             </table>
           </div>

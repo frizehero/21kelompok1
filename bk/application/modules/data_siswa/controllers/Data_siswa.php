@@ -125,7 +125,6 @@ class Data_siswa extends MX_Controller {
 
 	function filter()
 	{
-
 		$kelas 						= $this->input->post('kelas');
 		$jurusan 					= $this->input->post('jurusan');
 
@@ -136,16 +135,24 @@ class Data_siswa extends MX_Controller {
         	// pagination settings
 			$config = array();
 			$config['base_url'] = site_url("data_siswa/filter/$jurusan");
-			$config['total_rows'] = $this->m_data_siswa->get_filter_count($jurusan,$kelas);
+			$config['total_rows'] = $this->m_data_siswa->get_filter_count_jur($jurusan);
+			$config['per_page'] = "2";
+			$config["uri_segment"] = 4 ;
+			$choice = $config["total_rows"]/$config["per_page"];
+			$config["num_links"] = floor($choice);
 		}
-		if ($jurusan == "") {
+		elseif ($jurusan == "") {
 			 // get search string
 			$kelas = $this->input->post('kelas');
 			$kelas = ($this->uri->segment(3)) ? $this->uri->segment(3) : $kelas;
         	// pagination settings
 			$config = array();
 			$config['base_url'] = site_url("data_siswa/filter/$kelas");
-			$config['total_rows'] = $this->m_data_siswa->get_filter_count($kelas,$jurusan);	
+			$config['total_rows'] = $this->m_data_siswa->get_filter_count_kel($kelas);
+			$config['per_page'] = "2";
+			$config["uri_segment"] = 4 ;
+			$choice = $config["total_rows"]/$config["per_page"];
+			$config["num_links"] = floor($choice);	
 		}
 		// else{
 		// 	 // get search string
@@ -155,14 +162,15 @@ class Data_siswa extends MX_Controller {
 		// 	$jurusan = ($this->uri->segment(3)) ? $this->uri->segment(3) : $jurusan;
   //       	// pagination settings
 		// 	$config = array();
-		// 	$config['base_url'] = site_url("data_siswa/filter/$kelas$jurusan");
-		// 	$config['total_rows'] = $this->m_data_siswa->get_filter_count($kelas,$jurusan);	
+		// 	$config['base_url'] = site_url("data_siswa/filter/$kelas/$jurusan");
+		// 	$config['total_rows'] = $this->m_data_siswa->get_filter_count_kel($kelas) + $this->m_data_siswa->get_filter_count_jur($jurusan);
+		// 	$config['per_page'] = "2";
+		// 	$config["uri_segment"] = 4 ;
+		// 	$choice = $config["total_rows"]/$config["per_page"];
+		// 	$config["num_links"] = floor($choice);	
 		// }
 
-		$config['per_page'] = "2";
-		$config["uri_segment"] = 3 ;
-		$choice = $config["total_rows"]/$config["per_page"];
-		$config["num_links"] = floor($choice);
+		
 
 
 		$config['first_link']       = 'First';
@@ -214,9 +222,10 @@ class Data_siswa extends MX_Controller {
 	function details($id)
 	{
 		$data = array(
-			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_detail_siswa",
-			'tampil'		=> $this->m_data_siswa->tampildetail($id),
+			'namamodule' 		=> "data_siswa",
+			'namafileview' 		=> "V_detail_siswa",
+			'tampil'			=> $this->m_data_siswa->tampildetail($id),
+			// 'tampil_treatment'	=> $this->m_data_siswa->tampilriwayat_treatment($id)
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -250,10 +259,10 @@ class Data_siswa extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
-	/*akhir controler tambah treatment*/
+	 
 
 
-	/*controler tambah treatment*/
+	 
 	function caritreatment($id)
 	{
 		$carit 	= $this->input->post('caritreatment');
@@ -264,6 +273,14 @@ class Data_siswa extends MX_Controller {
 			'tampil'		=> $this->m_data_siswa->caritreatment($carit,$id),
 		);
 		echo Modules::run('template/tampilCore', $data);
+	}
+
+
+
+	function tambah_treatment($id)
+	{
+		$this->m_data_siswa->tambah_treatment($id);
+		redirect('data_siswa/details/'.$id);
 	}
 	/*akhir controler tambah treatment*/
 

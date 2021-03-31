@@ -106,40 +106,41 @@ class M_data_siswa extends CI_Model {
 
 
 
+	function get_filter_count_jur($jurusan)
+	{
+		$this->db->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->where('data_siswa.id_jurusan',$jurusan);
+		$query = $this->db->get('data_siswa');
+		return $query->num_rows();
+	}
+
+
+	function get_filter_count_kel($kelas)
+	{
+		$this->db->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->where('data_siswa.id_jurusan',$kelas);
+		$query = $this->db->get('data_siswa');
+		return $query->num_rows();
+	}
+
+
+
 	function get_filter_count($kelas,$jurusan)
 	{
-
-		if ($kelas  == "") {
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();		
-		}
-		elseif ($jurusan =="") 
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();
-		}
-		else
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan)
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();
-
-		}
+		$this->db->select('*')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->where('data_siswa.id_jurusan',$jurusan)
+		->where('data_siswa.id_kelas',$kelas);
+		$query = $this->db->get('data_siswa');
+		return $query->num_rows();
 
 	}
 
@@ -214,6 +215,18 @@ class M_data_siswa extends CI_Model {
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get();
+		return $query->result();
+	}
+
+
+	function tampilriwayat_treatment($id)
+	{
+		$this->db->select('*')
+		->from('riwayat_treatment')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->where('id_siswa',$id);
+		$query = $this->db->get('riwayat_treatment');
 		return $query->result();
 	}
 
@@ -317,6 +330,35 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
+
+
+	function tambah_treatment($id)
+	{
+		
+		$Keterangan_treatment 		= $this->input->post('Keterangan');
+		$tanggal_treatment					= $this->input->post('tanggal_treatment');
+		$id_treatment				= $this->input->post('id_treatment');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_treatment'	=> $Keterangan_treatment,
+			'tanggal_treatment'		=> $tanggal_treatment,
+			'id_treatment'			=> $id_treatment,
+			'id_siswa'				=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_treatment', $data);
+
+	}
+	// akhir model penambahan treatment siswa
+
+
+
+
+
+	// model tambah pelanggran siswa
 	function caripelanggaran($carip,$id)
 	{
 		$carip 	= $this->input->post('caripelanggaran');
