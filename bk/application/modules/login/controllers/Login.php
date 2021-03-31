@@ -60,7 +60,7 @@ class Login extends MX_Controller {
 			}
 			elseif ($getData->level==2) 
 			{
-				redirect('data_guru');
+				redirect('data_beranda_guru');
 			}
 			
 

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BK 2021 - Admin</title>
+    <title>BK 2021 - Guru</title>
 
 
     <!--STYLESHEET-->
@@ -525,9 +525,9 @@
                         <ul id="mainnav-menu" class="list-group">
                             <li class="list-header">MENU</li>
 
-                            <?php if($this->uri->segment('1') == 'data_beranda'){ ?>
+                            <?php if($this->uri->segment('1') == 'data_beranda_guru'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('data_beranda'); ?>">
+                                    <a href="<?php echo base_url('data_beranda_guru'); ?>">
                                         <i class="demo-pli-home"></i>
                                         <span class="menu-title">Beranda</span>
                                     </a>
@@ -535,7 +535,7 @@
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('data_beranda'); ?>">
+                                    <a href="<?php echo base_url('data_beranda_guru'); ?>">
                                        <i class="demo-pli-home"></i>
                                         <span class="menu-title">Beranda</span>
                                     </a>

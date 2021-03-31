@@ -5,7 +5,6 @@
                     <div class="pad-all text-center">
                         <h3>Selamat Datang Di Website BK</h3>
                         <p1>SMK BISA SMK HEBAT</p1>
-                        </div>
                     </div>
                 </div>
             
