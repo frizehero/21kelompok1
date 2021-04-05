@@ -50,7 +50,7 @@
 
       <div class="row">
 
-       <?php foreach($tampil as $res) {
+       <?php foreach($row as $res) {
         $id = $res->id_guru;
         $level = $res->level;
         $gambar = $res->foto_guru;
@@ -252,6 +252,8 @@
     </div>
 
   </div>
+
+  <?php echo $pagination; ?>
 
   
 

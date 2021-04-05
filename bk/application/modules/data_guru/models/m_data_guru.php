@@ -3,13 +3,12 @@
 
  class M_data_guru extends CI_Model {
 
- 	function tampil()
+ 	function tampil($limit, $start)
  	{
- 		return $this->db->from('data_user')
- 		->select('*')
- 		->join('data_guru','data_guru.id_guru = data_user.id_guru')
- 		->get()
- 		->result();
+ 		$this->db->select('*')
+ 		->join('data_guru','data_guru.id_guru = data_user.id_guru');
+ 		$query = $this->db->get('data_user', $limit, $start);
+		return $query->result();
  	}
 
  	function tambah()
