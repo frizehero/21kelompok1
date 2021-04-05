@@ -204,6 +204,15 @@ class M_data_siswa extends CI_Model {
 	}
 
 
+
+
+
+
+
+
+
+
+
 	/*bagian view detail*/
 
 	function tampildetail($id)
@@ -222,12 +231,23 @@ class M_data_siswa extends CI_Model {
 	function tampilriwayat_treatment($id)
 	{
 		$this->db->select('*')
-		->from('riwayat_treatment')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
 		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
-		->where('id_siswa',$id);
+		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();
+	}
+
+
+
+	function count_jtreatment($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->where('riwayat_treatment.id_siswa',$id);
+		$query = $this->db->get('riwayat_treatment');
+		return $query->num_rows();
 	}
 
 
@@ -300,6 +320,13 @@ class M_data_siswa extends CI_Model {
 	}
 
 	/*akhir model v detail*/
+
+
+
+
+
+
+
 
 
 	/*model bagian v tambah treatment*/

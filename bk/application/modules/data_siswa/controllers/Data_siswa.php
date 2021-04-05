@@ -217,6 +217,11 @@ class Data_siswa extends MX_Controller {
 	}
 
 
+
+
+
+
+
 	/*controler detail siswa*/
 
 	function details($id)
@@ -225,7 +230,8 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 		=> "data_siswa",
 			'namafileview' 		=> "V_detail_siswa",
 			'tampil'			=> $this->m_data_siswa->tampildetail($id),
-			// 'tampil_treatment'	=> $this->m_data_siswa->tampilriwayat_treatment($id)
+			'tampil_treatment'	=> $this->m_data_siswa->tampilriwayat_treatment($id),
+			'jumlah_treatment'	=> $this->m_data_siswa->count_jtreatment($id),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -246,6 +252,12 @@ class Data_siswa extends MX_Controller {
 	}
 
 	/*akhir controler detail siswa*/
+
+
+
+
+
+
 
 
 	/*controler tambah treatment*/
@@ -283,6 +295,12 @@ class Data_siswa extends MX_Controller {
 		redirect('data_siswa/details/'.$id);
 	}
 	/*akhir controler tambah treatment*/
+
+
+
+
+
+
 
 
 	/*controler tambah pelanggaran*/

@@ -211,7 +211,7 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <p class="text-2x mar-no text-semibold">1</p>
+                  <p class="text-2x mar-no text-semibold"><?php echo $jumlah_treatment ?></p>
                   <p class="mar-no">Treatment</p>
                 </div>
               </div>
@@ -259,15 +259,15 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <?php foreach ($tampil_treatment as $treatment) {
-                   $id = $treatment->id_riwayat_treatment;?>
+                <?php foreach ($tampil_treatment as $tment) {
+                   $id = $tment->id_riwayat_treatment;?>
                 <tr>
-                  <td><?php echo $treatment->tanggal_treatment; ?></td>
-                  <td><?php echo $treatment->nama_treatment; ?></td>
-                  <td>+<?php echo $treatment->point; ?></td>
-                  <td><p><?php echo $treatment->Keterangan_treatment; ?></p></td>
+                  <td><?php echo $tment->tanggal_treatment; ?></td>
+                  <td><?php echo $tment->nama_treatment; ?></td>
+                  <td>-<?php echo $tment->point; ?></td>
+                  <td><?php echo $tment->keterangan_treatment; ?></td>
                 </tr>
-              <?php } ?> -->
+              <?php } ?> 
               </tbody>
             </table>
           </div>
