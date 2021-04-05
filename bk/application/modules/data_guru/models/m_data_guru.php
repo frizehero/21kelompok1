@@ -155,12 +155,35 @@
  	}
 
 
- 	function cari()
- 	{
- 		$cari 		= $this->input->post('cari');
- 		return $this->db->like('nama_guru',$cari)
- 		->select('*')
- 		->join('data_guru','data_guru.id_guru = data_user.id_guru')
- 		->get('data_user')->result();
- 	}
+ 	// function cari()
+ 	// {
+ 	// 	$cari 		= $this->input->post('cari');
+ 	// 	return $this->db->like('nama_guru',$cari)
+ 	// 	->select('*')
+ 	// 	->join('data_guru','data_guru.id_guru = data_user.id_guru')
+ 	// 	->get('data_user')->result();
+ 	// }
+
+ 	function get_user($limit, $start, $st = NULL)
+	{
+		
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+		->like('nama_guru',$st);
+		$query = $this->db->get('data_user',$limit, $start);
+		return $query->result();
+	}
+
+	function get_user_count($st = NULL)
+	{
+
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+		->like('nama_guru',$st);
+		$query = $this->db->get('data_user');
+		return $query->num_rows();
+	}
+
  }

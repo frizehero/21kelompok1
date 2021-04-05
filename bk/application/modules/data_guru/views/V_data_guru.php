@@ -23,7 +23,7 @@
         <div id="demo-custom-toolbar5" class="table-toolbar-left">
           <a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah User</a>
         </div>
-        <form action="<?php echo site_url('data_guru/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+        <form action="<?php echo site_url('data_guru/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
           <div class="input-group text-right"  style="padding-left: : 5px">
             <?php if($this->uri->segment(2) != 'cari'){?>
               <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari User">
