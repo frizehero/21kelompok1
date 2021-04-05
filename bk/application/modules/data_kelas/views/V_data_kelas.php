@@ -4,7 +4,7 @@
   	<!--Page Title-->
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<div id="page-title">
-  		<h1 class="page-header text-overflow">Data Siswa</h1>
+  		<h1 class="page-header text-overflow">Data Kelas</h1>
   	</div>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End page title-->
@@ -15,7 +15,7 @@
   	<ol class="breadcrumb">
   		<li><a href="#"><i class="demo-pli-home"></i></a></li>
   		<li><a href="#">Data</a></li>
-  		<li class="active">Data Siswa</li>
+  		<li class="active">Data Kelas</li>
   	</ol>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->
@@ -24,30 +24,42 @@
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
   		</div>
-      <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_kelas/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
-             $cari = $this->input->post('cari');?>
-            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
-          <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
-            $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
-          <?php } ?> 
-          <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-            <button class="btn btn-default" name="submit" type="submit">cari</button>
-          </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
-            <i class="fa fa-refresh" ></i>
-          </a>
-        </div> 
-      </center>
+           $cari = $this->input->post('cari');?>
+           <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
+         <?php } ?>
+         <?php if($this->uri->segment(2) == 'cari'){
+          $cari = $this->input->post('cari'); ?>
+          <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
+        <?php } ?> 
+        <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+          <button class="btn btn-default" name="submit" type="submit">cari</button>
+        </div>
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">
+          <i class="fa fa-refresh" ></i>
+        </a>
+      </div> 
+    </center>
 
-    </form>
+  </form>
+
+  <form method="post" action="<?php echo site_url('data_kelas/filter') ?>">
+    <div class="select">
+     <select name="kelas" id="demo-ease">
+       <option  value="">kelas</option>
+       <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
+        <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+      <?php }?>
+    </select>
+  </div>
+  <button class="btn btn-default"  type="submit">Filter</button>  
+</form>
 </div>
 
 
-<div id="page-content text-black"><br><br><br><br>
+<div id="page-content text-black"><br><br><br>
 
   <div class="row">
    <div class="col-sm-12">
@@ -196,7 +208,7 @@
 
   </div>
   <!-- end tambah -->
- 
+
 
 
 

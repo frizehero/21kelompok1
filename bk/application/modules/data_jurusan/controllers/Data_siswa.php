@@ -54,6 +54,8 @@ class Data_siswa extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
+			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
 			'row'			=> $this->m_data_siswa->tampil($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
 
@@ -107,6 +109,8 @@ class Data_siswa extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_data_siswa",
+			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
 			'row'			=> $this->m_data_siswa->get_siswa($config["per_page"], $data['page'],$search),
 			'pagination' 	=> $this->pagination->create_links(),
 			'cari'			=> $nyari,
@@ -115,6 +119,97 @@ class Data_siswa extends MX_Controller {
 	}
 
 
+	
+
+
+
+	function filter()
+	{
+		$kelas 						= $this->input->post('kelas');
+		$jurusan 					= $this->input->post('jurusan');
+
+		echo $kelas;
+		echo $jurusan;
+
+		if ($kelas == "") {
+			 // get search string
+			$jurusan = $this->input->post('jurusan');
+			$jurusan = ($this->uri->segment(3)) ? $this->uri->segment(3) : $jurusan;
+        	// pagination settings
+			$config = array();
+			$config['base_url'] = site_url("data_siswa/filter/$jurusan");
+			$config['total_rows'] = $this->m_data_siswa->get_filter_count_jur($jurusan);
+			$config['per_page'] = "2";
+			$config["uri_segment"] = 4 ;
+			$choice = $config["total_rows"]/$config["per_page"];
+			$config["num_links"] = floor($choice);
+		}
+		elseif ($jurusan == "") {
+			 // get search string
+			$kelas = $this->input->post('kelas');
+			$kelas = ($this->uri->segment(3)) ? $this->uri->segment(3) : $kelas;
+        	// pagination settings
+			$config = array();
+			$config['base_url'] = site_url("data_siswa/filter/$kelas");
+			$config['total_rows'] = $this->m_data_siswa->get_filter_count_kel($kelas);
+			$config['per_page'] = "2";
+			$config["uri_segment"] = 4 ;
+			$choice = $config["total_rows"]/$config["per_page"];
+			$config["num_links"] = floor($choice);	
+		}
+		// else{
+		// 	 // get search string
+		// 	$kelas = $this->input->post('kelas');
+		// 	$kelas = ($this->uri->segment(3)) ? $this->uri->segment(3) : $kelas;
+		// 	$jurusan = $this->input->post('jurusan');
+		// 	$jurusan = ($this->uri->segment(3)) ? $this->uri->segment(3) : $jurusan;
+  //       	// pagination settings
+		// 	$config = array();
+		// 	$config['base_url'] = site_url("data_siswa/filter/$kelas/$jurusan");
+		// 	$config['total_rows'] = $this->m_data_siswa->get_filter_count_kel($kelas) + $this->m_data_siswa->get_filter_count_jur($jurusan);
+		// 	$config['per_page'] = "2";
+		// 	$config["uri_segment"] = 4 ;
+		// 	$choice = $config["total_rows"]/$config["per_page"];
+		// 	$config["num_links"] = floor($choice);	
+		// }
+
+		
+
+
+		$config['first_link']       = 'First';
+		$config['last_link']        = 'Last';
+		$config['next_link']        = 'Next';
+		$config['prev_link']        = 'Prev';
+		$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['prev_tagl_close']  = '</span>Next</li>';
+		$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+		$config['first_tagl_close'] = '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['last_tagl_close']  = '</span></li>';
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+
+		$data = array(
+			'namamodule' 	=> "data_siswa",
+			'namafileview' 	=> "V_data_siswa",
+			'filter_jur'	=> $this->m_data_siswa->filter_jur(),
+			'filter_kel'	=> $this->m_data_siswa->filter_kel(),
+			'row'			=> $this->m_data_siswa->filter($config["per_page"], $data['page'],$kelas,$jurusan),
+			'pagination' 	=> $this->pagination->create_links(),
+			'kelas_fil'		=> $kelas,
+			'jur_fil'		=> $jurusan,
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
 
 
 

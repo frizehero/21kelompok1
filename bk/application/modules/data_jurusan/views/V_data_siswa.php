@@ -44,10 +44,30 @@
       </center>
 
     </form>
+
+    <form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
+      <div class="select">
+       <select name="jurusan" id="demo-ease">
+         <option  value="">Jurusan</option>
+         <?php  foreach($filter_jur as $jur) { $fjur = $jur_fil;  ?>
+          <option <?php echo ($fjur == $jur->id_jurusan) ? "selected": "" ?> value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
+        <?php } ?>
+      </select>
+    </div>
+    <div class="select">
+     <select name="kelas" id="demo-ease">
+       <option  value="">kelas</option>
+       <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
+        <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+      <?php }?>
+    </select>
+  </div>
+  <button class="btn btn-default"  type="submit">Filter</button>  
+</form>
 </div>
 
 
-<div id="page-content text-black"><br><br><br><br>
+<div id="page-content text-black"><br><br><br>
 
   <div class="row">
    <div class="col-sm-12">
