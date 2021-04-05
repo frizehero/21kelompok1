@@ -122,10 +122,10 @@
                  <div class="text-center pad-to">
                   <div class="btn-group">
                     <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_guru?>" class="btn btn-sm btn-danger">
-                      <span class="fa fa-edit"></span>
+                      <span class="fa fa-trash"></span>
                     &nbsp;Hapus</a>
                     <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_guru?>" class="btn btn-sm btn-success">
-                      <span class="fa fa-trash"></span>
+                      <span class="fa fa-edit"></span>
                     &nbsp;Edit</a>
 
                   </div>
