@@ -27,7 +27,7 @@
           Tambah
         </button>
       </div>
-      <form action="<?php echo site_url('data_pelanggaran/cari1/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_pelanggaran/cariku1/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari1'){?>
             <input type="text" autocomplete="off" name="cari1" class="form-control" placeholder="Cari">
@@ -180,7 +180,6 @@
 </div>
 
 </div>
-<?php echo $pagination; ?>
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
