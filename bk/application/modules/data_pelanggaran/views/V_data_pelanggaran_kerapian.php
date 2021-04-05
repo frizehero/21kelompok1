@@ -70,7 +70,7 @@
                                 
     <div class="col-sm-12">
       <div class="row">
-       <?php foreach($tampil1 as $res) {
+       <?php foreach($row as $res) {
         $id = $res->id_pelanggaran_kerapian;
         ?>
         <div class="col-sm-3">
@@ -180,7 +180,7 @@
 </div>
 
 </div>
-
+<?php echo $pagination; ?>
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">

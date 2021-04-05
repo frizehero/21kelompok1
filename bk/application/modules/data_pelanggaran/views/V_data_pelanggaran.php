@@ -27,17 +27,17 @@
           Tambah
         </button>
       </div>
-      <form action="<?php echo site_url('data_pelanggaran/cari') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
-        <div class="input-group text-right"  style="padding-left: : 5px">
+      <form action="<?php echo site_url('data_pelanggaran/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+        <div class="input-group text-right"  style="padding-left: : 5px"s>
           <?php if($this->uri->segment(2) != 'cari'){?>
-            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari">
+            <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari pelanggaran" required="">
           <?php } ?>
           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="cari">
+            <input type="text" autocomplete="off" value="<?= $cari ?>" name="cari" class="form-control " placeholder="Cari pelanggaran" required="">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-            <button class="btn btn-default" type="submit">cari</button>
+            <button class="btn btn-default" name="submit" type="submit">cari</button>
           </div>
           <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_pelanggaran'); ?>">
             <i class="fa fa-refresh" ></i>
@@ -70,7 +70,7 @@
                                 
     <div class="col-sm-12">
       <div class="row">
-       <?php foreach($tampil as $res) {
+       <?php foreach($row as $res) {
         $id = $res->id_pelanggaran;
         ?>
         <div class="col-sm-3">
@@ -180,7 +180,7 @@
 </div>
 
 </div>
-
+<?php echo $pagination; ?>
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">

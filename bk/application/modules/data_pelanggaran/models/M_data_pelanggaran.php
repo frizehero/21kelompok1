@@ -3,17 +3,84 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_pelanggaran extends CI_Model {
 
-	function tampil()
+	function tampil($limit, $start)
 	{
-		return $this->db->get('data_pelanggaran')->result();
+		
+		$query = $this->db->get('data_pelanggaran', $limit, $start);
+		return $query->result();
 	}
-	function tampil1()
+	function get_pelanggaran($limit, $start, $st = NULL)
 	{
-		return $this->db->get('data_pelanggaran_kerapian')->result();
+		
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran',$st);
+		$query = $this->db->get('data_pelanggaran',$limit, $start);
+		return $query->result();
 	}
-	function tampil2()
+
+	function get_pelanggaran_count($st = NULL)
 	{
-		return $this->db->get('data_pelanggaran_berat')->result();
+
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran',$st);
+		$query = $this->db->get('data_pelanggaran');
+		return $query->num_rows();
+	}
+
+	// tampil1
+	function tampil1($limit, $start)
+	{
+		
+		$query = $this->db->get('data_pelanggaran_kerapian', $limit, $start);
+		return $query->result();
+	}
+	function get_pelanggaran_kerapian($limit, $start, $st = NULL)
+	{
+		
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran_kerapian',$st);
+		$query = $this->db->get('data_pelanggaran_kerapian',$limit, $start);
+		return $query->result();
+	}
+
+	function get_pelanggaran_kerapian_count($st = NULL)
+	{
+
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran_kerapian',$st);
+		$query = $this->db->get('data_pelanggaran_kerapian');
+		return $query->num_rows();
+	}
+
+	// tampil2
+	function tampil2($limit, $start)
+	{
+		
+		$query = $this->db->get('data_pelanggaran_berat', $limit, $start);
+		return $query->result();
+	}
+	function get_pelanggaran_berat($limit, $start, $st = NULL)
+	{
+		
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran_berat',$st);
+		$query = $this->db->get('data_pelanggaran_berat',$limit, $start);
+		return $query->result();
+	}
+
+	function get_pelanggaran_berat_count($st = NULL)
+	{
+
+		if ($st == "NIL") $st = "";
+		$this->db->select('*')
+		->like('nama_pelanggaran_berat',$st);
+		$query = $this->db->get('data_pelanggaran_berat');
+		return $query->num_rows();
 	}
 
 	function tambah()
