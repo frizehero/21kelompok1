@@ -20,7 +20,7 @@ class Data_treatment extends MX_Controller {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_treatment/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_treatment'); //total row
-        $config['per_page'] 		= 8;  //show record per halaman
+        $config['per_page'] 		= 2;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"]		= floor($choice);
@@ -62,11 +62,13 @@ class Data_treatment extends MX_Controller {
 	
 	function cariku()
     {
+
+        $nyari = $this->input->post("cari");
         // get search string
         $search = ($this->input->post("cari"))? $this->input->post("cari") : "NIL";
 
         $search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
-        $caris = $this->input->post("cari");
+        
 
         // pagination settings
         $config = array();
@@ -104,8 +106,9 @@ class Data_treatment extends MX_Controller {
        $data = array(
 			'namamodule' 	=> "data_treatment",
 			'namafileview' 	=> "V_data_treatment",
-			'row'			=> $this->m_data_treatment->tampil($config["per_page"], $data['page']),
+			'row'			=> $this->m_data_treatment->get_treatment($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
+            'cari'          => $nyari,
 		);
 		echo Modules::run('template/tampilCore', $data);
     }

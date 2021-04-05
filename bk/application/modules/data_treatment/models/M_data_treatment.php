@@ -13,11 +13,8 @@ class M_data_treatment extends CI_Model {
 	{
 		
 		if ($st == "NIL") $st = "";
-		// $this->db->select('*')
-		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		// ->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		// ->like('nama_treatment',$st);
+		$this->db->select('*')
+		->like('nama_treatment',$st);
 		$query = $this->db->get('data_treatment',$limit, $start);
 		return $query->result();
 	}
@@ -26,11 +23,8 @@ class M_data_treatment extends CI_Model {
 	{
 
 		if ($st == "NIL") $st = "";
-		// $this->db->select('*')
-		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		// ->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		// ->like('nama_treatment',$st);
+		$this->db->select('*')
+		->like('nama_treatment',$st);
 		$query = $this->db->get('data_treatment');
 		return $query->num_rows();
 	}
