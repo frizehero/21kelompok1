@@ -67,13 +67,14 @@
  		$id_user					= $this->input->post('id_user');
  		$username					= $this->input->post('username');
  		$password 					= $this->input->post('password');
+ 		$password1 					= sha1($password);
  		$level 						= $this->input->post('level');
 
  		$data = array(
  			'id_user'				=> $id_user,
  			'id_guru'				=> $insert_id,
  			'username'				=> $username,
- 			'password'				=> $password,
+ 			'password'				=> $password1,
  			'level'					=> $level,
 
  		);
