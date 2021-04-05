@@ -135,11 +135,13 @@ class Data_siswa extends MX_Controller {
 	function details($id)
 	{
 		$data = array(
-			'namamodule' 		=> "data_siswa",
-			'namafileview' 		=> "V_detail_siswa",
-			'tampil'			=> $this->m_data_siswa->tampildetail($id),
-			'tampil_treatment'	=> $this->m_data_siswa->tampilriwayat_treatment($id),
-			'jumlah_treatment'	=> $this->m_data_siswa->count_jtreatment($id),
+			'namamodule' 			=> "data_siswa",
+			'namafileview' 			=> "V_detail_siswa",
+			'tampil'				=> $this->m_data_siswa->tampildetail($id),
+			'tampil_treatment'		=> $this->m_data_siswa->tampilriwayat_treatment($id),
+			'jumlah_treatment'		=> $this->m_data_siswa->count_jtreatment($id),
+			'tampil_pelanggaran'	=> $this->m_data_siswa->tampilriwayat_pelanggaran($id),
+			'jumlah_pelanggaran'	=> $this->m_data_siswa->count_jpelanggaran($id),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -239,5 +241,11 @@ class Data_siswa extends MX_Controller {
 			
 		);
 		echo Modules::run('template/tampilCore', $data);
+	}
+
+	function tambah_pelanggaran($id)
+	{
+		$this->m_data_siswa->tambah_pelanggaran($id);
+		redirect('data_siswa/details/'.$id);
 	}
 }

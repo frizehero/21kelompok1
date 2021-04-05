@@ -150,6 +150,29 @@ class M_data_siswa extends CI_Model {
 	}
 
 
+	function tampilriwayat_pelanggaran($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+	function count_jpelanggaran($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+
 
 	function edit($id)
 	{
@@ -262,7 +285,7 @@ class M_data_siswa extends CI_Model {
 	{
 		
 		$Keterangan_treatment 		= $this->input->post('Keterangan');
-		$tanggal_treatment					= $this->input->post('tanggal_treatment');
+		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_treatment				= $this->input->post('id_treatment');
 		$id_siswa 					= $this->input->post('id_siswa');
 
@@ -367,6 +390,26 @@ class M_data_siswa extends CI_Model {
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
+
+	}
+	function tambah_pelanggaran($id)
+	{
+		
+		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
+		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$id_pelanggaran				= $this->input->post('id_pelanggaran');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+			'id_pelanggaran'			=> $id_pelanggaran,
+			'id_siswa'					=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_pelanggaran', $data);
 
 	}
 }

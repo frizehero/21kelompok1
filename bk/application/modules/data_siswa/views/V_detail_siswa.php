@@ -199,7 +199,7 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <p class="text-2x mar-no text-semibold ">2</p>
+                  <p class="text-2x mar-no text-semibold "><?php echo $jumlah_pelanggaran ?></p>
                   <p class="mar-no">Pelanggaran</p>
                 </div>
               </div>
@@ -259,6 +259,16 @@
                 </tr>
               </thead>
               <tbody>
+                 <?php foreach ($tampil_pelanggaran as $tment) {
+                   $id = $tment->id_riwayat_pelanggaran;?>
+                <tr>
+                  <td><?php echo $tment->tanggal_pelanggaran; ?></td>
+                  <td><?php echo $tment->nama_pelanggaran; ?></td>
+                  <td>+<?php echo $tment->point; ?></td>
+                  <td><?php echo $tment->keterangan_pelanggaran; ?></td>
+                </tr>
+              <?php } ?> 
+
                 <?php foreach ($tampil_treatment as $tment) {
                    $id = $tment->id_riwayat_treatment;?>
                 <tr>

@@ -143,13 +143,15 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran/tambah'); ?>
-                          <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
+                          <?= form_open_multipart('data_siswa/tambah_pelanggaran/'.$res->id_siswa); ?>
 
                           <!--Modal body--> 
                           <div class="modal-body">
 
                             <div class="panel-body">
+                              <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                              <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
+                              <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
 
                               <div><h5>Penjelasan Menu :</h5>
                                 <p></p>
