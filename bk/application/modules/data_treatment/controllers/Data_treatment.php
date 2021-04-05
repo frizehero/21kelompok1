@@ -20,7 +20,7 @@ class Data_treatment extends MX_Controller {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_treatment/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_treatment'); //total row
-        $config['per_page'] 		= 2;  //show record per halaman
+        $config['per_page'] 		= 4;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"]		= floor($choice);
