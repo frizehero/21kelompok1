@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_treatment extends CI_Model {
 
+	
 	function tampil($limit, $start)
 	{
 		

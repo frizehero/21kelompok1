@@ -4,29 +4,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Data_treatment extends MX_Controller {
 
 	function __construct()
-	{
-		parent::__construct();
-		// model
-		 $this->load->model('m_data_treatment');
-		 $this->load->model('login/m_session');
-		 $this->load->library('pagination');
-		 $this->load->library('session');
-	}
+    {
+        parent::__construct();
+        // model
+        $this->load->model('m_data_treatment');
+        $this->load->model('login/m_session');
+        $this->load->library('pagination');
+        $this->load->library('session');
+    }
 
 
-	// index
-	function index()
-	{
-		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_treatment/index'); //site url
-        $config['total_rows'] 		= $this->db->count_all('data_treatment'); //total row
-        $config['per_page'] 		= 4;  //show record per halaman
-		$config["uri_segment"] 		= 3;  // uri parameter
+    // index
+    function index()
+    {
+        //konfigurasi pagination
+        $config['base_url']         = site_url('data_treatment/index'); //site url
+        $config['total_rows']       = $this->db->count_all('data_treatment'); //total row
+        $config['per_page']         = 12;  //show record per halaman
+        $config["uri_segment"]      = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"]		= floor($choice);
+        $config["num_links"]        = floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -45,30 +45,29 @@ class Data_treatment extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_treatment",
-			'namafileview' 	=> "V_data_treatment",
-			'row'			=> $this->m_data_treatment->tampil($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+            'namamodule'    => "data_treatment",
+            'namafileview'  => "V_data_treatment",
+            'row'           => $this->m_data_treatment->tampil($config["per_page"], $data['page']),
+            'pagination'    => $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
+        );
+        echo Modules::run('template/tampilCore', $data);
+    }
 
-	
-	function cariku()
+    
+    function cariku()
     {
 
         $nyari = $this->input->post("cari");
+
         // get search string
         $search = ($this->input->post("cari"))? $this->input->post("cari") : "NIL";
-
         $search = ($this->uri->segment(3)) ? $this->uri->segment(3) : $search;
-        
 
         // pagination settings
         $config = array();
@@ -79,7 +78,7 @@ class Data_treatment extends MX_Controller {
         $choice = $config["total_rows"]/$config["per_page"];
         $config["num_links"] = floor($choice);
 
-       
+
         $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
@@ -101,38 +100,38 @@ class Data_treatment extends MX_Controller {
         $this->pagination->initialize($config);
 
         $data['page'] = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-        
 
-       $data = array(
-			'namamodule' 	=> "data_treatment",
-			'namafileview' 	=> "V_data_treatment",
-			'row'			=> $this->m_data_treatment->get_treatment($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+
+        $data = array(
+            'namamodule'    => "data_treatment",
+            'namafileview'  => "V_data_treatment",
+            'row'           => $this->m_data_treatment->get_treatment($config["per_page"], $data['page'],$search),
+            'pagination'    => $this->pagination->create_links(),
             'cari'          => $nyari,
-		);
-		echo Modules::run('template/tampilCore', $data);
+        );
+        
+        echo Modules::run('template/tampilCore', $data);
     }
 
-	function tambah()
-	{
-		$this->m_data_treatment->tambah();
-		redirect('data_treatment');
-	}
+    function tambah()
+    {
+      $this->m_data_treatment->tambah();
+      redirect('data_treatment');
+  }
 
-	function edit()
-	{
-		$this->m_data_treatment->edit();
-		redirect('data_treatment');
-	}
+  function edit()
+  {
+      $this->m_data_treatment->edit();
+      redirect('data_treatment');
+  }
 
-	function hapus($id)
-	{
-		$this->m_data_treatment->hapus($id);
-		redirect('data_treatment');
-	}
+  function hapus($id)
+  {
+      $this->m_data_treatment->hapus($id);
+      redirect('data_treatment');
+  }
 
 
 
 
 }
- 
