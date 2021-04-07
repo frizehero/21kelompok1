@@ -4,7 +4,7 @@
   	<!--Page Title-->
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<div id="page-title">
-  		<h1 class="page-header text-overflow">Data Kelas</h1>
+  		<h1 class="page-header text-overflow">Data Jurusan</h1>
   	</div>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End page title-->
@@ -15,7 +15,7 @@
   	<ol class="breadcrumb">
   		<li><a href="#"><i class="demo-pli-home"></i></a></li>
   		<li><a href="#">Data</a></li>
-  		<li class="active">Data Kelas</li>
+  		<li class="active">Data Jurusan</li>
   	</ol><br>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->

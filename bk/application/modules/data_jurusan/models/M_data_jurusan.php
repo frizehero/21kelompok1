@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_kelas extends CI_Model {
+class M_data_jurusan extends CI_Model {
 
 	function tampil()
 	{
