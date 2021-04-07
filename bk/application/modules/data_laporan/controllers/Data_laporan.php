@@ -21,6 +21,7 @@ class Data_laporan extends MX_Controller {
 			'tampil'		=> $this->m_data_laporan->tampil(),
 			'jum_sis'		=> $this->m_data_laporan->jum_sis(),
 			'jum_laki'		=> $this->m_data_laporan->jum_laki(),
+			'tampil_jur'	=> $this->m_data_laporan->tampil_jur(),
 			'jum_perempuan'	=> $this->m_data_laporan->jum_perempuan(),
 
 		);
@@ -37,6 +38,8 @@ class Data_laporan extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+	
 
 }
  

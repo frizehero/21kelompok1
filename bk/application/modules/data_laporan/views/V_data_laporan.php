@@ -42,105 +42,57 @@
 
 <div id="page-content">
 
-
-
-
    <!-- Basic Data Tables -->
    <!--===================================================-->
 
 
    <div class="row">
+
+    <?php foreach($tampil_jur as $res) {
+        $id = $res->id_jurusan;
+        ?>
+
     <div class="col-md-3">
-        <div class="panel panel-info panel-colorful media middle pad-all ">
+        <?php if ($res->id_jurusan=='1') { ?>
+            <div class="panel panel-info panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='2') { ?>
+            <div class="panel panel-success panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='3') { ?>
+            <div class="panel panel-danger panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='4') { ?>
+            <div class="panel panel-warning panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='5') { ?>
+            <div class="panel panel-primary panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='6') { ?>
+            <div class="panel panel-pink panel-colorful media middle pad-all ">
+        <?php } ?>
+
+        <?php if ($res->id_jurusan=='7') { ?>
+            <div class="panel panel-info panel-colorful media middle pad-all ">
+        <?php } ?>
+        
             <div class="media-left">
                 <div class="pad-hor">
                     <p class="text-3x mar-no text-bold">132</p>
                 </div>
             </div>
             <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">RPL</p></center>
+                <center><p class="text-2x mar-no text-semibold"><?php echo $res->jurusan ; ?></p></center>
                 <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
             </div>
         </div>
     </div>
-    <div class="col-md-3">
-        <div class="panel panel-success panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">13</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TPM</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-danger panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">30</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TKR</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-warning panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">15</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TITL</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-primary panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">20</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TPK</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-pink panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">10</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TB</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-3">
-        <div class="panel panel-info panel-colorful media middle pad-all">
-            <div class="media-left">
-                <div class="pad-hor">
-                    <p class="text-3x mar-no text-bold">4</p>
-                </div>
-            </div>
-            <div class="media-body">
-                <center><p class="text-2x mar-no text-semibold">TKJ</p></center>
-                <center><a href="<?php  echo base_url('data_laporan/tampilsiswa/');  ?>" class="mar-no btn">Klik Untuk Detail</a></center>
-            </div>
-        </div>
-    </div>
+    <?php } ?>
 </div>
 </div>
 
@@ -284,7 +236,7 @@
 
 
             </div>
-            <h3 class="panel-title">Pelanggaran Dalam 1 Tahun</h3>
+            <h3 class="panel-title">Pelanggaran Dalam 1 Bulan</h3>
         </div>
         <div class="panel-body">
             <div class="col-md-12">

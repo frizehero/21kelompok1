@@ -18,6 +18,13 @@ class M_data_laporan extends CI_Model {
 		return $query->num_rows();
 	}
 
+	function tampil_jur(){
+		$this->db->select('*')
+		->from('data_jurusan');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	function jum_laki()
 	{
 		$this->db->select('*')
