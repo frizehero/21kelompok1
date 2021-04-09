@@ -115,65 +115,64 @@
 
               </form><br><br><hr>
 
-              <form action="#" method="post">
                 <p>Pilih pelanggaran :</p>
                 <?php foreach($tampil as $res) {
                   $id = $res->id_pelanggaran;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-info panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point<br>
-                      <p><?php echo  $res->nama_pelanggaran?></p>
+                  <div class="col-sm-3">
 
-                    </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-info panel-colorful" style="height: 150px">
+                      <div class="pad-all text-left">
+                       <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
+                        <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                        + <?php echo  $res->point?> point<br>
+                        <p><?php echo  $res->nama_pelanggaran?></p>
 
-                          <!--Modal Update-->
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Penambahan point Siswa</h4>
-                          </div>
-                          <?= form_open_multipart('data_siswa/tambah_pelanggaran/'.$res->id_siswa); ?>
+                      </div>
+                    </div>                
+                  </div>
+                  <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
 
-                          <!--Modal body--> 
-                          <div class="modal-body">
+                        <!--Modal Update-->
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                          <h4 class="modal-title">Penambahan point Siswa</h4>
+                        </div>
+                        <?= form_open_multipart('data_siswa/tambah_pelanggaran/'.$res->id_siswa); ?>
 
-                            <div class="panel-body">
-                              <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
-                              <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
-                              <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
+                        <!--Modal body--> 
+                        <div class="modal-body">
 
-                              <div><h5>Penjelasan Menu :</h5>
-                                <p></p>
-                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                              </div><hr>
+                          <div class="panel-body">
+                            <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                            <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
+                            <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
 
-                              <table>
-                                <tr>
-                                  <td><b>Nama</b></td>
-                                  <td>:  <?php echo $res->nama_siswa?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Kelas</b></td>
-                                  <td>:  <?php echo $res->kelas?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Jenis Kelamin</b></td>
-                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                                </tr>
-                              </table><hr>
+                            <div><h5>Penjelasan Menu :</h5>
+                              <p></p>
+                              <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
+                            </div><hr>
 
-                             <div class="col-md-6">
+                            <table>
+                              <tr>
+                                <td><b>Nama</b></td>
+                                <td>:  <?php echo $res->nama_siswa?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Kelas</b></td>
+                                <td>:  <?php echo $res->kelas?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Jenis Kelamin</b></td>
+                                <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                              </tr>
+                            </table><hr>
+
+                            <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
                               <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
                             </div>
@@ -186,40 +185,40 @@
                             <div class="col-md-12">
                               <label for="" class="control-label"><b>Keterangan</b></label>
                               <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                              </div>
-
                             </div>
 
-
                           </div>
 
-                          <!--Modal footer-->
-                          <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                          </div>
-                          <?= form_close(); ?>
+
                         </div>
+
+                        <!--Modal footer-->
+                        <div class="modal-footer">
+                          <button class="btn btn-primary" type="submit">Simpan</button>
+                        </div>
+                        <?= form_close(); ?>
                       </div>
                     </div>
+                  </div>
                 <?php  } ?>
                 <?php foreach($tampil1 as $res) {
                   $id = $res->id_pelanggaran_kerapian;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-purple panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point
-                      <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
+                  <div class="col-sm-3">
 
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-purple panel-colorful" style="height: 150px">
+                      <div class="pad-all text-left">
+                        <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                          + <?php echo  $res->point?> point
+                          <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
+
+                        </div>
+                      </div>                
                     </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -228,35 +227,37 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran_kerapian/tambah'); ?>
-                          <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian?>">
+                          <?= form_open_multipart('data_siswa/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
 
                           <!--Modal body--> 
                           <div class="modal-body">
 
                             <div class="panel-body">
+                             <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                             <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian ?>">
+                             <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
 
-                              <div><h5>Penjelasan Menu :</h5>
-                                <p></p>
-                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                              </div><hr>
+                             <div><h5>Penjelasan Menu :</h5>
+                              <p></p>
+                              <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
+                            </div><hr>
 
-                              <table>
-                                <tr>
-                                  <td><b>Nama</b></td>
-                                  <td>:  <?php echo $res->nama_siswa?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Kelas</b></td>
-                                  <td>:  <?php echo $res->kelas?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Jenis Kelamin</b></td>
-                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                                </tr>
-                              </table><hr>
+                            <table>
+                              <tr>
+                                <td><b>Nama</b></td>
+                                <td>:  <?php echo $res->nama_siswa?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Kelas</b></td>
+                                <td>:  <?php echo $res->kelas?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Jenis Kelamin</b></td>
+                                <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                              </tr>
+                            </table><hr>
 
-                             <div class="col-md-6">
+                            <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
                               <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
                             </div>
@@ -269,123 +270,125 @@
                             <div class="col-md-12">
                               <label for="" class="control-label"><b>Keterangan</b></label>
                               <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                              </div>
-
                             </div>
 
-
                           </div>
 
-                          <!--Modal footer-->
-                          <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                          </div>
-                          <?= form_close(); ?>
+
                         </div>
+
+                        <!--Modal footer-->
+                        <div class="modal-footer">
+                          <button class="btn btn-primary" type="submit">Simpan</button>
+                        </div>
+                        <?= form_close(); ?>
                       </div>
                     </div>
+                  </div>
                 <?php  } ?>
                 <?php foreach($tampil2 as $res) {
                   $id = $res->id_pelanggaran_berat;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-dark panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point
-                      <p><?php echo  $res->nama_pelanggaran_berat?></p>
+                  <div class="col-sm-3">
 
-                    </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-dark panel-colorful" style="height: 150px">
+                      <div class="pad-all text-left">
+                       <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
+                        <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                        + <?php echo  $res->point?> point
+                        <p><?php echo  $res->nama_pelanggaran_berat?></p>
 
-                          <!--Modal Update-->
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Penambahan point Siswa</h4>
-                          </div>
-                          <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
-                          <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
-
-                          <!--Modal body--> 
-                          <div class="modal-body">
-
-                            <div class="panel-body">
-
-                              <div><h5>Penjelasan Menu :</h5>
-                                <p></p>
-                                <p>Pelanggaran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                              </div><hr>
-
-                              <table>
-                                <tr>
-                                  <td><b>Nama</b></td>
-                                  <td>:  <?php echo $res->nama_siswa?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Kelas</b></td>
-                                  <td>:  <?php echo $res->kelas?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Jenis Kelamin</b></td>
-                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                                </tr>
-                              </table><hr>
-
-                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
-                            </div>
-
-                            <div class="col-md-6">
-                              <label for="" class="control-label"><b>Point</b> </label>
-                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                            </div>
-
-                            <div class="col-md-12">
-                              <label for="" class="control-label"><b>Keterangan</b></label>
-                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                              </div>
-
-                            </div>
-
-
-                          </div>
-
-                          <!--Modal footer-->
-                          <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                          </div>
-                          <?= form_close(); ?>
-                        </div>
                       </div>
+                    </div>                
+                  </div>
+                  <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+
+                        <!--Modal Update-->
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                          <h4 class="modal-title">Penambahan point Siswa</h4>
+                        </div>
+                        <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
+
+                        <!--Modal body--> 
+                        <div class="modal-body">
+
+                          <div class="panel-body">
+                           <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                           <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat ?>">
+                           <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
+
+                           <div><h5>Penjelasan Menu :</h5>
+                            <p></p>
+                            <p>Pelanggaran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
+                          </div><hr>
+
+                          <table>
+                            <tr>
+                              <td><b>Nama</b></td>
+                              <td>:  <?php echo $res->nama_siswa?></td>
+                            </tr>
+                            <tr>
+                              <td><b>Kelas</b></td>
+                              <td>:  <?php echo $res->kelas?></td>
+                            </tr>
+                            <tr>
+                              <td><b>Jenis Kelamin</b></td>
+                              <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                            </tr>
+                          </table><hr>
+
+                          <div class="col-md-6">
+                            <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                            <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
+                          </div>
+
+                          <div class="col-md-6">
+                            <label for="" class="control-label"><b>Point</b> </label>
+                            <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                          </div>
+
+                          <div class="col-md-12">
+                            <label for="" class="control-label"><b>Keterangan</b></label>
+                            <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+
+                      <!--Modal footer-->
+                      <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit">Simpan</button>
+                      </div>
+                      <?= form_close(); ?>
                     </div>
-                <?php  } ?>
+                  </div>
+                </div>
+              <?php  } ?>
             </div>
-          </form>
+          
 
         </div>
+      </div>
     </div>
   </div>
 </div>
-</div>
 
 
-  <!-- hapus -->
-  <!-- end hapus -->
+<!-- hapus -->
+<!-- end hapus -->
 
 
 
 
-  <!-- modal edit -->
-  <!-- end modal edit -->
+<!-- modal edit -->
+<!-- end modal edit -->
 
 
 
