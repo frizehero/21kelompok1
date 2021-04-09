@@ -114,7 +114,6 @@
 
               </form><br><br><hr>
 
-              <form action="#" method="post">
                 <p>Pilih Treatment :</p>
                 <?php foreach($tampil as $res) {
                   $id = $res->id_treatment;
@@ -202,7 +201,6 @@
                     </div>
                   <?php  } ?>
                 </div>
-              </form>
 
             </div>
           </div>
