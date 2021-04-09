@@ -226,7 +226,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
