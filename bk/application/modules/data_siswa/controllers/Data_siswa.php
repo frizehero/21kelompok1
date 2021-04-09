@@ -134,6 +134,13 @@ class Data_siswa extends MX_Controller {
 
 	function details($id)
 	{
+
+		$jumlah_pelanggaranku			= $this->m_data_siswa->count_jpelanggaran($id);
+		$jumlah_pelanggaran_kerapian	= $this->m_data_siswa->count_jpelanggaran_kerapian($id);
+		$jumlah_pelanggaran_berat		= $this->m_data_siswa->count_jpelanggaran_berat($id);
+
+		$total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
 		$data = array(
 			'namamodule' 			=> "data_siswa",
 			'namafileview' 			=> "V_detail_siswa",
@@ -142,11 +149,9 @@ class Data_siswa extends MX_Controller {
 			'tampil_treatment'		=> $this->m_data_siswa->tampilriwayat_treatment($id),
 			'jumlah_treatment'		=> $this->m_data_siswa->count_jtreatment($id),
 			'tampil_pelanggaran'	=> $this->m_data_siswa->tampilriwayat_pelanggaran($id),
-			'jumlah_pelanggaran'	=> $this->m_data_siswa->count_jpelanggaran($id),
 			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa->tampilriwayat_pelanggaran_kerapian($id),
-			'jumlah_pelanggaran_kerapian'	=> $this->m_data_siswa->count_jpelanggaran_kerapian($id),
 			'tampil_pelanggaran_berat'		=> $this->m_data_siswa->tampilriwayat_pelanggaran_berat($id),
-			'jumlah_pelanggaran_berat'		=> $this->m_data_siswa->count_jpelanggaran_berat($id),
+			'jumlah_pelanggaran'			=> $total,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

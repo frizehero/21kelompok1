@@ -59,6 +59,7 @@
                     <a href="<?php echo base_url('data_siswa/details/'.$terbaru->id_siswa) ?>" class="text-main">
                       <p><?php echo $terbaru->nama_siswa ?></p>
                     </a>
+                    <a class="btn btn-xs btn-default" href="<?php echo base_url('data_siswa/details/'.$terbaru->id_siswa) ?>">Detail</a>
                   </div>
                 </div>
                 <?php $count++; ?>
