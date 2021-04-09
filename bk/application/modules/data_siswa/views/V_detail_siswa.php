@@ -44,240 +44,167 @@
               Pelanggar Baru Ini
             </p>
 
+            <?php $count = 0; ?>
             <!--Family-->
             <div class="list-group bg-trans bord-btm">
-              <div class="list-group-item list-item-sm">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
+              <?php foreach ($pterbaru as $terbaru) {
+                $id = $terbaru->id_riwayat_pelanggaran;
+                ?>
+                <?php if($count == 10) break; ?>
+                <div class="list-group-item">
+                  <div class="media-left pos-rel">
+                    <a href="<?php echo base_url('data_siswa/details/'.$terbaru->id_siswa) ?>"><img class="img-circle img-xs" src="<?php echo base_url ()?>assets/img/<?php echo $terbaru->foto_siswa ?>" alt="Profile Picture"></a>
+                  </div>
+                  <div class="media-body">
+                    <a href="<?php echo base_url('data_siswa/details/'.$terbaru->id_siswa) ?>" class="text-main">
+                      <p><?php echo $terbaru->nama_siswa ?></p>
+                    </a>
+                  </div>
                 </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Dhimas</p>
-                  </a>
-                </div>
+                <?php $count++; ?>
+              <?php } ?>
+
               </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Hajir</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>muhammad davino budiarto</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Betty Murphy</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/7.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Samantha Reid</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item list-item-sm">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/2.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Dhimas</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/8.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Hajir</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/4.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Donald Brown</p>
-                  </a>
-                </div>
-              </div>
-              <div class="list-group-item">
-                <div class="media-left pos-rel">
-                  <a href="#"><img class="img-circle img-xs" src="img/profile-photos/9.png" alt="Profile Picture"></a>
-                </div>
-                <div class="media-body">
-                  <a href="#" class="text-main">
-                    <p>Betty Murphy</p>
-                  </a>
-                </div>
-              </div>
+
 
             </div>
-
-
           </div>
         </div>
       </div>
-    </div>
-    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <!--End Fixedbar-->
+      <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+      <!--End Fixedbar-->
 
 
 
-    <!--Page content-->
-    <!--===================================================-->
-    <div id="page-content">
-      <div class="panel">
-       <div class="panel-body">
-        <div class="row">
-        
-          <div class="fixed-fluid">
-            <?php foreach($tampil as $res) {
-          $id = $res->id_siswa;
-          $gambar = $res->foto_siswa;
-          ?>
-           <div class="fixed-md-200 pull-sm-left fixed-right-border">
-
-             <!-- Simple profile -->
-             <div class="text-center">
-               <div class="pad-ver">
-                <img src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>" class="img-lg img-circle" alt="Profile Picture">
-               </div>
-               <p><h4 class="text-lg text-overflow"><?php echo $res->nama_siswa?></h4></p>
-               <p><b>NIS : </b><?php echo $res->nis?></p>
-             </div><hr>
-             <div class="text-center">
-              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
-              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
-            </div>
-            <hr>
-
-            <!-- Profile Details -->
-            <p class="pad-ver text-main text-sm text-uppercase text-bold">Data Siswa</p>
-            <p><b>ALAMAT : </b><?php echo $res->alamat_siswa?></p>
-            <p><b>TGL LAHIR : </b><?php echo $res->tanggal_lahir_siswa?></p>
-            <p><b>JENIS KELAMIN : </b><?php echo $res->jenis_kelamin_siswa?></p>
-            <p><b>KELAS : </b><?php echo $res->kelas?></p>
-            <p><b>JURUSAN : </b><?php echo $res->jurusan?></p>
-            <p><b>AGAMA : </b><?php echo $res->agama?></p>
-            <hr>
-
-          </div>
-        <?php }?>
-        <div class="fluid">
-
+      <!--Page content-->
+      <!--===================================================-->
+      <div id="page-content">
+        <div class="panel">
+         <div class="panel-body">
           <div class="row">
-            <div class="col-md-4">
-              <div class="panel panel-danger panel-colorful media middle pad-all">
-                <div class="media-left">
-                  <div class="pad-hor ti-agenda icon-3x">
+
+            <div class="fixed-fluid">
+              <?php foreach($tampil as $res) {
+                $id = $res->id_siswa;
+                $gambar = $res->foto_siswa;
+                ?>
+                <div class="fixed-md-200 pull-sm-left fixed-right-border">
+
+                 <!-- Simple profile -->
+                 <div class="text-center">
+                   <div class="pad-ver">
+                    <img src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>" class="img-lg img-circle" alt="Profile Picture">
+                  </div>
+                  <p><h4 class="text-lg text-overflow"><?php echo $res->nama_siswa?></h4></p>
+                  <p><b>NIS : </b><?php echo $res->nis?></p>
+                </div><hr>
+                <div class="text-center">
+                  <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
+                  <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
+                </div>
+                <hr>
+
+                <!-- Profile Details -->
+                <p class="pad-ver text-main text-sm text-uppercase text-bold">Data Siswa</p>
+                <p><b>ALAMAT : </b><?php echo $res->alamat_siswa?></p>
+                <p><b>TGL LAHIR : </b><?php echo $res->tanggal_lahir_siswa?></p>
+                <p><b>JENIS KELAMIN : </b><?php echo $res->jenis_kelamin_siswa?></p>
+                <p><b>KELAS : </b><?php echo $res->kelas?></p>
+                <p><b>JURUSAN : </b><?php echo $res->jurusan?></p>
+                <p><b>AGAMA : </b><?php echo $res->agama?></p>
+                <hr>
+
+              </div>
+            <?php }?>
+            <div class="fluid">
+
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="panel panel-danger panel-colorful media middle pad-all">
+                    <div class="media-left">
+                      <div class="pad-hor ti-agenda icon-3x">
+                      </div>
+                    </div>
+                    <div class="media-body">
+                      <p class="text-2x mar-no text-semibold "><?php echo $jumlah_pelanggaran ?></p>
+                      <p class="mar-no">Pelanggaran</p>
+                    </div>
                   </div>
                 </div>
-                <div class="media-body">
-                  <p class="text-2x mar-no text-semibold "><?php echo $jumlah_pelanggaran ?></p>
-                  <p class="mar-no">Pelanggaran</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="panel panel-info panel-colorful media middle pad-all">
-                <div class="media-left">
-                  <div class="pad-hor ion-ios-paper-outline icon-3x">
+                <div class="col-md-3">
+                  <div class="panel panel-info panel-colorful media middle pad-all">
+                    <div class="media-left">
+                      <div class="pad-hor ion-ios-paper-outline icon-3x">
+                      </div>
+                    </div>
+                    <div class="media-body">
+                      <p class="text-2x mar-no text-semibold"><?php echo $jumlah_treatment ?></p>
+                      <p class="mar-no">Treatment</p>
+                    </div>
                   </div>
                 </div>
-                <div class="media-body">
-                  <p class="text-2x mar-no text-semibold"><?php echo $jumlah_treatment ?></p>
-                  <p class="mar-no">Treatment</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3">
-              <div class="panel panel-primary panel-colorful media middle pad-all">
-                <div class="media-left">
-                  <div class="pad-hor">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                      <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                    </svg>
+                <div class="col-md-3">
+                  <div class="panel panel-primary panel-colorful media middle pad-all">
+                    <div class="media-left">
+                      <div class="pad-hor">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                          <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="media-body">
+                      <p class="text-2x mar-no text-semibold">17</p>
+                      <p class="mar-no">Point</p>
+                    </div>
                   </div>
                 </div>
-                <div class="media-body">
-                  <p class="text-2x mar-no text-semibold">17</p>
-                  <p class="mar-no">Point</p>
+                <div class="text-right">
+                  <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>" class="btn btn-sm btn-danger">
+                    <span class="fa fa-edit"></span>
+                  &nbsp;Hapus</a>
+                  <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
+                    <span class="fa fa-trash"></span>
+                  &nbsp;Edit</a>
                 </div>
+                <br><br><br>
+
+                <hr>
+                <h3>Riwayat Pelanggaran/Treatment Siswa</h3>
+
+
               </div>
-            </div>
-            <div class="text-right">
-              <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>" class="btn btn-sm btn-danger">
-                <span class="fa fa-edit"></span>
-              &nbsp;Hapus</a>
-              <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
-                <span class="fa fa-trash"></span>
-              &nbsp;Edit</a>
-            </div>
-            <br><br><br>
 
-            <hr>
-            <h3>Riwayat Pelanggaran/Treatment Siswa</h3>
+              <div class="panel-body">
 
+                <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                  <thead>
+                    <tr>
+                      <th>Tanggal</th>
+                      <th>Pelanggaran/treatment</th>
+                      <th>point</th>
+                      <th>Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <?php foreach ($tampil_pelanggaran as $tment) {
+                     $id = $tment->id_riwayat_pelanggaran;?>
+                     <tr>
+                      <td><?php echo $tment->tanggal_pelanggaran; ?></td>
+                      <td><?php echo $tment->nama_pelanggaran; ?></td>
+                      <td>+<?php echo $tment->point; ?></td>
+                      <td><?php echo $tment->keterangan_pelanggaran; ?></td>
+                    </tr>
+                  <?php } ?> 
 
-          </div>
-
-          <div class="panel-body">
-
-            <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
-              <thead>
-                <tr>
-                  <th>Tanggal</th>
-                  <th>Pelanggaran/treatment</th>
-                  <th>point</th>
-                  <th>Keterangan</th>
-                </tr>
-              </thead>
-              <tbody>
-                 <?php foreach ($tampil_pelanggaran as $tment) {
-                   $id = $tment->id_riwayat_pelanggaran;?>
-                <tr>
-                  <td><?php echo $tment->tanggal_pelanggaran; ?></td>
-                  <td><?php echo $tment->nama_pelanggaran; ?></td>
-                  <td>+<?php echo $tment->point; ?></td>
-                  <td><?php echo $tment->keterangan_pelanggaran; ?></td>
-                </tr>
-              <?php } ?> 
-
-                <?php foreach ($tampil_treatment as $tment) {
+                  <?php foreach ($tampil_treatment as $tment) {
                    $id = $tment->id_riwayat_treatment;?>
-                <tr>
-                  <td><?php echo $tment->tanggal_treatment; ?></td>
-                  <td><?php echo $tment->nama_treatment; ?></td>
-                  <td>-<?php echo $tment->point; ?></td>
-                  <td><?php echo $tment->keterangan_treatment; ?></td>
-                </tr>
-              <?php } ?> 
+                   <tr>
+                    <td><?php echo $tment->tanggal_treatment; ?></td>
+                    <td><?php echo $tment->nama_treatment; ?></td>
+                    <td>-<?php echo $tment->point; ?></td>
+                    <td><?php echo $tment->keterangan_treatment; ?></td>
+                  </tr>
+                <?php } ?> 
               </tbody>
             </table>
           </div>

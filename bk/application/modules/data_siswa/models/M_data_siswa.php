@@ -174,6 +174,17 @@ class M_data_siswa extends CI_Model {
 
 
 
+	function pterbaru()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
 	function edit($id)
 	{
 		$id_detail_siswa            = $this->input->post('id_siswa');
