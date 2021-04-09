@@ -58,29 +58,61 @@ class M_data_jurusan extends CI_Model {
 	}
 
 
-	function get_siswax()
+	function jml_siswarpl()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
-		->where('id_kelas',"1");
+		->where('id_jurusan',"1");
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
 
-	function get_siswaxi()
+	function jml_siswatkj()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
-		->where('id_kelas',"2");
+		->where('id_jurusan',"2");
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
 
-	function get_siswaxii()
+	function jml_siswatpm()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
-		->where('id_kelas',"3");
+		->where('id_jurusan',"3");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatitl()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"4");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatipk()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"5");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatb()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"6");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatkr()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"7");
 		$query = $this->db->get();
 		return $query->num_rows();
 	}

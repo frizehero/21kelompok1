@@ -26,9 +26,13 @@ class Data_jurusan extends MX_Controller {
 			'filter_jur'	=> $this->m_data_jurusan->filter_jur(),
 			'filter_kel'	=> $this->m_data_jurusan->filter_kel(),
 			'row'			=> $this->m_data_jurusan->tampil(),
-			'jml_siswax'	=> $this->m_data_jurusan->get_siswax(),
-			'jml_siswaxi'	=> $this->m_data_jurusan->get_siswaxi(),
-			'jml_siswaxii'	=> $this->m_data_jurusan->get_siswaxii(),
+			'jml_siswarpl'	=> $this->m_data_jurusan->jml_siswarpl(),
+			'jml_siswatkj'	=> $this->m_data_jurusan->jml_siswatkj(),
+			'jml_siswatpm'	=> $this->m_data_jurusan->jml_siswatpm(),
+			'jml_siswatitl'	=> $this->m_data_jurusan->jml_siswatitl(),
+			'jml_siswatipk'	=> $this->m_data_jurusan->jml_siswatipk(),
+			'jml_siswatb'	=> $this->m_data_jurusan->jml_siswatb(),
+			'jml_siswatkr'	=> $this->m_data_jurusan->jml_siswatkr(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);
@@ -41,7 +45,7 @@ class Data_jurusan extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_jurusan",
 			'namafileview' 	=> "V_hasil_jurusan",
-			'tampil'			=> $this->m_data_jurusan->get_siswa($cari),
+			'tampil'		=> $this->m_data_jurusan->get_siswa($cari),
 			'cari'			=> $cari,
 		);
 		echo Modules::run('template/tampilCore', $data);
@@ -58,8 +62,8 @@ class Data_jurusan extends MX_Controller {
 		$data = array(
 			'namamodule' 	=> "data_jurusan",
 			'namafileview' 	=> "V_hasil_jurusan",
-			'filter_kel'	=> $this->m_data_kelas->filter_kel(),
-			'tampil'		=> $this->m_data_kelas->filter($kelas,$jurusan),
+			'filter_kel'	=> $this->m_data_jurusan->filter_kel(),
+			'tampil'		=> $this->m_data_jurusan->filter($kelas,$jurusan),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

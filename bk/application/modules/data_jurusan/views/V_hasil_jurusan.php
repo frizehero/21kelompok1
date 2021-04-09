@@ -4,7 +4,7 @@
   	<!--Page Title-->
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<div id="page-title">
-  		<h1 class="page-header text-overflow">Data Kelas</h1>
+  		<h1 class="page-header text-overflow">Data jurusan</h1>
   	</div>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End page title-->
@@ -15,7 +15,7 @@
   	<ol class="breadcrumb">
   		<li><a href="#"><i class="demo-pli-home"></i></a></li>
   		<li><a href="#">Data</a></li>
-  		<li class="active">Data Kelas</li>
+  		<li class="active">Data jurusan</li>
   	</ol>
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->
@@ -36,7 +36,7 @@
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" name="submit" type="submit">cari</button>
           </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_jurusan'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
         </div> 
