@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_data_pelanggaran extends CI_Model {
 
-	function tampil($limit, $start)
+	function tampil()
 	{
 		
-		$query = $this->db->get('data_pelanggaran', $limit, $start);
+		$query = $this->db->get('data_pelanggaran');
 		return $query->result();
 	}
 	function get_pelanggaran($limit, $start, $st = NULL)
@@ -30,10 +30,10 @@ class M_data_pelanggaran extends CI_Model {
 	}
 
 	// tampil1
-	function tampil1($limit, $start)
+	function tampil1()
 	{
 		
-		$query = $this->db->get('data_pelanggaran_kerapian', $limit, $start);
+		$query = $this->db->get('data_pelanggaran_kerapian');
 		return $query->result();
 	}
 	function get_pelanggaran_kerapian($limit, $start, $st = NULL)
@@ -57,10 +57,10 @@ class M_data_pelanggaran extends CI_Model {
 	}
 
 	// tampil2
-	function tampil2($limit, $start)
+	function tampil2()
 	{
 		
-		$query = $this->db->get('data_pelanggaran_berat', $limit, $start);
+		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
 	}
 	function get_pelanggaran_berat($limit, $start, $st = NULL)
