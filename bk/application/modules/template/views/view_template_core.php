@@ -147,7 +147,7 @@
                     <a href="index.html" class="navbar-brand">
                         <img src="<?php echo base_url(); ?>assets/login/pages/img/login/logo7.png" alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">Hummagang</span>
+                            <span class="brand-text">BK-2021</span>
                         </div>
                     </a>
                 </div>
@@ -637,7 +637,7 @@
  <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+ <p class="pad-lft">&#0169; 2021 SMKN 1 Tambakboyo</p>
 
 
 

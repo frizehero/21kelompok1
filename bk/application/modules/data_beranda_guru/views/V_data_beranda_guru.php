@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">48</p>
+                    <p class="text-2x mar-no text-semibold"><?php echo $jum_gur; ?></p>
                     <p class="mar-no">Guru</p>
                 </div>
             </div>

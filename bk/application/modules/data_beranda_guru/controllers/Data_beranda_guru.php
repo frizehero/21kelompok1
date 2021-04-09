@@ -19,6 +19,7 @@ class Data_beranda_guru extends MX_Controller {
 			'namamodule' 	=> "data_beranda_guru",
 			'namafileview' 	=> "V_data_beranda_guru",
 			'tampil'		=> $this->m_data_beranda_guru->tampil(),
+			'jum_gur'		=> $this->m_data_beranda_guru->jum_gur(),
 		);
 		echo Modules::run('template_guru/tampilCore', $data);
 	}

@@ -13,4 +13,11 @@ class M_data_beranda_guru extends CI_Model {
 		
 	}
 
+	function jum_gur(){
+		$this->db->select('*')
+		->from('data_user');
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+
 }
