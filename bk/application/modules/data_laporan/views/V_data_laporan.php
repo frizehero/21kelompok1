@@ -58,11 +58,11 @@
         <?php } ?>
 
         <?php if ($res->id_jurusan=='2') { ?>
-            <div class="panel panel-success panel-colorful media middle pad-all ">
+            <div class="panel panel-purple panel-colorful media middle pad-all ">
         <?php } ?>
 
         <?php if ($res->id_jurusan=='3') { ?>
-            <div class="panel panel-danger panel-colorful media middle pad-all ">
+            <div class="panel panel-success panel-colorful media middle pad-all ">
         <?php } ?>
 
         <?php if ($res->id_jurusan=='4') { ?>
@@ -78,7 +78,7 @@
         <?php } ?>
 
         <?php if ($res->id_jurusan=='7') { ?>
-            <div class="panel panel-info panel-colorful media middle pad-all ">
+            <div class="panel panel-danger panel-colorful media middle pad-all ">
         <?php } ?>
         
             <div class="media-left">
