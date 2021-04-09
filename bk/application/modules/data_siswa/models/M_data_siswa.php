@@ -298,6 +298,8 @@ class M_data_siswa extends CI_Model {
 	function hapus($id)
 	{
 		$this->db->where('id_siswa', $id)->delete('data_siswa');
+		$this->db->where('id_siswa', $id)->delete('riwayat_pelanggaran');
+		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
 	}
 
 	/*akhir model v detail*/
