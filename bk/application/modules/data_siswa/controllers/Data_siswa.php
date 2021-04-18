@@ -152,6 +152,7 @@ class Data_siswa extends MX_Controller {
 			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa->tampilriwayat_pelanggaran_kerapian($id),
 			'tampil_pelanggaran_berat'		=> $this->m_data_siswa->tampilriwayat_pelanggaran_berat($id),
 			'jumlah_pelanggaran'			=> $total,
+			'jpelangdaran1'					=> $this->m_data_siswa->jumlahpelanggaran1($id),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
