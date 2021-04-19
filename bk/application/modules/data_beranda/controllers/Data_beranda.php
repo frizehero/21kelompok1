@@ -9,6 +9,8 @@ class Data_beranda extends MX_Controller {
 		// model
 		 $this->load->model('m_data_beranda');
 		 $this->load->model('login/m_session');
+		 $this->load->library('pagination');
+		 $this->load->library('session');
 	}
 
 	
@@ -39,11 +41,63 @@ class Data_beranda extends MX_Controller {
 
 	function tampil_pelanggaran_siswa_hari_ini()
 	{
+
+        // pagination settings
+		$config['base_url'] = site_url("data_beranda/tampil_pelanggaran_siswa_hari_ini/");
+		$config['total_rows'] = $this->m_data_beranda->count_pelanggarhariini();
+		$config['per_page'] = "12";
+		$config["uri_segment"] = 3;
+		$choice = $config["total_rows"]/$config["per_page"];
+		$config["num_links"] = floor($choice);
+
+
+		$config['first_link']       = 'First';
+		$config['last_link']        = 'Last';
+		$config['next_link']        = 'Next';
+		$config['prev_link']        = 'Prev';
+		$config['full_tag_open']    = '<div class="pagging text-center"><nav><ul class="pagination justify-content-center">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item active"><span class="page-link">';
+		$config['cur_tag_close']    = '<span class="sr-only">(current)</span></span></li>';
+		$config['next_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['next_tagl_close']  = '<span aria-hidden="true">&raquo;</span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['prev_tagl_close']  = '</span>Next</li>';
+		$config['first_tag_open']   = '<li class="page-item"><span class="page-link">';
+		$config['first_tagl_close'] = '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
+		$config['last_tagl_close']  = '</span></li>';
+		$this->pagination->initialize($config);
+
+		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+
 		$data = array(
-			'namamodule' 	=> "data_beranda",
-			'namafileview' 	=> "V_pelanggaran_siswa_hari_ini",
-			'tampil'		=> $this->m_data_beranda->tampil_pelanggaran_siswa_hari_ini(),
+			'namamodule' 			=> "data_beranda",
+			'namafileview' 			=> "V_pelanggaran_siswa_hari_ini",
+			'pelanggar_hariini'		=> $this->m_data_beranda->tampilpelanggar_hariini($config["per_page"], $data['page']),
+			'pagination' 			=> $this->pagination->create_links(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+
+
+
+	function cariku()
+	{
+
+		$nyari = $this->input->post("cari");
+
+
+		$data = array(
+			'namamodule' 			=> "data_beranda",
+			'namafileview' 			=> "V_caripsiswa_hariini",
+			'pelanggar_hariini'		=> $this->m_data_beranda->carisiswa($nyari),
+			'cari'					=> $nyari,
+		);
+		echo Modules::run('template/tampilCore', $data);
+	}
+
+	
 }

@@ -91,5 +91,4 @@
         </div>
 
 
-    </div>
-    <?php echo $pagination; ?>               
+    </div></div>            
