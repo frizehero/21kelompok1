@@ -1,13 +1,13 @@
 <div class="boxed">
 
-                <div id="page-head">
+    <div id="page-head">
 
-                    <div class="pad-all text-center">
-                        <h3>Selamat Datang Di Website BK</h3>
-                        <p1>SMK BISA SMK HEBAT</p1>
-                    </div>
-                </div>
-            
+        <div class="pad-all text-center">
+            <h3>Selamat Datang Di Website BK</h3>
+            <p1>SMK BISA SMK HEBAT</p1>
+        </div>
+    </div>
+
 </div>
 
 
@@ -67,7 +67,7 @@
             <div class="panel panel-danger panel-colorful media middle pad-all">
                 <div class="media-left">
                     <div class="pad-hor ion-university icon-3x">
-                                            
+
                     </div>
                 </div>
                 <div class="media-body">
@@ -85,14 +85,14 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h4 class="panel-title"> Pelanggaran Perjurusan Perhari</h4>
-                            <script>
-                                window.onload = function () {
+                        <script>
+                            window.onload = function () {
 
-                                    var chart = new CanvasJS.Chart("chartContainer", {
-                                        animationEnabled: true,
-                                        data: [{
-                                                type: "doughnut",
-                                                    startAngle: 60,
+                                var chart = new CanvasJS.Chart("chartContainer", {
+                                    animationEnabled: true,
+                                    data: [{
+                                        type: "doughnut",
+                                        startAngle: 60,
                                             //innerRadius: 60,
                                             indexLabelFontSize: 13,
                                             indexLabel: "{label} - #percent%",
@@ -106,19 +106,19 @@
                                             { y: 40, label: "TKJ"},
                                             { y: 45, label: "TITL"}
                                             ]
-                                            }]
-                                            });
-                                                chart.render();
+                                        }]
+                                    });
+                                chart.render();
 
-                                            }
-                            </script>
+                            }
+                        </script>
                         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                     </div>
                 </div>
             </div>
 
-             <div class="col-md-6">
+            <div class="col-md-6">
 
 
                 <!-- Area Chart -->
@@ -136,7 +136,7 @@
 
             </div>
 
-             <div class="col-md-6">
+            <div class="col-md-6">
                 <div class="panel">
                     <div class="panel-heading">
                         <h3 class="panel-title">Pelanggaran Siswa</h3>
@@ -172,9 +172,9 @@
                                         <a href="detail-siswa.html" class="text-info">Achmad Muhajir
                                         </a>
                                     </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
+                                    <p>NIS      : 243562</p>
+                                    <p>Kelas    : XI</p>
+                                    <p>Jurusan  : RPL</p>
                                 </div>
                             </div>
 
@@ -197,9 +197,9 @@
                                         <a href="detail-siswa.html" class="text-info">Imam Mulkhakim
                                         </a>
                                     </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
+                                    <p>NIS      : 243562</p>
+                                    <p>Kelas    : XI</p>
+                                    <p>Jurusan  : RPL</p>
 
                                 </div>
                             </div>
@@ -223,10 +223,10 @@
                                         <a href="detail-siswa.html" class="text-info">Santi Saputri
                                         </a>
                                     </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-                                                    
+                                    <p>NIS      : 243562</p>
+                                    <p>Kelas    : XI</p>
+                                    <p>Jurusan  : RPL</p>
+
                                 </div>
                             </div>
 
@@ -249,9 +249,9 @@
                                         <a href="detail-siswa.html" class="text-info">Muhammad Davino Budiarto
                                         </a>
                                     </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
+                                    <p>NIS      : 243562</p>
+                                    <p>Kelas    : XI</p>
+                                    <p>Jurusan  : RPL</p>
 
                                 </div>
                             </div>
@@ -276,9 +276,9 @@
                                         <a href="detail-siswa.html" class="text-info">Dhimas Endra Kumara
                                         </a>
                                     </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
+                                    <p>NIS      : 243562</p>
+                                    <p>Kelas    : XI</p>
+                                    <p>Jurusan  : RPL</p>
 
                                 </div>
                             </div>
@@ -307,136 +307,39 @@
                                 </div>
                             </div>
 
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="detail-siswa.html">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/1.png" alt="Profile picture">
-                                        </div> 
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold">200</div>
-                                        </h5>
-                                    </div>
+                            <?php $count = 0; ?>
 
-                                </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="detail-siswa.html" class="text-info">Achmad Muhajir
+                            <?php foreach ($pelanggar_hariini as $pelanggar_hariini) {
+                                $id = $pelanggar_hariini->id_riwayat_pelanggaran;
+                                ?>
+                                <?php if($count == 5) break; ?>
+                                <div class="timeline-entry">
+                                    <div class="timeline-stat">
+                                        <a href="detail-siswa.html">
+                                            <div class="timeline-icon">
+                                                <img src="<?php echo base_url ()?>assets/img/<?php echo $pelanggar_hariini->foto_siswa ?>" alt="Profile picture">
+                                            </div> 
                                         </a>
-                                    </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-                                </div>
-                            </div>
-
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="detail-siswa.html">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/2.png" alt="Profile picture">
+                                        <div class="timeline-time">
+                                            <h5>
+                                                <div >Point</div>
+                                                <div class="text-info text-bold">200</div>
+                                            </h5>
                                         </div>
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold">180</div>
-                                        </h5>               
-                                    </div>
-                                </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="detail-siswa.html" class="text-info">Imam Mulkhakim
-                                        </a>
-                                    </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-
-                                </div>
-                            </div>
-
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="detail-siswa.html">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/10.png" alt="Profile picture">
-                                        </div>
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold">150</div>
-                                        </h5>            
-                                    </div>
-                                </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="detail-siswa.html" class="text-info">Santi Saputri
-                                        </a>
-                                    </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-                                                    
-                                </div>
-                            </div>
-
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="detail-siswa.html">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/5.png" alt="Profile picture">
-                                        </div>
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold">130</div> 
-                                        </h5>
-                                    </div>
-                                </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="detail-siswa.html" class="text-info">Muhammad Davino Budiarto
-                                        </a>
-                                    </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-
-                                </div>
-                            </div>
-
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="detail-siswa.html">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url(); ?>assets/img/profile-photos/4.png" alt="Profile picture">
-                                        </div>
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold">100</div> 
-                                        </h5>
 
                                     </div>
+                                    <div class="timeline-label">
+                                        <p class="text-bold">
+                                            <a href="<?php echo base_url("data_siswa/details/".$pelanggar_hariini->id_siswa) ?>" class="text-info"><?php echo $pelanggar_hariini->nama_siswa ?>
+                                            </a>
+                                        </p>
+                                        <p>NIS      : <?php echo $pelanggar_hariini->nis ?></p>
+                                        <p>Kelas    : <?php echo $pelanggar_hariini->kelas?></p>
+                                        <p>Jurusan  : <?php echo $pelanggar_hariini->jurusan?></p>
+                                    </div>
                                 </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="detail-siswa.html" class="text-info">Dhimas Endra Kumara
-                                        </a>
-                                    </p>
-                                        <p>NIS      : 243562</p>
-                                        <p>Kelas    : XI</p>
-                                        <p>Jurusan  : RPL</p>
-
-                                </div>
-                            </div>
+                                <?php $count++; ?>
+                            <?php } ?>
 
 
                         </div>
@@ -445,9 +348,8 @@
 
                 </div>
             </div>
+        </div>
+
     </div>
 
-</div>
 
-
-                   
