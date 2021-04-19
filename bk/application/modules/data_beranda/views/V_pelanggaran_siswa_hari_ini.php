@@ -57,9 +57,9 @@
                     $id = $pelanggar_hariini->id_riwayat_pelanggaran;
                     ?>
                     <div class="col-sm-3">
-                        <div class="panel">
+                        <div class="panel" style="height: 295px;">
                             <div class="panel-body text-center">
-                                <a href="detail-siswa.html">
+                                <a href="<?php echo base_url('data_siswa/details/'.$pelanggar_hariini->id_siswa); ?>">
                                     <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $pelanggar_hariini->foto_siswa ?>">
                                     <p class="text-lg text-semibold mar-no text-main"><?php echo $pelanggar_hariini->nama_siswa ?></p></a>
                                     <p class="text-muted"><?php echo $pelanggar_hariini->nis ?></p>
