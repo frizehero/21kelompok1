@@ -24,17 +24,26 @@
             <div id="demo-custom-toolbar5" class="table-toolbar-left">
                 <a class="btn btn-default text-left" type="button" href="<?php  echo base_url('data_laporan/index/');  ?>">Kembali</a>
             </div>
-            <center>
-                <form action="#" method="post" class="col-xs-8 col-sm-3 text-right">
-                    <div class="input-group text-right">
-                        <input type="text" placeholder="Search" class="form-control">
-                        <span class="input-group-btn text-right">
-                            <button class="btn btn-default" type="button">Search</button>
-                        </span>
+      <form action="<?php echo site_url('data_laporan/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+        <div class="input-group text-right"  style="padding-left: : 5px">
+          <?php if($this->uri->segment(2) != 'cari'){
+             $cari = $this->input->post('cari');?>
+            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
+          <?php } ?>
+          <?php if($this->uri->segment(2) == 'cari'){
+            $cari = $this->input->post('cari'); ?>
+            <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
+          <?php } ?> 
+          <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+            <button class="btn btn-default" name="submit" type="submit">cari</button>
+          </div>
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_laporan'); ?>">
+            <i class="fa fa-refresh" ></i>
+          </a>
+        </div> 
+      </center>
 
-                    </div>
-                </form>
-            </center>
+    </form>
         </div>
     </div>
 </div>
@@ -48,39 +57,10 @@
 
       <div class="row">
 
-      <div class="col-lg-3">
-
-                                    <!--Profile Widget-->
-                                    <!--===================================================-->
-                                    <div class="panel widget">
-                                        <div class="widget-header bg-info text-center">
-                                            <h4 class="text-light mar-no pad-top">Dhimas </h4>
-                                            <p class="mar-btm">5530</p>
-                                        </div>
-                                        <div class="widget-body">
-                                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/profile-photos/4.png">
-
-                                            <div class="list-group bg-trans mar-no">
-                                                <p class="pull-right">X</p>
-                                                <p>Kelas</p>
-                                                <p class="pull-right">45</p>
-                                                <p>Point</p>
-                                                <center>
-                                                    <a class="btn btn-default" type="button" href="detail-siswa.html">
-                                                        Detail
-                                                    </a>
-                                                </center>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--===================================================-->
-
-
-                                    <!--Profile Widget-->
-                                    <!--===================================================-->
-                                    
-
-                                </div>
+        <?php foreach($tampil_riwayat as $res) {
+        $id = $res->id_riwayat_pelanggaran;
+        $gambar = $res->foto_siswa;
+        ?>
 
                                 <div class="col-lg-3">
 
@@ -88,34 +68,31 @@
                                     <!--===================================================-->
                                     <div class="panel widget">
                                         <div class="widget-header bg-info text-center">
-                                            <h4 class="text-light mar-no pad-top">Dhimas </h4>
-                                            <p class="mar-btm">5530</p>
+                                            <h4 class="text-light mar-no pad-top"><?= $res->nama_siswa ?></h4>
+                                            <p class="mar-btm"><?= $res->nis ?></p>
                                         </div>
                                         <div class="widget-body">
-                                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="img/profile-photos/4.png">
-
+                                            <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?> ?>">
                                             <div class="list-group bg-trans mar-no">
-                                                <p class="pull-right">X</p>
+                                                <p class="pull-right"><?= $res->kelas ?></p>
                                                 <p>Kelas</p>
                                                 <p class="pull-right">45</p>
                                                 <p>Point</p>
                                                 <center>
-                                                    <a class="btn btn-default" type="button" href="detail-siswa.html">
+                                                    <a class="btn btn-default" type="button" href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
                                                         Detail
                                                     </a>
                                                 </center>
                                             </div>
                                         </div>
                                     </div>
-                                    <!--===================================================-->
-
-
                                     <!--Profile Widget-->
                                     <!--===================================================-->
                                     
-
                                 </div>
+
        
+        <?php } ?>
     </div>
 
   </div>
@@ -124,5 +101,67 @@
 <!--End page content-->
 
 
+<script type="text/javascript">
 
+    function tampilkanPreview(userfile,idpreview)
+    {
+        var gb = userfile.files;
+        for (var i = 0; i < gb.length; i++)
+        {
+            var gbPreview = gb[i];
+            var imageType = /image.*/;
+            var preview=document.getElementById(idpreview);
+            var reader = new FileReader();
+            if (gbPreview.type.match(imageType))
+            {
+      //jika tipe data sesuai
+      preview.file = gbPreview;
+      reader.onload = (function(element)
+      {
+        return function(e)
+        {
+            element.src = e.target.result;
+        };
+      })(preview);
+      //membaca data URL gambar
+      reader.readAsDataURL(gbPreview);
+    }
+    else
+    {
+        //jika tipe data tidak sesuai
+        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
+      }
+    }
+  }
+  function tampilkanPreview1(userfile,idpreview1)
+  {
+   var gb = userfile.files;
+   for (var i = 0; i < gb.length; i++)
+   {
+    var gbPreview1 = gb[i];
+    var imageType = /image.*/;
+    var preview1=document.getElementById(idpreview1);
+    var reader = new FileReader();
+    if (gbPreview1.type.match(imageType))
+    {
+      //jika tipe data sesuai
+      preview1.file = gbPreview1;
+      reader.onload = (function(element)
+      {
+        return function(e)
+        {
+            element.src = e.target.result;
+        };
+      })(preview1);
+      //membaca data URL gambar
+      reader.readAsDataURL(gbPreview1);
+    }
+    else
+    {
+        //jika tipe data tidak sesuai
+        alert("Tipe file tidak sesuai. Gambar harus bertipe .png, .gif atau .jpg.");
+      }
+    }
+  }
+</script>
 
