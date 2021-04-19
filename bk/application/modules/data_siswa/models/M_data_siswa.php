@@ -304,6 +304,15 @@ class M_data_siswa extends CI_Model {
 		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
 	}
 
+
+
+	function jumlahpelanggaran1()
+	{
+		
+	}
+
+
+
 	/*akhir model v detail*/
 
 

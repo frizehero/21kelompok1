@@ -153,7 +153,7 @@
                     </div>
                   </div>
                   <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">17</p>
+                    <p class="text-2x mar-no text-semibold"><!-- <?php echo $pointpelanggaran1 ?> --></p>
                     <p class="mar-no">Point</p>
                   </div>
                 </div>
