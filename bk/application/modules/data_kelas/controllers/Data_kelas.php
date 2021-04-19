@@ -26,9 +26,13 @@ class Data_kelas extends MX_Controller {
 			'filter_jur'	=> $this->m_data_kelas->filter_jur(),
 			'filter_kel'	=> $this->m_data_kelas->filter_kel(),
 			'row'			=> $this->m_data_kelas->tampil(),
-			'jml_siswax'	=> $this->m_data_kelas->get_siswax(),
-			'jml_siswaxi'	=> $this->m_data_kelas->get_siswaxi(),
-			'jml_siswaxii'	=> $this->m_data_kelas->get_siswaxii(),
+			'jml_siswarpl'	=> $this->m_data_kelas->jml_siswarpl(),
+			'jml_siswatkj'	=> $this->m_data_kelas->jml_siswatkj(),
+			'jml_siswatpm'	=> $this->m_data_kelas->jml_siswatpm(),
+			'jml_siswatitl'	=> $this->m_data_kelas->jml_siswatitl(),
+			'jml_siswatipk'	=> $this->m_data_kelas->jml_siswatipk(),
+			'jml_siswatb'	=> $this->m_data_kelas->jml_siswatb(),
+			'jml_siswatkr'	=> $this->m_data_kelas->jml_siswatkr(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);
