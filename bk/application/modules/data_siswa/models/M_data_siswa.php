@@ -490,14 +490,14 @@ class M_data_siswa extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
-		$id_pelanggaran_kerapian				= $this->input->post('id_pelanggaran_kerapian');
+		$id_pelanggaran_kerapian	= $this->input->post('id_pelanggaran_kerapian');
 		$id_siswa 					= $this->input->post('id_siswa');
 
 
 		$data = array(
 			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
 			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran_kerapian'			=> $id_pelanggaran_kerapian,
+			'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
 			'id_siswa'					=> $id_siswa,
 
 

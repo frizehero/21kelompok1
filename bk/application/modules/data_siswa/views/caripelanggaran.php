@@ -228,7 +228,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran_kerapian/tambah'); ?>
+                          <?= form_open_multipart('data_siswa/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
                           <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian?>">
 
                           <!--Modal body--> 
@@ -311,7 +311,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
+                         <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
                           <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
 
                           <!--Modal body--> 
