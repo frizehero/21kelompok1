@@ -24,7 +24,7 @@
       <div id="demo-custom-toolbar5" class="table-toolbar-left">
         
       </div>
-      <form action="<?php echo site_url('data_jurusan/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_kelas/carik/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
            $cari = $this->input->post('cari');?>
@@ -37,7 +37,7 @@
         <div class="input-group-btn  text-right"  style="padding-left: : 10px">
           <button class="btn btn-default" name="submit" type="submit">cari</button>
         </div>
-        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_jurusan'); ?>">
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">
           <i class="fa fa-refresh" ></i>
         </a>
       </div> 

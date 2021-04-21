@@ -39,7 +39,7 @@ class Data_kelas extends MX_Controller {
 	}
 
 
-	function cariku()
+	function carik()
 	{
 		$cari 						= $this->input->post('cari');
 		$data = array(

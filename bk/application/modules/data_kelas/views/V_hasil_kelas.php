@@ -24,7 +24,7 @@
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
         <a class="btn btn-default text-left form-control" style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">Kembali</a>
       </div>
-      <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_kelas/carik/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
            $cari = $this->input->post('cari');?>
