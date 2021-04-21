@@ -32,6 +32,7 @@ class Data_laporan extends MX_Controller {
 			'jml_siswatkr'	=> $this->m_data_laporan->jml_siswatkr(),
 			'filter_kel'	=> $this->m_data_laporan->filter_kel(),
 
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -59,9 +60,9 @@ class Data_laporan extends MX_Controller {
 			'namamodule' 			=> "data_laporan",
 			'namafileview' 			=> "V_data_laporan_siswa",
 			'filter_kel'			=> $this->m_data_laporan->filter_kel(),
-			'tampil_riwayat'		=> $this->m_data_laporan->tampil_riwayat($jurusan, $kelas),
-			'filter_tanggal'		=> $this->m_data_laporan->filter_tanggal($awal, $akhir),
-		);
+			// 'filter_tanggal'		=> $this->m_data_laporan->filter_tanggal($awal, $akhir),
+			'tampil_riwayat'		=> $this->m_data_laporan->tampil_riwayat($jurusan, $kelas, $awal, $akhir),
+			);
 		echo Modules::run('template/tampilCore', $data);
 	}
 
