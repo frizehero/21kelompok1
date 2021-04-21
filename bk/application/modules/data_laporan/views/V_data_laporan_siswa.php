@@ -67,8 +67,8 @@
 
                                     <!--Profile Widget-->
                                     <!--===================================================-->
-                                    <div class="panel widget">
-                                        <div class="widget-header bg-info text-center">
+                                    <div class="panel widget" style="height: 320px">
+                                        <div class="widget-header bg-info text-center" style="height: 175px">
                                             <h4 class="text-light mar-no pad-top"><?= $res->nama_siswa ?></h4>
                                             <p class="mar-btm"><?= $res->nis ?></p>
                                         </div>
