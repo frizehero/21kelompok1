@@ -144,7 +144,7 @@
                                         </div>
                                     </div>
 
-                                    <br>
+                                   <!--  <br>
 
                                         <label class="control-label"> <p class="modal-title text-1x  ">Pilih Kelas :</p></label>
                                             <select class="form-control" name="kelas" id="demo-ease" required="">
@@ -152,7 +152,7 @@
                                                     <?php  foreach($filter_kel as $kel) {  ?>
                                                 <option  value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
                                                     <?php }?>
-                                            </select>
+                                            </select> -->
 
                                 </div>
                                     
