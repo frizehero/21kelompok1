@@ -134,13 +134,13 @@
                                     <div class="box-inline mar-btm pad-rgt">
                                         <p class="modal-title text-1x">Pilih Tanggal :</p>
                                         <div class="select">
-                                            <input class="btn btn-default" type="date" name="awal">
+                                            <input class="btn btn-default" required="" type="date" name="awal">
                                         </div>
                                     </div>
                                     <div class="box-inline mar-btm">
                                         <p class="modal-title text-1x">Sampai Dengan :</p>
                                         <div class="select">
-                                            <input class="btn btn-default" type="date" name="akhir">
+                                            <input class="btn btn-default" required="" type="date" name="akhir">
                                         </div>
                                     </div>
 

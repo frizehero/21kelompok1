@@ -166,4 +166,46 @@ class M_data_beranda extends CI_Model {
 		return $query->num_rows();
 	}
 
+
+	function count_jtreatment($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->where('riwayat_treatment.id_siswa',$id);
+		$query = $this->db->get('riwayat_treatment');
+		return $query->num_rows();
+	}
+
+	function count_jpelanggaran($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+
+	function count_jpelanggaran_kerapian($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+	function count_jpelanggaran_berat($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
 }

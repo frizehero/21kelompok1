@@ -24,7 +24,7 @@
             <div id="demo-custom-toolbar5" class="table-toolbar-left">
                 <a class="btn btn-default text-left" type="button" href="<?php  echo base_url('data_laporan/index/');  ?>">Kembali</a>
             </div>
-      <form action="<?php echo site_url('data_laporan/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_laporan/cariww/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
              $cari = $this->input->post('cari');?>
@@ -67,8 +67,8 @@
 
                                     <!--Profile Widget-->
                                     <!--===================================================-->
-                                    <div class="panel widget">
-                                        <div class="widget-header bg-info text-center">
+                                    <div class="panel widget" style="height: 320px">
+                                        <div class="widget-header bg-info text-center" style="height: 175px">
                                             <h4 class="text-light mar-no pad-top"><?= $res->nama_siswa ?></h4>
                                             <p class="mar-btm"><?= $res->nis ?></p>
                                         </div>

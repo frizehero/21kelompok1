@@ -69,11 +69,31 @@
                                     </p>
                                     <ul class="list-unstyled text-center bord-top pad-top mar-no row">
                                         <li class="col-xs-5">
-                                            <span class="text-lg text-semibold text-main">0</span>
+                                            <span class="text-lg text-semibold text-main">
+                                              <?php 
+                                                $id = $pelanggar_hariini->id_siswa;
+
+                                                $jumlah_pelanggaranku      = $this->m_data_beranda->count_jpelanggaran($id);
+                                                $jumlah_pelanggaran_kerapian  = $this->m_data_beranda->count_jpelanggaran_kerapian($id);
+                                                $jumlah_pelanggaran_berat   = $this->m_data_beranda->count_jpelanggaran_berat($id);
+
+                                                $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
+                                                echo $total;
+                                                ?>
+                                            </span>
                                             <p class="text-muted mar-no">Pelanggaran</p>
                                         </li>
                                         <li class="col-xs-4">
-                                            <span class="text-lg text-semibold text-main">0</span>
+                                            <span class="text-lg text-semibold text-main">
+                                              <?php 
+                                                $id = $pelanggar_hariini->id_siswa;
+
+                                                $jumlah_treatment    = $this->m_data_beranda->count_jtreatment($id);
+
+                                                echo $jumlah_treatment;
+                                                ?>
+                                            </span>
                                             <p class="text-muted mar-no">Treatment</p>
                                         </li>
                                         <li class="col-xs-3">
