@@ -27,23 +27,23 @@
       <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
-             $cari = $this->input->post('cari');?>
-            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
-          <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
-            $cari = $this->input->post('cari'); ?>
-            <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
-          <?php } ?> 
-          <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-            <button class="btn btn-default" name="submit" type="submit">cari</button>
-          </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
-            <i class="fa fa-refresh" ></i>
-          </a>
-        </div> 
-      </center>
+           $cari = $this->input->post('cari');?>
+           <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
+         <?php } ?>
+         <?php if($this->uri->segment(2) == 'cari'){
+          $cari = $this->input->post('cari'); ?>
+          <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
+        <?php } ?> 
+        <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+          <button class="btn btn-default" name="submit" type="submit">cari</button>
+        </div>
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
+          <i class="fa fa-refresh" ></i>
+        </a>
+      </div> 
+    </center>
 
-    </form>
+  </form>
 </div>
 
 
@@ -71,11 +71,31 @@
             </p>
             <ul class="list-unstyled text-center bord-top pad-top mar-no row">
               <li class="col-xs-5">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $id = $res->id_siswa;
+
+                  $jumlah_pelanggaranku      = $this->m_data_siswa->count_jpelanggaran($id);
+                  $jumlah_pelanggaran_kerapian  = $this->m_data_siswa->count_jpelanggaran_kerapian($id);
+                  $jumlah_pelanggaran_berat   = $this->m_data_siswa->count_jpelanggaran_berat($id);
+
+                  $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
+                  echo $total;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Pelanggaran</p>
               </li>
               <li class="col-xs-4">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $id = $res->id_siswa;
+
+                  $jumlah_treatment    = $this->m_data_siswa->count_jtreatment($id);
+
+                  echo $jumlah_treatment;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Treatment</p>
               </li>
               <li class="col-xs-3">
@@ -196,7 +216,7 @@
 
   </div>
   <!-- end tambah -->
- 
+
 
 
 
