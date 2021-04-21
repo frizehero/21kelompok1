@@ -66,7 +66,7 @@ class Data_laporan extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
-	function cariku()
+	function cariww()
 	{
 		$cari 						= $this->input->post('cari');
 		$data = array(
