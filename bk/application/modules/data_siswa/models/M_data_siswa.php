@@ -8,7 +8,8 @@ class M_data_siswa extends CI_Model {
 		$this->db->select('*')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama');
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->order_by("id_siswa", "DESC");
 		$query = $this->db->get('data_siswa', $limit, $start);
 		return $query->result();
 
@@ -306,9 +307,17 @@ class M_data_siswa extends CI_Model {
 
 
 
-	function jumlahpelanggaran1()
+	function jumlahpelanggaran1($id)
 	{
 		
+		// $query = $this->db->select_sum("data_pelanggaran.point")
+		// ->from("data_pelanggaran")
+		// ->join("riwayat_pelanggaran","data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran","left") 
+		// ->where("riwayat_pelanggaran.id_siswa",$id);
+		// $query = $this->db->get();
+		// return $query->result_array();
+
+
 	}
 
 
