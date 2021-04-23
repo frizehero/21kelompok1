@@ -141,6 +141,14 @@ class Data_siswa extends MX_Controller {
 
 		$total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
 
+		$jpelanggaran1					= $this->m_data_siswa->jumlahpelanggaran1($id);
+		$jpelanggaran2					= $this->m_data_siswa->jumlahpelanggaran2($id);
+		$jpelanggaran3					= $this->m_data_siswa->jumlahpelanggaran3($id);
+		$jumlahpointtreatment			= $this->m_data_siswa->jumlahpointtreatment($id);
+		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+		$total_treatment				= $jumlahpointtreatment['point'];
+
+
 		$data = array(
 			'namamodule' 			=> "data_siswa",
 			'namafileview' 			=> "V_detail_siswa",
@@ -152,7 +160,8 @@ class Data_siswa extends MX_Controller {
 			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa->tampilriwayat_pelanggaran_kerapian($id),
 			'tampil_pelanggaran_berat'		=> $this->m_data_siswa->tampilriwayat_pelanggaran_berat($id),
 			'jumlah_pelanggaran'			=> $total,
-			'jpelangdaran1'					=> $this->m_data_siswa->jumlahpelanggaran1($id),
+			'total_point'					=> $total_pelanggaran - $total_treatment,
+
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

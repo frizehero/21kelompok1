@@ -159,4 +159,48 @@ class M_data_kelas extends CI_Model {
 		return $query->num_rows();
 	}
 
+	function jumlahpelanggaran1($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran.point")
+		->from("data_pelanggaran")
+		->join("riwayat_pelanggaran","data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpelanggaran2($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_berat.point")
+		->from("data_pelanggaran_berat")
+		->join("riwayat_pelanggaran","data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpelanggaran3($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_kerapian.point")
+		->from("data_pelanggaran_kerapian")
+		->join("riwayat_pelanggaran","data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpointtreatment($id)
+	{
+		
+		$query = $this->db->select_sum("data_treatment.point")
+		->from("data_treatment")
+		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
+		->where("riwayat_treatment.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
 }

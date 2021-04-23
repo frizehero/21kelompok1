@@ -158,7 +158,7 @@
                         <!--Modal footer-->
                         <div class="modal-footer">
                           <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                          <button class="btn btn-primary" type="submit">cari</button>
+                          <button class="btn btn-primary" type="submit">Detail</button>
                         </div>
                         <?= form_close(); ?>
                       </div>

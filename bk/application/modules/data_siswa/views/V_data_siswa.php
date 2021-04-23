@@ -99,7 +99,21 @@
                 <p class="text-muted mar-no">Treatment</p>
               </li>
               <li class="col-xs-3">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $jpelanggaran1          = $this->m_data_siswa->jumlahpelanggaran1($id);
+                  $jpelanggaran2          = $this->m_data_siswa->jumlahpelanggaran2($id);
+                  $jpelanggaran3          = $this->m_data_siswa->jumlahpelanggaran3($id);
+                  $jumlahpointtreatment   = $this->m_data_siswa->jumlahpointtreatment($id);
+
+
+                  $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                  $total_treatment        = $jumlahpointtreatment['point'];
+                  $total_point            = $total_pelanggaran - $total_treatment;
+
+                  echo $total_point;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Point</p>
               </li>
             </ul>
