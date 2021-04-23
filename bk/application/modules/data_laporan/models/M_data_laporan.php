@@ -50,7 +50,7 @@ class M_data_laporan extends CI_Model {
 		return $query->num_rows();
 	}
 
-	function tampil_riwayat($jurusan,$kelas,$awal,$akhir)
+	function tampil_riwayat($jurusan,$awal,$akhir)
 	{
 		$this->db->select('*')
 		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
@@ -62,7 +62,6 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
 		->where('tanggal_pelanggaran >=',$awal) 
 		->where('tanggal_pelanggaran <=',$akhir)
-		->like('data_siswa.id_kelas',$kelas)
 		->like('data_siswa.id_jurusan',$jurusan);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -153,13 +152,58 @@ class M_data_laporan extends CI_Model {
 		return $query->result();
 	}
 
-	function filter_kel()
+
+	function jumlahpelanggaran1($id)
 	{
-		$this->db->select('*')
-		->from('data_kelas');
+		
+		$query = $this->db->select_sum("data_pelanggaran.point")
+		->from("data_pelanggaran")
+		->join("riwayat_pelanggaran","data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
 		$query = $this->db->get();
-		return $query->result();
+		return $query->row_array();
 	}
+
+	function jumlahpelanggaran2($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_berat.point")
+		->from("data_pelanggaran_berat")
+		->join("riwayat_pelanggaran","data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpelanggaran3($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_kerapian.point")
+		->from("data_pelanggaran_kerapian")
+		->join("riwayat_pelanggaran","data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpointtreatment($id)
+	{
+		
+		$query = $this->db->select_sum("data_treatment.point")
+		->from("data_treatment")
+		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
+		->where("riwayat_treatment.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	// function filter_kel()
+	// {
+	// 	$this->db->select('*')
+	// 	->from('data_kelas');
+	// 	$query = $this->db->get();
+	// 	return $query->result();
+	// }
 
 	// function filter_tanggal($awal,$akhir)
 	// {
