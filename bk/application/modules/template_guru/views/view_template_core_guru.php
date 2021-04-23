@@ -522,7 +522,7 @@
                         
 
                         
-                        <ul id="mainnav-menu" class="list-group">
+                         <ul id="mainnav-menu" class="list-group">
                             <li class="list-header">MENU</li>
 
                             <?php if($this->uri->segment('1') == 'data_beranda_guru'){ ?>
@@ -543,7 +543,7 @@
                                 </li>
                             <?php } ?>
                             
-                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas' ? "active-sub" : ''?>">
+                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
                                 <a href="">
                                    <i class="demo-pli-receipt-4"></i>
                                     <span>Data</span>
@@ -563,8 +563,8 @@
                                     <i class="arrow"></i>
                                 </a>
                                 <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'data_pelanggaran' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_pelanggaran'); ?>">Data Pelanggaran</a></li>
-                                        <li <?=$this->uri->segment('1') == 'data_treatment' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_treatment'); ?>">Data Treatment</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_pelanggaran' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_pelanggaran_guru'); ?>">Data Pelanggaran</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_treatment_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_treatment_guru'); ?>">Data Treatment</a></li>
                                     </ul>
                             </li>
 
