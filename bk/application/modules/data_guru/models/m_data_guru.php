@@ -136,11 +136,12 @@
  		$id_user					= $this->input->post('id_user');
  		$username					= $this->input->post('username');
  		$password 					= $this->input->post('password');
+ 		$password2 					= sha1($password);
  		$level 						= $this->input->post('level');
 
  		$data = array(
  			'username'				=> $username,
- 			'password'				=> $password,
+ 			'password'				=> $password2,
  			'level'					=> $level,
 
  		);
