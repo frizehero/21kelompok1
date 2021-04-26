@@ -556,14 +556,14 @@
                                     </ul>
                             </li>
 
-                           <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
+                           <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
                                 <a href="">
                                    <i class="demo-pli-warning-window"></i>
                                     <span>Peraturan</span>
                                     <i class="arrow"></i>
                                 </a>
                                 <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'data_pelanggaran' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_pelanggaran_guru'); ?>">Data Pelanggaran</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_pelanggaran_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_pelanggaran_guru'); ?>">Data Pelanggaran</a></li>
                                         <li <?=$this->uri->segment('1') == 'data_treatment_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_treatment_guru'); ?>">Data Treatment</a></li>
                                     </ul>
                             </li>
