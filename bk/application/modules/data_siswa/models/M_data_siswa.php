@@ -231,6 +231,7 @@ class M_data_siswa extends CI_Model {
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
 	}
