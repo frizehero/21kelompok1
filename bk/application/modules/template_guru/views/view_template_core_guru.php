@@ -543,21 +543,19 @@
                                 </li>
                             <?php } ?>
                             
-                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
+                            <li class=" <?=$this->uri->segment('1') == 'data_siswa_guru' || $this->uri->segment(1) == 'data_guru'   ? "active-sub" : ''?>">
                             <a href="">
                              <i class="demo-pli-receipt-4"></i>
                              <span class="menu-title">Data</span>
                              <i class="arrow"></i>
                          </a>
                          <ul class="collapse">
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_siswa' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_siswa_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_siswa_guru'); ?>">Data Siswa</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas_guru'); ?>">Data Kelas</a></li>
                         </ul>
                     </li>
 
-                    <!-- percobaan -->
-                    <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
+                    <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment_guru' ? "active-sub" : ''?>">
                         <a href="#">
                             <i class="demo-pli-warning-window"></i>
                             <span class="menu-title">Peraturan</span>
@@ -567,8 +565,8 @@
                         <!--Submenu-->
 
                         <ul class="collapse">
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_pelanggaran' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_pelanggaran'); ?>">Data Pelanggaran</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_treatment' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_treatment'); ?>">Data Treatment</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_pelanggaran_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_pelanggaran_guru'); ?>">Data Pelanggaran</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_treatment_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_treatment_guru'); ?>">Data Treatment</a></li>
                         </ul>
                     </li>
 
