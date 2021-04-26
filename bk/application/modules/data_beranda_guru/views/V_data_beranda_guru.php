@@ -16,7 +16,7 @@
     <div class="row">
 
         <div class="col-md-3">
-            <div class="panel panel-warning panel-colorful media middle pad-all">
+            <div class="panel panel-warning panel-colorful media middle pad-all" style="height: 100px; width: 220px;" >
                 <div class="media-left">
                     <div class="pad-hor ion-ios-bookmarks-outline icon-3x">
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="col-md-3">
-            <div class="panel panel-info panel-colorful media middle pad-all">
+            <div class="panel panel-info panel-colorful media middle pad-all" style="height: 100px; width: 220px;">
                 <div class="media-left">
                     <div class="pad-hor">
                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-file-person" viewBox="0 0 16 16">
@@ -47,7 +47,7 @@
         </div>
 
         <div class="col-md-3">
-            <div class="panel panel-mint panel-colorful media middle pad-all">
+            <div class="panel panel-mint panel-colorful media middle pad-all" style="height: 100px; width: 220px;">
                 <div class="media-left">
                     <div class="pad-hor ti-agenda icon-3x">
 
@@ -61,7 +61,7 @@
         </div>
 
         <div class="col-md-3">
-            <div class="panel panel-danger panel-colorful media middle pad-all">
+            <div class="panel panel-danger panel-colorful media middle pad-all" style="height: 100px; width: 220px;">
                 <div class="media-left">
                     <div class="pad-hor ti-write icon-3x">
 

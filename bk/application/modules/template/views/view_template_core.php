@@ -459,7 +459,7 @@
                             <div id="mainnav-profile" class="mainnav-profile">
 
 
-                               <div class="profile-wrap text-center">
+                             <div class="profile-wrap text-center">
                                 <div class="pad-btm">
                                     <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
                                 </div>
@@ -536,39 +536,43 @@
                             <?php } else{ ?>
                                 <li>
                                     <a href="<?php echo base_url('data_beranda'); ?>">
-                                       <i class="demo-pli-home"></i>
-                                        <span class="menu-title">Beranda</span>
-                                    </a>
-                                    <!--Submenu-->
-                                </li>
-                            <?php } ?>
-                            
-                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
-                                <a href="">
-                                   <i class="demo-pli-receipt-4"></i>
-                                    <span>Data</span>
-                                    <i class="arrow"></i>
-                                </a>
-                                <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'data_siswa' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li <?=$this->uri->segment('1') == 'data_kelas' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li>
-                                        <li <?=$this->uri->segment('1') == 'data_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
-                                    </ul>
-                            </li>
+                                     <i class="demo-pli-home"></i>
+                                     <span class="menu-title">Beranda</span>
+                                 </a>
+                                 <!--Submenu-->
+                             </li>
+                         <?php } ?>
 
-                           <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
-                                <a href="">
-                                   <i class="demo-pli-warning-window"></i>
-                                    <span>Peraturan</span>
-                                    <i class="arrow"></i>
-                                </a>
-                                <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'data_pelanggaran' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_pelanggaran'); ?>">Data Pelanggaran</a></li>
-                                        <li <?=$this->uri->segment('1') == 'data_treatment' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_treatment'); ?>">Data Treatment</a></li>
-                                    </ul>
-                            </li>
+                         <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
+                            <a href="">
+                             <i class="demo-pli-receipt-4"></i>
+                             <span class="menu-title">Data</span>
+                             <i class="arrow"></i>
+                         </a>
+                         <ul class="collapse">
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_siswa' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
+                        </ul>
+                    </li>
 
-                      <?php if($this->uri->segment('1') == 'data_laporan'){ ?>
+                    
+                    <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
+                        <a href="#">
+                            <i class="demo-pli-warning-window"></i>
+                            <span class="menu-title">Peraturan</span>
+                            <i class="arrow"></i>
+                        </a>
+                        
+                        <!--Submenu-->
+
+                        <ul class="collapse">
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_pelanggaran' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_pelanggaran'); ?>">Data Pelanggaran</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_treatment' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_treatment'); ?>">Data Treatment</a></li>
+                        </ul>
+                    </li>
+
+                    <?php if($this->uri->segment('1') == 'data_laporan'){ ?>
                         <li class="active-sub">
                             <a href="<?php echo base_url('data_laporan'); ?>">
                                 <i class="demo-pli-file-html"></i>
@@ -627,16 +631,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-     SMKN 1 TAMBAKBOYO
- </div>
+       SMKN 1 TAMBAKBOYO
+   </div>
 
 
 
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
- <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
- <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2021 BK</p>
+   <p class="pad-lft">&#0169; 2021 BK</p>
 
 
 
