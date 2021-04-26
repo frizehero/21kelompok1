@@ -60,7 +60,7 @@
     <?php foreach($tampil_riwayat as $res) {
       $id = $res->id_siswa;
       // $id_siswa = $id_siswa;
-      $id_kelas = $res->id_kelas;
+      $kelas = $res->kelas;
       $gambar = $res->foto_siswa;
       ?>
 
@@ -77,7 +77,7 @@
           <div class="widget-body">
             <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?> ?>">
             <div class="list-group bg-trans mar-no">
-              <p class="pull-right"><?= $res->id_kelas ?></p>
+              <p class="pull-right"><?= $res->kelas ?></p>
               <p>Kelas</p>
               <p class="pull-right">
                 <?php 

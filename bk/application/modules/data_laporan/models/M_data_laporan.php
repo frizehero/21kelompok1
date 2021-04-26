@@ -18,6 +18,22 @@ class M_data_laporan extends CI_Model {
 		return $query->result();
 	}
 
+	function tampil_treatment()
+	{
+		$this->db->select('*')
+		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
+		// ->join('data_jurusan','data_jurusan.id_jurusan = riwayat_pelanggaran.id_jurusan')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->like("riwayat_treatment.create_at", date('y-m-d'))
+		->order_by("riwayat_treatment.create_at", "DESC");
+		$this->db->group_by('riwayat_treatment.id_siswa');
+		$query = $this->db->get('riwayat_treatment');
+		return $query->result();
+	}
+
 
 	function jum_sis(){
 		$this->db->select('*')
@@ -55,14 +71,17 @@ class M_data_laporan extends CI_Model {
 		$this->db->select('*')
 		// ->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		// ->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		// ->join('data_kelas','data_kelas.id_kelas = riwayat_pelanggaran.id_kelas')
+		
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		// ->where('riwayat_pelanggaran.id_siswa')
 		->where('tanggal_pelanggaran >=',$awal) 
 		->where('tanggal_pelanggaran <=',$akhir)
 		->like('data_siswa.id_jurusan',$jurusan);
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
 	}
@@ -73,6 +92,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"1");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -83,6 +103,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"2");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -93,6 +114,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"3");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -103,6 +125,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"4");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -113,6 +136,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"5");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -123,6 +147,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"6");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -133,6 +158,7 @@ class M_data_laporan extends CI_Model {
 		->from('riwayat_pelanggaran')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->where('id_jurusan',"7");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
