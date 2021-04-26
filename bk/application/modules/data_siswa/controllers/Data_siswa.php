@@ -193,11 +193,19 @@ class Data_siswa extends MX_Controller {
 	/*controler tambah treatment*/
 	function tampiltreatment($id)
 	{
+		$jpelanggaran1					= $this->m_data_siswa->jumlahpelanggaran1($id);
+		$jpelanggaran2					= $this->m_data_siswa->jumlahpelanggaran2($id);
+		$jpelanggaran3					= $this->m_data_siswa->jumlahpelanggaran3($id);
+		$jumlahpointtreatment			= $this->m_data_siswa->jumlahpointtreatment($id);
+		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+		$total_treatment				= $jumlahpointtreatment['point'];
+
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_tambah_treatment",
 			'tampil'		=> $this->m_data_siswa->tampiltreatment($id),
 			'id'			=> $id,
+			'total_point'	=> $total_pelanggaran - $total_treatment,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -209,10 +217,18 @@ class Data_siswa extends MX_Controller {
 	{
 		$carit 	= $this->input->post('caritreatment');
 
+		$jpelanggaran1					= $this->m_data_siswa->jumlahpelanggaran1($id);
+		$jpelanggaran2					= $this->m_data_siswa->jumlahpelanggaran2($id);
+		$jpelanggaran3					= $this->m_data_siswa->jumlahpelanggaran3($id);
+		$jumlahpointtreatment			= $this->m_data_siswa->jumlahpointtreatment($id);
+		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+		$total_treatment				= $jumlahpointtreatment['point'];
+
 		$data = array(
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_cari_treatment",
 			'tampil'		=> $this->m_data_siswa->caritreatment($carit,$id),
+			'total_point'	=> $total_pelanggaran - $total_treatment,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -237,21 +253,21 @@ class Data_siswa extends MX_Controller {
 	function tampilpelanggaran($id)
 	{
 
-		$jpelanggaran1					= $this->m_data_siswa->jumlahpelanggaran1($id);
-		$jpelanggaran2					= $this->m_data_siswa->jumlahpelanggaran2($id);
-		$jpelanggaran3					= $this->m_data_siswa->jumlahpelanggaran3($id);
-		$jumlahpointtreatment			= $this->m_data_siswa->jumlahpointtreatment($id);
-		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointtreatment['point'];
+		$jpelanggaran1			= $this->m_data_siswa->jumlahpelanggaran1($id);
+		$jpelanggaran2			= $this->m_data_siswa->jumlahpelanggaran2($id);
+		$jpelanggaran3			= $this->m_data_siswa->jumlahpelanggaran3($id);
+		$jumlahpointtreatment	= $this->m_data_siswa->jumlahpointtreatment($id);
+		$total_pelanggaran		= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+		$total_treatment		= $jumlahpointtreatment['point'];
 
 		$data = array(
-			'namamodule' 					=> "data_siswa",
-			'namafileview' 					=> "V_tambah_pelanggaran",
-			'tampil'						=> $this->m_data_siswa->tampilpelanggaran($id),
-			'tampil1'						=> $this->m_data_siswa->tampil1($id),
-			'tampil2'						=> $this->m_data_siswa->tampil2($id),
-			'id'							=> $id,
-			'total_point'					=> $total_pelanggaran - $total_treatment,
+			'namamodule' 			=> "data_siswa",
+			'namafileview' 			=> "V_tambah_pelanggaran",
+			'tampil'				=> $this->m_data_siswa->tampilpelanggaran($id),
+			'tampil1'				=> $this->m_data_siswa->tampil1($id),
+			'tampil2'				=> $this->m_data_siswa->tampil2($id),
+			'id'					=> $id,
+			'total_point'			=> $total_pelanggaran - $total_treatment,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
