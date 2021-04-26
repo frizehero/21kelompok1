@@ -11,6 +11,7 @@
  		$this->load->model('login/m_session');
  		$this->load->library('pagination');
 		$this->load->library('session');
+		$this->load->helper('file');
  	}
 
  	
@@ -21,7 +22,7 @@
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_guru/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_user'); //total row
-        $config['per_page'] 		= 2;  //show record per halaman
+        $config['per_page'] 		= 12;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
 		$choice = $config["total_rows"] / $config["per_page"];
 		$config["num_links"]		= floor($choice);

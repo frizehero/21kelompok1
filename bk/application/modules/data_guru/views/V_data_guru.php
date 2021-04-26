@@ -205,8 +205,8 @@
 
                 </div>
 
-
               </div>
+              <input type="hidden" name="fotomu" value="<?php echo $res->foto_guru ?>">
 
               <!--Modal footer-->
               <div class="modal-footer">

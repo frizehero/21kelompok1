@@ -90,6 +90,7 @@
  		$tgl_lahir_guru				= $this->input->post('tgl_lahir_guru');
  		$alamat_guru				= $this->input->post('alamat_guru');
  		$jenis_kelamin_guru 		= $this->input->post('jenis_kelamin_guru');
+ 		$fotomu 					= $this->input->post('fotomu');
  		
 
  		$this->load->library('upload');
@@ -107,6 +108,7 @@
  		{
  			if ($this->upload->do_upload('foto_guru'))
  			{
+ 				unlink("assets/img/".$fotomu);
  				$gbr = $this->upload->data();
  				$data = array(
  					'nip'					=> $nip,
@@ -151,8 +153,16 @@
 
  	function hapus($id)
  	{
- 		$this->db->where('id_guru', $id)->delete('data_guru');
+ 		// unlink("assets/img/".$res->foto_guru);
+ 		// $this->db->where('id_guru', $id)->delete('data_guru');
  		$this->db->where('id_guru', $id)->delete('data_user');
+
+ 		$this->db->where('id_guru', $id);
+		$query = $this->db->get('data_guru');
+		$row = $query->row();
+		unlink("assets/img/".$row->foto_guru);
+		
+		$this->db->delete('data_guru',array('id_guru' => $id));
 
  	}
 
