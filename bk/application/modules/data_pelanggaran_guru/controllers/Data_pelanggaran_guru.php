@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_pelanggaran extends MX_Controller {
+class Data_pelanggaran_guru extends MX_Controller {
 
 	function __construct()
 	{
 		parent::__construct();
 		// model
-		 $this->load->model('m_data_pelanggaran');
+		 $this->load->model('m_data_pelanggaran_guru');
 		 $this->load->model('login/m_session');
 		 $this->load->library('pagination');
 		 $this->load->library('session');
@@ -18,7 +18,7 @@ class Data_pelanggaran extends MX_Controller {
 	function index()
 	{
 		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_pelanggaran/index'); //site url
+        $config['base_url'] 		= site_url('Data_pelanggaran_guru/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran'); //total row
         $config['per_page'] 		= 2;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
@@ -50,13 +50,13 @@ class Data_pelanggaran extends MX_Controller {
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
 		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran",
-			'row'			=> $this->m_data_pelanggaran->tampil($config["per_page"], $data['page']),
+			'namamodule' 	=> "data_pelanggaran_guru",
+			'namafileview' 	=> "V_data_pelanggaran_guru",
+			'row'			=> $this->m_data_pelanggaran_guru->tampil($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
 
 		);
-		echo Modules::run('template/tampilCore', $data);
+		echo Modules::run('template_guru/tampilCore', $data);
 	}
 
 	function cariku()
@@ -70,8 +70,8 @@ class Data_pelanggaran extends MX_Controller {
 
         // pagination settings
         $config = array();
-        $config['base_url'] = site_url("data_pelanggaran/cariku/$search");
-        $config['total_rows'] = $this->m_data_pelanggaran->get_pelanggaran_count($search);
+        $config['base_url'] = site_url("data_pelanggaran_guru/cariku/$search");
+        $config['total_rows'] = $this->m_data_pelanggaran_guru->get_pelanggaran_count($search);
         $config['per_page'] = "2";
         $config["uri_segment"] = 4;
         $choice = $config["total_rows"]/$config["per_page"];
@@ -102,19 +102,19 @@ class Data_pelanggaran extends MX_Controller {
 
 
         $data = array(
-            'namamodule'    => "data_pelanggaran",
-            'namafileview'  => "V_data_pelanggaran",
-            'row'           => $this->m_data_pelanggaran->get_pelanggaran($config["per_page"], $data['page'],$search),
+            'namamodule'    => "data_pelanggaran_guru",
+            'namafileview'  => "V_data_pelanggaran_guru",
+            'row'           => $this->m_data_pelanggaran_guru->get_pelanggaran($config["per_page"], $data['page'],$search),
             'pagination'    => $this->pagination->create_links(),
             'cari'          => $nyari,
         );
-        echo Modules::run('template/tampilCore', $data);
+        echo Modules::run('template_guru/tampilCore', $data);
     }
 
 	function tampil1()
 	{
 		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_pelanggaran_kerapian/tampil1'); //site url
+        $config['base_url'] 		= site_url('data_pelanggaran_kerapian_guru/tampil1'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_kerapian'); //total row
         $config['per_page'] 		= 2;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
@@ -146,13 +146,13 @@ class Data_pelanggaran extends MX_Controller {
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
 		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_kerapian",
-			'row'			=> $this->m_data_pelanggaran->tampil1($config["per_page"], $data['page']),
+			'namamodule' 	=> "data_pelanggaran_guru",
+			'namafileview' 	=> "V_data_pelanggaran_kerapian_guru",
+			'row'			=> $this->m_data_pelanggaran_guru->tampil1($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
 
 		);
-		echo Modules::run('template/tampilCore', $data);
+		echo Modules::run('template_guru/tampilCore', $data);
 	}
 
 	function cariku1()
@@ -166,8 +166,8 @@ class Data_pelanggaran extends MX_Controller {
 
         // pagination settings
         $config = array();
-        $config['base_url'] = site_url("data_pelanggaran_kerapian/cariku1/$search");
-        $config['total_rows'] = $this->m_data_pelanggaran->get_pelanggaran_kerapian_count($search);
+        $config['base_url'] = site_url("data_pelanggaran_kerapian_guru/cariku1/$search");
+        $config['total_rows'] = $this->m_data_pelanggaran_guru->get_pelanggaran_kerapian_count($search);
         $config['per_page'] = "2";
         $config["uri_segment"] = 4;
         $choice = $config["total_rows"]/$config["per_page"];
@@ -198,13 +198,13 @@ class Data_pelanggaran extends MX_Controller {
 
 
         $data = array(
-            'namamodule'    => "data_pelanggaran",
-            'namafileview'  => "V_data_pelanggaran_kerapian",
-            'row'           => $this->m_data_pelanggaran->get_pelanggaran_kerapian($config["per_page"], $data['page'],$search),
+            'namamodule'    => "data_pelanggaran_guru",
+            'namafileview'  => "V_data_pelanggaran_kerapian_guru",
+            'row'           => $this->m_data_pelanggaran_guru->get_pelanggaran_kerapian($config["per_page"], $data['page'],$search),
             'pagination'    => $this->pagination->create_links(),
-            'cari1'          => $nyari,
+            'cari'          => $nyari,
         );
-        echo Modules::run('template/tampilCore', $data);
+        echo Modules::run('template_guru/tampilCore', $data);
     }
 
 
@@ -212,7 +212,7 @@ class Data_pelanggaran extends MX_Controller {
 	function tampil2()
 	{
 		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_pelanggaran_berat/tampil2'); //site url
+        $config['base_url'] 		= site_url('data_pelanggaran_berat_guru/tampil2'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_berat'); //total row
         $config['per_page'] 		= 2;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
@@ -244,13 +244,13 @@ class Data_pelanggaran extends MX_Controller {
 		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
 		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_berat",
-			'row2'			=> $this->m_data_pelanggaran->tampil2($config["per_page"], $data['page']),
+			'namamodule' 	=> "Data_pelanggaran_guru",
+			'namafileview' 	=> "V_data_pelanggaran_berat_guru",
+			'row2'			=> $this->m_data_pelanggaran_guru->tampil2($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
 
 		);
-		echo Modules::run('template/tampilCore', $data);
+		echo Modules::run('template_guru/tampilCore', $data);
 	}
 
 	function cariku2()
@@ -264,8 +264,8 @@ class Data_pelanggaran extends MX_Controller {
 
         // pagination settings
         $config = array();
-        $config['base_url'] = site_url("data_pelanggaran_berat/cariku2/$search");
-        $config['total_rows'] = $this->m_data_pelanggaran->get_pelanggaran_berat_count($search);
+        $config['base_url'] = site_url("data_pelanggaran_berat_guru/cariku2/$search");
+        $config['total_rows'] = $this->m_data_pelanggaran_guru->get_pelanggaran_berat_count($search);
         $config['per_page'] = "2";
         $config["uri_segment"] = 4;
         $choice = $config["total_rows"]/$config["per_page"];
@@ -296,13 +296,13 @@ class Data_pelanggaran extends MX_Controller {
 
 
         $data = array(
-            'namamodule'    => "data_pelanggaran",
-            'namafileview'  => "V_data_pelanggaran_berat",
-            'row2'           => $this->m_data_pelanggaran->get_pelanggaran_berat($config["per_page"], $data['page'],$search),
+            'namamodule'    => "data_pelanggaran_guru",
+            'namafileview'  => "V_data_pelanggaran_berat_guru",
+            'row2'           => $this->m_data_pelanggaran_guru->get_pelanggaran_berat($config["per_page"], $data['page'],$search),
             'pagination'    => $this->pagination->create_links(),
             'cari2'          => $nyari,
         );
-        echo Modules::run('template/tampilCore', $data);
+        echo Modules::run('template_guru/tampilCore', $data);
     }
 
 
