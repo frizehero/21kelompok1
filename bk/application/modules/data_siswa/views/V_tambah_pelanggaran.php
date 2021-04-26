@@ -83,7 +83,7 @@
                           <div class="panel panel-info panel-colorful">
                             <div class="pad-all text-right">
                               <center>TOTAL POINT</center>
-                              <h4 class="text-center text-light">17</h4>
+                              <h4 class="text-center text-light"><?php echo $total_point ?></h4>
                             </div>
                           </div>
                         </div>
