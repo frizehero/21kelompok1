@@ -154,7 +154,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 					=> "data_siswa",
 			'namafileview' 					=> "V_detail_siswa",
 			'tampil'						=> $this->m_data_siswa->tampildetail($id),
-			'pterbaru'						=> $this->m_data_siswa->pterbaru($id),
+			'terbaru'						=> $this->m_data_siswa->pterbaru($id),
 			'tampil_treatment'				=> $this->m_data_siswa->tampilriwayat_treatment($id),
 			'jumlah_treatment'				=> $this->m_data_siswa->count_jtreatment($id),
 			'tampil_pelanggaran'			=> $this->m_data_siswa->tampilriwayat_pelanggaran($id),

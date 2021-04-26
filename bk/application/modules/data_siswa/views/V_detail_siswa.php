@@ -47,7 +47,7 @@
             <?php $count = 0; ?>
             <!--Family-->
             <div class="list-group bg-trans bord-btm">
-              <?php foreach ($pterbaru as $terbaru) {
+              <?php foreach ($terbaru as $terbaru) {
                 $id = $terbaru->id_riwayat_pelanggaran;
                 ?>
                 <?php if($count == 10) break; ?>
