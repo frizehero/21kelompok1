@@ -23,7 +23,7 @@
   <!--End breadcrumb-->
   <div class="text-left breadcrumb">
     <div id="demo-custom-toolbar5" class="table-toolbar-left">
-      <a class="btn btn-default text-left" type="button" href="<?php echo base_url('data_siswa') ?>">Kembali</a>
+      <a class="btn btn-default text-left" type="button" href="javascript:window.history.go(-1);">Kembali</a>
     </div>  
   </div><br>
 
@@ -339,13 +339,15 @@
           <div class="col-md-6" >
             <label for="" class="control-label">Gambar siswa</label>
             <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+            <img id="preview" width="100px" />
           </div>
           <div class="col-lg-4" style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile :</label>
+            <label for="" class="control-label">Preview Foto sebelumnya </label>
             <img   src="<?= base_url(); ?>assets/img/<?= $res->foto_siswa ?>" width="150px" />
           </div>
         </div>
       </div>
+      <input  type="hidden" value="<?php echo $res->foto_siswa ?>" name="fotoku">
 
       <!--Modal footer-->
       <div class="modal-footer">

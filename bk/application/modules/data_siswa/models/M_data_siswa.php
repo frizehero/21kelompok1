@@ -247,6 +247,7 @@ class M_data_siswa extends CI_Model {
 		$kelas 						= $this->input->post('kelas');
 		$jurusan 					= $this->input->post('jurusan');
 		$agama 						= $this->input->post('agama');
+		$fotoku 					= $this->input->post('fotoku');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -263,6 +264,7 @@ class M_data_siswa extends CI_Model {
 		{
 			if ($this->upload->do_upload('foto_siswa'))
 			{
+				unlink("assets/img/".$fotoku);
 				$gbr = $this->upload->data();
 				$data = array(
 					'nis'					=> $nis,
@@ -274,8 +276,6 @@ class M_data_siswa extends CI_Model {
 					'id_jurusan'			=> $jurusan,
 					'id_agama'				=> $agama,
 					'foto_siswa' 			=> $gbr['file_name'],
-
-
 				);
 				$this->db->where('id_siswa',$id_detail_siswa)->update('data_siswa', $data);
 
@@ -300,9 +300,15 @@ class M_data_siswa extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_siswa', $id)->delete('data_siswa');
 		$this->db->where('id_siswa', $id)->delete('riwayat_pelanggaran');
 		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
+
+		$this->db->where('id_siswa', $id);
+		$query = $this->db->get('data_siswa');
+		$row = $query->row();
+		unlink("assets/img/".$row->foto_siswa);
+		
+		$this->db->delete('data_siswa',array('id_siswa' => $id));
 	}
 
 
