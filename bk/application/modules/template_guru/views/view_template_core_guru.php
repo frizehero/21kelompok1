@@ -145,9 +145,9 @@
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
-                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/logo7.png" alt="Nifty Logo" class="brand-icon">
+                         <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">Hummagang</span>
+                            <span class="brand-text">BK - GURU</span>
                         </div>
                     </a>
                 </div>
@@ -556,7 +556,7 @@
                                     </ul>
                             </li>
 
-                           <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment' ? "active-sub" : ''?>">
+                           <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment_guru' ? "active-sub" : ''?>">
                                 <a href="">
                                    <i class="demo-pli-warning-window"></i>
                                     <span>Peraturan</span>
@@ -627,7 +627,7 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-     Hummasoft Technologhy
+     SMKN 1 TAMBAKBOYO
  </div>
 
 
@@ -636,7 +636,7 @@
  <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2019 HummaPOS</p>
+ <p class="pad-lft">&#0169; 2021 BK</p>
 
 
 

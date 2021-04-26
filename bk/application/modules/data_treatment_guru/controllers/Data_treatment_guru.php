@@ -71,7 +71,7 @@ class Data_treatment_guru extends MX_Controller {
 
         // pagination settings
         $config = array();
-        $config['base_url'] = site_url("data_treatment/cariku/$search");
+        $config['base_url'] = site_url("data_treatment_guru/cariku/$search");
         $config['total_rows'] = $this->m_data_treatment_guru->get_treatment_count($search);
         $config['per_page'] = "2";
         $config["uri_segment"] = 4;

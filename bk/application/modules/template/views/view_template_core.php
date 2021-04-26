@@ -147,7 +147,7 @@
                     <a href="index.html" class="navbar-brand">
                         <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">BK-2021</span>
+                            <span class="brand-text">BK - ADMIN</span>
                         </div>
                     </a>
                 </div>
@@ -627,7 +627,7 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-     Hummasoft Technologhy
+     SMKN 1 TAMBAKBOYO
  </div>
 
 
@@ -636,7 +636,7 @@
  <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
  <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
- <p class="pad-lft">&#0169; 2021 SMKN 1 Tambakboyo</p>
+ <p class="pad-lft">&#0169; 2021 BK</p>
 
 
 

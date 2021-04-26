@@ -22,7 +22,7 @@
     <!--End breadcrumb-->
 
     <div class="text-right breadcrumb">
-      <form action="<?php echo site_url('data_treatment/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
+      <form action="<?php echo site_url('data_treatment_guru/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){?>
             <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari treatment" required="">
@@ -34,7 +34,7 @@
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" name="submit" type="submit">cari</button>
           </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_treatment'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_treatment_guru'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
         </div> 
@@ -59,79 +59,8 @@
           <!--===================================================-->
           <div class="panel panel-info panel-colorful" style="height: 150px">
             <div class="pad-all text-left">
-              <span class="pull-right">- <?php echo $res->point ?> Point</span><br>
+              <span class="pull-right">- <?php echo $res->point ?> Point</span><br><br><br>
               <p><?php echo $res->nama_treatment ?></p>
-        </div>
-      </div>
-    </div> 
-    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal Update-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Update</h4>
-          </div>
-          <?= form_open_multipart('data_treatment/edit'); ?>
-          <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment?>">
-
-          <!--Modal body--> 
-          <div class="modal-body">
-
-            <div class="panel-body">
-
-              <div class="col-md-6">
-                <label for="" class="control-label">Nama treatment</label>
-                <input type="text" name="nama_treatment" placeholder="Nama treatment" class="form-control" value="<?= $res->nama_treatment ?>">
-              </div>
-
-              <div class="col-md-6">
-                <label for="" class="control-label">point</label>
-                <input type="text" name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-              </div>
-
-
-            </div>
-
-
-          </div>
-
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-            <button class="btn btn-primary" type="submit">Simpan</button>
-          </div>
-          <?= form_close(); ?>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!--Modal header-->
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-            <h4 class="modal-title">Hapus</h4>
-          </div>
-
-          <!--Modal body-->
-          <div class="modal-body">
-            <p class="text-semibold text-main"></p>
-            <p>Anda Yakin Ingin Menghapus <b><?php echo $res->nama_treatment ?></b> ? </p>
-            <br>
-
-
-
-          </div>
-
-          <!--Modal footer-->
-          <div class="modal-footer">
-            <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-            <a class="btn btn-danger" href="<?php echo base_url('data_treatment/hapus/'. $res->id_treatment) ?>">Hapus treatment</a>
-          </div>
         </div>
       </div>
     </div>
@@ -144,50 +73,6 @@
 
 </div><hr>
 <?php echo $pagination; ?>
-<!-- tambah -->
-<div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!--Modal Update-->
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-        <h4 class="modal-title">Tambah</h4>
-      </div>
-
-      <?= form_open_multipart('data_treatment/tambah'); ?>
-      <!--Modal body--> 
-      <div class="modal-body">
-
-        <div class="panel-body">
-
-          <div class="col-md-6">
-            <label for="" class="control-label">Nama treatment</label>
-            <input type="text" name="nama_treatment" placeholder="Nama treatment" class="form-control">
-          </div>
-
-          <div class="col-md-6">
-            <label for="" class="control-label">point</label>
-            <input type="text" name="point" rows="5" placeholder="point" class="form-control">
-          </div>
-
-
-        </div>
-
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
-      <?= form_close(); ?>
-
-    </div>
-  </div>
-</div>
-<!-- end tambah -->
 
 
 <!--jQuery [ REQUIRED ]-->
