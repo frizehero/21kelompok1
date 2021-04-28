@@ -14,7 +14,7 @@
     <!--Breadcrumb-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
-      <li><a href="#"><i class="demo-pli-home"></i></a></li>
+      <li><a href="<?php echo base_url('data_beranda_guru') ?>"><i class="demo-pli-home"></i></a></li>
       <li><a href="#">Peraturan</a></li>
       <li class="active">pelanggaran</li>
     </ol>

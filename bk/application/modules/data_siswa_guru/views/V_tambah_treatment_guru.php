@@ -14,7 +14,7 @@
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <ol class="breadcrumb">
-    <li><a href="#"><i class="demo-pli-home"></i></a></li>
+    <li><a href="<?php echo base_url('data_beranda_guru') ?>"><i class="demo-pli-home"></i></a></li>
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
@@ -94,7 +94,7 @@
 
                 <td>Cari Treatment </td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa_guru/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_siswa/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caritreatment'){?>
                       <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
@@ -106,7 +106,7 @@
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa_guru/tampiltreatment/'.$res->id_siswa); ?>">
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">
                       <i class="fa fa-refresh" ></i>
                     </a>
                   </div> 
@@ -141,7 +141,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Perbaikan Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_siswa_guru/tambah_treatment/'.$res->id_siswa); ?>
+                          <?= form_open_multipart('data_siswa/tambah_treatment/'.$res->id_siswa); ?>
 
                           <!--Modal body--> 
                           <div class="modal-body">

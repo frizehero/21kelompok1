@@ -14,7 +14,7 @@
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <ol class="breadcrumb">
-    <li><a href="#"><i class="demo-pli-home"></i></a></li>
+    <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
@@ -58,7 +58,7 @@
               <!--===================================================-->
               <div class="col-sm-12">
                  <?php if ($tampil == null) { ?>
-               <h2>Treatment Tidak Ada</h2>
+               
               <?php } else { ?>
 
                 <div class="row">
@@ -120,6 +120,11 @@
 
 
                 <p>Pilih Treatment :</p>
+                <?php if ($tampil == null) { ?>
+                  <center>
+                 <h2>Treatment Tidak Ditemukan</h2></center>
+              <?php } else { ?>
+              
                 <?php foreach($tampil as $res) {
                   $id = $res->id_treatment;
                   ?>
@@ -136,7 +141,7 @@
 
                         </div>
                       </div>                
-                    </div>
+                    </div><?php } ?>
                     <div class="modal fade" id="demo-default-modal<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">

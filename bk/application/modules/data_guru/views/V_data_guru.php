@@ -12,7 +12,7 @@
       <!--Breadcrumb-->
       <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <ol class="breadcrumb">
-        <li><a href="#"><i class="demo-pli-home"></i></a></li>
+        <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
         <li><a href="#">Data</a></li>
         <li class="active">Data User</li>
       </ol>

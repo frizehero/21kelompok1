@@ -14,7 +14,7 @@
         <!--Breadcrumb-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <ol class="breadcrumb">
-          <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
+          <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
           <li><a href="<?php  echo base_url('data_beranda/index/');  ?>">Beranda</a></li>
           <li class="active">Treatment Siswa Hari Ini </li>
       </ol><br>

@@ -14,7 +14,7 @@
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <ol class="breadcrumb">
-    <li><a href="#"><i class="demo-pli-home"></i></a></li>
+    <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
@@ -209,9 +209,13 @@
                 </div>
               </div>
             <?php  } ?>
+            <?php if ($tampil1 == null) { ?>
+                
+              <?php } else { ?>
             <?php foreach($tampil1 as $res) {
               $id = $res->id_pelanggaran_kerapian;
               ?>
+
               <div class="col-sm-3">
 
                 <!--Profile Widget-->
@@ -225,7 +229,7 @@
 
                     </div>
                   </div>                
-                </div>
+                </div><?php   } ?>
                 <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -292,6 +296,9 @@
                   </div>
                 </div>
               <?php  } ?>
+              <?php if ($tampil2 == null) { ?>
+                
+              <?php } else { ?>
               <?php foreach($tampil2 as $res) {
                 $id = $res->id_pelanggaran_berat;
                 ?>
@@ -309,6 +316,7 @@
                     </div>
                   </div>                
                 </div>
+              <?php   } ?>
                 <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
