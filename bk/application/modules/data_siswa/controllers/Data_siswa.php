@@ -229,6 +229,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_cari_treatment",
 			'tampil'		=> $this->m_data_siswa->caritreatment($carit,$id),
+			'id'			=> $id,
 			'total_point'	=> $total_pelanggaran - $total_treatment,
 		);
 		echo Modules::run('template/tampilCore', $data);

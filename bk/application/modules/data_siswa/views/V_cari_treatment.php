@@ -1,4 +1,4 @@
-
+  
 <!--CONTENT CONTAINER-->
 <div id="page-head">
 
@@ -57,7 +57,9 @@
               <!--Profile Widget-->
               <!--===================================================-->
               <div class="col-sm-12">
-
+                 <?php if ($tampil == null) { ?>
+               <h2>Treatment Tidak Ada</h2>
+              <?php } else { ?>
 
                 <div class="row">
                   <div class="col-sm-3">
@@ -88,13 +90,15 @@
                         </div>
                       </div>
                     </div>
+                    <?php } ?>
                   </div>
                 </div>
                 <hr>
+              
 
                 <td>Cari Treatment </td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_siswa/caritreatment/'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caritreatment'){?>
                       <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
@@ -106,7 +110,7 @@
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampiltreatment/'.$id); ?>">
                       <i class="fa fa-refresh" ></i>
                     </a>
                   </div> 
