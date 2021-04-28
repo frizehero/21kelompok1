@@ -26,6 +26,13 @@ class Data_beranda extends MX_Controller {
 			'jum_sis'				=> $this->m_data_beranda->jum_sis(),
 			'pelanggar_hariini'		=> $this->m_data_beranda->pelanggar_hariini(),
 			'treatmentsiswa'		=> $this->m_data_beranda->treatmentsiswa(),
+			'jml_siswarpl'			=> $this->m_data_beranda->jml_siswarpl(),
+			'jml_siswatkj'			=> $this->m_data_beranda->jml_siswatkj(),
+			'jml_siswatpm'			=> $this->m_data_beranda->jml_siswatpm(),
+			'jml_siswatitl'			=> $this->m_data_beranda->jml_siswatitl(),
+			'jml_siswatipk'			=> $this->m_data_beranda->jml_siswatipk(),
+			'jml_siswatb'			=> $this->m_data_beranda->jml_siswatb(),
+			'jml_siswatkr'			=> $this->m_data_beranda->jml_siswatkr(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

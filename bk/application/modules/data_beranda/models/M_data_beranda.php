@@ -30,6 +30,116 @@ class M_data_beranda extends CI_Model {
 	}
 
 
+
+	function jml_siswarpl()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"1")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+	function jml_siswatkj()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"2")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+	function jml_siswatpm()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"3")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+	function jml_siswatitl()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"4")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+	function jml_siswatipk()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"5")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+	function jml_siswatb()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"6")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+	function jml_siswatkr()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->where('data_siswa.id_jurusan',"7")
+		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+
 	function carisiswa($nyari)
 	{
 		$this->db->select('*')

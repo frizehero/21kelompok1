@@ -98,13 +98,13 @@
                                             indexLabel: "{label} - #percent%",
                                             toolTipContent: "<b>{label}:</b> {y} (#percent%)",
                                             dataPoints: [
-                                            { y: 36, label: "RPL" },
-                                            { y: 70, label: "TKR" },
-                                            { y: 65, label: "TPM" },
-                                            { y: 60, label: "TIPK"},
-                                            { y: 10, label: "TB"},
-                                            { y: 40, label: "TKJ"},
-                                            { y: 45, label: "TITL"}
+                                            { y: <?php echo $jml_siswarpl; ?>, label: "RPL" },
+                                            { y: <?php echo $jml_siswatkr; ?>, label: "TKR" },
+                                            { y: <?php echo $jml_siswatpm; ?>, label: "TPM" },
+                                            { y: <?php echo $jml_siswatipk; ?>, label: "TIPK"},
+                                            { y: <?php echo $jml_siswatb; ?>, label: "TB"},
+                                            { y: <?php echo $jml_siswatkj; ?>, label: "TKJ"},
+                                            { y: <?php echo $jml_siswatitl; ?>, label: "TITL"}
                                             ]
                                         }]
                                     });

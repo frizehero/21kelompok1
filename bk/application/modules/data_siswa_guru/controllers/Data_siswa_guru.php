@@ -155,6 +155,9 @@ class Data_siswa_guru extends MX_Controller {
 			'tampil_pelanggaran'			=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran($id),
 			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_kerapian($id),
 			'tampil_pelanggaran_berat'		=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_berat($id),
+			'tampil_pelanggaran_samping'			=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_samping($id),
+			'tampil_pelanggaran_kerapian_samping' 	=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_kerapian_samping($id),
+			'tampil_pelanggaran_berat_samping'		=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_berat_samping($id),
 			'jumlah_pelanggaran'			=> $total,
 			'total_point'					=> $total_pelanggaran - $total_treatment,
 
