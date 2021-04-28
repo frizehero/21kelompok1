@@ -41,7 +41,7 @@
         <div class="nano">
           <div class="nano-content">
             <p class="pad-all text-main text-sm text-uppercase text-bold">
-              Pelanggar Baru Ini
+              Pelanggar Baru Inibfdbfdfvdfv
             </p>
 
             <?php $count = 0; ?>

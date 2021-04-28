@@ -154,7 +154,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 					=> "data_siswa",
 			'namafileview' 					=> "V_detail_siswa",
 			'tampil'						=> $this->m_data_siswa->tampildetail($id),
-			'terbaru'						=> $this->m_data_siswa->pterbaru($id),
+			'terbaru'						=> $this->m_data_siswa->pterbaru(),
 			'tampil_treatment'				=> $this->m_data_siswa->tampilriwayat_treatment($id),
 			'jumlah_treatment'				=> $this->m_data_siswa->count_jtreatment($id),
 			'tampil_pelanggaran'			=> $this->m_data_siswa->tampilriwayat_pelanggaran($id),
@@ -290,7 +290,9 @@ class Data_siswa extends MX_Controller {
 			'tampil'						=> $this->m_data_siswa->caripelanggaran($carip,$id),
 			'tampil1'						=> $this->m_data_siswa->caripelanggaran1($carip1,$id),
 			'tampil2'						=> $this->m_data_siswa->caripelanggaran2($carip2,$id),
+			'id'							=> $id,
 			'total_point'					=> $total_pelanggaran - $total_treatment,
+
 			
 		);
 		echo Modules::run('template/tampilCore', $data);
