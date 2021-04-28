@@ -47,18 +47,16 @@ class M_data_beranda extends CI_Model {
 
 
 
-	function cari_pelanggaransiswa($limit, $start, $st = NULL)
+	function cari_treatmentsiswa($limit, $start, $st = NULL)
 	{
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
-		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
-		->like('data_siswa.nama_siswa',$st);
-		$query = $this->db->get('riwayat_pelanggaran',$limit, $start);
+		->like('data_siswa.nama_siswa',$st)
+		->like("riwayat_treatment.create_at", date('y-m-d'));
+		$query = $this->db->get('riwayat_treatment',$limit, $start);
 		return $query->result();
 	}
 
@@ -67,14 +65,12 @@ class M_data_beranda extends CI_Model {
 	{
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
-		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
-		->like('data_siswa.nama_siswa',$st);
-		$query = $this->db->get('riwayat_pelanggaran');
+		->like('data_siswa.nama_siswa',$st)
+		->like("riwayat_treatment.create_at", date('y-m-d'));
+		$query = $this->db->get('riwayat_treatment');
 		return $query->num_rows();
 	}
 
@@ -127,46 +123,42 @@ class M_data_beranda extends CI_Model {
 	}
 
 
-	function pelanggaransiswa()
+	function treatmentsiswa()
 	{
 		$this->db->select('*')
-		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left');
-		$this->db->group_by('riwayat_pelanggaran.id_siswa');
-		$query = $this->db->get('riwayat_pelanggaran');
-		return $query->result();
-	}
-
-	function tampil_pelanggaransiswa($limit, $start)
-	{
-		$this->db->select('*')
-		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
-		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left');
-		$this->db->group_by('riwayat_pelanggaran.id_siswa');
-		$query = $this->db->get('riwayat_pelanggaran',$limit, $start);
-		return $query->result();
-	}
-
-	function count_pelanggaransiswa()
-	{
-		$this->db->select('*')
-		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
-		->order_by("riwayat_pelanggaran.create_at", "DESC");
-		$this->db->group_by('riwayat_pelanggaran.id_siswa');
-		$query = $this->db->get('riwayat_pelanggaran');
+		->like("riwayat_treatment.create_at", date('y-m-d'))
+		->order_by("riwayat_treatment.create_at", "DESC");
+		$this->db->group_by('riwayat_treatment.id_siswa');
+		$query = $this->db->get('riwayat_treatment');
+		return $query->result();
+	}
+
+	function tampil_treatmentsiswa($limit, $start)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->like("riwayat_treatment.create_at", date('y-m-d'))
+		->order_by("riwayat_treatment.create_at", "DESC");
+		$this->db->group_by('riwayat_treatment.id_siswa');
+		$query = $this->db->get('riwayat_treatment',$limit, $start);
+		return $query->result();
+	}
+
+	function count_treatmentsiswa()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->like("riwayat_treatment.create_at", date('y-m-d'))
+		->order_by("riwayat_treatment.create_at", "DESC");
+		$this->db->group_by('riwayat_treatment.id_siswa');
+		$query = $this->db->get('riwayat_treatment');
 		return $query->num_rows();
 	}
 

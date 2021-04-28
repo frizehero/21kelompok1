@@ -5,7 +5,7 @@
         <!--Page Title-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <div id="page-title">
-            <h1 class="page-header text-overflow">Pelanggaran Siswa</h1>
+            <h1 class="page-header text-overflow">Treatment Siswa Hari Ini</h1>
         </div>
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <!--End page title-->
@@ -16,7 +16,7 @@
         <ol class="breadcrumb">
           <li><a href="index.html"><i class="demo-pli-home"></i></a></li>
           <li><a href="<?php  echo base_url('data_beranda/index/');  ?>">Beranda</a></li>
-          <li class="active">Pelanggaran Siswa</li>
+          <li class="active">Treatment Siswa Hari Ini </li>
       </ol><br>
       <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
       <!--End breadcrumb-->
@@ -37,7 +37,7 @@
         <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" name="submit" type="submit">cari</button>
         </div>
-        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_beranda/tampil_pelanggaran_siswa/'); ?>">
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_beranda/tampil_treatmentsiswa/'); ?>">
             <i class="fa fa-refresh" ></i>
         </a>
     </div> 
@@ -54,7 +54,7 @@
         <div class="col-sm-12">
             <div class="row">
                 <?php foreach ($tampil as $res) {
-                    $id = $res->id_riwayat_pelanggaran;
+                    $id = $res->id_riwayat_treatment;
                     ?>
                     <div class="col-sm-3">
                         <div class="panel" style="height: 295px;">
@@ -112,4 +112,5 @@
         </div>
 
         <?php echo $pagination; ?>
-    </div>               
+    </div>    
+    </div>           

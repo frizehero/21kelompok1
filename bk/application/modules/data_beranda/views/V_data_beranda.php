@@ -139,7 +139,7 @@
             <div class="col-md-6">
                 <div class="panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Pelanggaran Siswa</h3>
+                        <h3 class="panel-title">Treatment Siswa Hari Ini</h3>
                     </div>
                     <div class="panel-body">
                         <!-- Timeline -->
@@ -148,21 +148,21 @@
 
                             <!-- Timeline header -->
                             <div class="timeline-header">
-                                <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_pelanggaran_siswa/');  ?>"> Lihat Semua</a>
+                                <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_treatmentsiswa/');  ?>"> Lihat Semua</a>
                                 </div>
                             </div>
 
                             <?php $count = 0; ?>
 
-                            <?php foreach ($pelanggaransiswa as $pelanggaransiswa) {
-                                $id = $pelanggaransiswa->id_siswa;
+                            <?php foreach ($treatmentsiswa as $treatmentsiswa) {
+                                $id = $treatmentsiswa->id_siswa;
                                 ?>
                                 <?php if($count == 5) break; ?>
                                 <div class="timeline-entry">
                                     <div class="timeline-stat">
-                                        <a href="<?php echo base_url('data_siswa/details/'.$pelanggaransiswa->id_siswa); ?>">
+                                        <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>">
                                             <div class="timeline-icon">
-                                                <img src="<?php echo base_url ()?>assets/img/<?php echo $pelanggaransiswa->foto_siswa ?>" alt="Profile picture">
+                                                <img src="<?php echo base_url ()?>assets/img/<?php echo $treatmentsiswa->foto_siswa ?>" alt="Profile picture">
                                             </div> 
                                         </a>
                                         <div class="timeline-time">
@@ -187,12 +187,12 @@
                                     </div>
                                     <div class="timeline-label">
                                         <p class="text-bold">
-                                            <a href="<?php echo base_url('data_siswa/details/'.$pelanggaransiswa->id_siswa); ?>" class="text-info"><?php echo $pelanggaransiswa->nama_siswa ?>
+                                            <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>" class="text-info"><?php echo $treatmentsiswa->nama_siswa ?>
                                         </a>
                                     </p>
-                                    <p>NIS      : <?php echo $pelanggaransiswa->nis ?></p>
-                                    <p>Kelas    : <?php echo $pelanggaransiswa->kelas?></p>
-                                    <p>Jurusan  : <?php echo $pelanggaransiswa->jurusan?></p>
+                                    <p>NIS      : <?php echo $treatmentsiswa->nis ?></p>
+                                    <p>Kelas    : <?php echo $treatmentsiswa->kelas?></p>
+                                    <p>Jurusan  : <?php echo $treatmentsiswa->jurusan?></p>
                                 </div>
                             </div>
                             <?php $count++; ?>

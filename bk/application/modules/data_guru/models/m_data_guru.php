@@ -174,11 +174,14 @@
  		$this->db->where('id_guru', $id)->delete('data_user');
 
  		$this->db->where('id_guru', $id);
- 		$query = $this->db->get('data_guru');
- 		$row = $query->row();
- 		unlink("assets/img/".$row->foto_guru);
-
- 		$this->db->delete('data_guru',array('id_guru' => $id));
+		$query = $this->db->get('data_guru');
+		$row = $query->row();
+		if ($row->foto_guru == "kosong1.png") {
+			$this->db->delete('data_guru',array('id_guru' => $id));
+		}else{
+			unlink("assets/img/".$row->foto_guru);
+			$this->db->delete('data_guru',array('id_guru' => $id));
+		}
 
  	}
 

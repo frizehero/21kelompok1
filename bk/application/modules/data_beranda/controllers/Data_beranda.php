@@ -25,17 +25,17 @@ class Data_beranda extends MX_Controller {
 			'jum_gur'				=> $this->m_data_beranda->jum_gur(),
 			'jum_sis'				=> $this->m_data_beranda->jum_sis(),
 			'pelanggar_hariini'		=> $this->m_data_beranda->pelanggar_hariini(),
-			'pelanggaransiswa'		=> $this->m_data_beranda->pelanggaransiswa(),
+			'treatmentsiswa'		=> $this->m_data_beranda->treatmentsiswa(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
 
-	function tampil_pelanggaran_siswa()
+	function tampil_treatmentsiswa()
 	{
 
 		// pagination settings
 		$config['base_url'] = site_url("data_beranda/tampil_pelanggaran_siswa/");
-		$config['total_rows'] = $this->m_data_beranda->count_pelanggaransiswa();
+		$config['total_rows'] = $this->m_data_beranda->count_treatmentsiswa();
 		$config['per_page'] = "12";
 		$config["uri_segment"] = 3;
 		$choice = $config["total_rows"]/$config["per_page"];
@@ -66,8 +66,8 @@ class Data_beranda extends MX_Controller {
 
 		$data = array(
 			'namamodule' 	=> "data_beranda",
-			'namafileview' 	=> "V_pelanggaran_siswa",
-			'tampil'		=> $this->m_data_beranda->tampil_pelanggaransiswa($config["per_page"], $data['page']),
+			'namafileview' 	=> "V_treatmentsiswa",
+			'tampil'		=> $this->m_data_beranda->tampil_treatmentsiswa($config["per_page"], $data['page']),
 			'pagination' 	=> $this->pagination->create_links(),
 		);
 		echo Modules::run('template/tampilCore', $data);
@@ -176,8 +176,8 @@ class Data_beranda extends MX_Controller {
 
 		$data = array(
 			'namamodule' 			=> "data_beranda",
-			'namafileview' 			=> "V_pelanggaran_siswa",
-			'tampil'				=> $this->m_data_beranda->cari_pelanggaransiswa($config["per_page"], $data['page'],$search),
+			'namafileview' 			=> "V_treatmentsiswa",
+			'tampil'				=> $this->m_data_beranda->cari_treatmentsiswa($config["per_page"], $data['page'],$search),
 			'pagination' 			=> $this->pagination->create_links(),
 			'cari'					=> $nyari,
 		);
