@@ -8,7 +8,7 @@
  		$this->db->select('*')
  		->join('data_guru','data_guru.id_guru = data_user.id_guru');
  		$query = $this->db->get('data_user', $limit, $start);
-		return $query->result();
+ 		return $query->result();
  	}
 
  	function tambah()
@@ -108,19 +108,35 @@
  		{
  			if ($this->upload->do_upload('foto_guru'))
  			{
- 				unlink("assets/img/".$fotomu);
- 				$gbr = $this->upload->data();
- 				$data = array(
- 					'nip'					=> $nip,
- 					'nama_guru'				=> $nama_guru,
- 					'tgl_lahir_guru'		=> $tgl_lahir_guru,
- 					'alamat_guru'			=> $alamat_guru,
- 					'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
- 					'foto_guru' 			=> $gbr['file_name'],
+ 				if ($fotomu == "kosong1.png") {
+ 					 					$gbr = $this->upload->data();
+ 					$data = array(
+ 						'nip'					=> $nip,
+ 						'nama_guru'				=> $nama_guru,
+ 						'tgl_lahir_guru'		=> $tgl_lahir_guru,
+ 						'alamat_guru'			=> $alamat_guru,
+ 						'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
+ 						'foto_guru' 			=> $gbr['file_name'],
 
 
- 				);
- 				$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
+ 					);
+ 					$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
+ 				}else{
+ 					unlink("assets/img/".$fotomu);
+ 					$gbr = $this->upload->data();
+ 					$data = array(
+ 						'nip'					=> $nip,
+ 						'nama_guru'				=> $nama_guru,
+ 						'tgl_lahir_guru'		=> $tgl_lahir_guru,
+ 						'alamat_guru'			=> $alamat_guru,
+ 						'jenis_kelamin_guru'	=> $jenis_kelamin_guru,
+ 						'foto_guru' 			=> $gbr['file_name'],
+
+
+ 					);
+ 					$this->db->where('id_guru',$id_guru)->update('data_guru', $data);
+ 				}
+ 				
 
  			}	 
  		}
@@ -158,11 +174,11 @@
  		$this->db->where('id_guru', $id)->delete('data_user');
 
  		$this->db->where('id_guru', $id);
-		$query = $this->db->get('data_guru');
-		$row = $query->row();
-		unlink("assets/img/".$row->foto_guru);
-		
-		$this->db->delete('data_guru',array('id_guru' => $id));
+ 		$query = $this->db->get('data_guru');
+ 		$row = $query->row();
+ 		unlink("assets/img/".$row->foto_guru);
+
+ 		$this->db->delete('data_guru',array('id_guru' => $id));
 
  	}
 
@@ -177,25 +193,25 @@
  	// }
 
  	function get_user($limit, $start, $st = NULL)
-	{
-		
-		if ($st == "NIL") $st = "";
-		$this->db->select('*')
-		->join('data_guru','data_guru.id_guru = data_user.id_guru')
-		->like('nama_guru',$st);
-		$query = $this->db->get('data_user',$limit, $start);
-		return $query->result();
-	}
+ 	{
 
-	function get_user_count($st = NULL)
-	{
+ 		if ($st == "NIL") $st = "";
+ 		$this->db->select('*')
+ 		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+ 		->like('nama_guru',$st);
+ 		$query = $this->db->get('data_user',$limit, $start);
+ 		return $query->result();
+ 	}
 
-		if ($st == "NIL") $st = "";
-		$this->db->select('*')
-		->join('data_guru','data_guru.id_guru = data_user.id_guru')
-		->like('nama_guru',$st);
-		$query = $this->db->get('data_user');
-		return $query->num_rows();
-	}
+ 	function get_user_count($st = NULL)
+ 	{
+
+ 		if ($st == "NIL") $st = "";
+ 		$this->db->select('*')
+ 		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+ 		->like('nama_guru',$st);
+ 		$query = $this->db->get('data_user');
+ 		return $query->num_rows();
+ 	}
 
  }
