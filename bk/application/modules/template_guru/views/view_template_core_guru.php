@@ -543,15 +543,15 @@
                                 </li>
                             <?php } ?>
                             
-                            <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
+                            <li class=" <?=$this->uri->segment('1') == 'data_siswa_guru' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas_guru'  ? "active-sub" : ''?>">
                                 <a href="">
                                    <i class="demo-pli-receipt-4"></i>
                                     <span>Data</span>
                                     <i class="arrow"></i>
                                 </a>
                                 <ul class="collapse">
-                                        <li <?=$this->uri->segment('1') == 'data_siswa' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                                        <li <?=$this->uri->segment('1') == 'data_kelas' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_siswa_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_siswa_guru'); ?>">Data Siswa</a></li>
+                                        <li <?=$this->uri->segment('1') == 'data_kelas_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_kelas_guru'); ?>">Data Kelas</a></li>
                                         <li <?=$this->uri->segment('1') == 'data_guru' ? 'class="active-link"' : ''?>><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                                     </ul>
                             </li>

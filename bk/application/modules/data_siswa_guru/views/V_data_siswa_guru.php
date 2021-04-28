@@ -22,52 +22,32 @@
 
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
-  			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
-  		</div>
-      <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
-        <div class="input-group text-right"  style="padding-left: : 5px">
-          <?php if($this->uri->segment(2) != 'cari'){
+
+        <form action="<?php echo site_url('data_siswa_guru/cariku/') ?>" method="post" class="col-xs-8 col-sm-5 text-right">
+          <div class="input-group text-right"  style="padding-left: : 5px">
+            <?php if($this->uri->segment(2) != 'cari'){
              $cari = $this->input->post('cari');?>
-            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
-          <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
+             <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
+           <?php } ?>
+           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
             <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
           <?php } ?> 
           <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" name="submit" type="submit">cari</button>
           </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa'); ?>">
+          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa_guru'); ?>">
             <i class="fa fa-refresh" ></i>
           </a>
         </div> 
       </center>
 
     </form>
-
-    <form method="post" action="<?php echo site_url('data_siswa/filter') ?>">
-      <div class="select">
-       <select name="jurusan" id="demo-ease">
-         <option  value="">Jurusan</option>
-         <?php  foreach($filter_jur as $jur) { $fjur = $jur_fil;  ?>
-          <option <?php echo ($fjur == $jur->id_jurusan) ? "selected": "" ?> value="<?= $jur->id_jurusan ?>"><?= $jur->jurusan ?></option>
-        <?php } ?>
-      </select>
-    </div>
-    <div class="select">
-     <select name="kelas" id="demo-ease">
-       <option  value="">kelas</option>
-       <?php  foreach($filter_kel as $kel) { $fkel = $kelas_fil; ?>
-        <option <?php echo ($fkel == $kel->id_kelas) ? "selected": "" ?> value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
-      <?php }?>
-    </select>
   </div>
-  <button class="btn btn-default"  type="submit">Filter</button>  
-</form>
 </div>
 
 
-<div id="page-content text-black"><br><br><br>
+<div id="page-content text-black"><br><br><br><br>
 
   <div class="row">
    <div class="col-sm-12">
@@ -77,10 +57,10 @@
       $gambar = $res->foto_siswa;
       ?>
 
-      <div class="col-sm-3">
-        <div class="panel">
+      <div class="col-sm-3" >
+        <div class="panel" style="height: 295px;">
           <div class="panel-body text-center">
-            <a href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
+            <a href="<?php echo base_url('data_siswa_guru/details/'.$res->id_siswa); ?>">
               <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
               <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
             </a>
@@ -91,15 +71,49 @@
             </p>
             <ul class="list-unstyled text-center bord-top pad-top mar-no row">
               <li class="col-xs-5">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $id = $res->id_siswa;
+
+                  $jumlah_pelanggaranku      = $this->m_data_siswa_guru->count_jpelanggaran($id);
+                  $jumlah_pelanggaran_kerapian  = $this->m_data_siswa_guru->count_jpelanggaran_kerapian($id);
+                  $jumlah_pelanggaran_berat   = $this->m_data_siswa_guru->count_jpelanggaran_berat($id);
+
+                  $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
+                  echo $total;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Pelanggaran</p>
               </li>
               <li class="col-xs-4">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $id = $res->id_siswa;
+
+                  $jumlah_treatment    = $this->m_data_siswa_guru->count_jtreatment($id);
+
+                  echo $jumlah_treatment;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Treatment</p>
               </li>
               <li class="col-xs-3">
-                <span class="text-muted mar-no">0</span>
+                <span class="text-muted mar-no">
+                  <?php 
+                  $jpelanggaran1          = $this->m_data_siswa_guru->jumlahpelanggaran1($id);
+                  $jpelanggaran2          = $this->m_data_siswa_guru->jumlahpelanggaran2($id);
+                  $jpelanggaran3          = $this->m_data_siswa_guru->jumlahpelanggaran3($id);
+                  $jumlahpointtreatment   = $this->m_data_siswa_guru->jumlahpointtreatment($id);
+
+
+                  $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                  $total_treatment        = $jumlahpointtreatment['point'];
+                  $total_point            = $total_pelanggaran - $total_treatment;
+
+                  echo $total_point;
+                  ?>
+                </span>
                 <p class="text-muted mar-no">Point</p>
               </li>
             </ul>
@@ -216,7 +230,7 @@
 
   </div>
   <!-- end tambah -->
- 
+
 
 
 

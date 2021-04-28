@@ -83,7 +83,7 @@
                           <div class="panel panel-info panel-colorful">
                             <div class="pad-all text-right">
                               <center>TOTAL POINT</center>
-                              <h4 class="text-center text-light">17</h4>
+                              <h4 class="text-center text-light"><?php echo $total_point ?></h4>
                             </div>
                           </div>
                         </div>
@@ -95,19 +95,19 @@
 
                 <td>Cari pelanggaran</td>
                 <p></p>
-                <form action="<?php echo site_url('data_siswa/caripelanggaran/'.$res->id_siswa) ?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                 <form action="<?php echo base_url('data_siswa_guru/caripelanggaran /'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
-                    <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
-                      <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
+                    <?php if($this->uri->segment(2) != 'caripelanggaran '){?>
+                      <input type="text" autocomplete="off" name="caripelanggaran " class="form-control" placeholder="Cari">
                     <?php } ?>
-                    <?php if($this->uri->segment(2) == 'caripelanggaran'){
-                      $caripelanggaran = $this->input->post('caripelanggaran'); ?>
-                      <input type="text" autocomplete="off" value="<?= $caripelanggaran ?>" name="caripelanggaran" class="form-control " placeholder="Outlet">
+                    <?php if($this->uri->segment(2) == 'caripelanggaran '){
+                      $carip = $this->input->post('caripelanggaran '); ?>
+                      <input type="text" autocomplete="off" value="<?= $carit ?>" name="caripelanggaran " class="form-control " placeholder="pelanggaran ">
                     <?php } ?> 
                     <div class="input-group-btn  text-right"  style="padding-left: : 10px">
                       <button class="btn btn-default" type="submit">cari</button>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa_guru/tampilpelanggaran /'.$res->id_siswa); ?>">
                       <i class="fa fa-refresh" ></i>
                     </a>
                   </div> 
@@ -115,63 +115,65 @@
 
               </form><br><br><hr>
 
-              <form action="#" method="post">
+             
                 <p>Pilih pelanggaran :</p>
                 <?php foreach($tampil as $res) {
                   $id = $res->id_pelanggaran;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-info panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point<br>
-                      <p><?php echo  $res->nama_pelanggaran?></p>
+                  <div class="col-sm-3">
 
-                    </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-info panel-colorful" style="height: 150px">
+                      <div class="pad-all text-left">
+                       <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
+                        <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                        + <?php echo  $res->point?> point<br>
+                        <p><?php echo  $res->nama_pelanggaran?></p>
 
-                          <!--Modal Update-->
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <h4 class="modal-title">Penambahan point Siswa</h4>
-                          </div>
-                          <?= form_open_multipart('data_pelanggaran/tambah'); ?>
-                          <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
+                      </div>
+                    </div>                
+                  </div>
+                  <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
 
-                          <!--Modal body--> 
-                          <div class="modal-body">
+                        <!--Modal Update-->
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                          <h4 class="modal-title">Penambahan point Siswa</h4>
+                        </div>
+                        <?= form_open_multipart('data_siswa_guru/tambah_pelanggaran/'.$res->id_siswa); ?>
 
-                            <div class="panel-body">
+                        <!--Modal body--> 
+                        <div class="modal-body">
 
-                              <div><h5>Penjelasan Menu :</h5>
-                                <p></p>
-                                <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                              </div><hr>
+                          <div class="panel-body">
+                            <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                            <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
+                            <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
 
-                              <table>
-                                <tr>
-                                  <td><b>Nama</b></td>
-                                  <td>:  <?php echo $res->nama_siswa?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Kelas</b></td>
-                                  <td>:  <?php echo $res->kelas?></td>
-                                </tr>
-                                <tr>
-                                  <td><b>Jenis Kelamin</b></td>
-                                  <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                                </tr>
-                              </table><hr>
+                            <div><h5>Penjelasan Menu :</h5>
+                              <p></p>
+                              <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
+                            </div><hr>
 
-                             <div class="col-md-6">
+                            <table>
+                              <tr>
+                                <td><b>Nama</b></td>
+                                <td>:  <?php echo $res->nama_siswa?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Kelas</b></td>
+                                <td>:  <?php echo $res->kelas?></td>
+                              </tr>
+                              <tr>
+                                <td><b>Jenis Kelamin</b></td>
+                                <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                              </tr>
+                            </table><hr>
+
+                            <div class="col-md-6">
                               <label for="" class="control-label"><b>Nama pelanggaran</b></label>
                               <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
                             </div>
@@ -184,40 +186,40 @@
                             <div class="col-md-12">
                               <label for="" class="control-label"><b>Keterangan</b></label>
                               <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                              </div>
-
                             </div>
 
-
                           </div>
 
-                          <!--Modal footer-->
-                          <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Simpan</button>
-                          </div>
-                          <?= form_close(); ?>
+
                         </div>
+
+                        <!--Modal footer-->
+                        <div class="modal-footer">
+                          <button class="btn btn-primary" type="submit">Simpan</button>
+                        </div>
+                        <?= form_close(); ?>
                       </div>
                     </div>
+                  </div>
                 <?php  } ?>
                 <?php foreach($tampil1 as $res) {
                   $id = $res->id_pelanggaran_kerapian;
                   ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-purple panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point
-                      <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
+                  <div class="col-sm-3">
 
+                    <!--Profile Widget-->
+                    <!--===================================================-->
+                    <div class="panel panel-purple panel-colorful" style="height: 150px">
+                      <div class="pad-all text-left">
+                        <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                          + <?php echo  $res->point?> point
+                          <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
+
+                        </div>
+                      </div>                
                     </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -226,7 +228,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran_kerapian/tambah'); ?>
+                          <?= form_open_multipart('data_siswa_guru/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
                           <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian?>">
 
                           <!--Modal body--> 
@@ -254,19 +256,19 @@
                                 </tr>
                               </table><hr>
 
-                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                                <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
+                              </div>
 
-                            <div class="col-md-6">
-                              <label for="" class="control-label"><b>Point</b> </label>
-                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Point</b> </label>
+                                <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                              </div>
 
-                            <div class="col-md-12">
-                              <label for="" class="control-label"><b>Keterangan</b></label>
-                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <div class="col-md-12">
+                                <label for="" class="control-label"><b>Keterangan</b></label>
+                                <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
@@ -282,25 +284,25 @@
                         </div>
                       </div>
                     </div>
-                <?php  } ?>
-                <?php foreach($tampil2 as $res) {
-                  $id = $res->id_pelanggaran_berat;
-                  ?>
-                <div class="col-sm-3">
-                 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-dark panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                     <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
-                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point
-                      <p><?php echo  $res->nama_pelanggaran_berat?></p>
+                  <?php  } ?>
+                  <?php foreach($tampil2 as $res) {
+                    $id = $res->id_pelanggaran_berat;
+                    ?>
+                    <div class="col-sm-3">
 
+                      <!--Profile Widget-->
+                      <!--===================================================-->
+                      <div class="panel panel-dark panel-colorful" style="height: 150px">
+                        <div class="pad-all text-left">
+                         <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
+                          <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
+                          + <?php echo  $res->point?> point
+                          <p><?php echo  $res->nama_pelanggaran_berat?></p>
+
+                        </div>
+                      </div>                
                     </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                    <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
 
@@ -309,7 +311,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Penambahan point Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_pelanggaran_berat/tambah'); ?>
+                         <?= form_open_multipart('data_siswa_guru/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
                           <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat?>">
 
                           <!--Modal body--> 
@@ -337,19 +339,19 @@
                                 </tr>
                               </table><hr>
 
-                             <div class="col-md-6">
-                              <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                                <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
+                              </div>
 
-                            <div class="col-md-6">
-                              <label for="" class="control-label"><b>Point</b> </label>
-                              <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                            </div>
+                              <div class="col-md-6">
+                                <label for="" class="control-label"><b>Point</b> </label>
+                                <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
+                              </div>
 
-                            <div class="col-md-12">
-                              <label for="" class="control-label"><b>Keterangan</b></label>
-                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                              <div class="col-md-12">
+                                <label for="" class="control-label"><b>Keterangan</b></label>
+                                <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
                               </div>
 
                             </div>
@@ -365,70 +367,70 @@
                         </div>
                       </div>
                     </div>
-                <?php  } ?>
+                  <?php  } ?>
+                </div>
+             
+
             </div>
-          </form>
-
+          </div>
         </div>
+      </div>
     </div>
-  </div>
-</div>
-</div>
 
 
-  <!-- hapus -->
-  <!-- end hapus -->
+    <!-- hapus -->
+    <!-- end hapus -->
 
 
 
 
-  <!-- modal edit -->
-  <!-- end modal edit -->
+    <!-- modal edit -->
+    <!-- end modal edit -->
 
 
 
-<!--===================================================-->
-<!--End page content-->
+    <!--===================================================-->
+    <!--End page content-->
 
-<!--jQuery [ REQUIRED ]-->
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<script>
-  $(document).ready(function () {
-
-
-    $('#demo-dp-txtinputmasukkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
-
-    $('#demo-dp-txtinputakhirkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
+    <script>
+      $(document).ready(function () {
 
 
+        $('#demo-dp-txtinputmasukkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
-  });
-</script>
+        $('#demo-dp-txtinputakhirkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
 
-<script type="text/javascript">
+
+      });
+    </script>
 
 
-  function tampilkanPreview(userfile,idpreview)
-  {
-    var gb = userfile.files;
-    for (var i = 0; i < gb.length; i++)
-    {
-      var gbPreview = gb[i];
-      var imageType = /image.*/;
-      var preview=document.getElementById(idpreview);
-      var reader = new FileReader();
-      if (gbPreview.type.match(imageType))
+    <script type="text/javascript">
+
+
+      function tampilkanPreview(userfile,idpreview)
       {
+        var gb = userfile.files;
+        for (var i = 0; i < gb.length; i++)
+        {
+          var gbPreview = gb[i];
+          var imageType = /image.*/;
+          var preview=document.getElementById(idpreview);
+          var reader = new FileReader();
+          if (gbPreview.type.match(imageType))
+          {
       //jika tipe data sesuai
       preview.file = gbPreview;
       reader.onload = (function(element)

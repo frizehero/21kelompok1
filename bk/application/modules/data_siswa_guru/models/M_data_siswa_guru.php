@@ -1,14 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class M_data_siswa extends CI_Model {
+class M_data_siswa_guru extends CI_Model {
 
 	function tampil($limit, $start)
 	{
 		$this->db->select('*')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama');
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->order_by("id_siswa", "DESC");
 		$query = $this->db->get('data_siswa', $limit, $start);
 		return $query->result();
 
@@ -106,101 +107,10 @@ class M_data_siswa extends CI_Model {
 
 
 
-	function get_filter_count($kelas,$jurusan)
-	{
-
-		if ($kelas  == "") {
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();		
-		}
-		elseif ($jurusan =="") 
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();
-		}
-		else
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan)
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa');
-			return $query->num_rows();
-
-		}
-
-	}
+	
 
 
 
-	function filter($limit, $start,$kelas,$jurusan)
-	{
-
-		if ($kelas=="") 
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan);
-			$query = $this->db->get('data_siswa',$limit, $start);
-			return $query->result();
-
-		}
-		elseif ($jurusan=="") 
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa',$limit, $start);
-			return $query->result();
-		}
-		else
-		{
-			$this->db->select('*')
-			->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
-			->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-			->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-			->where('data_siswa.id_jurusan',$jurusan)
-			->where('data_siswa.id_kelas',$kelas);
-			$query = $this->db->get('data_siswa',$limit, $start);
-			return $query->result();
-
-		}
-	}
-
-
-
-	function filter_jur(){
-		$this->db->select('*')
-		->from('data_jurusan');
-		$query = $this->db->get();
-		return $query->result();
-
-
-	}
-	function filter_kel(){
-		$this->db->select('*')
-		->from('data_kelas');
-		$query = $this->db->get();
-		return $query->result();
-
-
-	}
 
 
 	/*bagian view detail*/
@@ -218,6 +128,114 @@ class M_data_siswa extends CI_Model {
 	}
 
 
+	function tampilriwayat_treatment($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->where('riwayat_treatment.id_siswa',$id);
+		$query = $this->db->get('riwayat_treatment');
+		return $query->result();
+	}
+
+
+
+	function count_jtreatment($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->where('riwayat_treatment.id_siswa',$id);
+		$query = $this->db->get('riwayat_treatment');
+		return $query->num_rows();
+	}
+
+
+	function tampilriwayat_pelanggaran($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+	function count_jpelanggaran($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+
+	function count_jpelanggaran_kerapian($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+	function count_jpelanggaran_berat($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();
+	}
+
+
+
+	function tampilriwayat_pelanggaran_kerapian($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+	
+
+	function tampilriwayat_pelanggaran_berat($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+
+	function pterbaru()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
 
 	function edit($id)
 	{
@@ -230,6 +248,7 @@ class M_data_siswa extends CI_Model {
 		$kelas 						= $this->input->post('kelas');
 		$jurusan 					= $this->input->post('jurusan');
 		$agama 						= $this->input->post('agama');
+		$fotoku 					= $this->input->post('fotoku');
 
 		$this->load->library('upload');
 		$nmfile = "file_".time();
@@ -246,6 +265,7 @@ class M_data_siswa extends CI_Model {
 		{
 			if ($this->upload->do_upload('foto_siswa'))
 			{
+				unlink("assets/img/".$fotoku);
 				$gbr = $this->upload->data();
 				$data = array(
 					'nis'					=> $nis,
@@ -257,8 +277,6 @@ class M_data_siswa extends CI_Model {
 					'id_jurusan'			=> $jurusan,
 					'id_agama'				=> $agama,
 					'foto_siswa' 			=> $gbr['file_name'],
-
-
 				);
 				$this->db->where('id_siswa',$id_detail_siswa)->update('data_siswa', $data);
 
@@ -283,10 +301,73 @@ class M_data_siswa extends CI_Model {
 
 	function hapus($id)
 	{
-		$this->db->where('id_siswa', $id)->delete('data_siswa');
+		$this->db->where('id_siswa', $id)->delete('riwayat_pelanggaran');
+		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
+
+		$this->db->where('id_siswa', $id);
+		$query = $this->db->get('data_siswa');
+		$row = $query->row();
+		unlink("assets/img/".$row->foto_siswa);
+		
+		$this->db->delete('data_siswa',array('id_siswa' => $id));
 	}
 
+
+
+	function jumlahpelanggaran1($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran.point")
+		->from("data_pelanggaran")
+		->join("riwayat_pelanggaran","data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpelanggaran2($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_berat.point")
+		->from("data_pelanggaran_berat")
+		->join("riwayat_pelanggaran","data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpelanggaran3($id)
+	{
+		
+		$query = $this->db->select_sum("data_pelanggaran_kerapian.point")
+		->from("data_pelanggaran_kerapian")
+		->join("riwayat_pelanggaran","data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian","left") 
+		->where("riwayat_pelanggaran.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+	function jumlahpointtreatment($id)
+	{
+		
+		$query = $this->db->select_sum("data_treatment.point")
+		->from("data_treatment")
+		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
+		->where("riwayat_treatment.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
+
+
+
 	/*akhir model v detail*/
+
+
+
+
+
+
+
 
 
 	/*model bagian v tambah treatment*/
@@ -317,6 +398,35 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
+
+
+	function tambah_treatment($id)
+	{
+		
+		$Keterangan_treatment 		= $this->input->post('Keterangan');
+		$tanggal_treatment			= $this->input->post('tanggal_treatment');
+		$id_treatment				= $this->input->post('id_treatment');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_treatment'	=> $Keterangan_treatment,
+			'tanggal_treatment'		=> $tanggal_treatment,
+			'id_treatment'			=> $id_treatment,
+			'id_siswa'				=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_treatment', $data);
+
+	}
+	// akhir model penambahan treatment siswa
+
+
+
+
+
+	// model tambah pelanggran siswa
 	function caripelanggaran($carip,$id)
 	{
 		$carip 	= $this->input->post('caripelanggaran');
@@ -399,6 +509,68 @@ class M_data_siswa extends CI_Model {
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
+
+	}
+	function tambah_pelanggaran($id)
+	{
+		
+		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
+		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$id_pelanggaran				= $this->input->post('id_pelanggaran');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+			'id_pelanggaran'			=> $id_pelanggaran,
+			'id_siswa'					=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_pelanggaran', $data);
+
+	}
+
+	function tambah_pelanggaran_kerapian($id)
+	{
+		
+		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
+		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$id_pelanggaran_kerapian	= $this->input->post('id_pelanggaran_kerapian');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+			'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
+			'id_siswa'					=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_pelanggaran', $data);
+
+	}
+
+	function tambah_pelanggaran_berat($id)
+	{
+		
+		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
+		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$id_pelanggaran_berat       = $this->input->post('id_pelanggaran_berat');
+		$id_siswa 					= $this->input->post('id_siswa');
+
+
+		$data = array(
+			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+			'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
+			'id_siswa'					=> $id_siswa,
+
+
+		);
+		$this->db->insert('riwayat_pelanggaran', $data);
 
 	}
 }
