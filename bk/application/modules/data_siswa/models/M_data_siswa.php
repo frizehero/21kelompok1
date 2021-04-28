@@ -265,20 +265,37 @@ class M_data_siswa extends CI_Model {
 		{
 			if ($this->upload->do_upload('foto_siswa'))
 			{
-				unlink("assets/img/".$fotoku);
-				$gbr = $this->upload->data();
-				$data = array(
-					'nis'					=> $nis,
-					'nama_siswa'			=> $nama_siswa,
-					'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
-					'alamat_siswa'			=> $alamat_siswa,
-					'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
-					'id_kelas'				=> $kelas,
-					'id_jurusan'			=> $jurusan,
-					'id_agama'				=> $agama,
-					'foto_siswa' 			=> $gbr['file_name'],
-				);
-				$this->db->where('id_siswa',$id_detail_siswa)->update('data_siswa', $data);
+				if ($fotoku == "kosong1.png") {
+					$gbr = $this->upload->data();
+					$data = array(
+						'nis'					=> $nis,
+						'nama_siswa'			=> $nama_siswa,
+						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
+						'alamat_siswa'			=> $alamat_siswa,
+						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'id_kelas'				=> $kelas,
+						'id_jurusan'			=> $jurusan,
+						'id_agama'				=> $agama,
+						'foto_siswa' 			=> $gbr['file_name'],
+					);
+					$this->db->where('id_siswa',$id_detail_siswa)->update('data_siswa', $data);
+				}else{
+					unlink("assets/img/".$fotoku);
+					$gbr = $this->upload->data();
+					$data = array(
+						'nis'					=> $nis,
+						'nama_siswa'			=> $nama_siswa,
+						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
+						'alamat_siswa'			=> $alamat_siswa,
+						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'id_kelas'				=> $kelas,
+						'id_jurusan'			=> $jurusan,
+						'id_agama'				=> $agama,
+						'foto_siswa' 			=> $gbr['file_name'],
+					);
+					$this->db->where('id_siswa',$id_detail_siswa)->update('data_siswa', $data);
+				}
+				
 
 			}	 
 		}
@@ -307,9 +324,13 @@ class M_data_siswa extends CI_Model {
 		$this->db->where('id_siswa', $id);
 		$query = $this->db->get('data_siswa');
 		$row = $query->row();
-		unlink("assets/img/".$row->foto_siswa);
+		if ($row->foto_siswa == "kosong1.png") {
+			$this->db->delete('data_siswa',array('id_siswa' => $id));
+		}else{
+			unlink("assets/img/".$row->foto_siswa);
+			$this->db->delete('data_siswa',array('id_siswa' => $id));
+		}
 		
-		$this->db->delete('data_siswa',array('id_siswa' => $id));
 	}
 
 
