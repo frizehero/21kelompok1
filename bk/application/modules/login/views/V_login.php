@@ -75,9 +75,9 @@
                                     
                                 </div>
                                 <div class="col-sm-8 text-right">
-                                    <div class="forgot-password">
+                                    <!-- <div class="forgot-password">
                                         <a href="javascript:;" id="forget-password" class="forget-password">Lupa Password?</a>
-                                    </div>
+                                    </div> -->
                                     <button class="btn green" type="submit">Masuk</button>
                                 </div>
                             </div>

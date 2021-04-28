@@ -568,9 +568,9 @@
                                     </ul>
                             </li>
 
-                      <?php if($this->uri->segment('1') == 'data_laporan'){ ?>
+                      <?php if($this->uri->segment('1') == 'data_laporan_guru'){ ?>
                         <li class="active-sub">
-                            <a href="<?php echo base_url('data_laporan'); ?>">
+                            <a href="<?php echo base_url('data_laporan_guru'); ?>">
                                 <i class="demo-pli-file-html"></i>
                                 <span class="menu-title">Laporan</span>
                             </a>
@@ -578,7 +578,7 @@
                         </li>
                     <?php } else{ ?>
                         <li>
-                            <a href="<?php echo base_url('data_laporan'); ?>">
+                            <a href="<?php echo base_url('data_laporan_guru'); ?>">
                                 <i class="demo-pli-file-html"></i>
                                 <span class="menu-title">Laporan</span>
                             </a>

@@ -183,7 +183,7 @@
 
 
             </div>
-            <h3 class="panel-title">Riwayat Treatmeant Terbaru</h3>
+            <h3 class="panel-title">Riwayat Treatmeant Hari Ini</h3>
         </div>
                                     <div class="table-responsive">
                                         <table class="table table-vcenter mar-top">
