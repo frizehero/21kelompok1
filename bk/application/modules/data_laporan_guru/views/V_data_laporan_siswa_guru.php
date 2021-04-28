@@ -14,8 +14,8 @@
     <!--Breadcrumb-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
-      <li><a href="#"><i class="demo-pli-home"></i></a></li>
-      <li><a href="#">Laporan</a></li>
+      <li><a href="<?php  echo base_url('data_beranda_guru/index/');  ?>"><i class="demo-pli-home"></i></a></li>
+      <li><a href="<?php  echo base_url('data_laporan_guru/index/');  ?>">Laporan</a></li>
       <li class="active">Laporan Siswa</li>
     </ol>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
