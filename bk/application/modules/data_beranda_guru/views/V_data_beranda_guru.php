@@ -79,7 +79,7 @@
     <div class="panel">
         <div class="panel-body">
           <form action="<?php echo site_url('data_beranda_guru/carisiswa/') ?>" method="post" class="col-sm-10 text-right">
-            <label class="col-sm-4 control-label" for="demo-hor-inputemail">Masukkan Nis/Nama</label>
+            <label class="col-sm-4 control-label" for="demo-hor-inputemail"><h5>Masukkan Nis/Nama </h5></label>
             <div class="input-group text-right"  style="padding-left: : 5px">
               <?php if($this->uri->segment(2) != 'cari'){?>
                 <input type="text" autocomplete="off" name="cari" class="form-control" placeholder="Cari Nis/Nama" required="">
