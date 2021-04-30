@@ -9,9 +9,9 @@ class M_template extends CI_Model {
 	}
 	public function tampil_pengguna_kesiswaan($username){
 
-		$query = "SELECT username FROM tb_login where username='$username' AND status='1'";
+		$query = "SELECT username FROM data_user where username='$username' AND status='1'";
 		$result = $this->db->query($query);
-		$nama = '';
+		$nama = 'username';
 
 		foreach($result->result_array() as $row)
 		{
@@ -19,6 +19,16 @@ class M_template extends CI_Model {
 		}
 
 		return $nama;
+	}
+
+	function oke($id)
+	{
+		$this->db->select('*')
+		->from('data_user')
+		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+		->where('id_user',$id);
+		$query = $this->db->get();
+		return $query->row();
 	}
 
 	function lastDates()

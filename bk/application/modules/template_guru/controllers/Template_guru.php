@@ -24,6 +24,9 @@ class Template_guru extends MX_Controller {
 	public function tampilCore($data)
 	{
 		$id = $this->session->userdata('session_id');
+		$user = $this->m_template_guru->oke($id);
+
+		$data['nama'] = $this->m_template_guru->oke($id);
 		
 		$this->load->view('view_template_core_guru',$data);
 	}

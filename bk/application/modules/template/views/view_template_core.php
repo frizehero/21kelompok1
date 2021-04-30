@@ -461,14 +461,13 @@
 
                              <div class="profile-wrap text-center">
                                 <div class="pad-btm">
-                                    <img class="img-circle img-md" src="<?php echo base_url(); ?>assets/img/1.png" alt="Profile Picture">
+                                    <img class="img-circle img-md" src="<?php echo base_url ()?>assets/img/<?php echo $nama->foto_guru; ?>" alt="Profile Picture">
                                 </div>
                                 <a href="#profile-nav" class="box-block" data-toggle="collapse" aria-expanded="false">
                                     <span class="pull-right dropdown-toggle">
                                         <i class="dropdown-caret"></i>
                                     </span>
-                                    <p class="mnp-name">somad</p>
-                                    <span class="mnp-desc">somad@gmail.com</span>
+                                    <p class="mnp-name"><?php echo $nama->nama_guru; ?></p>
                                 </a>
                             </div>
                             

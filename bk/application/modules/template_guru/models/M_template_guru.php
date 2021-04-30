@@ -21,6 +21,16 @@ class M_template_guru extends CI_Model {
 		return $nama;
 	}
 
+	function oke($id)
+	{
+		$this->db->select('*')
+		->from('data_user')
+		->join('data_guru','data_guru.id_guru = data_user.id_guru')
+		->where('id_user',$id);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 	function lastDates()
 	{
 		$query = $this->db->query("SELECT * FROM tb_agenda ORDER BY created_at DESC LIMIT 1");
