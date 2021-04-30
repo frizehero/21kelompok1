@@ -223,15 +223,59 @@ class M_data_siswa extends CI_Model {
 
 
 
-	function pterbaru()
+	function tampilriwayat_pelanggaran_samping($id)
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$this->db->order_by("riwayat_pelanggaran.create_at", 'DESC');
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+	function tampilriwayat_pelanggaran_kerapian_samping($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$this->db->order_by("riwayat_pelanggaran.create_at", 'DESC');
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+	
+
+	function tampilriwayat_pelanggaran_berat_samping($id)
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
+		->where('riwayat_pelanggaran.id_siswa',$id);
+		$this->db->order_by("riwayat_pelanggaran.create_at", 'DESC');
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->result();
+	}
+
+
+
+
+	function pterbaru($id)
+	{
+		$this->db->select('*')
+		// ->select_max('riwayat_pelanggaran.create_at')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left');
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('riwayat_pelanggaran.id_siswa',$id);
 		$this->db->order_by("riwayat_pelanggaran.create_at", 'DESC');
-		$this->db->group_by('riwayat_pelanggaran.id_siswa');
+		// $this->db->group_by('riwayat_pelanggaran.id_siswa');
 
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
