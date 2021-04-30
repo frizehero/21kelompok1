@@ -31,6 +31,18 @@ class Data_laporan extends MX_Controller {
 			'jml_siswatipk'			=> $this->m_data_laporan->jml_siswatipk(),
 			'jml_siswatb'			=> $this->m_data_laporan->jml_siswatb(),
 			'jml_siswatkr'			=> $this->m_data_laporan->jml_siswatkr(),
+			'januari'					=> $this->m_data_laporan->januari(),
+			'februari'					=> $this->m_data_laporan->februari(),
+			'maret'					=> $this->m_data_laporan->maret(),
+			'april'					=> $this->m_data_laporan->april(),
+			'mei'					=> $this->m_data_laporan->mei(),
+			'juni'					=> $this->m_data_laporan->juni(),
+			'juli'					=> $this->m_data_laporan->juli(),
+			'agustus'					=> $this->m_data_laporan->agustus(),
+			'september'					=> $this->m_data_laporan->september(),
+			'oktober'					=> $this->m_data_laporan->oktober(),
+			'november'					=> $this->m_data_laporan->november(),
+			'desember'					=> $this->m_data_laporan->desember(),
 			// 'filter_kel'	=> $this->m_data_laporan->filter_kel(),
 
 

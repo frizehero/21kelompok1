@@ -243,18 +243,18 @@
         xValueFormatString: "MMM, YYYY",
         yValueFormatString: "###.#",
         dataPoints: [        
-        { x: new Date(2021, 0, 1), y: 61, },
-        { x: new Date(2021, 1, 1), y: 71,  },
-        { x: new Date(2021, 2, 1) , y: 55,  },
-        { x: new Date(2021, 3, 1) , y: 50,  },
-        { x: new Date(2021, 4, 1) , y: 65,  },
-        { x: new Date(2021, 5, 1) , y: 85,  },
-        { x: new Date(2021, 6, 1) , y: 68, },
-        { x: new Date(2021, 7, 1) , y: 28,  },
-        { x: new Date(2021, 8, 1) , y: 34,  },
-        { x: new Date(2021, 9, 1) , y: 24,  },
-        { x: new Date(2021, 10, 1) , y: 44, },
-        { x: new Date(2021, 11, 1) , y: 34,  }
+        { x: new Date(2021, 0, 1), y: <?php echo $januari; ?>, },
+        { x: new Date(2021, 1, 1), y: <?php echo $februari; ?>,  },
+        { x: new Date(2021, 2, 1) , y: <?php echo $maret; ?>,  },
+        { x: new Date(2021, 3, 1) , y: <?php echo $april; ?>,  },
+        { x: new Date(2021, 4, 1) , y: <?php echo $mei; ?>,  },
+        { x: new Date(2021, 5, 1) , y: <?php echo $juni; ?>,  },
+        { x: new Date(2021, 6, 1) , y: <?php echo $juli; ?>, },
+        { x: new Date(2021, 7, 1) , y: <?php echo $agustus; ?>,  },
+        { x: new Date(2021, 8, 1) , y: <?php echo $september; ?>,  },
+        { x: new Date(2021, 9, 1) , y: <?php echo $oktober; ?>,  },
+        { x: new Date(2021, 10, 1) , y: <?php echo $november; ?>, },
+        { x: new Date(2021, 11, 1) , y: <?php echo $desember; ?>,  }
         ]
     }]
 });

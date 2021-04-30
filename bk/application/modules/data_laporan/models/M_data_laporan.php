@@ -223,25 +223,155 @@ class M_data_laporan extends CI_Model {
 		return $query->row_array();
 	}
 
-	// function filter_kel()
-	// {
-	// 	$this->db->select('*')
-	// 	->from('data_kelas');
-	// 	$query = $this->db->get();
-	// 	return $query->result();
-	// }
 
-	// function filter_tanggal($awal,$akhir)
-	// {
-	// 	$this->db->where('tanggal_pelanggaran >=',$awal); 
-	// 	$this->db->where('tanggal_pelanggaran <=',$akhir);
-	// 	return $this->db->get('riwayat_pelanggaran');
+	function januari()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',1);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
 
-	// 	return $this->db->from('riwayat_pelanggaran')
-	// 	->order_by("tanggal_pelanggaran","asc")
-	// 	->where("tanggal_pelanggaran BETWEEN '$awal' AND '$akhir'")
-	// 	->get()
-	// 	->result();
-	// }
+	function februari()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',2);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function maret()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',3);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function april()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',4);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function mei()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',5);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function juni()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',6);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+	function juli()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',7);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function agustus()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',8);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+	function september()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',9);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+	function oktober()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',10);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+
+	function november()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',11);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
+
+	function desember()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',12);
+		$query = $this->db->get('riwayat_pelanggaran');
+		return $query->num_rows();	
+	}
 
 }
