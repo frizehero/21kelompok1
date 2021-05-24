@@ -85,7 +85,7 @@
                 <div class="panel">
                     <div class="panel-heading">
                         <h4 class="panel-title"> Pelanggaran Perjurusan Perhari</h4>
-                        <script>
+                        <script type="text/javascript">
                             window.onload = function () {
 
                                 var chart = new CanvasJS.Chart("chartContainer", {
@@ -112,7 +112,7 @@
 
                             }
                         </script>
-                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                        <div id="chartContainer" style="height: 260px; width: 100%;"></div>
                         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                     </div>
                 </div>
@@ -128,8 +128,27 @@
                         <h3 class="panel-title">Pelanggaran Dalam 1 Minggu</h3>
                     </div>
                     <div class="pad-all">
-                        <div id="demo-morris-area-legend" class="text-center"></div>
-                        <div id="demo-morris-area" style="height:270px"></div>
+                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+<script>
+var xValues = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat","Sabtu"];
+var yValues = [55, 49, 44, 24, 60, 30];
+var barColors = ["red", "yellow","green","blue","magenta","purple"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false}
+  }
+});
+</script>
                     </div>
                 </div>
                 <!---------------------------------->
