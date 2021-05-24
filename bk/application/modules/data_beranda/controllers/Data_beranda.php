@@ -33,6 +33,13 @@ class Data_beranda extends MX_Controller {
 			'jml_siswatipk'			=> $this->m_data_beranda->jml_siswatipk(),
 			'jml_siswatb'			=> $this->m_data_beranda->jml_siswatb(),
 			'jml_siswatkr'			=> $this->m_data_beranda->jml_siswatkr(),
+
+			'chartsenin'			=> $this->m_data_beranda->chartsenin(),
+			'chartselasa'			=> $this->m_data_beranda->chartselasa(),
+			'chartrabu'				=> $this->m_data_beranda->chartrabu(),
+			'chartkamis'			=> $this->m_data_beranda->chartkamis(),
+			'chartjumat'			=> $this->m_data_beranda->chartjumat(),
+			'chartsabtu'			=> $this->m_data_beranda->chartsabtu(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

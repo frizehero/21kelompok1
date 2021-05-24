@@ -112,7 +112,7 @@
 
                             }
                         </script>
-                        <div id="chartContainer" style="height: 260px; width: 100%;"></div>
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
                     </div>
                 </div>
@@ -127,171 +127,173 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Pelanggaran Dalam 1 Minggu</h3>
                     </div>
-                    <div class="pad-all">
-                        <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+                    <div class="pad-all" style="height: 300px; width: 100%;">
+                        <canvas id="myChart" style="width:300%;max-width:600px">
+                            <script>
+                                var xValues = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat","Sabtu"];
+                                var yValues = [<?php echo $chartsenin;  ?>, <?php echo $chartselasa ?>, <?php echo $chartrabu; ?>, <?php echo $chartkamis ?>, <?php echo $chartjumat ?>, <?php echo $chartsabtu ?>];
+                                var barColors = ["red", "yellow","green","blue","magenta","purple"];
 
-<script>
-var xValues = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat","Sabtu"];
-var yValues = [55, 49, 44, 24, 60, 30];
-var barColors = ["red", "yellow","green","blue","magenta","purple"];
-
-new Chart("myChart", {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    legend: {display: false}
-  }
-});
-</script>
-                    </div>
-                </div>
-                <!---------------------------------->
-
-            </div>
-
-            <div class="col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Treatment Siswa Hari Ini</h3>
-                    </div>
-                    <div class="panel-body">
-                        <!-- Timeline -->
-                        <!--===================================================-->
-                        <div class="timeline">
-
-                            <!-- Timeline header -->
-                            <div class="timeline-header">
-                                <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_treatmentsiswa/');  ?>"> Lihat Semua</a>
-                                </div>
-                            </div>
-
-                            <?php $count = 0; ?>
-
-                            <?php foreach ($treatmentsiswa as $treatmentsiswa) {
-                                $id = $treatmentsiswa->id_siswa;
-                                ?>
-                                <?php if($count == 5) break; ?>
-                                <div class="timeline-entry">
-                                    <div class="timeline-stat">
-                                        <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>">
-                                            <div class="timeline-icon">
-                                                <img src="<?php echo base_url ()?>assets/img/<?php echo $treatmentsiswa->foto_siswa ?>" alt="Profile picture">
-                                            </div> 
-                                        </a>
-                                        <div class="timeline-time">
-                                            <h5>
-                                                <div >Point</div>
-                                                <div class="text-info text-bold"><?php 
-                                                $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
-                                                $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
-                                                $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
-                                                $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
+                                new Chart("myChart", {
+                                  type: "bar",
+                                  data: {
+                                    labels: xValues,
+                                    datasets: [{
+                                      backgroundColor: barColors,
+                                      data: yValues
+                                  }]
+                              },
+                              options: {
+                                legend: {display: false}
+                            }
+                        });
+                    </script>
+                </canvas>
 
 
-                                                $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                                                $total_treatment        = $jumlahpointtreatment['point'];
-                                                $total_point            = $total_pelanggaran - $total_treatment;
-
-                                                echo $total_point;
-                                                ?></div>
-                                            </h5>
-                                        </div>
-
-                                    </div>
-                                    <div class="timeline-label">
-                                        <p class="text-bold">
-                                            <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>" class="text-info"><?php echo $treatmentsiswa->nama_siswa ?>
-                                        </a>
-                                    </p>
-                                    <p>NIS      : <?php echo $treatmentsiswa->nis ?></p>
-                                    <p>Kelas    : <?php echo $treatmentsiswa->kelas?></p>
-                                    <p>Jurusan  : <?php echo $treatmentsiswa->jurusan?></p>
-                                </div>
-                            </div>
-                            <?php $count++; ?>
-                        <?php } ?>
-
-
-                    </div>
-                </div>
             </div>
         </div>
+        <!---------------------------------->
 
-        <div class="col-md-6">
-            <div class="panel">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Pelanggaran Siswa Hari ini</h3>
-                </div>
-                <div class="panel-body">
-                    <!-- Timeline -->
-                    <!--===================================================-->
-                    <div class="timeline">
+    </div>
 
-                        <!-- Timeline header -->
-                        <div class="timeline-header">
-                            <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_pelanggaran_siswa_hari_ini/');  ?>"> Lihat Semua</a>
-                            </div>
+    <div class="col-md-6">
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">Treatment Siswa Hari Ini</h3>
+            </div>
+            <div class="panel-body">
+                <!-- Timeline -->
+                <!--===================================================-->
+                <div class="timeline">
+
+                    <!-- Timeline header -->
+                    <div class="timeline-header">
+                        <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_treatmentsiswa/');  ?>"> Lihat Semua</a>
                         </div>
+                    </div>
 
-                        <?php $count = 0; ?>
+                    <?php $count = 0; ?>
 
-                        <?php foreach ($pelanggar_hariini as $pelanggar_hariini) {
-                            $id = $pelanggar_hariini->id_siswa;
-                            ?>
-                            <?php if($count == 5) break; ?>
-                            <div class="timeline-entry">
-                                <div class="timeline-stat">
-                                    <a href="<?php echo base_url('data_siswa/details/'.$pelanggar_hariini->id_siswa); ?>">
-                                        <div class="timeline-icon">
-                                            <img src="<?php echo base_url ()?>assets/img/<?php echo $pelanggar_hariini->foto_siswa ?>" alt="Profile picture">
-                                        </div> 
-                                    </a>
-                                    <div class="timeline-time">
-                                        <h5>
-                                            <div >Point</div>
-                                            <div class="text-info text-bold"> <?php 
-                                            $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
-                                            $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
-                                            $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
-                                            $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
+                    <?php foreach ($treatmentsiswa as $treatmentsiswa) {
+                        $id = $treatmentsiswa->id_siswa;
+                        ?>
+                        <?php if($count == 5) break; ?>
+                        <div class="timeline-entry">
+                            <div class="timeline-stat">
+                                <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>">
+                                    <div class="timeline-icon">
+                                        <img src="<?php echo base_url ()?>assets/img/<?php echo $treatmentsiswa->foto_siswa ?>" alt="Profile picture">
+                                    </div> 
+                                </a>
+                                <div class="timeline-time">
+                                    <h5>
+                                        <div >Point</div>
+                                        <div class="text-info text-bold"><?php 
+                                        $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
+                                        $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
+                                        $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
+                                        $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
 
 
-                                            $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                                            $total_treatment        = $jumlahpointtreatment['point'];
-                                            $total_point            = $total_pelanggaran - $total_treatment;
+                                        $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                                        $total_treatment        = $jumlahpointtreatment['point'];
+                                        $total_point            = $total_pelanggaran - $total_treatment;
 
-                                            echo $total_point;
-                                            ?></div>
-                                        </h5>
-                                    </div>
-
+                                        echo $total_point;
+                                        ?></div>
+                                    </h5>
                                 </div>
-                                <div class="timeline-label">
-                                    <p class="text-bold">
-                                        <a href="<?php echo base_url("data_siswa/details/".$pelanggar_hariini->id_siswa) ?>" class="text-info"><?php echo $pelanggar_hariini->nama_siswa ?>
-                                    </a>
-                                </p>
-                                <p>NIS      : <?php echo $pelanggar_hariini->nis ?></p>
-                                <p>Kelas    : <?php echo $pelanggar_hariini->kelas?></p>
-                                <p>Jurusan  : <?php echo $pelanggar_hariini->jurusan?></p>
+
                             </div>
+                            <div class="timeline-label">
+                                <p class="text-bold">
+                                    <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>" class="text-info"><?php echo $treatmentsiswa->nama_siswa ?>
+                                </a>
+                            </p>
+                            <p>NIS      : <?php echo $treatmentsiswa->nis ?></p>
+                            <p>Kelas    : <?php echo $treatmentsiswa->kelas?></p>
+                            <p>Jurusan  : <?php echo $treatmentsiswa->jurusan?></p>
                         </div>
-                        <?php $count++; ?>
-                    <?php } ?>
+                    </div>
+                    <?php $count++; ?>
+                <?php } ?>
 
-
-                </div>
 
             </div>
-
         </div>
     </div>
+</div>
+
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Pelanggaran Siswa Hari ini</h3>
+        </div>
+        <div class="panel-body">
+            <!-- Timeline -->
+            <!--===================================================-->
+            <div class="timeline">
+
+                <!-- Timeline header -->
+                <div class="timeline-header">
+                    <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_pelanggaran_siswa_hari_ini/');  ?>"> Lihat Semua</a>
+                    </div>
+                </div>
+
+                <?php $count = 0; ?>
+
+                <?php foreach ($pelanggar_hariini as $pelanggar_hariini) {
+                    $id = $pelanggar_hariini->id_siswa;
+                    ?>
+                    <?php if($count == 5) break; ?>
+                    <div class="timeline-entry">
+                        <div class="timeline-stat">
+                            <a href="<?php echo base_url('data_siswa/details/'.$pelanggar_hariini->id_siswa); ?>">
+                                <div class="timeline-icon">
+                                    <img src="<?php echo base_url ()?>assets/img/<?php echo $pelanggar_hariini->foto_siswa ?>" alt="Profile picture">
+                                </div> 
+                            </a>
+                            <div class="timeline-time">
+                                <h5>
+                                    <div >Point</div>
+                                    <div class="text-info text-bold"> <?php 
+                                    $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
+                                    $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
+                                    $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
+                                    $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
+
+
+                                    $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                                    $total_treatment        = $jumlahpointtreatment['point'];
+                                    $total_point            = $total_pelanggaran - $total_treatment;
+
+                                    echo $total_point;
+                                    ?></div>
+                                </h5>
+                            </div>
+
+                        </div>
+                        <div class="timeline-label">
+                            <p class="text-bold">
+                                <a href="<?php echo base_url("data_siswa/details/".$pelanggar_hariini->id_siswa) ?>" class="text-info"><?php echo $pelanggar_hariini->nama_siswa ?>
+                            </a>
+                        </p>
+                        <p>NIS      : <?php echo $pelanggar_hariini->nis ?></p>
+                        <p>Kelas    : <?php echo $pelanggar_hariini->kelas?></p>
+                        <p>Jurusan  : <?php echo $pelanggar_hariini->jurusan?></p>
+                    </div>
+                </div>
+                <?php $count++; ?>
+            <?php } ?>
+
+
+        </div>
+
+    </div>
+
+</div>
+</div>
 </div>
 
 </div>

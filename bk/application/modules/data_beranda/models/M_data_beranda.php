@@ -358,4 +358,40 @@ class M_data_beranda extends CI_Model {
 		return $query->row_array();
 	}
 
+	function chartsenin()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
+	function chartselasa()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 1 AND 1 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
+	function chartrabu()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 2 AND 2 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
+	function chartkamis()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 3 AND 3 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
+	function chartjumat()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 4 AND 4 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
+	function chartsabtu()
+	{
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 5 AND 5 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		return $query->num_rows();
+	}
+
 }
