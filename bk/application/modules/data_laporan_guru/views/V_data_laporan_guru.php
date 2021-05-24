@@ -121,7 +121,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <p class="modal-title text-2x text-semibold">Pilih Tanggal Untuk Melihat Detail</p>
                           </div>
-                          <?= form_open_multipart('data_laporan/filter/'); ?>
+                          <?= form_open_multipart('data_laporan_guru/filter/'); ?>
 
 
                           <!--Modal body--> 

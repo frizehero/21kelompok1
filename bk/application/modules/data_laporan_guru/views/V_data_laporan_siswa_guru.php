@@ -97,7 +97,7 @@
               </p>
               <p>Point</p>
               <center>
-                <a class="btn btn-default" type="button" href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
+                <a class="btn btn-default" type="button" href="<?php echo base_url('data_siswa_guru/details/'.$res->id_siswa); ?>">
                   Detail
                 </a>
               </center>
