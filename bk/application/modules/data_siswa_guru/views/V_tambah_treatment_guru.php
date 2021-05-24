@@ -94,7 +94,7 @@
 
                 <td>Cari Treatment </td>
                 <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                <form action="<?php echo base_url('data_siswa_guru/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caritreatment'){?>
                       <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
@@ -141,7 +141,7 @@
                             <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                             <h4 class="modal-title">Perbaikan Siswa</h4>
                           </div>
-                          <?= form_open_multipart('data_siswa/tambah_treatment/'.$res->id_siswa); ?>
+                          <?= form_open_multipart('data_siswa_guru/tambah_treatment/'.$res->id_siswa); ?>
 
                           <!--Modal body--> 
                           <div class="modal-body">
