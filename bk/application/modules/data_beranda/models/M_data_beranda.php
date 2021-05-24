@@ -43,6 +43,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"1")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -59,6 +60,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"2")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -75,6 +77,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"3")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -90,6 +93,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"4")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -105,6 +109,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"5")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -120,6 +125,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"6")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -135,6 +141,7 @@ class M_data_beranda extends CI_Model {
 		->where('data_siswa.id_jurusan',"7")
 		->like("riwayat_pelanggaran.create_at", date('y-m-d'))
 		->order_by("riwayat_pelanggaran.create_at", "DESC");
+		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();
 	}
@@ -360,37 +367,38 @@ class M_data_beranda extends CI_Model {
 
 	function chartsenin()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 0 AND 0 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
+
 		return $query->num_rows();
 	}
 
 	function chartselasa()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 1 AND 1 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 1 AND 1 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
 		return $query->num_rows();
 	}
 
 	function chartrabu()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 2 AND 2 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 2 AND 2 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
 		return $query->num_rows();
 	}
 
 	function chartkamis()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 3 AND 3 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 3 AND 3 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
 		return $query->num_rows();
 	}
 
 	function chartjumat()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 4 AND 4 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 4 AND 4 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
 		return $query->num_rows();
 	}
 
 	function chartsabtu()
 	{
-		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 5 AND 5 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now())");
+		$query = $this->db->query("SELECT * FROM riwayat_pelanggaran WHERE WEEKDAY(CONCAT(tanggal_pelanggaran)) BETWEEN 5 AND 5 AND WEEK(CONCAT(tanggal_pelanggaran)) = WEEK(now()) GROUP BY id_siswa");
 		return $query->num_rows();
 	}
 
