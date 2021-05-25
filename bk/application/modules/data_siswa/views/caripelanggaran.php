@@ -60,6 +60,36 @@
               <div class="col-sm-12">
 
               <?php if ($tampil == null) { ?>
+
+                <div class="row">
+                <div class="col-sm-3">
+                  <?php foreach($tampilp as $res) {
+                    $id = $res->id_siswa;
+                    $gambar = $res->foto_siswa;
+                    ?>
+                    <div class="pad-ver">
+                      <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa?>" style="height: 180px " style="width: 180px" class="img-lg- img-box" alt="Profile Picture">
+                      </div><?php } ?>
+                    </div>
+                    <div class="col-sm-3"><br>
+                      <p>Nama :</p>
+                      <h4><?php echo $res->nama_siswa?></h4>
+                      <p>Kelas :</p>
+                      <h4><?php echo $res->kelas?></h4>
+                      <p>Jenis Kelamin :</p>
+                      <h4><?php echo $res->jenis_kelamin_siswa?></h4>  
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-7 col-lg-3 pull-right">
+                        <div class="panel panel-info panel-colorful">
+                          <div class="pad-all text-right">
+                            <center>TOTAL POINT</center>
+                            <h4 class="text-center text-light"><?php echo $total_point ?></h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 
               <?php } else { ?>
                <div class="row">
@@ -100,26 +130,27 @@
               </div>
               <hr>
 
-              <td>Cari pelanggaran</td>
-              <p></p>
-              <form action="<?php echo base_url('data_siswa/caripelanggaran /'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
-                <div class="input-group text-right"  style="padding-left: : 5px">
-                  <?php if($this->uri->segment(2) != 'caripelanggaran '){?>
-                    <input type="text" autocomplete="off" value="<?= $carit ?>" name="caripelanggaran " class="form-control" placeholder="Cari">
-                  <?php } ?>
-                  <?php if($this->uri->segment(2) == 'caripelanggaran '){
-                    $carip = $this->input->post('caripelanggaran '); ?>
-                    <input type="text" autocomplete="off" value="<?= $carit ?>" name="caripelanggaran " class="form-control " placeholder="pelanggaran ">
-                  <?php } ?> 
-                  <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-                    <button class="btn btn-default" type="submit">cari</button>
-                  </div>
-                  <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran /'.$id); ?>">
-                    <i class="fa fa-refresh" ></i>
-                  </a>
-                </div> 
+              <td>Cari pelanggaran </td>
+                <p></p>
+                <form action="<?php echo base_url('data_siswa/caripelanggaran/'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
+                  <div class="input-group text-right"  style="padding-left: : 5px">
+                    <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
+                      <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
+                    <?php } ?>
+                    <?php if($this->uri->segment(2) == 'caripelanggaran'){
+                      $carit = $this->input->post('caripelanggaran'); ?>
+                      <input type="text" autocomplete="off" value="<?= $carit ?>" name="caripelanggaran" class="form-control " placeholder="Pelanggran">
+                    <?php } ?> 
+                    <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+                      <button class="btn btn-default" type="submit">cari</button>
+                    </div>
+                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$id); ?>">
+                      <i class="fa fa-refresh" ></i>
+                    </a>
+                  </div> 
+                </center>
 
-            </form><br><br><hr>
+              </form><br><br><hr>
 
 
             <p>Pilih Treatment :</p>

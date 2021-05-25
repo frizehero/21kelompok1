@@ -232,6 +232,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 	=> "data_siswa",
 			'namafileview' 	=> "V_cari_treatment",
 			'tampil'		=> $this->m_data_siswa->caritreatment($carit,$id),
+			'tampilt'		=> $this->m_data_siswa->tampiltreatment($id),
 			'id'			=> $id,
 			'total_point'	=> $total_pelanggaran - $total_treatment,
 		);
@@ -291,6 +292,7 @@ class Data_siswa extends MX_Controller {
 			'namamodule' 					=> "data_siswa",
 			'namafileview' 					=> "caripelanggaran",
 			'tampil'						=> $this->m_data_siswa->caripelanggaran($carip,$id),
+			'tampilp'						=> $this->m_data_siswa->tampilpelanggaran($id),
 			'tampil1'						=> $this->m_data_siswa->caripelanggaran1($carip,$id),
 			'tampil2'						=> $this->m_data_siswa->caripelanggaran2($carip,$id),
 			'id'							=> $id,

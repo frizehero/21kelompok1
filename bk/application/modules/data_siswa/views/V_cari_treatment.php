@@ -58,6 +58,36 @@
               <!--===================================================-->
               <div class="col-sm-12">
                  <?php if ($tampil == null) { ?>
+
+                  <div class="row">
+                  <div class="col-sm-3">
+                    <?php foreach($tampilt as $res) {
+                      $id = $res->id_siswa;
+                      $gambar = $res->foto_siswa;
+                      ?>
+                      <div class="pad-ver">
+                        <img class="widget-bg img-responsive" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa?>" style="height: 180px " style="width: 180px" class="img-lg- img-box" alt="Profile Picture">
+                        </div><?php } ?>
+                      </div>
+                      <div class="col-sm-3"><br>
+                        <p>Nama :</p>
+                        <h4><?php echo $res->nama_siswa?></h4>
+                        <p>Kelas :</p>
+                        <h4><?php echo $res->kelas?></h4>
+                        <p>Jenis Kelamin :</p>
+                        <h4><?php echo $res->jenis_kelamin_siswa?></h4>  
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-7 col-lg-3 pull-right">
+                          <div class="panel panel-info panel-colorful">
+                            <div class="pad-all text-right">
+                              <center>TOTAL POINT</center>
+                              <h4 class="text-center text-light"><?php echo $total_point ?></h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                
               <?php } else { ?>
 
