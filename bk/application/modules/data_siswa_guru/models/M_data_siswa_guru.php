@@ -483,7 +483,7 @@ class M_data_siswa_guru extends CI_Model {
 		return $query->result();
 
 	}
-	function caripelanggaran1($carip1,$id)
+	function caripelanggaran1($carip,$id)
 	{
 		$carip1 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
@@ -497,7 +497,7 @@ class M_data_siswa_guru extends CI_Model {
 		return $query->result();
 
 	}
-	function caripelanggaran2($carip2,$id)
+	function caripelanggaran2($carip,$id)
 	{
 		$carip2 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
