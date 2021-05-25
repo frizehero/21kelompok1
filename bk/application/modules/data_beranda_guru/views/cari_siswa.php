@@ -21,9 +21,15 @@
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <!--End breadcrumb-->
   </div>
+  
 
 </div>
-
+<div class="text-right breadcrumb">
+      <div id="demo-custom-toolbar5" class="table-toolbar-left">
+        <a class="btn btn-default text-left" type="button" href="<?php  echo base_url('data_beranda_guru/index/');  ?>">Kembali</a>
+      </div>
+</div>
+<br>
 
 <div id="page-content">
   <div class="row">
