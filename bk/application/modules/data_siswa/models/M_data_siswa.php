@@ -507,30 +507,30 @@ class M_data_siswa extends CI_Model {
 		return $query->result();
 
 	}
-	function caripelanggaran1($carip1,$id)
+	function caripelanggaran1($carip,$id)
 	{
-		$carip1 	= $this->input->post('caripelanggaran');
+		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
-		->like('nama_pelanggaran_kerapian',$carip1);
+		->like('nama_pelanggaran_kerapian',$carip);
 		$query = $this->db->get('data_pelanggaran_kerapian');
 		return $query->result();
 
 	}
-	function caripelanggaran2($carip2,$id)
+	function caripelanggaran2($carip,$id)
 	{
-		$carip2 	= $this->input->post('caripelanggaran');
+		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
-		->like('nama_pelanggaran_berat',$carip2);
+		->like('nama_pelanggaran_berat',$carip);
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
 

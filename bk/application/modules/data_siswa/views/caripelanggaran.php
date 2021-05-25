@@ -105,7 +105,7 @@
               <form action="<?php echo base_url('data_siswa/caripelanggaran /'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                 <div class="input-group text-right"  style="padding-left: : 5px">
                   <?php if($this->uri->segment(2) != 'caripelanggaran '){?>
-                    <input type="text" autocomplete="off" name="caripelanggaran " class="form-control" placeholder="Cari">
+                    <input type="text" autocomplete="off" value="<?= $carit ?>" name="caripelanggaran " class="form-control" placeholder="Cari">
                   <?php } ?>
                   <?php if($this->uri->segment(2) == 'caripelanggaran '){
                     $carip = $this->input->post('caripelanggaran '); ?>
@@ -118,12 +118,15 @@
                     <i class="fa fa-refresh" ></i>
                   </a>
                 </div> 
-              </center>
 
             </form><br><br><hr>
 
 
-            <p>Pilih pelanggaran :</p>
+            <p>Pilih Treatment :</p>
+                <?php if ($tampil == null) { ?>
+                  <center>
+                 <h2>Treatment Tidak Ditemukan</h2></center>
+              <?php } else { ?>
             <?php foreach($tampil as $res) {
               $id = $res->id_pelanggaran;
               ?>
@@ -385,7 +388,7 @@
               <?php  } ?>
             </div>
 
-
+          <?php } ?>
           </div>
         </div>
       </div>
