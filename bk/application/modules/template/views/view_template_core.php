@@ -573,25 +573,20 @@
                         </ul>
                     </li>
 
-                    <?php if($this->uri->segment('1') == 'data_laporan'){ ?>
-                        <li class="active-sub">
-                            <a href="<?php echo base_url('data_laporan'); ?>">
-                                <i class="demo-pli-file-html"></i>
-                                <span class="menu-title">Laporan</span>
-                            </a>
-                            <!--Submenu-->
-                        </li>
-                    <?php } else{ ?>
-                        <li>
-                            <a href="<?php echo base_url('data_laporan'); ?>">
-                                <i class="demo-pli-file-html"></i>
-                                <span class="menu-title">Laporan</span>
-                            </a>
-                            <!--Submenu-->
-                        </li>
-                    <?php } ?>
+                     <li class=" <?=$this->uri->segment('1') == 'data_laporan' || $this->uri->segment(1) == 'data_' ? "active-sub" : ''?>">
+                        <a href="#">
+                            <i class="demo-pli-warning-window"></i>
+                            <span class="menu-title">Laporan</span>
+                            <i class="arrow"></i>
+                        </a>
+                        
+                        <!--Submenu-->
 
-
+                        <ul class="collapse">
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_laporan' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_laporan'); ?>">Laporan</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_'); ?>">List</a></li>
+                        </ul>
+                    </li>
 
                 </ul>
 
