@@ -81,148 +81,147 @@
 
     <div id="page-content">
         <div class="row">
-            <div class="col-md-6">
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h4 class="panel-title"> Pelanggaran Perjurusan Perhari</h4>
-                        <script type="text/javascript">
-                            window.onload = function () {
+           <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-heading">
+                    <h4 class="panel-title"> Pelanggaran Perjurusan Perhari</h4>
+                </div>
+                <div class="pad-all" style="height: 300px; width: 100%;">
+                    <canvas id="aku" style="width:300%;max-width:600px"></canvas>
 
-                                var chart = new CanvasJS.Chart("chartContainer", {
-                                    animationEnabled: true,
-                                    data: [{
-                                        type: "doughnut",
-                                        startAngle: 60,
-                                            //innerRadius: 60,
-                                            indexLabelFontSize: 13,
-                                            indexLabel: "{label} - #percent%",
-                                            toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                                            dataPoints: [
-                                            { y: <?php echo $jml_siswarpl; ?>, label: "RPL" },
-                                            { y: <?php echo $jml_siswatkr; ?>, label: "TKR" },
-                                            { y: <?php echo $jml_siswatpm; ?>, label: "TPM" },
-                                            { y: <?php echo $jml_siswatipk; ?>, label: "TIPK"},
-                                            { y: <?php echo $jml_siswatb; ?>, label: "TB"},
-                                            { y: <?php echo $jml_siswatkj; ?>, label: "TKJ"},
-                                            { y: <?php echo $jml_siswatitl; ?>, label: "TITL"}
-                                            ]
-                                        }]
-                                    });
-                                chart.render();
+                    <script>
+                        var xValues = ["TKJ", "TPM", "TKR", "RPL", "TB", "TIPK", "TITL"];
+                        var yValues = [<?php echo $jml_siswatkj;  ?>, <?php echo $jml_siswatpm;  ?>, <?php echo $jml_siswatkr;  ?>, <?php echo $jml_siswarpl;  ?>, <?php echo $jml_siswatb;  ?>, <?php echo $jml_siswatipk;  ?>, <?php echo $jml_siswatitl;  ?>];
+                        var barColors = [
+                        "#00BFFF",
+                        "#008000",
+                        "#FF0000",
+                        "#0000FF",
+                        "#FFC0CB",
+                        "#191970",
+                        "#FFFF00"
+                        ];
 
-                            }
-                        </script>
-                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                        new Chart("aku", {
+                          type: "doughnut",
+                          data: {
+                            labels: xValues,
+                            datasets: [{
+                              backgroundColor: barColors,
+                              data: yValues
+                          }]
+                      },
+              });
+          </script>
+          </div>
+  </div>
+</div>
+
+<div class="col-md-6">
+
+
+    <!-- Area Chart -->
+    <!---------------------------------->
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Pelanggaran Dalam 1 Minggu</h3>
+        </div>
+        <div class="pad-all" style="height: 300px; width: 100%;">
+            <canvas id="myChart" style="width:300%;max-width:600px">
+                <script>
+                    var xValues = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat","Sabtu"];
+                    var yValues = [<?php echo $chartsenin;  ?>, <?php echo $chartselasa ?>, <?php echo $chartrabu; ?>, <?php echo $chartkamis ?>, <?php echo $chartjumat ?>, <?php echo $chartsabtu ?>];
+                    var barColors = ["red", "yellow","green","blue","magenta","purple"];
+
+                    new Chart("myChart", {
+                      type: "bar",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          backgroundColor: barColors,
+                          data: yValues
+                      }]
+                  },
+                  options: {
+                    legend: {display: false}
+                }
+            });
+        </script>
+    </canvas>
+
+
+</div>
+</div>
+<!---------------------------------->
+
+</div>
+
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">Treatment Siswa Hari Ini</h3>
+        </div>
+        <div class="panel-body">
+            <!-- Timeline -->
+            <!--===================================================-->
+            <div class="timeline">
+
+                <!-- Timeline header -->
+                <div class="timeline-header">
+                    <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_treatmentsiswa/');  ?>"> Lihat Semua</a>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6">
+                <?php $count = 0; ?>
 
-
-                <!-- Area Chart -->
-                <!---------------------------------->
-                <div class="panel">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Pelanggaran Dalam 1 Minggu</h3>
-                    </div>
-                    <div class="pad-all" style="height: 300px; width: 100%;">
-                        <canvas id="myChart" style="width:300%;max-width:600px">
-                            <script>
-                                var xValues = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat","Sabtu"];
-                                var yValues = [<?php echo $chartsenin;  ?>, <?php echo $chartselasa ?>, <?php echo $chartrabu; ?>, <?php echo $chartkamis ?>, <?php echo $chartjumat ?>, <?php echo $chartsabtu ?>];
-                                var barColors = ["red", "yellow","green","blue","magenta","purple"];
-
-                                new Chart("myChart", {
-                                  type: "bar",
-                                  data: {
-                                    labels: xValues,
-                                    datasets: [{
-                                      backgroundColor: barColors,
-                                      data: yValues
-                                  }]
-                              },
-                              options: {
-                                legend: {display: false}
-                            }
-                        });
-                    </script>
-                </canvas>
+                <?php foreach ($treatmentsiswa as $treatmentsiswa) {
+                    $id = $treatmentsiswa->id_siswa;
+                    ?>
+                    <?php if($count == 5) break; ?>
+                    <div class="timeline-entry">
+                        <div class="timeline-stat">
+                            <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>">
+                                <div class="timeline-icon">
+                                    <img src="<?php echo base_url ()?>assets/img/<?php echo $treatmentsiswa->foto_siswa ?>" alt="Profile picture">
+                                </div> 
+                            </a>
+                            <div class="timeline-time">
+                                <h5>
+                                    <div >Point</div>
+                                    <div class="text-info text-bold"><?php 
+                                    $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
+                                    $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
+                                    $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
+                                    $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
 
 
-            </div>
-        </div>
-        <!---------------------------------->
+                                    $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                                    $total_treatment        = $jumlahpointtreatment['point'];
+                                    $total_point            = $total_pelanggaran - $total_treatment;
 
-    </div>
-
-    <div class="col-md-6">
-        <div class="panel">
-            <div class="panel-heading">
-                <h3 class="panel-title">Treatment Siswa Hari Ini</h3>
-            </div>
-            <div class="panel-body">
-                <!-- Timeline -->
-                <!--===================================================-->
-                <div class="timeline">
-
-                    <!-- Timeline header -->
-                    <div class="timeline-header">
-                        <div class="timeline-header-title bg-info"><a href="<?php  echo base_url('data_beranda/tampil_treatmentsiswa/');  ?>"> Lihat Semua</a>
-                        </div>
-                    </div>
-
-                    <?php $count = 0; ?>
-
-                    <?php foreach ($treatmentsiswa as $treatmentsiswa) {
-                        $id = $treatmentsiswa->id_siswa;
-                        ?>
-                        <?php if($count == 5) break; ?>
-                        <div class="timeline-entry">
-                            <div class="timeline-stat">
-                                <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>">
-                                    <div class="timeline-icon">
-                                        <img src="<?php echo base_url ()?>assets/img/<?php echo $treatmentsiswa->foto_siswa ?>" alt="Profile picture">
-                                    </div> 
-                                </a>
-                                <div class="timeline-time">
-                                    <h5>
-                                        <div >Point</div>
-                                        <div class="text-info text-bold"><?php 
-                                        $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
-                                        $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
-                                        $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
-                                        $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
-
-
-                                        $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                                        $total_treatment        = $jumlahpointtreatment['point'];
-                                        $total_point            = $total_pelanggaran - $total_treatment;
-
-                                        echo $total_point;
-                                        ?></div>
-                                    </h5>
-                                </div>
-
+                                    echo $total_point;
+                                    ?></div>
+                                </h5>
                             </div>
-                            <div class="timeline-label">
-                                <p class="text-bold">
-                                    <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>" class="text-info"><?php echo $treatmentsiswa->nama_siswa ?>
-                                </a>
-                            </p>
-                            <p>NIS      : <?php echo $treatmentsiswa->nis ?></p>
-                            <p>Kelas    : <?php echo $treatmentsiswa->kelas?></p>
-                            <p>Jurusan  : <?php echo $treatmentsiswa->jurusan?></p>
+
                         </div>
+                        <div class="timeline-label">
+                            <p class="text-bold">
+                                <a href="<?php echo base_url('data_siswa/details/'.$treatmentsiswa->id_siswa); ?>" class="text-info"><?php echo $treatmentsiswa->nama_siswa ?>
+                            </a>
+                        </p>
+                        <p>NIS      : <?php echo $treatmentsiswa->nis ?></p>
+                        <p>Kelas    : <?php echo $treatmentsiswa->kelas?></p>
+                        <p>Jurusan  : <?php echo $treatmentsiswa->jurusan?></p>
                     </div>
-                    <?php $count++; ?>
-                <?php } ?>
+                </div>
+                <?php $count++; ?>
+            <?php } ?>
 
 
-            </div>
         </div>
     </div>
+</div>
 </div>
 
 <div class="col-md-6">

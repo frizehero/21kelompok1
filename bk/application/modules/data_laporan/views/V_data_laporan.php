@@ -13,13 +13,13 @@
         <!--Breadcrumb-->
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <ol class="breadcrumb">
-         <li><a href="<?php  echo base_url('data_beranda/index/');  ?>"><i class="demo-pli-home"></i></a></li>
-         <li class="active">Laporan</a></li>
-     </ol>
-     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-     <!--End breadcrumb-->
+           <li><a href="<?php  echo base_url('data_beranda/index/');  ?>"><i class="demo-pli-home"></i></a></li>
+           <li class="active">Laporan</a></li>
+       </ol>
+       <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+       <!--End breadcrumb-->
 
- </div>
+   </div>
 </div>
 
 
@@ -29,11 +29,11 @@
 
 <div id="page-content">
 
-   <!-- Basic Data Tables -->
-   <!--===================================================-->
+ <!-- Basic Data Tables -->
+ <!--===================================================-->
 
 
-   <div class="row">
+ <div class="row">
 
     <?php foreach($tampil_jur as $res) {
         $id = $res->id_jurusan;
@@ -213,59 +213,48 @@
 
     <div  class="panel">
         <div class="panel-heading">
-            <div class="panel-control">
-
-
-            </div>
             <h3 class="panel-title">Pelanggaran Dalam 1 Bulan</h3>
-            <script>
-                window.onload = function () {
-
-                    var chart = new CanvasJS.Chart("chartContainer", {
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
-    animationEnabled: true,
-    title:{
-        text: ""   
-    },
-    axisX: {
-        interval: 1,
-        intervalType: "month",
-        valueFormatString: "MMM"
-    },
-    axisY:{
-        title: "Jumlah",
-        includeZero: true,
-        valueFormatString: "#0"
-    },
-    data: [{        
-        type: "line",
-        markerSize: 12,
-        xValueFormatString: "MMM, YYYY",
-        yValueFormatString: "###.#",
-        dataPoints: [        
-        { x: new Date(2021, 0, 1), y: <?php echo $januari; ?>, },
-        { x: new Date(2021, 1, 1), y: <?php echo $februari; ?>,  },
-        { x: new Date(2021, 2, 1) , y: <?php echo $maret; ?>,  },
-        { x: new Date(2021, 3, 1) , y: <?php echo $april; ?>,  },
-        { x: new Date(2021, 4, 1) , y: <?php echo $mei; ?>,  },
-        { x: new Date(2021, 5, 1) , y: <?php echo $juni; ?>,  },
-        { x: new Date(2021, 6, 1) , y: <?php echo $juli; ?>, },
-        { x: new Date(2021, 7, 1) , y: <?php echo $agustus; ?>,  },
-        { x: new Date(2021, 8, 1) , y: <?php echo $september; ?>,  },
-        { x: new Date(2021, 9, 1) , y: <?php echo $oktober; ?>,  },
-        { x: new Date(2021, 10, 1) , y: <?php echo $november; ?>, },
-        { x: new Date(2021, 11, 1) , y: <?php echo $desember; ?>,  }
-        ]
-    }]
-});
-                    chart.render();
-
-                }
-            </script>
         </div>
-        <div id="chartContainer" style="height: 320px;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    </div>
+
+        <div>
+            <canvas id="bulan" style="width:100%;max-width:1200px"></canvas>
+
+            <script>
+                var yValues = [<?php echo $januari; ?>,
+                <?php echo $februari; ?>,
+                <?php echo $maret; ?>,
+                <?php echo $april; ?>,
+                <?php echo $mei; ?>,
+                <?php echo $juni; ?>,
+                <?php echo $juli; ?>,
+                <?php echo $agustus; ?>,
+                <?php echo $september; ?>,
+                <?php echo $oktober; ?>,
+                <?php echo $november; ?>,
+                <?php echo $desember; ?>
+                ];
+                var xValues = ["January","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+
+                new Chart("bulan", {
+                  type: "line",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      fill: false,
+                      lineTension: 0,
+                      backgroundColor: "rgba(0,0,255,1.0)",
+                      borderColor: "rgba(0,0,255,0.1)",
+                      data: yValues
+                  }]
+              },
+              options: {
+                legend: {display: false},
+          }
+      });
+  </script>
+</div>
+
+</div>
 </div>
 
 
