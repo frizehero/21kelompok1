@@ -15,6 +15,13 @@ class M_data_beranda extends CI_Model {
 		return $query->num_rows();
 	}
 
+	function jum_kel(){
+		$this->db->select('*')
+		->from('data_kelas');
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+
 	function jum_gur(){
 		$this->db->select('*')
 		->from('data_user');

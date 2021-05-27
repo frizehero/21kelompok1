@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class="media-body">
-                    <p class="text-2x mar-no text-semibold">33</p>
+                    <p class="text-2x mar-no text-semibold"><?php echo $jumlahkel; ?></p>
                     <p class="mar-no">Ruang Kelas</p>
                 </div>
             </div>

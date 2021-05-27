@@ -17,9 +17,13 @@ class Data_beranda extends MX_Controller {
 	// index
 	function index()
 	{
+		$jurusan = $this->m_data_beranda->jum_jur();
+		$kelas	 = $this->m_data_beranda->jum_kel();
+		$jumlah  = $jurusan * $kelas;
 		$data = array(
 			'namamodule' 			=> "data_beranda",
 			'namafileview' 			=> "V_data_beranda",
+			'jumlahkel'				=> $jumlah,
 			'tampil'				=> $this->m_data_beranda->tampil(),
 			'jum_jur'				=> $this->m_data_beranda->jum_jur(),
 			'jum_gur'				=> $this->m_data_beranda->jum_gur(),
