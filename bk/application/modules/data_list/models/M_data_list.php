@@ -18,4 +18,17 @@ class M_data_list extends CI_Model {
 		return $query->result();
 	}
 
+	function tampil_treatment()
+	{
+		$this->db->select('*')
+		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas','left')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan','left')
+		->like("riwayat_treatment.create_at", date('y-m-d'))
+		->order_by("riwayat_treatment.create_at", "DESC");
+		$query = $this->db->get('riwayat_treatment');
+		return $query->result();
+	}
+
 }

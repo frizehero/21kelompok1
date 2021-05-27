@@ -19,6 +19,7 @@ class Data_list extends MX_Controller {
 			'namamodule' 			=> "data_list",
 			'namafileview' 			=> "V_data_list",
 			'tampil'				=> $this->m_data_list->tampil(),
+			'tampil_treatment'		=> $this->m_data_list->tampil_treatment(),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
