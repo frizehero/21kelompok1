@@ -141,20 +141,20 @@
 
                           <!--Modal body--> 
                           <div class="modal-body">
-                            <div class="panel-body">
-                              <input type="hidden" name="jurusan" value="<?php echo $res->id_jurusan?>">
-                              <div class="select">
-                                <label class="control-label"> <p class="modal-title text-1x text-semibold">Pilih Kelas</p></label>
-                                <select name="kelas" id="demo-ease" required="">
-                                 <option  value="">Kelas </option>
-                                 <?php  foreach($filter_kel as $kel) {  ?>
-                                  <option  value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
-                                <?php }?>
-                              </select>
+                              <div class="panel-body">
+                                <input type="hidden" name="jurusan" value="<?php echo $res->id_jurusan?>">
+
+                                <div class="col-md-8" style="margin-top: 2%">
+                                  <label for="kelas" class="control-label modal-title text-1x text-semibold"><p>Kelas Siswa :</p></label>
+                                  <select name="kelas" id="demo-ease" required="" class="form-control">
+                                    <option  value="">Kelas </option>
+                                    <?php  foreach($filter_kel as $kel) {  ?>
+                                      <option  value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+                                    <?php }?>
+                                  </select>
+                                </div>
                             </div>
                           </div>
-                        </div>
-
                         <!--Modal footer-->
                         <div class="modal-footer">
                           <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>

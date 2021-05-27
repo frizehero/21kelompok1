@@ -22,7 +22,7 @@
 
     <div class="text-right breadcrumb">
       <div id="demo-custom-toolbar5" class="table-toolbar-left">
-        
+
       </div>
       <form action="<?php echo site_url('data_kelas/carik/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
@@ -54,123 +54,124 @@
           $id = $res->id_jurusan;
           ?>
           <div class="col-md-4">
-          <?php if ($res->id_jurusan=='1') { ?>
-          <div class="panel panel-info panel-colorful media middle pad-all ">
-          <?php } ?>
+            <?php if ($res->id_jurusan=='1') { ?>
+              <div class="panel panel-info panel-colorful media middle pad-all ">
+              <?php } ?>
 
-          <?php if ($res->id_jurusan=='2') { ?>
-          <div class="panel panel-info panel-colorful media middle pad-all ">
-          <?php } ?>
+              <?php if ($res->id_jurusan=='2') { ?>
+                <div class="panel panel-info panel-colorful media middle pad-all ">
+                <?php } ?>
 
-          <?php if ($res->id_jurusan=='3') { ?>
-          <div class="panel panel-success panel-colorful media middle pad-all ">
-          <?php } ?>
+                <?php if ($res->id_jurusan=='3') { ?>
+                  <div class="panel panel-success panel-colorful media middle pad-all ">
+                  <?php } ?>
 
-          <?php if ($res->id_jurusan=='4') { ?>
-          <div class="panel panel-warning panel-colorful media middle pad-all ">
-          <?php } ?>
+                  <?php if ($res->id_jurusan=='4') { ?>
+                    <div class="panel panel-warning panel-colorful media middle pad-all ">
+                    <?php } ?>
 
-          <?php if ($res->id_jurusan=='5') { ?>
-          <div class="panel panel-primary panel-colorful media middle pad-all ">
-          <?php } ?>
+                    <?php if ($res->id_jurusan=='5') { ?>
+                      <div class="panel panel-primary panel-colorful media middle pad-all ">
+                      <?php } ?>
 
-          <?php if ($res->id_jurusan=='6') { ?>
-          <div class="panel panel-pink panel-colorful media middle pad-all ">
-          <?php } ?>
+                      <?php if ($res->id_jurusan=='6') { ?>
+                        <div class="panel panel-pink panel-colorful media middle pad-all ">
+                        <?php } ?>
 
-          <?php if ($res->id_jurusan=='7') { ?>
-          <div class="panel panel-danger panel-colorful media middle pad-all ">
-          <?php } ?>
+                        <?php if ($res->id_jurusan=='7') { ?>
+                          <div class="panel panel-danger panel-colorful media middle pad-all ">
+                          <?php } ?>
 
 
-          <div class="media-left">
-            <?php if ($res->id_jurusan == '1') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswarpl; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '2') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatkj; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '3') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatpm; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '4') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatitl; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '5') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatipk; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '6') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatb; ?></p>
-              </div>
-            <?php } ?>
-            <?php if ($res->id_jurusan == '7') { ?>
-              <div class="pad-hor">
-                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatkr; ?></p>
-              </div>
-            <?php } ?>
-                        </div>
-                        <div class="media-body">
-                          <center><p class="text-2x mar-no text-semibold"><?php echo $res->jurusan ; ?></p></center>
-                          <center><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_jurusan?>" class="mar-no btn">klik untuk detail</a></center>
+                          <div class="media-left">
+                            <?php if ($res->id_jurusan == '1') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswarpl; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '2') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatkj; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '3') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatpm; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '4') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatitl; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '5') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatipk; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '6') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatb; ?></p>
+                              </div>
+                            <?php } ?>
+                            <?php if ($res->id_jurusan == '7') { ?>
+                              <div class="pad-hor">
+                                <p class="text-3x mar-no text-bold"><?php echo $jml_siswatkr; ?></p>
+                              </div>
+                            <?php } ?>
+                          </div>
+                          <div class="media-body">
+                            <center><p class="text-2x mar-no text-semibold"><?php echo $res->jurusan ; ?></p></center>
+                            <center><a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_jurusan?>" class="mar-no btn">klik untuk detail</a></center>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <!-- modal edit -->
-                    <div class="modal fade" id="demo-default-modal1<?php echo $res->id_jurusan?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
+                      <!-- modal edit -->
+                      <div class="modal fade" id="demo-default-modal1<?php echo $res->id_jurusan?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
 
-                          <!--Modal Update-->
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                            <p class="modal-title text-2x text-semibold">Pilih Kelas untuk melihat detail</p>
-                          </div>
-                          <?= form_open_multipart('data_kelas/filter/'); ?>
+                            <!--Modal Update-->
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                              <p class="modal-title text-2x text-semibold">Pilih Kelas untuk melihat detail</p>
+                            </div>
+                            <?= form_open_multipart('data_kelas/filter/'); ?>
 
 
-                          <!--Modal body--> 
-                          <div class="modal-body">
-                            <div class="panel-body">
-                              <input type="hidden" name="jurusan" value="<?php echo $res->id_jurusan?>">
-                              <div class="select">
-                                <label class="control-label"> <p class="modal-title text-1x text-semibold">Pilih Kelas</p></label>
-                                <select name="kelas" id="demo-ease" required="">
-                                 <option  value="">Kelas </option>
-                                 <?php  foreach($filter_kel as $kel) {  ?>
-                                  <option  value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
-                                <?php }?>
-                              </select>
+                            <!--Modal body--> 
+                            <div class="modal-body">
+                              <div class="panel-body">
+                                <input type="hidden" name="jurusan" value="<?php echo $res->id_jurusan?>">
+
+                                <div class="col-md-8" style="margin-top: 2%">
+                                  <label for="kelas" class="control-label modal-title text-1x text-semibold"><p>Kelas Siswa :</p></label>
+                                  <select name="kelas" id="demo-ease" required="" class="form-control">
+                                    <option  value="">Kelas </option>
+                                    <?php  foreach($filter_kel as $kel) {  ?>
+                                      <option  value="<?= $kel->id_kelas ?>"><?= $kel->kelas ?></option>
+                                    <?php }?>
+                                  </select>
+                                </div>
                             </div>
                           </div>
-                        </div>
 
-                        <!--Modal footer-->
-                        <div class="modal-footer">
-                          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                          <button class="btn btn-primary" type="submit">Detail</button>
+                          <!--Modal footer-->
+                          <div class="modal-footer">
+                            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                            <button class="btn btn-primary" type="submit">Detail</button>
+                          </div>
+                          <?= form_close(); ?>
                         </div>
-                        <?= form_close(); ?>
                       </div>
                     </div>
-                  </div>
-                  <!-- end modal edit -->
-                <?php } ?>
+                    <!-- end modal edit -->
+                  <?php } ?>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
 
 
@@ -178,44 +179,44 @@
 
 
 
-      <!--jQuery [ REQUIRED ]-->
-      <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+        <!--jQuery [ REQUIRED ]-->
+        <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-      <script>
-       $(document).ready(function () {
-
-
-        $('#demo-dp-txtinputmasukkerja input').datepicker({
-         format: "yyyy-m-d",
-         todayBtn: "linked",
-         todayHighlight: true
-       });
-
-        $('#demo-dp-txtinputakhirkerja input').datepicker({
-         format: "yyyy-m-d",
-         todayBtn: "linked",
-         todayHighlight: true
-       });
+        <script>
+         $(document).ready(function () {
 
 
+          $('#demo-dp-txtinputmasukkerja input').datepicker({
+           format: "yyyy-m-d",
+           todayBtn: "linked",
+           todayHighlight: true
+         });
 
-      });
-    </script>
+          $('#demo-dp-txtinputakhirkerja input').datepicker({
+           format: "yyyy-m-d",
+           todayBtn: "linked",
+           todayHighlight: true
+         });
 
 
-    <script type="text/javascript">
 
-     function tampilkanPreview(userfile,idpreview)
-     {
-      var gb = userfile.files;
-      for (var i = 0; i < gb.length; i++)
-      {
-       var gbPreview = gb[i];
-       var imageType = /image.*/;
-       var preview=document.getElementById(idpreview);
-       var reader = new FileReader();
-       if (gbPreview.type.match(imageType))
+        });
+      </script>
+
+
+      <script type="text/javascript">
+
+       function tampilkanPreview(userfile,idpreview)
        {
+        var gb = userfile.files;
+        for (var i = 0; i < gb.length; i++)
+        {
+         var gbPreview = gb[i];
+         var imageType = /image.*/;
+         var preview=document.getElementById(idpreview);
+         var reader = new FileReader();
+         if (gbPreview.type.match(imageType))
+         {
       //jika tipe data sesuai
       preview.file = gbPreview;
       reader.onload = (function(element)
