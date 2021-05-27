@@ -25,25 +25,25 @@
             <a href="<?php echo base_url("data_beranda") ?>" class="btn btn-default text-left form-control">Kembali</a>
         </div>
         <form action="<?php echo site_url('data_beranda/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
-        <div class="input-group text-right"  style="padding-left: : 5px">
-          <?php if($this->uri->segment(2) != 'cari'){
-             $cari = $this->input->post('cari');?>
-            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
-          <?php } ?>
-          <?php if($this->uri->segment(2) == 'cari'){
+            <div class="input-group text-right"  style="padding-left: : 5px">
+              <?php if($this->uri->segment(2) != 'cari'){
+               $cari = $this->input->post('cari');?>
+               <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
+           <?php } ?>
+           <?php if($this->uri->segment(2) == 'cari'){
             $cari = $this->input->post('cari'); ?>
             <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
-          <?php } ?> 
-          <div class="input-group-btn  text-right"  style="padding-left: : 10px">
+        <?php } ?> 
+        <div class="input-group-btn  text-right"  style="padding-left: : 10px">
             <button class="btn btn-default" name="submit" type="submit">cari</button>
-          </div>
-          <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_beranda/tampil_pelanggaran_siswa_hari_ini/'); ?>">
+        </div>
+        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_beranda/tampil_pelanggaran_siswa_hari_ini/'); ?>">
             <i class="fa fa-refresh" ></i>
-          </a>
-        </div> 
-      </center>
+        </a>
+    </div> 
+</center>
 
-    </form>
+</form>
 </div>
 </div><br><br>
 
@@ -71,46 +71,60 @@
                                         <li class="col-xs-5">
                                             <span class="text-lg text-semibold text-main">
                                               <?php 
-                                                $id = $pelanggar_hariini->id_siswa;
+                                              $id = $pelanggar_hariini->id_siswa;
 
-                                                $jumlah_pelanggaranku      = $this->m_data_beranda->count_jpelanggaran($id);
-                                                $jumlah_pelanggaran_kerapian  = $this->m_data_beranda->count_jpelanggaran_kerapian($id);
-                                                $jumlah_pelanggaran_berat   = $this->m_data_beranda->count_jpelanggaran_berat($id);
+                                              $jumlah_pelanggaranku      = $this->m_data_beranda->count_jpelanggaran($id);
+                                              $jumlah_pelanggaran_kerapian  = $this->m_data_beranda->count_jpelanggaran_kerapian($id);
+                                              $jumlah_pelanggaran_berat   = $this->m_data_beranda->count_jpelanggaran_berat($id);
 
-                                                $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+                                              $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
 
-                                                echo $total;
-                                                ?>
-                                            </span>
-                                            <p class="text-muted mar-no">Pelanggaran</p>
-                                        </li>
-                                        <li class="col-xs-4">
-                                            <span class="text-lg text-semibold text-main">
-                                              <?php 
-                                                $id = $pelanggar_hariini->id_siswa;
+                                              echo $total;
+                                              ?>
+                                          </span>
+                                          <p class="text-muted mar-no">Pelanggaran</p>
+                                      </li>
+                                      <li class="col-xs-4">
+                                        <span class="text-lg text-semibold text-main">
+                                          <?php 
+                                          $id = $pelanggar_hariini->id_siswa;
 
-                                                $jumlah_treatment    = $this->m_data_beranda->count_jtreatment($id);
+                                          $jumlah_treatment    = $this->m_data_beranda->count_jtreatment($id);
 
-                                                echo $jumlah_treatment;
-                                                ?>
-                                            </span>
-                                            <p class="text-muted mar-no">Treatment</p>
-                                        </li>
-                                        <li class="col-xs-3">
-                                            <span class="text-lg text-semibold text-main">0</span>
-                                            <p class="text-muted mar-no">Point</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                                          echo $jumlah_treatment;
+                                          ?>
+                                      </span>
+                                      <p class="text-muted mar-no">Treatment</p>
+                                  </li>
+                                  <li class="col-xs-3">
+                                    <span class="text-lg text-semibold text-main">
+                                        <?php 
+                                        $jpelanggaran1          = $this->m_data_beranda->jumlahpelanggaran1($id);
+                                        $jpelanggaran2          = $this->m_data_beranda->jumlahpelanggaran2($id);
+                                        $jpelanggaran3          = $this->m_data_beranda->jumlahpelanggaran3($id);
+                                        $jumlahpointtreatment   = $this->m_data_beranda->jumlahpointtreatment($id);
 
+
+                                        $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                                        $total_treatment        = $jumlahpointtreatment['point'];
+                                        $total_point            = $total_pelanggaran - $total_treatment;
+
+                                        echo $total_point;
+                                        ?>
+                                    </span>
+                                    <p class="text-muted mar-no">Point</p>
+                                </li>
+                            </ul>
                         </div>
-                    <?php } ?>
+                    </div>
+
                 </div>
-            </div>
+            <?php } ?>
         </div>
-
-
     </div>
-    <?php echo $pagination; ?>       
-    </div>        
+</div>
+
+
+</div>
+<?php echo $pagination; ?>       
+</div>        
