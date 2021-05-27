@@ -589,7 +589,7 @@
 
                         <ul class="collapse">
                             <li class="<?php if ( $this->uri->segment(1) == 'data_laporan' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_laporan'); ?>">Laporan</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_'); ?>">List</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_list' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_list'); ?>">List</a></li>
                         </ul>
                     </li>
 
