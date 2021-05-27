@@ -231,7 +231,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',1);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',1)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -244,7 +245,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',2);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',2)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -258,7 +260,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',3);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',3)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -272,7 +275,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',4);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',4)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -286,7 +290,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',5);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',5)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -300,7 +305,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',6);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',6)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -313,7 +319,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',7);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',7)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -327,7 +334,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',8);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',8)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -340,7 +348,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',9);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',9)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -353,7 +362,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',10);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',10)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -367,7 +377,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',11);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',11)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
@@ -380,7 +391,8 @@ class M_data_laporan extends CI_Model {
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
-		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',12);
+		->where('DATE_FORMAT(tanggal_pelanggaran,"%m")',12)
+		->like('DATE_FORMAT(tanggal_pelanggaran,"%y")',date('y'));
 		$this->db->group_by('riwayat_pelanggaran.id_siswa');
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->num_rows();	
