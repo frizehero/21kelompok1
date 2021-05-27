@@ -14,7 +14,8 @@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <ol class="breadcrumb">
            <li><a href="<?php  echo base_url('data_beranda/index/');  ?>"><i class="demo-pli-home"></i></a></li>
-           <li class="active">Laporan</a></li>
+           <li>Laporan</a></li>
+           <li class="active">List Siswa</a></li>
        </ol>
        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
        <!--End breadcrumb-->
@@ -39,15 +40,37 @@
               <th>Jurusan</th>
               <th>Nama Pelanggaran</th>
               <th>Keterangan</th>
+              <th>Action</th>
             </tr>
           </thead>
+          <tbody>
+            <?php foreach ($tampil as $res) {
+             $id = $res ->id_siswa;
+             ?>
             <tr>
-              <td>Gogon</td>
-              <td>XI</td>
-              <td>RPL</td>
-              <td>Memecahkan kaca</td>
-              <td>Sudah sering sekali memecahkan kaca kelas</td>
+              <td><?php echo $res->nama_siswa ?></td>
+              <td><?php echo $res->kelas ?></td>
+              <td><?php echo $res->jurusan ?></td>
+              <td>
+                
+                <?php if ($res->id_pelanggaran == null) { ?>
+
+                    <?php if ($res->id_pelanggaran_kerapian == null) { ?>
+                      <?php echo $res->nama_pelanggaran_berat ?>
+                    <?php } else { ?>
+                      <?php echo $res->nama_pelanggaran_kerapian ?>
+                    <?php } ?>
+
+                <?php } else { ?>
+                  <?php echo $res->nama_pelanggaran ?>
+                <?php } ?>
+
+
+              </td>
+              <td><?php echo $res->keterangan_pelanggaran ?></td>
+              <td><a class="btn btn-primary btn btn-xs" href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">Detail</a></td>
             </tr>
+          <?php } ?>
         </tbody>
       </table>
     </div>

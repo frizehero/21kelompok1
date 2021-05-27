@@ -14,7 +14,8 @@
         <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
         <ol class="breadcrumb">
            <li><a href="<?php  echo base_url('data_beranda/index/');  ?>"><i class="demo-pli-home"></i></a></li>
-           <li class="active">Laporan</a></li>
+           <li>Laporan</a></li>
+           <li class="active">Laporan Pelanggaran</a></li>
        </ol>
        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
        <!--End breadcrumb-->
