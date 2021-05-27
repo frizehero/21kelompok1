@@ -578,7 +578,7 @@
                         </ul>
                     </li>
 
-                     <li class=" <?=$this->uri->segment('1') == 'data_laporan' || $this->uri->segment(1) == 'data_' ? "active-sub" : ''?>">
+                     <li class=" <?=$this->uri->segment('1') == 'data_laporan' || $this->uri->segment(1) == 'data_list' ? "active-sub" : ''?>">
                         <a href="#">
                             <i class="demo-pli-warning-window"></i>
                             <span class="menu-title">Laporan</span>

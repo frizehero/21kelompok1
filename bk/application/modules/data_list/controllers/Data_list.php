@@ -37,3 +37,4 @@ class Data_list extends MX_Controller {
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+}
