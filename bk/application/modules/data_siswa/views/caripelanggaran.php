@@ -256,7 +256,7 @@
 
                     </div>
                   </div>                
-                </div><?php   } ?>
+                </div>
                 <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -322,6 +322,7 @@
                     </div>
                   </div>
                 </div>
+                <?php   } ?>
               <?php  } ?>
               <?php if ($tampil2 == null) { ?>
                 
@@ -343,7 +344,7 @@
                     </div>
                   </div>                
                 </div>
-              <?php   } ?>
+              
                 <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -409,6 +410,7 @@
                     </div>
                   </div>
                 </div>
+                <?php   } ?>
               <?php  } ?>
             </div>
 
