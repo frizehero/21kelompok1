@@ -542,7 +542,7 @@
                              </li>
                          <?php } ?>
 
-                         <li class=" <?=$this->uri->segment('1') == 'data_siswa_guru' || $this->uri->segment(1) == 'data_guru'   ? "active-sub" : ''?>">
+                         <li class=" <?=$this->uri->segment('1') == 'data_siswa_guru' || $this->uri->segment(1) == 'data_kelas_guru'   ? "active-sub" : ''?>">
                             <a href="">
                                <i class="demo-pli-receipt-4"></i>
                                <span class="menu-title">Data</span>
