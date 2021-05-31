@@ -571,7 +571,7 @@
                     
                     <li class=" <?=$this->uri->segment('1') == 'data_laporan_guru' || $this->uri->segment(1) == 'data_list_guru' ? "active-sub" : ''?>">
                         <a href="#">
-                            <i class="demo-pli-warning-window"></i>
+                            <i class="demo-pli-file-html"></i>
                             <span class="menu-title">Laporan</span>
                             <i class="arrow"></i>
                         </a>
