@@ -1,4 +1,3 @@
-
 <!--CONTENT CONTAINER-->
 <div id="page-head">
 
@@ -60,7 +59,6 @@
               <div class="col-sm-12">
 
               <?php if ($tampil == null) { ?>
-
                 <div class="row">
                 <div class="col-sm-3">
                   <?php foreach($tampilp as $res) {
@@ -90,7 +88,6 @@
                       </div>
                     </div>
                   </div>
-                
               <?php } else { ?>
                <div class="row">
                 <div class="col-sm-3">
@@ -150,14 +147,10 @@
                   </div> 
                 </center>
 
-              </form><br><br><hr>
+            </form><br><br><hr>
 
 
-            <p>Pilih Treatment :</p>
-                <?php if ($tampil == null) { ?>
-                  <center>
-                 <h2>Treatment Tidak Ditemukan</h2></center>
-              <?php } else { ?>
+            <p>Pilih pelanggaran :</p>
             <?php foreach($tampil as $res) {
               $id = $res->id_pelanggaran;
               ?>
@@ -419,7 +412,7 @@
               <?php  } ?>
             </div>
 
-          <?php } ?>
+
           </div>
         </div>
       </div>
@@ -530,3 +523,4 @@
     }
   }
 </script>
+

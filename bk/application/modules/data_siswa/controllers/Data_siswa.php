@@ -287,17 +287,19 @@ class Data_siswa extends MX_Controller {
 		$total_treatment				= $jumlahpointtreatment['point'];
 
 		$carip			= $this->input->post('caripelanggaran');
+		$carip1			= $this->input->post('caripelanggaran');
+		$carip2			= $this->input->post('caripelanggaran');
 
 		$data = array(
 			'namamodule' 					=> "data_siswa",
 			'namafileview' 					=> "caripelanggaran",
 			'tampil'						=> $this->m_data_siswa->caripelanggaran($carip,$id),
 			'tampilp'						=> $this->m_data_siswa->tampilpelanggaran($id),
-			'tampil1'						=> $this->m_data_siswa->caripelanggaran1($carip,$id),
-			'tampil2'						=> $this->m_data_siswa->caripelanggaran2($carip,$id),
+			'tampil1'						=> $this->m_data_siswa->caripelanggaran1($carip1,$id),
+			'tampil2'						=> $this->m_data_siswa->caripelanggaran2($carip2,$id),
 			'id'							=> $id,
 			'total_point'					=> $total_pelanggaran - $total_treatment,
-			'carit'							=> $carip,
+			'carip'							=> $carip,
 			
 		);
 		echo Modules::run('template/tampilCore', $data);

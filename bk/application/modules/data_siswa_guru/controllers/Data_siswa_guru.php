@@ -264,18 +264,21 @@ class Data_siswa_guru extends MX_Controller {
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
 		$total_treatment				= $jumlahpointtreatment['point'];
 
+
 		$carip			= $this->input->post('caripelanggaran');
+		$carip1			= $this->input->post('caripelanggaran');
+		$carip2			= $this->input->post('caripelanggaran');
 
 		$data = array(
 			'namamodule' 					=> "data_siswa_guru",
 			'namafileview' 					=> "caripelanggaran_guru",
 			'tampil'						=> $this->m_data_siswa_guru->caripelanggaran($carip,$id),
-			'tampill'						=> $this->m_data_siswa_guru->tampilpelanggaran($id),
-			'tampil1'						=> $this->m_data_siswa_guru->caripelanggaran1($carip,$id),
-			'tampil2'						=> $this->m_data_siswa_guru->caripelanggaran2($carip,$id),
-			'total_point'					=> $total_pelanggaran - $total_treatment,
-			'carit' 						=>$carip,
+			'tampilp'						=> $this->m_data_siswa_guru->tampilpelanggaran($id),
+			'tampil1'						=> $this->m_data_siswa_guru->caripelanggaran1($carip1,$id),
+			'tampil2'						=> $this->m_data_siswa_guru->caripelanggaran2($carip2,$id),
 			'id'							=> $id,
+			'total_point'					=> $total_pelanggaran - $total_treatment,
+			'carip'							=> $carip,
 			
 		);
 		echo Modules::run('template_guru/tampilCore', $data);

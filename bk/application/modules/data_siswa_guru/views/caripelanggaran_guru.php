@@ -1,4 +1,3 @@
-
 <!--CONTENT CONTAINER-->
 <div id="page-head">
 
@@ -62,7 +61,7 @@
               <?php if ($tampil == null) { ?>
                 <div class="row">
                 <div class="col-sm-3">
-                  <?php foreach($tampill as $res) {
+                  <?php foreach($tampilp as $res) {
                     $id = $res->id_siswa;
                     $gambar = $res->foto_siswa;
                     ?>
@@ -128,9 +127,9 @@
               </div>
               <hr>
 
-              <td>Cari pelanggaran</td>
-              <p></p>
-              <form action="<?php echo base_url('data_siswa_guru/caripelanggaran/'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
+              <td>Cari pelanggaran </td>
+                <p></p>
+                <form action="<?php echo base_url('data_siswa_guru/caripelanggaran/'.$id)?>" method="post" class="col-xs-8 col-sm-7 text-right">
                   <div class="input-group text-right"  style="padding-left: : 5px">
                     <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
                       <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
@@ -148,14 +147,10 @@
                   </div> 
                 </center>
 
-              </form><br><br><hr>
+            </form><br><br><hr>
 
 
-            <p>Pilih Treatment :</p>
-                <?php if ($tampil == null) { ?>
-                  <center>
-                 <h2>Treatment Tidak Ditemukan</h2></center>
-              <?php } else { ?>
+            <p>Pilih pelanggaran :</p>
             <?php foreach($tampil as $res) {
               $id = $res->id_pelanggaran;
               ?>
@@ -417,7 +412,7 @@
               <?php  } ?>
             </div>
 
-          <?php } ?>
+
           </div>
         </div>
       </div>
@@ -528,3 +523,4 @@
     }
   }
 </script>
+
