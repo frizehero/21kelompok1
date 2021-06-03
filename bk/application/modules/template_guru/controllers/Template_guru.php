@@ -25,6 +25,10 @@ class Template_guru extends MX_Controller {
 	{
 		$id = $this->session->userdata('session_id');
 		$user = $this->m_template_guru->oke($id);
+		if ( empty( $this->session->userdata('session_id') ) )
+		{
+			redirect('login');
+		}
 
 		$data['nama'] = $this->m_template_guru->oke($id);
 		
