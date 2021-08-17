@@ -42,7 +42,16 @@ class M_data_siswa extends CI_Model {
 		return $query->num_rows();
 	}
 
-
+	public function importData($data) {
+  
+            $res = $this->db->insert_batch('data_siswa',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
 	
 
 	function tambah()

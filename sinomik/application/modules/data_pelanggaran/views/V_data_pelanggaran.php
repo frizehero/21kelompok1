@@ -22,11 +22,11 @@
     <!--End breadcrumb-->
 
     <div class="text-right breadcrumb">
-      <div id="demo-custom-toolbar5" class="table-toolbar-left">
-        <button class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">
-          Tambah
-        </button>
-      </div>
+      <form action="<?php echo site_url('data_pelanggaran/importFile/') ?>" method="post" enctype="multipart/form-data">
+        Upload excel file : 
+        <input type="file" name="uploadFile" accept=".xlsx" value="" /><br><br>
+        <input type="submit" name="submit" value="Upload" />
+      </form>
       <form action="<?php echo site_url('data_pelanggaran/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px"s>
           <?php if($this->uri->segment(2) != 'cari'){?>
@@ -54,13 +54,13 @@
   <div class="tab-base">
     <ul class="nav nav-tabs tabs-right">
       <li class="active">
-        <a href="<?php echo base_url('data_pelanggaran/index/'); ?>">Etika</a>
+        <a href="<?php echo base_url('data_pelanggaran/index/'); ?>">Sikap Perilaku</a>
       </li>
       <li>
         <a href="<?php echo base_url('data_pelanggaran/tampil1/'); ?>">Kerapian</a>
       </li>
       <li>
-        <a  href="<?php echo base_url('data_pelanggaran/tampil2/'); ?>">Pelanggaran Berat</a>
+        <a  href="<?php echo base_url('data_pelanggaran/tampil2/'); ?>">Kerajinan</a>
       </li>
     </ul>
     <div class="tab-content">

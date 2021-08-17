@@ -45,7 +45,11 @@
 
   </form>
 </div>
-
+<form action="<?php echo site_url('data_siswa/importFile/') ?>" method="post" enctype="multipart/form-data">
+    Upload excel file : 
+    <input type="file" name="uploadFile" accept=".xlsx" value="" /><br><br>
+    <input type="submit" name="submit" value="Upload" />
+</form>
 
 <div id="page-content text-black"><br><br><br><br>
 

@@ -215,4 +215,40 @@ class M_data_pelanggaran extends CI_Model {
 		$cari2 		= $this->input->post('cari2');
 		return $this->db->like('nama_pelanggaran_berat',$cari2)->get('data_pelanggaran_berat')->result();
 	}
+	// import excel
+	public function importData($data) 
+	{
+  
+            $res = $this->db->insert_batch('data_pelanggaran',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
+
+    public function importDataberat($data) 
+	{
+  
+            $res = $this->db->insert_batch('data_pelanggaran_berat',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
+
+     public function importDatakerapian($data) 
+	{
+  
+            $res = $this->db->insert_batch('data_pelanggaran_kerapian',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
 }
