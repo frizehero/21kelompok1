@@ -69,4 +69,16 @@ class M_data_treatment extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_treatment',$cari)->get('data_treatment')->result();
 	}
+	// model import
+public function importData($data) 
+	{
+  
+            $res = $this->db->insert_batch('data_treatment',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
 }

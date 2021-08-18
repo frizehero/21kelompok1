@@ -23,9 +23,8 @@
 
     <div class="text-right breadcrumb">
       <div id="demo-custom-toolbar5" class="table-toolbar-left">
-        <button class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">
-          Tambah
-        </button>
+        <a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah</a>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import</a>
       </div>
       <form action="<?php echo site_url('data_prestasi/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
@@ -62,7 +61,7 @@
 
           <!--Profile Widget-->
           <!--===================================================-->
-          <div class="panel panel-info panel-colorful" style="height: 150px">
+          <div class="panel panel-info panel-colorful" style="height: 180px">
             <div class="pad-all text-left">
               <span class="pull-right">- <?php echo $res->point ?> Point</span><br>
               <p><?php echo $res->nama_prestasi ?></p>
@@ -165,6 +164,46 @@
 
 </div><hr>
 <?php echo $pagination; ?>
+
+<!-- import -->
+<div class="modal fade" id="demo-default-import" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!--Modal Update-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+        <h4 class="modal-title">Tambah</h4>
+      </div>
+      <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_prestasi/importfile/') ?>">
+        <div class="modal-body">
+
+        <div class="panel-body">
+
+          <div class="col-md-6">
+            <label for="" class="control-label">Pilih File</label>
+            <input type="file" name="uploadFile"  accept=".xlsx, .xls" value="" required=""/><br><br>
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+      </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+<!-- end import -->
+
+
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
