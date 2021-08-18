@@ -149,7 +149,7 @@
                                     <div class="panel-body">
                                       <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
                                       <input type="hidden" name="id_prestasi" value="<?php echo $res->id_prestasi ?>">
-                                      <input type="hidden" name="tanggal_traetment" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="tanggal_treatment" value="<?php echo date('y-m-d') ?>">
                                       <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru ?>">
 
                                       <div><h5>Penjelasan Menu :</h5>
@@ -177,12 +177,12 @@
                                         <textarea type="text" disabled name="nama_prestasi"  placeholder="<?= $res->nama_prestasi ?>" class="form-control"></textarea>
                                       </div>
                                       <div class="col-md-6">
-                                        <label for="" class="control-label"><b>Point/b></label>
-                                        <textarea type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></textarea>
-                                      </div>
-                                      <div class="col-md-6">
                                         <label for="" class="control-label"><b>Keterangan</b></label>
                                         <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Point</b> </label><br>
+                                        <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                                       </div>
                                       <div class="col-md-6" >
                                         <label for="" class="control-label">Foto prestasi </label>
@@ -192,10 +192,7 @@
                                         <label for="" class="control-label">Preview Foto Profile</label>
                                         <img id="preview" width="150px" />
                                       </div>
-
                                     </div>
-
-
                                   </div>
 
                                   <!--Modal footer-->

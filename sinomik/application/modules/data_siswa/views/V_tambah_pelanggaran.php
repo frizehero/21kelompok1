@@ -171,15 +171,15 @@
 
                                       <div class="col-md-6">
                                         <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                                        <input  type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></input>
-                                      </div>
-                                       <div class="col-md-6">
-                                        <label for="" class="control-label"><b>Point</b></label>
-                                        <input  type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></input>
+                                        <textarea type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
                                       </div>
                                       <div class="col-md-6">
                                         <label for="" class="control-label"><b>Keterangan</b></label>
                                         <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                       <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Point</b> </label><br>
+                                        <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
                                       </div>
                                       <div class="col-md-6" >
                                         <label for="" class="control-label">Foto pelanggaran </label>
