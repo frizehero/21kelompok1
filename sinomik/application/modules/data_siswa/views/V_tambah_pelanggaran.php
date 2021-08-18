@@ -225,7 +225,7 @@
                                   <!--Modal Perbaikan-->
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                                    <h4 class="modal-title">pelanggaran Siswa</h4>
+                                    <h4 class="modal-title">pelanggaran Siswa Kerapian</h4>
                                   </div>
                                   <?= form_open_multipart('data_siswa/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
 
@@ -260,7 +260,7 @@
 
                                       <div class="col-md-6">
                                         <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                                        <textarea type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
+                                        <textarea type="text" disabled name="nama_pelanggaran_kerapian"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
                                       </div>
                                       <div class="col-md-6">
                                         <label for="" class="control-label"><b>Point/b></label>
@@ -314,7 +314,7 @@
                                   <!--Modal Perbaikan-->
                                   <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                                    <h4 class="modal-title">pelanggaran Siswa</h4>
+                                    <h4 class="modal-title">pelanggaran Siswa Berat</h4>
                                   </div>
                                   <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
 
