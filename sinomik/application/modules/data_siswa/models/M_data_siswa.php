@@ -153,8 +153,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru')
-		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
+		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru','left')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment','left')
 		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();
@@ -177,8 +177,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -223,7 +223,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -237,7 +238,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -498,24 +500,57 @@ class M_data_siswa extends CI_Model {
 
 	function tambah_treatment($id)
 	{
-		
+
 		$Keterangan_treatment 		= $this->input->post('Keterangan');
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_treatment				= $this->input->post('id_treatment');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
 
-		$data = array(
-			'Keterangan_treatment'	=> $Keterangan_treatment,
-			'tanggal_treatment'		=> $tanggal_treatment,
-			'id_treatment'			=> $id_treatment,
-			'id_siswa'				=> $id_siswa,
-			'id_guru'				=> $id_guru,
+		$this->upload->initialize($config);
 
-		);
-		$this->db->insert('riwayat_treatment', $data);
+		if($_FILES['foto_treatment']['name'])
+		{
+			if ($this->upload->do_upload('foto_treatment'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_treatment'	=> $Keterangan_treatment,
+					'tanggal_treatment'		=> $tanggal_treatment,
+					'id_treatment'			=> $id_treatment,
+					'id_siswa'				=> $id_siswa,
+					'id_guru'				=> $id_guru,
+					'foto_treatment' 				=> $gbr['file_name'],
 
+
+				);
+				$this->db->insert('riwayat_treatment', $data); 
+
+			}	 
+		}
+
+		else
+		{ 
+			$data = array(
+				'Keterangan_treatment'	=> $Keterangan_treatment,
+				'tanggal_treatment'		=> $tanggal_treatment,
+				'id_treatment'			=> $id_treatment,
+				'id_siswa'				=> $id_siswa,
+				'id_guru'				=> $id_guru,
+				'foto_treatment' 		=> 'kosong1.png',
+
+			);
+			$this->db->insert('riwayat_treatment', $data);
+		}
 	}
 	// akhir model penambahan treatment siswa
 
@@ -617,18 +652,50 @@ class M_data_siswa extends CI_Model {
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran'				=> $id_pelanggaran,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran'			=> $id_pelanggaran,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran'			=> $id_pelanggaran,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'						=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
-
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 	function tambah_pelanggaran_kerapian($id)
@@ -640,18 +707,50 @@ class M_data_siswa extends CI_Model {
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran_kerapian'		=> $id_pelanggaran_kerapian,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'						=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
-
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 	function tambah_pelanggaran_berat($id)
@@ -659,23 +758,55 @@ class M_data_siswa extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
-		$id_pelanggaran_berat       = $this->input->post('id_pelanggaran_berat');
+		$id_pelanggaran_berat		= $this->input->post('id_pelanggaran_berat');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran_berat'			=> $id_pelanggaran_berat,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'					=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
-
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 
@@ -696,23 +827,56 @@ class M_data_siswa extends CI_Model {
 	function tambah_prestasi($id)
 	{
 		
-		$Keterangan_treatment 		= $this->input->post('Keterangan');
+		$Keterangan_treatment		= $this->input->post('Keterangan');
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_prestasi				= $this->input->post('id_prestasi');
 		$id_siswa 					= $this->input->post('id_siswa');
+		
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_treatment']['name'])
+		{
+			if ($this->upload->do_upload('foto_treatment'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_treatment'			=> $Keterangan_treatment,
+					'tanggal_treatment'				=> $tanggal_treatment,
+					'id_prestasi'					=> $id_prestasi,
+					'id_siswa'						=> $id_siswa,
+					'foto_prestasi' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_treatment', $data); 
 
-		$data = array(
-			'Keterangan_treatment'	=> $Keterangan_treatment,
-			'tanggal_treatment'		=> $tanggal_treatment,
-			'id_prestasi'			=> $id_prestasi,
-			'id_siswa'				=> $id_siswa,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_treatment'		=> $Keterangan_treatment,
+				'tanggal_treatment'			=> $tanggal_treatment,
+				'id_prestasi'				=> $id_prestasi,
+				'id_siswa'					=> $id_siswa,
+				'foto_prestasi' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_treatment', $data);
-
+			);
+			$this->db->insert('riwayat_treatment', $data);
+		}
 	}
+
 
 
 	function cariprestasi($carit,$id)
@@ -734,7 +898,7 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
-		->join('data_prestasi','data_prestasi.id_prestasi = riwayat_treatment.id_prestasi')
+		->join('data_prestasi','data_prestasi.id_prestasi = riwayat_treatment.id_prestasi','left')
 		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();

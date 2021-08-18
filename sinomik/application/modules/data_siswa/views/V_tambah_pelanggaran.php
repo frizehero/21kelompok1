@@ -1,11 +1,9 @@
-
-<!--CONTENT CONTAINER-->
 <div id="page-head">
 
   <!--Page Title-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <div id="page-title">
-    <h1 class="page-header text-overflow">Penambahan point Siswa</h1>
+    <h1 class="page-header text-overflow">Perbaikan Siswa</h1>
   </div>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End page title-->
@@ -18,7 +16,7 @@
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
-    <li class="active">Penambahan point Siswa</li>
+    <li class="active">Perbaikan Siswa</li>
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
@@ -27,7 +25,6 @@
       <a class="btn btn-default text-left" type="button" href="javascript:window.history.go(-1);">Kembali</a>
     </div>  
   </div><br>
-
 </div>
 <!--===================================================-->
 <div class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
@@ -41,7 +38,6 @@
     <!--End Fixedbar-->
 
 
-
     <!--Page content-->
     <!--===================================================-->
     <div id="page-content">
@@ -50,7 +46,7 @@
           <div class="panel panel-body">
             <div class="panel-heading">
               <h4>Menambah Point</h4>
-              <p>Memilih Data Point yang digunakan untuk menambahkan point Siswa</p>
+              <p>Memilih Data Point yang digunakan untuk memperbaiki point Siswa</p>
             </div><hr>
             <div class="panel-body">
               <div class="col-sm-3 pull-right">
@@ -84,368 +80,374 @@
                             <div class="pad-all text-right">
                               <center>TOTAL POINT</center>
                               <h4 class="text-center text-light">
-                               <?php 
-                               if ($total_point <= 0) {
-                                echo "0";
-                              } else {
-                                echo $total_point;
-                              }
-                              
-                              ?>
-                            </h4>
+                                <?php 
+                                if ($total_point <= 0) {
+                                  echo "0";
+                                } else {
+                                  echo $total_point;
+                                } 
+                                ?>
+                              </h4>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <hr>
+                <hr>
 
-              <td>Cari pelanggaran</td>
-              <p></p>
-              <form action="<?php echo site_url('data_siswa/caripelanggaran/'.$res->id_siswa) ?>" method="post" class="col-xs-8 col-sm-7 text-right">
-                <div class="input-group text-right"  style="padding-left: : 5px">
-                  <?php if($this->uri->segment(2) != 'caripelanggaran'){?>
-                    <input type="text" autocomplete="off" name="caripelanggaran" class="form-control" placeholder="Cari">
-                  <?php } ?>
-                  <?php if($this->uri->segment(2) == 'caripelanggaran'){
-                    $caripelanggaran = $this->input->post('caripelanggaran'); ?>
-                    <input type="text" autocomplete="off" value="<?= $caripelanggaran ?>" name="caripelanggaran" class="form-control " placeholder="Outlet">
-                  <?php } ?> 
-                  <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-                    <button class="btn btn-default" type="submit">cari</button>
-                  </div>
-                  <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">
-                    <i class="fa fa-refresh" ></i>
-                  </a>
-                </div> 
-              </center>
+                
 
-            </form><br><br><hr>
+                <p>Pilih pelanggaran :</p>
 
-            <p>Pilih pelanggaran :</p>
-            <?php foreach($tampil as $res) {
-              $id = $res->id_pelanggaran;
-              ?>
-              <div class="col-sm-3">
 
                 <!--Profile Widget-->
                 <!--===================================================-->
-                <div class="panel panel-info panel-colorful" style="height: 150px">
-                  <div class="pad-all text-left">
-                   <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">
-                    <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                    + <?php echo  $res->point?> point<br>
-                    <p><?php echo  $res->nama_pelanggaran?></p>
-
-                  </div>
-                </div>                
-              </div>
-              <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-
-                    <!--Modal Update-->
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                      <h4 class="modal-title">Penambahan point Siswa</h4>
+                <div class="panel">
+                  <div class="panel-body">
+                    <div class="panel-heading">
+                      <h4 class="panel-title"> Pelanggaran </h4>
                     </div>
-                    <?= form_open_multipart('data_siswa/tambah_pelanggaran/'.$res->id_siswa); ?>
-
-                    <!--Modal body--> 
-                    <div class="modal-body">
-
-                      <div class="panel-body">
-                        <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
-                        <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
-                        <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
-                        <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru; ?>">
-
-                        <div><h5>Penjelasan Menu :</h5>
-                          <p></p>
-                          <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                        </div><hr>
-
-                        <table>
-                          <tr>
-                            <td><b>Nama</b></td>
-                            <td>:  <?php echo $res->nama_siswa?></td>
-                          </tr>
-                          <tr>
-                            <td><b>Kelas</b></td>
-                            <td>:  <?php echo $res->kelas?></td>
-                          </tr>
-                          <tr>
-                            <td><b>Jenis Kelamin</b></td>
-                            <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                          </tr>
-                        </table><hr>
-
-                        <div class="col-md-6">
-                          <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                          <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
-                        </div>
-
-                        <div class="col-md-6">
-                          <label for="" class="control-label"><b>Point</b> </label>
-                          <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                        </div>
-
-                        <div class="col-md-12">
-                          <label for="" class="control-label"><b>Keterangan</b></label>
-                          <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-
-                    <!--Modal footer-->
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" type="submit">Simpan</button>
-                    </div>
-                    <?= form_close(); ?>
-                  </div>
-                </div>
-              </div>
-            <?php  } ?>
-            <?php foreach($tampil1 as $res) {
-              $id = $res->id_pelanggaran_kerapian;
-              ?>
-              <div class="col-sm-3">
-
-                <!--Profile Widget-->
-                <!--===================================================-->
-                <div class="panel panel-purple panel-colorful" style="height: 150px">
-                  <div class="pad-all text-left">
-                    <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">
-                      <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                      + <?php echo  $res->point?> point
-                      <p><?php echo  $res->nama_pelanggaran_kerapian?></p>
-
-                    </div>
-                  </div>                
-                </div>
-                <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-
-                      <!--Modal Update-->
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                        <h4 class="modal-title">Penambahan point Siswa</h4>
-                      </div>
-                      <?= form_open_multipart('data_siswa/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
-
-                      <!--Modal body--> 
-                      <div class="modal-body">
-
-                        <div class="panel-body">
-                         <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
-                         <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian ?>">
-                         <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
-                         <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru; ?>">
-
-                         <div><h5>Penjelasan Menu :</h5>
-                          <p></p>
-                          <p>Pelanggran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                        </div><hr>
-
-                        <table>
-                          <tr>
-                            <td><b>Nama</b></td>
-                            <td>:  <?php echo $res->nama_siswa?></td>
-                          </tr>
-                          <tr>
-                            <td><b>Kelas</b></td>
-                            <td>:  <?php echo $res->kelas?></td>
-                          </tr>
-                          <tr>
-                            <td><b>Jenis Kelamin</b></td>
-                            <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                          </tr>
-                        </table><hr>
-
-                        <div class="col-md-6">
-                          <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                          <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_kerapian ?>" class="form-control"></textarea>
-                        </div>
-
-                        <div class="col-md-6">
-                          <label for="" class="control-label"><b>Point</b> </label>
-                          <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                        </div>
-
-                        <div class="col-md-12">
-                          <label for="" class="control-label"><b>Keterangan</b></label>
-                          <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                        </div>
-
-                      </div>
-
-
-                    </div>
-
-                    <!--Modal footer-->
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" type="submit">Simpan</button>
-                    </div>
-                    <?= form_close(); ?>
-                  </div>
-                </div>
-              </div>
-            <?php  } ?>
-            <?php foreach($tampil2 as $res) {
-              $id = $res->id_pelanggaran_berat;
-              ?>
-              <div class="col-sm-3">
-
-                <!--Profile Widget-->
-                <!--===================================================-->
-                <div class="panel panel-dark panel-colorful" style="height: 150px">
-                  <div class="pad-all text-left">
-                   <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">
-                    <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                    + <?php echo  $res->point?> point
-                    <p><?php echo  $res->nama_pelanggaran_berat?></p>
-
-                  </div>
-                </div>                
-              </div>
-              <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-
-                    <!--Modal Update-->
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                      <h4 class="modal-title">Penambahan point Siswa</h4>
-                    </div>
-                    <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
-
-                    <!--Modal body--> 
-                    <div class="modal-body">
-
-                      <div class="panel-body">
-                       <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
-                       <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat ?>">
-                       <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
-                       <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru; ?>">
-
-                       <div><h5>Penjelasan Menu :</h5>
-                        <p></p>
-                        <p>Pelanggaran dimaksudkan untuk menambah poin siswa,maka siswa akan ditambahkan suatu pelanggaran saat melakukan pelanggaran.</p>
-                      </div><hr>
-
-                      <table>
+                    <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                      <thead>
                         <tr>
-                          <td><b>Nama</b></td>
-                          <td>:  <?php echo $res->nama_siswa?></td>
+                          <th>Nama Pelanggaran</th>
+                          <th>Point</th>
+                          <th>Action</th>
                         </tr>
-                        <tr>
-                          <td><b>Kelas</b></td>
-                          <td>:  <?php echo $res->kelas?></td>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($tampil as $res) {
+                         $id = $res ->id_pelanggaran;
+                         ?>
+                         <tr>
+                          <td>
+                            <?php echo $res->nama_pelanggaran ?>
+                          </td>
+                          <td>
+                            <?php echo $res->point ?>
+                          </td>
+                          <td><a  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_pelanggaran?>">Tambahkan</a>
+                            <div class="modal fade" id="demo-default-modal<?php echo $res->id_pelanggaran?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!--Modal Perbaikan-->
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                                    <h4 class="modal-title">pelanggaran Siswa</h4>
+                                  </div>
+                                  <?= form_open_multipart('data_siswa/tambah_pelanggaran/'.$res->id_siswa); ?>
+
+                                  <!--Modal body--> 
+                                  <div class="modal-body">
+
+                                    <div class="panel-body">
+                                      <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                                      <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran ?>">
+                                      <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru ?>">
+
+                                      <div><h5>Penjelasan Menu :</h5>
+                                        <p></p>
+                                        <p>pelanggaran siswa.</p>
+                                      </div><hr>
+                                      <table>
+                                        <tr>
+                                          <td><b>Nama</b></td>
+                                          <td>:  <?php echo $res->nama_siswa?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Kelas</b></td>
+                                          <td>:  <?php echo $res->kelas?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Jenis Kelamin</b></td>
+                                          <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                        </tr>
+                                      </table>
+                                      <hr>
+
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                                        <input  type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></input>
+                                      </div>
+                                       <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Point</b></label>
+                                        <input  type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></input>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Keterangan</b></label>
+                                        <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6" >
+                                        <label for="" class="control-label">Foto pelanggaran </label>
+                                        <input type="file" name="foto_pelanggaran" placeholder="Foto pelanggaran" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+                                      </div>
+                                      <div class="col-md-6 " style="margin-top: 2%">
+                                        <label for="" class="control-label">Preview Foto Profile</label>
+                                        <img id="preview" width="150px" />
+                                      </div>
+
+                                    </div>
+
+
+                                  </div>
+
+                                  <!--Modal footer-->
+                                  <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">Tambah</button>
+                                  </div>
+                                  <?= form_close(); ?>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
                         </tr>
-                        <tr>
-                          <td><b>Jenis Kelamin</b></td>
-                          <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                        
+                      <?php } ?>
+                      <?php foreach ($tampil1 as $res) {
+                         $id = $res ->id_pelanggaran_kerapian;
+                         ?>
+                         <tr>
+                          <td>
+                            <?php echo $res->nama_pelanggaran_kerapian ?>
+                          </td>
+                          <td>
+                            <?php echo $res->point ?>
+                          </td>
+                          <td><a  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>">Tambahkan</a>
+                            <div class="modal fade" id="demo-default-modal1<?php echo $res->id_pelanggaran_kerapian?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                  <!--Modal Perbaikan-->
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                                    <h4 class="modal-title">pelanggaran Siswa</h4>
+                                  </div>
+                                  <?= form_open_multipart('data_siswa/tambah_pelanggaran_kerapian/'.$res->id_siswa); ?>
+
+                                  <!--Modal body--> 
+                                  <div class="modal-body">
+
+                                    <div class="panel-body">
+                                      <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                                      <input type="hidden" name="id_pelanggaran_kerapian" value="<?php echo $res->id_pelanggaran_kerapian ?>">
+                                      <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru ?>">
+
+                                      <div><h5>Penjelasan Menu :</h5>
+                                        <p></p>
+                                        <p>pelanggaran kerapian siswa.</p>
+                                      </div><hr>
+                                      <table>
+                                        <tr>
+                                          <td><b>Nama</b></td>
+                                          <td>:  <?php echo $res->nama_siswa?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Kelas</b></td>
+                                          <td>:  <?php echo $res->kelas?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Jenis Kelamin</b></td>
+                                          <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                        </tr>
+                                      </table>
+                                      <hr>
+
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                                        <textarea type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Point/b></label>
+                                        <textarea type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Keterangan</b></label>
+                                        <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6" >
+                                        <label for="" class="control-label">Foto pelanggaran </label>
+                                        <input type="file" name="foto_pelanggaran" placeholder="Foto pelanggaran" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+                                      </div>
+                                      <div class="col-md-6 " style="margin-top: 2%">
+                                        <label for="" class="control-label">Preview Foto Profile</label>
+                                        <img id="preview" width="150px" />
+                                      </div>
+
+                                    </div>
+
+
+                                  </div>
+
+                                  <!--Modal footer-->
+                                  <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">Tambah</button>
+                                  </div>
+                                  <?= form_close(); ?>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
                         </tr>
-                      </table><hr>
+                        
+                      <?php } ?>
+                      <?php foreach ($tampil2 as $res) {
+                         $id = $res ->id_pelanggaran_berat;
+                         ?>
+                         <tr>
+                          <td>
+                            <?php echo $res->nama_pelanggaran_berat ?>
+                          </td>
+                          <td>
+                            <?php echo $res->point ?>
+                          </td>
+                          <td><a  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_pelanggaran_berat?>">Tambahkan</a>
+                            <div class="modal fade" id="demo-default-modal2<?php echo $res->id_pelanggaran_berat?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
 
-                      <div class="col-md-6">
-                        <label for="" class="control-label"><b>Nama pelanggaran</b></label>
-                        <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></textarea>
-                      </div>
+                                  <!--Modal Perbaikan-->
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                                    <h4 class="modal-title">pelanggaran Siswa</h4>
+                                  </div>
+                                  <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
 
-                      <div class="col-md-6">
-                        <label for="" class="control-label"><b>Point</b> </label>
-                        <input type="text" disabled name="point"  placeholder="point" class="form-control" value="<?= $res->point ?>">
-                      </div>
+                                  <!--Modal body--> 
+                                  <div class="modal-body">
 
-                      <div class="col-md-12">
-                        <label for="" class="control-label"><b>Keterangan</b></label>
-                        <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                      </div>
+                                    <div class="panel-body">
+                                      <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                                      <input type="hidden" name="id_pelanggaran_berat" value="<?php echo $res->id_pelanggaran_berat ?>">
+                                      <input type="hidden" name="tanggal_pelanggaran" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru ?>">
 
-                    </div>
+                                      <div><h5>Penjelasan Menu :</h5>
+                                        <p></p>
+                                        <p>pelanggaran berat siswa.</p>
+                                      </div><hr>
+                                      <table>
+                                        <tr>
+                                          <td><b>Nama</b></td>
+                                          <td>:  <?php echo $res->nama_siswa?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Kelas</b></td>
+                                          <td>:  <?php echo $res->kelas?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Jenis Kelamin</b></td>
+                                          <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                        </tr>
+                                      </table>
+                                      <hr>
+
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Nama pelanggaran</b></label>
+                                        <input  type="text" disabled name="nama_pelanggaran_berat"  placeholder="<?= $res->nama_pelanggaran_berat ?>" class="form-control"></input>
+                                      </div>
+                                       <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Point</b></label>
+                                        <input  type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></input>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Keterangan</b></label>
+                                        <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6" >
+                                        <label for="" class="control-label">Foto pelanggaran </label>
+                                        <input type="file" name="foto_pelanggaran" placeholder="Foto pelanggaran" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+                                      </div>
+                                      <div class="col-md-6 " style="margin-top: 2%">
+                                        <label for="" class="control-label">Preview Foto Profile</label>
+                                        <img id="preview" width="150px" />
+                                      </div>
+
+                                    </div>
 
 
-                  </div>
+                                  </div>
 
-                  <!--Modal footer-->
-                  <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit">Simpan</button>
-                  </div>
-                  <?= form_close(); ?>
+                                  <!--Modal footer-->
+                                  <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">Tambah</button>
+                                  </div>
+                                  <?= form_close(); ?>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        
+                      <?php } ?>
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-          <?php  } ?>
+          </div>
         </div>
-        
-
       </div>
     </div>
-  </div>
-</div>
-</div>
 
-
-<!-- hapus -->
-<!-- end hapus -->
+    <!-- hapus -->
+    <!-- end hapus -->
 
 
 
 
-<!-- modal edit -->
-<!-- end modal edit -->
+    <!-- modal edit -->
+    <!-- end modal edit -->
 
 
 
-<!--===================================================-->
-<!--End page content-->
+    <!--===================================================-->
+    <!--End page content-->
 
-<!--jQuery [ REQUIRED ]-->
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<script>
-  $(document).ready(function () {
-
-
-    $('#demo-dp-txtinputmasukkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
-
-    $('#demo-dp-txtinputakhirkerja input').datepicker({
-      format: "yyyy-m-d",
-      todayBtn: "linked",
-      todayHighlight: true
-    });
+    <script>
+      $(document).ready(function () {
 
 
+        $('#demo-dp-txtinputmasukkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
-  });
-</script>
+        $('#demo-dp-txtinputakhirkerja input').datepicker({
+          format: "yyyy-m-d",
+          todayBtn: "linked",
+          todayHighlight: true
+        });
 
 
-<script type="text/javascript">
+
+      });
+    </script>
 
 
-  function tampilkanPreview(userfile,idpreview)
-  {
-    var gb = userfile.files;
-    for (var i = 0; i < gb.length; i++)
-    {
-      var gbPreview = gb[i];
-      var imageType = /image.*/;
-      var preview=document.getElementById(idpreview);
-      var reader = new FileReader();
-      if (gbPreview.type.match(imageType))
+    <script type="text/javascript">
+
+
+      function tampilkanPreview(userfile,idpreview)
       {
+        var gb = userfile.files;
+        for (var i = 0; i < gb.length; i++)
+        {
+          var gbPreview = gb[i];
+          var imageType = /image.*/;
+          var preview=document.getElementById(idpreview);
+          var reader = new FileReader();
+          if (gbPreview.type.match(imageType))
+          {
       //jika tipe data sesuai
       preview.file = gbPreview;
       reader.onload = (function(element)

@@ -99,110 +99,112 @@
                 </div>
                 <hr>
 
-                <td>Cari Treatment </td>
-                <p></p>
-                <form action="<?php echo base_url('data_siswa/caritreatment/'.$res->id_siswa)?>" method="post" class="col-xs-8 col-sm-7 text-right">
-                  <div class="input-group text-right"  style="padding-left: : 5px">
-                    <?php if($this->uri->segment(2) != 'caritreatment'){?>
-                      <input type="text" autocomplete="off" name="caritreatment" class="form-control" placeholder="Cari">
-                    <?php } ?>
-                    <?php if($this->uri->segment(2) == 'caritreatment'){
-                      $carit = $this->input->post('caritreatment'); ?>
-                      <input type="text" autocomplete="off" value="<?= $carit ?>" name="caritreatment" class="form-control " placeholder="Treatment">
-                    <?php } ?> 
-                    <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-                      <button class="btn btn-default" type="submit">cari</button>
+                
+
+                <p>Pilih Treatment :</p>
+
+
+                <!--Profile Widget-->
+                <!--===================================================-->
+                <div class="panel">
+
+                  <div class="panel-body">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">Treatment</h4>
                     </div>
-                    <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">
-                      <i class="fa fa-refresh" ></i>
-                    </a>
-                  </div> 
-                </center>
+                    <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                      <thead>
+                        <tr>
+                          <th>Nama Treatment</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php foreach ($tampil as $res) {
+                         $id = $res ->id_treatment;
+                         ?>
+                         <tr>
+                          <td>
+                            <?php echo $res->nama_treatment ?>
+                          </td>
+                          <td><a  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_treatment?>">Tambahkan</a>
+                            <div class="modal fade" id="demo-default-modal<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
 
-              </form><br><br><hr>
+                                  <!--Modal Perbaikan-->
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                                    <h4 class="modal-title">treatment Siswa</h4>
+                                  </div>
+                                  <?= form_open_multipart('data_siswa/tambah_treatment/'.$res->id_siswa); ?>
 
-              <p>Pilih Treatment :</p>
-              <?php foreach($tampil as $res) {
-                $id = $res->id_treatment;
-                ?>
-                <div class="col-sm-3">
+                                  <!--Modal body--> 
+                                  <div class="modal-body">
 
-                  <!--Profile Widget-->
-                  <!--===================================================-->
-                  <div class="panel panel-info panel-colorful" style="height: 150px">
-                    <div class="pad-all text-left">
-                      <a class="panel panel-warning panel-colorful" data-toggle="modal" data-target="#demo-default-modal<?php echo $res->id_treatment?>">
-                        <span class="pull-right"><button class="btn btn-lg ion-compose icon-2x"></button></span></a><br><br><br>
-                        <p><?php echo  $res->nama_treatment?></p>
+                                    <div class="panel-body">
+                                      <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
+                                      <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment ?>">
+                                      <input type="hidden" name="tanggal_treatment" value="<?php echo date('y-m-d') ?>">
 
-                      </div>
-                    </div>                
-                  </div>
-                  <div class="modal fade" id="demo-default-modal<?php echo $res->id_treatment?>" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
+                                      <div><h5>Penjelasan Menu :</h5>
+                                        <p></p>
+                                        <p>treatment siswa.</p>
+                                      </div><hr>
+                                      <table>
+                                        <tr>
+                                          <td><b>Nama</b></td>
+                                          <td>:  <?php echo $res->nama_siswa?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Kelas</b></td>
+                                          <td>:  <?php echo $res->kelas?></td>
+                                        </tr>
+                                        <tr>
+                                          <td><b>Jenis Kelamin</b></td>
+                                          <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
+                                        </tr>
+                                      </table>
+                                      <hr>
 
-                        <!--Modal Perbaikan-->
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
-                          <h4 class="modal-title">Perbaikan Siswa</h4>
-                        </div>
-                        <?= form_open_multipart('data_siswa/tambah_treatment/'.$res->id_siswa); ?>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Nama treatment</b></label>
+                                        <textarea type="text" disabled name="nama_treatment"  placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <label for="" class="control-label"><b>Keterangan</b></label>
+                                        <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
+                                      </div>
+                                      <div class="col-md-6" >
+                                        <label for="" class="control-label">Foto treatment </label>
+                                        <input type="file" name="foto_treatment" placeholder="Foto treatment" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+                                      </div>
+                                      <div class="col-md-6 " style="margin-top: 2%">
+                                        <label for="" class="control-label">Preview Foto Profile</label>
+                                        <img id="preview" width="150px" />
+                                      </div>
 
-                        <!--Modal body--> 
-                        <div class="modal-body">
+                                    </div>
 
-                          <div class="panel-body">
-                            <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
-                            <input type="hidden" name="id_treatment" value="<?php echo $res->id_treatment ?>">
-                            <input type="hidden" name="tanggal_treatment" value="<?php echo date('y-m-d') ?>">
-                            <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru; ?>">
-                            <div><h5>Penjelasan Menu :</h5>
-                              <p></p>
-                              <p>Perbaikan diri dimaksudkan untuk memperbaiki poin siswa yang sudah mencapai pada batas tertentu,maka siswa membutuhkan suatu treatment supaya dapat memperbaiki nilai sikap siswa.</p>
-                            </div><hr>
-                            <table>
-                              <tr>
-                                <td><b>Nama</b></td>
-                                <td>:  <?php echo $res->nama_siswa?></td>
-                              </tr>
-                              <tr>
-                                <td><b>Kelas</b></td>
-                                <td>:  <?php echo $res->kelas?></td>
-                              </tr>
-                              <tr>
-                                <td><b>Jenis Kelamin</b></td>
-                                <td>:  <?php echo $res->jenis_kelamin_siswa?></td>
-                              </tr>
-                            </table>
-                            <hr>
 
-                            <div class="col-md-6">
-                              <label for="" class="control-label"><b>Nama treatment</b></label>
-                              <textarea type="text" disabled name="Keterangan"  placeholder="<?= $res->nama_treatment ?>" class="form-control"></textarea>
+                                  </div>
+
+                                  <!--Modal footer-->
+                                  <div class="modal-footer">
+                                    <button class="btn btn-primary" type="submit">Tambah</button>
+                                  </div>
+                                  <?= form_close(); ?>
+                                </div>
+                              </div>
                             </div>
-
-                            <div class="col-md-12">
-                              <label for="" class="control-label"><b>Keterangan</b></label>
-                              <textarea type="text" name="Keterangan"  placeholder="keterangan" class="form-control"></textarea>
-                            </div>
-
-                          </div>
-
-
-                        </div>
-
-                        <!--Modal footer-->
-                        <div class="modal-footer">
-                          <button class="btn btn-primary" type="submit">Tambah</button>
-                        </div>
-                        <?= form_close(); ?>
-                      </div>
-                    </div>
-                  </div>
-                <?php  } ?>
+                          </td>
+                        </tr>
+                        
+                      <?php } ?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-
             </div>
           </div>
         </div>

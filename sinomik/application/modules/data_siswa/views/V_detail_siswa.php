@@ -226,6 +226,7 @@
                   <thead>
                     <tr>
                       <th>Tanggal</th>
+                      <th>Foto Pelanggaran</th>
                       <th>Pelanggaran</th>
                       <th>point</th>
                       <th>Petugas</th>
@@ -237,6 +238,7 @@
                      $id = $tment->id_riwayat_pelanggaran;?>
                      <tr>
                       <td><?php echo $tment->tanggal_pelanggaran; ?></td>
+                      <td><img src="<?php echo base_url ()?>assets/img/<?php echo $tment->foto_pelanggaran ?>" class="img-sm img-box" alt="Profile Picture"></td>
                       <td><?php echo $tment->nama_pelanggaran; ?></td>
                       <td>+<?php echo $tment->point; ?></td>
                       <td><?php echo $tment->nama_guru; ?></td>
@@ -248,6 +250,7 @@
                    $id = $tment->id_riwayat_pelanggaran;?>
                    <tr>
                     <td><?php echo $tment->tanggal_pelanggaran; ?></td>
+                    <td><img src="<?php echo base_url ()?>assets/img/<?php echo $tment->foto_pelanggaran ?>" class="img-sm img-box" alt="Profile Picture"></td>
                     <td><?php echo $tment->nama_pelanggaran_kerapian; ?></td>
                     <td>+<?php echo $tment->point; ?></td>
                     <td><?php echo $tment->nama_guru; ?></td>
@@ -259,6 +262,7 @@
                  $id = $tment->id_riwayat_pelanggaran;?>
                  <tr>
                   <td><?php echo $tment->tanggal_pelanggaran; ?></td>
+                  <td><img src="<?php echo base_url ()?>assets/img/<?php echo $tment->foto_pelanggaran ?>" class="img-sm img-box" alt="Profile Picture"></td>
                   <td><?php echo $tment->nama_pelanggaran_berat; ?></td>
                   <td>+<?php echo $tment->point; ?></td>
                   <td><?php echo $tment->nama_guru; ?></td>
@@ -283,6 +287,7 @@
               <thead>
                 <tr>
                   <th>Tanggal</th>
+                  <th>Foto Treatment</th>
                   <th>Nama Treatment</th>
                   <th class="min-tablet">Petugas</th>
                   <th class="min-tablet">Keterangan</th>
@@ -293,6 +298,7 @@
                  $id = $tment->id_riwayat_treatment;?>
                  <tr>
                   <td><?php echo $tment->tanggal_treatment; ?></td>
+                  <td><img src="<?php echo base_url ()?>assets/img/<?php echo $tment->foto_treatment ?>" class="img-sm img-box" alt="Profile Picture"></td>
                   <td><?php echo $tment->nama_treatment; ?></td>
                   <td><?php echo $tment->nama_guru; ?></td>
                   <td><?php echo $tment->keterangan_treatment; ?></td>
@@ -314,6 +320,7 @@
             <thead>
               <tr>
                <th>Tanggal</th>
+               <th>Foto Prestasi</th>
                <th>Prestasi</th>
                <th>point</th>
                <th>Keterangan</th>
@@ -324,6 +331,7 @@
              $id = $tpres->id_riwayat_treatment;?>
              <tr>
               <td><?php echo $tpres->tanggal_treatment; ?></td>
+              <td><img src="<?php echo base_url ()?>assets/img/<?php echo $tpres->foto_prestasi ?>" class="img-sm img-box" alt="Profile Picture"></td>
               <td><?php echo $tpres->nama_prestasi; ?></td>
               <td><?php echo $tpres->point; ?></td>
               <td><?php echo $tpres->keterangan_treatment; ?></td>

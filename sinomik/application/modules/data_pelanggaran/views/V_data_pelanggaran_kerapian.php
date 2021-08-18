@@ -22,11 +22,10 @@
     <!--End breadcrumb-->
 
     <div class="text-right breadcrumb">
-     <form action="<?php echo site_url('data_pelanggaran/importFilekerapian/') ?>" method="post" enctype="multipart/form-data">
-      Upload excel file : 
-      <input type="file" name="uploadFile" value="" /><br><br>
-      <input type="submit" name="submit" value="Upload" />
-    </form>
+     <div id="demo-custom-toolbar5" class="table-toolbar-left">
+        <a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah</a>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import</a>
+      </div>
     <form action="<?php echo site_url('data_pelanggaran/cariku1/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
       <div class="input-group text-right"  style="padding-left: : 5px">
         <?php if($this->uri->segment(2) != 'cari1'){?>
@@ -77,7 +76,7 @@
 
                 <!--Profile Widget-->
                 <!--===================================================-->
-                <div class="panel panel-purple panel-colorful" style="height: 150px">
+                <div class="panel panel-purple panel-colorful" style="height: 180px">
                   <div class="pad-all text-left"><br>
                     <span class="pull-right">+ <?php echo $res->point ?> point</span><br>
                     <p><?php echo $res->nama_pelanggaran_kerapian ?></p>
@@ -181,7 +180,7 @@
 
 </div>
 <!-- tambah -->
-<div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+<div class="modal fade" id="demo-default-import" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -190,23 +189,15 @@
         <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
         <h4 class="modal-title">Tambah</h4>
       </div>
-
-      <?= form_open_multipart('data_pelanggaran/tambah1'); ?>
-      <!--Modal body--> 
-      <div class="modal-body">
+      <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_pelanggaran/importFileKerapian/') ?>">
+        <div class="modal-body">
 
         <div class="panel-body">
 
           <div class="col-md-6">
-            <label for="" class="control-label">Nama pelanggaran_kerapian</label>
-            <input type="text" name="nama_pelanggaran_kerapian" placeholder="Nama pelanggaran_kerapian" class="form-control">
+            <label for="" class="control-label">Pilih File</label>
+            <input type="file" name="uploadFile"  accept=".xlsx, .xls" value="" required=""/><br><br>
           </div>
-
-          <div class="col-md-6">
-            <label for="" class="control-label">point</label>
-            <input type="text" name="point" rows="5" placeholder="point" class="form-control">
-          </div>
-
 
         </div>
 
@@ -216,11 +207,12 @@
       <!--Modal footer-->
       <div class="modal-footer">
         <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
+        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
       </div>
-      <?= form_close(); ?>
+      </form>
 
     </div>
+
   </div>
 </div>
 </div>

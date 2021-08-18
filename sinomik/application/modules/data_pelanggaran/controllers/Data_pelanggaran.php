@@ -7,16 +7,16 @@ class Data_pelanggaran extends MX_Controller {
 	{
 		parent::__construct();
 		// model
-		 $this->load->model('m_data_pelanggaran');
-		 $this->load->model('login/m_session');
-		 $this->load->library('pagination');
-		 $this->load->library('session');
-	}
+       $this->load->model('m_data_pelanggaran');
+       $this->load->model('login/m_session');
+       $this->load->library('pagination');
+       $this->load->library('session');
+   }
 
-	
+
 	// index
-	function index()
-	{
+   function index()
+   {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_pelanggaran/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran'); //total row
@@ -26,7 +26,7 @@ class Data_pelanggaran extends MX_Controller {
         $config["num_links"]		= floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -45,21 +45,21 @@ class Data_pelanggaran extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran",
-			'row'			=> $this->m_data_pelanggaran->tampil($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule' 	=> "data_pelanggaran",
+           'namafileview' 	=> "V_data_pelanggaran",
+           'row'			=> $this->m_data_pelanggaran->tampil($config["per_page"], $data['page']),
+           'pagination' 	=> $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template/tampilCore', $data);
+    }
 
-	function cariku()
+    function cariku()
     {
 
         $nyari = $this->input->post("cari");
@@ -111,8 +111,8 @@ class Data_pelanggaran extends MX_Controller {
         echo Modules::run('template/tampilCore', $data);
     }
 
-	function tampil1()
-	{
+    function tampil1()
+    {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_pelanggaran_kerapian/tampil1'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_kerapian'); //total row
@@ -122,7 +122,7 @@ class Data_pelanggaran extends MX_Controller {
         $config["num_links"]		= floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -141,21 +141,21 @@ class Data_pelanggaran extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_kerapian",
-			'row'			=> $this->m_data_pelanggaran->tampil1($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule' 	=> "data_pelanggaran",
+           'namafileview' 	=> "V_data_pelanggaran_kerapian",
+           'row'			=> $this->m_data_pelanggaran->tampil1($config["per_page"], $data['page']),
+           'pagination' 	=> $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template/tampilCore', $data);
+    }
 
-	function cariku1()
+    function cariku1()
     {
 
         $nyari = $this->input->post("cari1");
@@ -209,8 +209,8 @@ class Data_pelanggaran extends MX_Controller {
 
 
 
-	function tampil2()
-	{
+    function tampil2()
+    {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_pelanggaran_berat/tampil2'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_berat'); //total row
@@ -220,7 +220,7 @@ class Data_pelanggaran extends MX_Controller {
         $config["num_links"]		= floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -239,21 +239,21 @@ class Data_pelanggaran extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_berat",
-			'row2'			=> $this->m_data_pelanggaran->tampil2($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule' 	=> "data_pelanggaran",
+           'namafileview' 	=> "V_data_pelanggaran_berat",
+           'row2'			=> $this->m_data_pelanggaran->tampil2($config["per_page"], $data['page']),
+           'pagination' 	=> $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template/tampilCore', $data);
+    }
 
-	function cariku2()
+    function cariku2()
     {
 
         $nyari = $this->input->post("cari2");
@@ -305,266 +305,267 @@ class Data_pelanggaran extends MX_Controller {
         echo Modules::run('template/tampilCore', $data);
     }
 
-    // import excel
-     public function importFile(){
-  
+
+    public function importFile(){
+
       if ($this->input->post('submit')) {
-                 
-                $path = 'assets/';
-                require_once APPPATH . "/third_party/PHPExcel.php";
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'xlsx|xls|csv';
-                $config['remove_spaces'] = TRUE;
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);            
-                if (!$this->upload->do_upload('uploadFile')) {
-                    $error = array('error' => $this->upload->display_errors());
-                } else {
-                    $data = array('upload_data' => $this->upload->data());
-                }
-                if(empty($error)){
-                  if (!empty($data['upload_data']['file_name'])) {
-                    $import_xls_file = $data['upload_data']['file_name'];
-                } else {
-                    $import_xls_file = 0;
-                }
-                $inputFileName = $path . $import_xls_file;
-                 
-                try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-                    $flag = true;
-                    $i=0;
-                    foreach ($allDataInSheet as $value) {
-                      if($flag){
-                        $flag =false;
-                        continue;
-                      }
-                      $inserdata[$i]['nama_pelanggaran'] = $value['B'];
-                      $inserdata[$i]['point'] = $value['C'];
-                      $i++;
-                    }               
-                    $result = $this->m_data_pelanggaran->importData($inserdata);   
-                    if($result){
-                      redirect('data_pelanggaran');
-                    }else{
-                      echo "ERROR !";
-                    }             
-      
-              } catch (Exception $e) {
-                   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-                            . '": ' .$e->getMessage());
-                }
-              }else{
-                  echo $error['error'];
-                }
-                 
-                 
+
+        $path = 'assets/';
+        require_once APPPATH . "/third_party/PHPExcel.php";
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'xlsx|xls|csv';
+        $config['remove_spaces'] = TRUE;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);            
+        if (!$this->upload->do_upload('uploadFile')) {
+            $error = array('error' => $this->upload->display_errors());
+        } else {
+            $data = array('upload_data' => $this->upload->data());
         }
-        
-    }
-
-    // import excel pelanggaran kerapian
-    public function importFileberat(){
-  
-      if ($this->input->post('submit')) {
-                 
-                $path = 'assets/';
-                require_once APPPATH . "/third_party/PHPExcel.php";
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'xlsx|xls|csv';
-                $config['remove_spaces'] = TRUE;
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);            
-                if (!$this->upload->do_upload('uploadFile')) {
-                    $error = array('error' => $this->upload->display_errors());
-                } else {
-                    $data = array('upload_data' => $this->upload->data());
-                }
-                if(empty($error)){
-                  if (!empty($data['upload_data']['file_name'])) {
-                    $import_xls_file = $data['upload_data']['file_name'];
-                } else {
-                    $import_xls_file = 0;
-                }
-                $inputFileName = $path . $import_xls_file;
-                 
-                try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-                    $flag = true;
-                    $i=0;
-                    foreach ($allDataInSheet as $value) {
-                      if($flag){
-                        $flag =false;
-                        continue;
-                      }
-                      $inserdata[$i]['nama_pelanggaran_berat'] = $value['B'];
-                      $inserdata[$i]['point'] = $value['C'];
-                      $i++;
-                    }               
-                    $result = $this->m_data_pelanggaran->importDataberat($inserdata);   
-                    if($result){
-                      redirect('data_pelanggaran');
-                    }else{
-                      echo "ERROR !";
-                    }             
-      
-              } catch (Exception $e) {
-                   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-                            . '": ' .$e->getMessage());
-                }
-              }else{
-                  echo $error['error'];
-                }
-                 
-                 
+        if(empty($error)){
+          if (!empty($data['upload_data']['file_name'])) {
+            $import_xls_file = $data['upload_data']['file_name'];
+        } else {
+            $import_xls_file = 0;
         }
-        
-    }
+        $inputFileName = $path . $import_xls_file;
 
-
-    public function importFilekerapian(){
-  
-      if ($this->input->post('submit')) {
-                 
-                $path = 'assets/';
-                require_once APPPATH . "/third_party/PHPExcel.php";
-                $config['upload_path'] = $path;
-                $config['allowed_types'] = 'xlsx|xls|csv';
-                $config['remove_spaces'] = TRUE;
-                $this->load->library('upload', $config);
-                $this->upload->initialize($config);            
-                if (!$this->upload->do_upload('uploadFile')) {
-                    $error = array('error' => $this->upload->display_errors());
-                } else {
-                    $data = array('upload_data' => $this->upload->data());
-                }
-                if(empty($error)){
-                  if (!empty($data['upload_data']['file_name'])) {
-                    $import_xls_file = $data['upload_data']['file_name'];
-                } else {
-                    $import_xls_file = 0;
-                }
-                $inputFileName = $path . $import_xls_file;
-                 
-                try {
-                    $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-                    $objReader = PHPExcel_IOFactory::createReader($inputFileType);
-                    $objPHPExcel = $objReader->load($inputFileName);
-                    $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-                    $flag = true;
-                    $i=0;
-                    foreach ($allDataInSheet as $value) {
-                      if($flag){
-                        $flag =false;
-                        continue;
-                      }
-                      $inserdata[$i]['nama_pelanggaran_kerapian'] = $value['B'];
-                      $inserdata[$i]['point'] = $value['C'];
-                      $i++;
-                    }               
-                    $result = $this->m_data_pelanggaran->importDatakerapian($inserdata);   
-                    if($result){
-                      redirect('data_pelanggaran');
-                    }else{
-                      echo "ERROR !";
-                    }             
+        try {
+            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+            $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+            $flag = true;
+            $i=0;
+            foreach ($allDataInSheet as $value) {
+              if($flag){
+                $flag =false;
+                continue;
+            }
+            $inserdata[$i]['nama_pelanggaran'] = $value['B'];
+            $inserdata[$i]['point'] = $value['C'];
+            $i++;
+        }               
+        $result = $this->m_data_pelanggaran->importData($inserdata);   
+        if($result){
+          redirect('data_pelanggaran');
+      }else{
+          echo "ERROR !";
+      }             
       
-              } catch (Exception $e) {
-                   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-                            . '": ' .$e->getMessage());
-                }
-              }else{
-                  echo $error['error'];
-                }
-                 
-                 
-        }
-        
-    }
-
-	function tambah()
-	{
-		$this->m_data_pelanggaran->tambah();
-		redirect('data_pelanggaran');
-	}
-	function tambah1()
-	{
-		$this->m_data_pelanggaran->tambah1();
-		redirect('data_pelanggaran/tampil1');
-	}
-	function tambah2()
-	{
-		$this->m_data_pelanggaran->tambah2();
-		redirect('data_pelanggaran/tampil2');
-	}
-
-	function edit()
-	{
-		$this->m_data_pelanggaran->edit();
-		redirect('data_pelanggaran');
-	}
-	function edit1()
-	{
-		$this->m_data_pelanggaran->edit1();
-		redirect('data_pelanggaran/tampil1');
-	}
-	function edit2()
-	{
-		$this->m_data_pelanggaran->edit2();
-		redirect('data_pelanggaran/tampil2');
-	}
-
-	function hapus($id)
-	{
-		$this->m_data_pelanggaran->hapus($id);
-		redirect('data_pelanggaran');
-	}
-	function hapus1($id)
-	{
-		$this->m_data_pelanggaran->hapus1($id);
-		redirect('data_pelanggaran/tampil1');
-	}
-	function hapus2($id)
-	{
-		$this->m_data_pelanggaran->hapus2($id);
-		redirect('data_pelanggaran/tampil2');
-	}
-
-	function cari()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran",
-			'tampil'		=> $this->m_data_pelanggaran->cari(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	function cari1()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_kerapian",
-			'tampil1'		=> $this->m_data_pelanggaran->cari1(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	function cari2()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_berat",
-			'tampil2'		=> $this->m_data_pelanggaran->cari2(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-
-
-	
+  } catch (Exception $e) {
+     die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+        . '": ' .$e->getMessage());
+ }
+}else{
+  echo $error['error'];
 }
- 
+
+
+}
+
+}
+    // import excel pelanggaran kerapian
+public function importFileKerapian(){
+
+  if ($this->input->post('submit')) {
+
+    $path = 'assets/';
+    require_once APPPATH . "/third_party/PHPExcel.php";
+    $config['upload_path'] = $path;
+    $config['allowed_types'] = 'xlsx|xls|csv';
+    $config['remove_spaces'] = TRUE;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);            
+    if (!$this->upload->do_upload('uploadFile')) {
+        $error = array('error' => $this->upload->display_errors());
+    } else {
+        $data = array('upload_data' => $this->upload->data());
+    }
+    if(empty($error)){
+      if (!empty($data['upload_data']['file_name'])) {
+        $import_xls_file = $data['upload_data']['file_name'];
+    } else {
+        $import_xls_file = 0;
+    }
+    $inputFileName = $path . $import_xls_file;
+
+    try {
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+        $flag = true;
+        $i=0;
+        foreach ($allDataInSheet as $value) {
+          if($flag){
+            $flag =false;
+            continue;
+        }
+        $inserdata[$i]['nama_pelanggaran_kerapian'] = $value['B'];
+        $inserdata[$i]['point'] = $value['C'];
+        $i++;
+    }               
+    $result = $this->m_data_pelanggaran->importDataKerapian($inserdata);   
+    if($result){
+      redirect('data_pelanggaran');
+  }else{
+      echo "ERROR !";
+  }             
+
+} catch (Exception $e) {
+ die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+    . '": ' .$e->getMessage());
+}
+}else{
+  echo $error['error'];
+}
+
+
+}
+
+}
+
+//     // import excel pelanggaran Berat
+public function importFileBerat(){
+
+  if ($this->input->post('submit')) {
+
+    $path = 'assets/';
+    require_once APPPATH . "/third_party/PHPExcel.php";
+    $config['upload_path'] = $path;
+    $config['allowed_types'] = 'xlsx|xls|csv';
+    $config['remove_spaces'] = TRUE;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);            
+    if (!$this->upload->do_upload('uploadFile')) {
+        $error = array('error' => $this->upload->display_errors());
+    } else {
+        $data = array('upload_data' => $this->upload->data());
+    }
+    if(empty($error)){
+      if (!empty($data['upload_data']['file_name'])) {
+        $import_xls_file = $data['upload_data']['file_name'];
+    } else {
+        $import_xls_file = 0;
+    }
+    $inputFileName = $path . $import_xls_file;
+
+    try {
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+        $flag = true;
+        $i=0;
+        foreach ($allDataInSheet as $value) {
+          if($flag){
+            $flag =false;
+            continue;
+        }
+        $inserdata[$i]['nama_pelanggaran_berat'] = $value['B'];
+        $inserdata[$i]['point'] = $value['C'];
+        $i++;
+    }               
+    $result = $this->m_data_pelanggaran->importDataberat($inserdata);   
+    if($result){
+      redirect('data_pelanggaran');
+  }else{
+      echo "ERROR !";
+  }             
+
+} catch (Exception $e) {
+ die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+    . '": ' .$e->getMessage());
+}
+}else{
+  echo $error['error'];
+}
+
+
+}
+
+}
+
+
+
+
+function tambah()
+{
+  $this->m_data_pelanggaran->tambah();
+  redirect('data_pelanggaran');
+}
+function tambah1()
+{
+  $this->m_data_pelanggaran->tambah1();
+  redirect('data_pelanggaran/tampil1');
+}
+function tambah2()
+{
+  $this->m_data_pelanggaran->tambah2();
+  redirect('data_pelanggaran/tampil2');
+}
+
+function edit()
+{
+  $this->m_data_pelanggaran->edit();
+  redirect('data_pelanggaran');
+}
+function edit1()
+{
+  $this->m_data_pelanggaran->edit1();
+  redirect('data_pelanggaran/tampil1');
+}
+function edit2()
+{
+  $this->m_data_pelanggaran->edit2();
+  redirect('data_pelanggaran/tampil2');
+}
+
+function hapus($id)
+{
+  $this->m_data_pelanggaran->hapus($id);
+  redirect('data_pelanggaran');
+}
+function hapus1($id)
+{
+  $this->m_data_pelanggaran->hapus1($id);
+  redirect('data_pelanggaran/tampil1');
+}
+function hapus2($id)
+{
+  $this->m_data_pelanggaran->hapus2($id);
+  redirect('data_pelanggaran/tampil2');
+}
+
+function cari()
+{
+  $data = array(
+   'namamodule' 	=> "data_pelanggaran",
+   'namafileview' 	=> "V_data_pelanggaran",
+   'tampil'		=> $this->m_data_pelanggaran->cari(),
+);
+  echo Modules::run('template/tampilCore', $data);
+}
+function cari1()
+{
+  $data = array(
+   'namamodule' 	=> "data_pelanggaran",
+   'namafileview' 	=> "V_data_pelanggaran_kerapian",
+   'tampil1'		=> $this->m_data_pelanggaran->cari1(),
+);
+  echo Modules::run('template/tampilCore', $data);
+}
+function cari2()
+{
+  $data = array(
+   'namamodule' 	=> "data_pelanggaran",
+   'namafileview' 	=> "V_data_pelanggaran_berat",
+   'tampil2'		=> $this->m_data_pelanggaran->cari2(),
+);
+  echo Modules::run('template/tampilCore', $data);
+}
+
+
+
+}
