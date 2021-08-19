@@ -82,6 +82,7 @@
  		$this->db->insert('data_user', $data);
  		$insert_id = $this->db->insert_id();
  	}
+ 	
  	function edit()
  	{
  		$id_guru					= $this->input->post('id_guru');

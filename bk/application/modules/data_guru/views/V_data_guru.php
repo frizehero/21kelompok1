@@ -41,6 +41,7 @@
           </div>
         </form>
       </div>
+
     </div><br><br><br>
 
 
@@ -65,19 +66,15 @@
               <?php } else{ ?>
                 <div class="widget-header bg-info text-center">
                 <?php } ?>
-
-
                 <h4 class="text-light mar-no pad-top"><?= $res->nama_guru?></h4>
                 <?php if ($res->level=='1') {?>
                <p class="mar-btm">admin</p>
                 <?php } else{ ?>
                   <p class="mar-btm">guru</p>
                 <?php }?>
-
               </div> 
               <div class="widget-body">
                 <img alt="Profile Picture" class="widget-img img-circle img-border-light" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_guru ?>">
-
                 <div class="list-group bg-trans mar-no">
                     <p class="pull-right"><?= $res->nip?></p>
                     <p class="text-semibold">Nip</p>
@@ -91,34 +88,6 @@
                     <p class="text-semibold">Username</p>
                     <p class="pull-right">*********</p>
                     <p class="text-semibold">Password</p>
-
-                    <!-- <table border="0">
-                      <tr>
-                        <td><b>Nip</b></td>
-                        <td class="text-right"><?= $res->nip?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Tgl Lahir</b></td>
-                        <td class="text-right"><?= $res->tgl_lahir_guru?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Alamat</b></td>
-                        <td class="text-right"><?= $res->alamat_guru?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Jenis Kelamin </b></td>
-                        <td class="text-right"><?= $res->jenis_kelamin_guru?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Username</b></td>
-                        <td class="text-right"><?= $res->username?></td>
-                      </tr>
-                      <tr>
-                        <td><b>Password</b></td>
-                        <td class="text-right"><?= $res->password?></td>
-                      </tr>
-                    </table> -->
-                   
                  <div class="text-center pad-to">
                   <div class="btn-group">
                     <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_guru?>" class="btn btn-sm btn-danger">
@@ -127,7 +96,6 @@
                     <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_guru?>" class="btn btn-sm btn-success">
                       <span class="fa fa-edit"></span>
                     &nbsp;Edit</a>
-
                   </div>
                 </div>
               </div>
@@ -151,7 +119,6 @@
 
               <!--Modal body--> 
               <div class="modal-body">
-
                 <div class="panel-body">
 
                   <div class="col-md-6" style="margin-top: 2%">

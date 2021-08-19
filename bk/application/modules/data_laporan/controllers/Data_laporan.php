@@ -18,7 +18,7 @@ class Data_laporan extends MX_Controller {
 		$data = array(
 			'namamodule' 			=> "data_laporan",
 			'namafileview' 			=> "V_data_laporan",
-			'tampil'				=> $this->m_data_laporan->tampil(),
+			// 'tampil'				=> $this->m_data_laporan->tampil(),
 			'tampil_treatment'		=> $this->m_data_laporan->tampil_treatment(),
 			'jum_sis'				=> $this->m_data_laporan->jum_sis(),
 			'jum_laki'				=> $this->m_data_laporan->jum_laki(),
@@ -31,20 +31,18 @@ class Data_laporan extends MX_Controller {
 			'jml_siswatipk'			=> $this->m_data_laporan->jml_siswatipk(),
 			'jml_siswatb'			=> $this->m_data_laporan->jml_siswatb(),
 			'jml_siswatkr'			=> $this->m_data_laporan->jml_siswatkr(),
-			'januari'					=> $this->m_data_laporan->januari(),
-			'februari'					=> $this->m_data_laporan->februari(),
+			'januari'				=> $this->m_data_laporan->januari(),
+			'februari'				=> $this->m_data_laporan->februari(),
 			'maret'					=> $this->m_data_laporan->maret(),
 			'april'					=> $this->m_data_laporan->april(),
 			'mei'					=> $this->m_data_laporan->mei(),
 			'juni'					=> $this->m_data_laporan->juni(),
 			'juli'					=> $this->m_data_laporan->juli(),
-			'agustus'					=> $this->m_data_laporan->agustus(),
-			'september'					=> $this->m_data_laporan->september(),
-			'oktober'					=> $this->m_data_laporan->oktober(),
-			'november'					=> $this->m_data_laporan->november(),
-			'desember'					=> $this->m_data_laporan->desember(),
-			// 'filter_kel'	=> $this->m_data_laporan->filter_kel(),
-
+			'agustus'				=> $this->m_data_laporan->agustus(),
+			'september'				=> $this->m_data_laporan->september(),
+			'oktober'				=> $this->m_data_laporan->oktober(),
+			'november'				=> $this->m_data_laporan->november(),
+			'desember'				=> $this->m_data_laporan->desember(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);

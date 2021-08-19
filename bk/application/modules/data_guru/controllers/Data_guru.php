@@ -89,8 +89,6 @@
  	function cariku()
  	{
 
-
-
 		$nyari = $this->input->post("cari");
 
         // get search string
@@ -138,13 +136,6 @@
 			'cari'			=> $nyari,
 		);
 		echo Modules::run('template/tampilCore', $data);
-
- 		// $data = array(
- 		// 	'namamodule' 	=> "data_guru",
- 		// 	'namafileview' 	=> "V_data_guru",
- 		// 	'tampil'		=> $this->m_data_guru->cari(),
- 		// );
- 		// echo Modules::run('template/tampilCore', $data);
  	}
  	
  }
