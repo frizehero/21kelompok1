@@ -150,6 +150,8 @@
 			</div>
 
 			<?= form_open_multipart('data_siswa/tambah'); ?>
+
+      <input type="hidden" name="level" value="3">
 			<!--Modal body--> 
 			<div class="modal-body">
 
@@ -209,17 +211,6 @@
 							<option value="7">TKR</option>
 						</select>
 					</div>
-          <div class="col-md-6" style="margin-top: 2% ">
-            <label for="" class="control-label">Level</label>
-            <select name="level" required="" class="form-control">
-              <option  value="1">Admin
-              </option>
-              <option  value="2">Guru
-              </option>
-              <option  value="3">Siswa
-              </option>
-            </select>
-          </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label">Username</label>
             <input type="text" name="username" placeholder="Username" class="form-control" required="">

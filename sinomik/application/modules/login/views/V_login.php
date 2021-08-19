@@ -50,8 +50,8 @@
                         <img class="login-logo" src="<?php echo base_url(); ?>assets/login/pages/img/login/logo-ori.png" style="width:200px"/> 
                     </div>
                     <div class="login-content">
-                        <h1>BK-2021 </h1>
-                        <p> Selamat datang di website BK-2021 , silahkan login terlebih dahulu sebelum melanjutkan ke menu awal . </p>
+                        <h1>SINOMIK </h1>
+                        <p> Selamat datang di website SINOMIK , silahkan login terlebih dahulu sebelum melanjutkan ke menu awal . </p>
                         <?php if($cekAdmin){ 
                         
                      }
