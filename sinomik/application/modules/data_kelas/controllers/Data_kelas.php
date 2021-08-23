@@ -64,6 +64,8 @@ class Data_kelas extends MX_Controller {
 			'namafileview' 	=> "V_hasil_kelas",
 			'filter_kel'	=> $this->m_data_kelas->filter_kel(),
 			'tampil'		=> $this->m_data_kelas->filter($kelas,$jurusan),
+			'kelas'			=> $kelas,
+			'jurusan'		=> $jurusan,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

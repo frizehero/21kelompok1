@@ -45,7 +45,8 @@ class M_data_kelas extends CI_Model {
 	{
 		$this->db->select('*')
 		->like('data_siswa.kelas',$kelas)
-		->like('data_siswa.jurusan',$jurusan);
+		->like('data_siswa.jurusan',$jurusan)
+		->like('data_siswa.status',"siswa");
 		$query = $this->db->get('data_siswa');
 		return $query->result();
 	}
