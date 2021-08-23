@@ -12,74 +12,102 @@ class Data_siswa extends MX_Controller {
 		$this->load->model('login/m_session');
 		$this->load->library('pagination');
 		$this->load->library('session');
+		$this->load->library('excel');
 		$this->load->helper('file');
 	}
 
 public function importFile(){
 
-		if ($this->input->post('submit')) {
+		if(isset($_FILES["file"]["name"])){
+                  // upload
+			$file_tmp = $_FILES['file']['tmp_name'];
+			$file_name = $_FILES['file']['name'];
+			$file_size =$_FILES['file']['size'];
+			$file_type=$_FILES['file']['type'];
 
-			$path = 'assets/';
-			require_once APPPATH . "/third_party/PHPExcel.php";
-			$config['upload_path'] = $path;
-			$config['allowed_types'] = 'xlsx|xls|csv';
-			$config['remove_spaces'] = TRUE;
-			$this->load->library('upload', $config);
-			$this->upload->initialize($config);            
-			if (!$this->upload->do_upload('uploadFile')) {
-				$error = array('error' => $this->upload->display_errors());
-			} else {
-				$data = array('upload_data' => $this->upload->data());
+			$object = PHPExcel_IOFactory::load($file_tmp);
+
+			foreach($object->getWorksheetIterator() as $worksheet){
+
+				$highestRow = $worksheet->getHighestRow();
+				$highestColumn = $worksheet->getHighestColumn();
+
+				for($row=4; $row<=$highestRow; $row++){
+
+					$nis 					= $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$nama_siswa 			= $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					$tanggal_lahir			= $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+					$alamat_siswa 			= $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+					$jenis_kelamin_siswa 	= $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+					$kelas 					= $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+					$agama 					= $worksheet->getCellByColumnAndRow(7, $row)->getValue();
+					$jurusan 				= $worksheet->getCellByColumnAndRow(8, $row)->getValue();
+
+					$tanggal_lahir_siswa 	= \PHPExcel_Style_NumberFormat::toFormattedString($tanggal_lahir, 'YYYY-MM-DD');
+					
+					if ($jurusan == NULL) {
+
+					} else {
+
+						$data = array(
+							'nis'					=> $nis,
+							'nama_siswa'			=> $nama_siswa,
+							'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
+							'alamat_siswa'			=> $alamat_siswa,
+							'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+							'kelas'					=> $kelas,
+							'jurusan'				=> $jurusan,
+							'agama'					=> $agama,
+							'foto_siswa' 			=> "kosong1.png",
+						);
+
+						$this->db->insert('data_siswa', $data);
+					}
+					
+					
+
+					$insert_id = $this->db->insert_id();
+					$username		= $worksheet->getCellByColumnAndRow(9, $row)->getValue();
+					$password 		= $worksheet->getCellByColumnAndRow(10, $row)->getValue();
+					$password1 		= sha1($password);
+
+
+					if ($username == NULL) {
+						
+					} else {
+
+						$data = array(
+							'id_siswa'				=> $insert_id,
+							'username'				=> $username,
+							'password'				=> $password1,
+							'level'					=> "3",
+
+						);
+
+
+						$this->db->insert('data_user', $data);
+						$insert_id = $this->db->insert_id();
+					}
+
+				} 
+
 			}
-			if(empty($error)){
-				if (!empty($data['upload_data']['file_name'])) {
-					$import_xls_file = $data['upload_data']['file_name'];
-				} else {
-					$import_xls_file = 0;
-				}
-				$inputFileName = $path . $import_xls_file;
+			$message = array(
+				'message'=>'<div class="alert alert-success">Import file excel berhasil disimpan di database</div>',
+			);
 
-				try {
-					$inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-					$objReader = PHPExcel_IOFactory::createReader($inputFileType);
-					$objPHPExcel = $objReader->load($inputFileName);
-					$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-					$flag = true;
-					$i=0;
-					foreach ($allDataInSheet as $value) {
-						if($flag){
-							$flag =false;
-							continue;
-						}
-						$inserdata[$i]['foto_siswa'] = $value['B'];
-						$inserdata[$i]['nis'] = $value['C'];
-						$inserdata[$i]['nama_siswa'] = $value['D'];
-						$inserdata[$i]['tanggal_lahir_siswa'] = $value['E'];
-						$inserdata[$i]['alamat_siswa'] = $value['F'];
-						$inserdata[$i]['jenis_kelamin_siswa'] = $value['G'];
-						$inserdata[$i]['id_kelas'] = $value['H'];
-						$inserdata[$i]['id_agama'] = $value['I'];
-						$inserdata[$i]['id_jurusan'] = $value['J'];
-						$i++;
-					}               
-					$result = $this->m_data_siswa->importData($inserdata);   
-					if($result){
-						redirect('data_siswa');
-					}else{
-						echo "ERROR !";
-					}             
-
-				} catch (Exception $e) {
-					die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-						. '": ' .$e->getMessage());
-				}
-			}else{
-				echo $error['error'];
-			}
-
-
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
 		}
+		else
+		{
+			$message = array(
+				'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
+			);
 
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
+		}
 	}
 	
 	// index

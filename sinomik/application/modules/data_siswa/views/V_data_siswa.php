@@ -23,7 +23,8 @@
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
-  		</div>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import Siswa</a>
+      </div>
       <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
           <?php if($this->uri->segment(2) != 'cari'){
@@ -45,11 +46,6 @@
 
   </form>
 </div>
-<form action="<?php echo site_url('data_siswa/importFile/') ?>" method="post" enctype="multipart/form-data">
-    Upload excel file : 
-    <input type="file" name="uploadFile" accept=".xlsx" value="" /><br><br>
-    <input type="submit" name="submit" value="Upload" />
-</form>
 
 <div id="page-content text-black"><br><br><br><br>
 
@@ -143,6 +139,48 @@
 <!--===================================================-->
 <!--End page content-->	
 <!-- tambah -->
+
+
+<!-- import -->
+<div class="modal fade" id="demo-default-import" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!--Modal Update-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+        <h4 class="modal-title">Tambah</h4>
+      </div>
+      <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_siswa/importfile/') ?>">
+        <div class="modal-body">
+
+        <div class="panel-body">
+
+          <div class="col-md-6">
+            <label for="" class="control-label">Pilih File</label>
+            <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+      </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+<!-- end import -->
+
+
+
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -156,124 +194,124 @@
 			<?= form_open_multipart('data_siswa/tambah'); ?>
 
       <input type="hidden" name="level" value="3">
-			<!--Modal body--> 
-			<div class="modal-body">
+      <!--Modal body--> 
+      <div class="modal-body">
 
-				<div class="panel-body">
+        <div class="panel-body">
 
-					<div class="col-md-6">
-						<label for="" class="control-label">NIS</label>
-						<input type="text" name="nis" placeholder="NIS" class="form-control" required="">
-					</div>
-					<div class="col-md-6">
-						<label for="" class="control-label">Nama siswa</label>
-						<input type="text" name="nama_siswa" placeholder="Nama siswa" class="form-control" required="">
-					</div>
-					<div class="col-md-6" style="margin-top: 2%">
-						<label for="" class="control-label">Tgl Lahir Siswa</label>
-						<input type="date" name="tanggal_lahir_siswa" placeholder="Tgl Lahir Siswa" class="form-control" required="">
-					</div>
-					<div class="col-md-6" style="margin-top: 2%">
-						<label for="" class="control-label">Alamat Siswa</label>
-						<input type="text" name="alamat_siswa" placeholder="Alamat Siswa" class="form-control" required=""><br>
-					</div>
-					<div class="col-md-6" >
-						<label for="jk" required="" class="control-label">Jenis Kelamin Siswa</label><br>
-						<input id="jk" type="radio" name="jenis_kelamin_siswa" value="Laki-Laki" > Laki-Laki
-						<input id="jk" type="radio" name="jenis_kelamin_siswa" value="Perempuan" > Perempuan
-					</div>
-					<div class="col-md-6" >
-						<label for="kelas" class="control-label">Kelas Siswa</label>
-						<select name="kelas" id="kelas" class="form-control" required="">
-							<option value="">Kelas</option>
-							<option value="1">X</option>
-							<option value="2">XI</option>
-							<option value="3">XII</option>
-						</select>
-					</div>
-					<div class="col-md-6" style="margin-top: 2%">
-						<label for="agama" class="control-label">Agama Siswa</label>
-						<select name="agama" id="agama" class="form-control" required="">
-							<option value="">Agama</option>
-							<option value="1">Islam</option>
-							<option value="2">Hindu</option>
-							<option value="3">Budha</option>
-							<option value="4">Konghucu</option>
-							<option value="5">Kristen</option>
-						</select>
-					</div>
-					<div class="col-md-6" style="margin-top: 2%">
-						<label for="jurusan" class="control-label">Jurusan Siswa</label>
-						<select name="jurusan" id="jurusan" class="form-control" required="">
-							<option value="">Jurusan</option>
-							<option value="1">RPL</option>
-							<option value="2">TKJ</option>
-							<option value="3">TPM</option>
-							<option value="4">TITL</option>
-							<option value="5">TIPK</option>
-							<option value="6">TB</option>
-							<option value="7">TKR</option>
-						</select>
-					</div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">Username</label>
-            <input type="text" name="username" placeholder="Username" class="form-control" required="">
-          </div>
-          <div class="col-md-6" style="margin-top: 2%">
-            <label for="" class="control-label">Password</label>
-            <input type="text" name="password" placeholder="Password" class="form-control" required="">
-          </div>
-          <div class="col-md-6" >
-            <label for="" class="control-label">Gambar siswa</label>
-            <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
-          </div>
-          <div class="col-md-6 " style="margin-top: 2%">
-            <label for="" class="control-label">Preview Foto Profile</label>
-            <img id="preview" width="150px" />
-          </div>
-
+         <div class="col-md-6">
+          <label for="" class="control-label">NIS</label>
+          <input type="text" name="nis" placeholder="NIS" class="form-control" required="">
         </div>
-
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <button class="btn btn-primary" type="submit">Simpan</button>
-      </div>
-      <?= form_close(); ?>
-
-    </div>
-
+        <div class="col-md-6">
+          <label for="" class="control-label">Nama siswa</label>
+          <input type="text" name="nama_siswa" placeholder="Nama siswa" class="form-control" required="">
+        </div>
+        <div class="col-md-6" style="margin-top: 2%">
+          <label for="" class="control-label">Tgl Lahir Siswa</label>
+          <input type="date" name="tanggal_lahir_siswa" placeholder="Tgl Lahir Siswa" class="form-control" required="">
+        </div>
+        <div class="col-md-6" style="margin-top: 2%">
+          <label for="" class="control-label">Alamat Siswa</label>
+          <input type="text" name="alamat_siswa" placeholder="Alamat Siswa" class="form-control" required=""><br>
+        </div>
+        <div class="col-md-6" >
+          <label for="jk" required="" class="control-label">Jenis Kelamin Siswa</label><br>
+          <input id="jk" type="radio" name="jenis_kelamin_siswa" value="Laki-Laki" > Laki-Laki
+          <input id="jk" type="radio" name="jenis_kelamin_siswa" value="Perempuan" > Perempuan
+        </div>
+        <div class="col-md-6" >
+          <label for="kelas" class="control-label">Kelas Siswa</label>
+          <select name="kelas" id="kelas" class="form-control" required="">
+           <option value="">Kelas</option>
+           <option value="1">X</option>
+           <option value="2">XI</option>
+           <option value="3">XII</option>
+         </select>
+       </div>
+       <div class="col-md-6" style="margin-top: 2%">
+        <label for="agama" class="control-label">Agama Siswa</label>
+        <select name="agama" id="agama" class="form-control" required="">
+         <option value="">Agama</option>
+         <option value="1">Islam</option>
+         <option value="2">Hindu</option>
+         <option value="3">Budha</option>
+         <option value="4">Konghucu</option>
+         <option value="5">Kristen</option>
+       </select>
+     </div>
+     <div class="col-md-6" style="margin-top: 2%">
+      <label for="jurusan" class="control-label">Jurusan Siswa</label>
+      <select name="jurusan" id="jurusan" class="form-control" required="">
+       <option value="">Jurusan</option>
+       <option value="1">RPL</option>
+       <option value="2">TKJ</option>
+       <option value="3">TPM</option>
+       <option value="4">TITL</option>
+       <option value="5">TIPK</option>
+       <option value="6">TB</option>
+       <option value="7">TKR</option>
+     </select>
+   </div>
+   <div class="col-md-6" style="margin-top: 2%">
+    <label for="" class="control-label">Username</label>
+    <input type="text" name="username" placeholder="Username" class="form-control" required="">
   </div>
-  <!-- end tambah -->
+  <div class="col-md-6" style="margin-top: 2%">
+    <label for="" class="control-label">Password</label>
+    <input type="text" name="password" placeholder="Password" class="form-control" required="">
+  </div>
+  <div class="col-md-6" >
+    <label for="" class="control-label">Gambar siswa</label>
+    <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+  </div>
+  <div class="col-md-6 " style="margin-top: 2%">
+    <label for="" class="control-label">Preview Foto Profile</label>
+    <img id="preview" width="150px" />
+  </div>
+
+</div>
+
+
+</div>
+
+<!--Modal footer-->
+<div class="modal-footer">
+  <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+  <button class="btn btn-primary" type="submit">Simpan</button>
+</div>
+<?= form_close(); ?>
+
+</div>
+
+</div>
+<!-- end tambah -->
 
 
 
 
-  <!--jQuery [ REQUIRED ]-->
-  <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+<!--jQuery [ REQUIRED ]-->
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-  <script>
-   $(document).ready(function () {
-
-
-    $('#demo-dp-txtinputmasukkerja input').datepicker({
-     format: "yyyy-m-d",
-     todayBtn: "linked",
-     todayHighlight: true
-   });
-
-    $('#demo-dp-txtinputakhirkerja input').datepicker({
-     format: "yyyy-m-d",
-     todayBtn: "linked",
-     todayHighlight: true
-   });
+<script>
+ $(document).ready(function () {
 
 
+  $('#demo-dp-txtinputmasukkerja input').datepicker({
+   format: "yyyy-m-d",
+   todayBtn: "linked",
+   todayHighlight: true
+ });
 
-  });
+  $('#demo-dp-txtinputakhirkerja input').datepicker({
+   format: "yyyy-m-d",
+   todayBtn: "linked",
+   todayHighlight: true
+ });
+
+
+
+});
 </script>
 
 

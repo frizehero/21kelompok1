@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 12:20 PM
+-- Generation Time: Aug 23, 2021 at 05:20 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -115,7 +115,8 @@ CREATE TABLE `data_kelas` (
 INSERT INTO `data_kelas` (`id_kelas`, `kelas`, `id_jurusan`, `create_at`) VALUES
 (1, 'X', NULL, '2021-04-07 07:17:59'),
 (2, 'XI', NULL, '2021-03-03 04:11:53'),
-(3, 'XII', NULL, '2021-03-03 04:12:00');
+(3, 'XII', NULL, '2021-03-03 04:12:00'),
+(8, 'XI TKJ1', NULL, '2021-08-23 01:46:09');
 
 -- --------------------------------------------------------
 
@@ -219,9 +220,9 @@ CREATE TABLE `data_siswa` (
   `tanggal_lahir_siswa` date DEFAULT NULL,
   `alamat_siswa` varchar(200) DEFAULT NULL,
   `jenis_kelamin_siswa` varchar(10) DEFAULT NULL,
-  `id_kelas` int(11) DEFAULT NULL,
-  `id_agama` int(11) DEFAULT NULL,
-  `id_jurusan` int(11) NOT NULL,
+  `kelas` varchar(20) DEFAULT NULL,
+  `agama` varchar(20) DEFAULT NULL,
+  `jurusan` varchar(20) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -229,8 +230,12 @@ CREATE TABLE `data_siswa` (
 -- Dumping data for table `data_siswa`
 --
 
-INSERT INTO `data_siswa` (`id_siswa`, `foto_siswa`, `nis`, `nama_siswa`, `tanggal_lahir_siswa`, `alamat_siswa`, `jenis_kelamin_siswa`, `id_kelas`, `id_agama`, `id_jurusan`, `create_at`) VALUES
-(43, 'kosong1.png', '324523', 'vino', '2021-08-03', 'tby', 'Laki-Laki', 3, 1, 1, '2021-08-16 05:07:31');
+INSERT INTO `data_siswa` (`id_siswa`, `foto_siswa`, `nis`, `nama_siswa`, `tanggal_lahir_siswa`, `alamat_siswa`, `jenis_kelamin_siswa`, `kelas`, `agama`, `jurusan`, `create_at`) VALUES
+(145, 'kosong1.png', '293468714672', 'Ahmad Barjo', '2001-12-31', 'tambakboyo', 'Laki-Laki', 'X', 'Islam', 'TKJ 1', '2021-08-23 02:04:33'),
+(146, 'kosong1.png', '98275r823161', 'vino bin asmodeus', '2002-01-01', 'tambakboyo', 'Perempuan', 'XI', 'hindu', 'RPL', '2021-08-23 02:04:33'),
+(147, 'kosong1.png', '245254254', 'wiluyo', '2002-01-02', 'tambakboyo', 'Laki-Laki', 'X', 'hindu', 'RPL', '2021-08-23 02:04:33'),
+(148, 'kosong1.png', '236772625225', 'sugeng rino', '2002-01-03', 'tambakboyo', 'Laki-Laki', 'XII', 'hindu', 'TPm2', '2021-08-23 02:04:33'),
+(149, 'kosong1.png', '967362437589', 'bandu prayitno', '2002-01-04', 'tambakboyo', 'Laki-Laki', 'X', 'hindu', 'TKR2', '2021-08-23 02:04:33');
 
 -- --------------------------------------------------------
 
@@ -268,6 +273,7 @@ CREATE TABLE `data_user` (
   `password` varchar(100) DEFAULT NULL,
   `level` varchar(10) DEFAULT NULL,
   `id_guru` int(11) DEFAULT NULL,
+  `id_siswa` int(11) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -275,10 +281,14 @@ CREATE TABLE `data_user` (
 -- Dumping data for table `data_user`
 --
 
-INSERT INTO `data_user` (`id_user`, `username`, `password`, `level`, `id_guru`, `create_at`) VALUES
-(21, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', 20, '2021-06-16 01:37:34'),
-(22, 'guru', 'a1872e333d0e52644f6125da2276530f7ebe5e77', '2', 21, '2021-05-31 07:25:38'),
-(24, 'mereza', 'ecc9d0b390b82b9ecaf332a4daad37ff77ecb413', '2', 23, '2021-08-18 03:28:09');
+INSERT INTO `data_user` (`id_user`, `username`, `password`, `level`, `id_guru`, `id_siswa`, `create_at`) VALUES
+(21, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', 20, NULL, '2021-06-16 01:37:34'),
+(22, 'guru', 'a1872e333d0e52644f6125da2276530f7ebe5e77', '2', 21, NULL, '2021-05-31 07:25:38'),
+(82, 'fw', '8def4372cd160453bb0cf48b1211fe06f9e74f9b', '3', NULL, 145, '2021-08-23 02:04:33'),
+(83, 'er', '78991a547c4f0765c224e8cdc0b7b67b21fe21da', '3', NULL, 146, '2021-08-23 02:04:33'),
+(84, 'ef', 'f822051471957b7bbebb8ab088fe9bd6d14f4261', '3', NULL, 147, '2021-08-23 02:04:33'),
+(85, 'gf', '8eff122bd434b4b3641b6f41d64956af2106169b', '3', NULL, 148, '2021-08-23 02:04:33'),
+(86, 'fe', 'ad45205a471752ff1e17b788c3e52521e319899e', '3', NULL, 149, '2021-08-23 02:04:33');
 
 -- --------------------------------------------------------
 
@@ -296,19 +306,6 @@ CREATE TABLE `riwayat_pelanggaran` (
   `id_pelanggaran_berat` int(11) DEFAULT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `riwayat_pelanggaran`
---
-
-INSERT INTO `riwayat_pelanggaran` (`id_riwayat_pelanggaran`, `tanggal_pelanggaran`, `keterangan_pelanggaran`, `id_siswa`, `id_pelanggaran`, `id_pelanggaran_kerapian`, `id_pelanggaran_berat`, `create_at`) VALUES
-(65, NULL, 'mabokan', NULL, NULL, NULL, 1, '2021-05-31 09:44:14'),
-(66, NULL, 'mabokan', NULL, NULL, NULL, 1, '2021-05-31 09:54:28'),
-(68, NULL, 't', NULL, NULL, NULL, 1, '2021-05-31 09:58:41'),
-(69, NULL, 'ers', NULL, NULL, NULL, 1, '2021-06-01 05:07:32'),
-(71, NULL, '', NULL, NULL, 4, NULL, '2021-06-01 05:09:19'),
-(72, NULL, '', NULL, NULL, 3, NULL, '2021-06-01 05:13:00'),
-(77, '2021-08-18', 'Rusuh Sendiri Dikelas', 43, 10, NULL, NULL, '2021-08-18 02:59:29');
 
 -- --------------------------------------------------------
 
@@ -333,7 +330,9 @@ CREATE TABLE `riwayat_treatment` (
 
 INSERT INTO `riwayat_treatment` (`id_riwayat_treatment`, `tanggal_treatment`, `keterangan_treatment`, `id_siswa`, `id_guru`, `id_treatment`, `id_prestasi`, `create_at`) VALUES
 (49, '2021-08-16', 'mendapat teguran', 43, 20, 8, NULL, '2021-08-16 06:02:45'),
-(51, '2021-08-18', 'Dikarenakan Point Siswa Sudah Tinggi', 43, 23, 13, NULL, '2021-08-18 03:54:08');
+(51, '2021-08-18', 'Dikarenakan Point Siswa Sudah Tinggi', 43, 23, 13, NULL, '2021-08-18 03:54:08'),
+(52, '2021-08-22', '', 124, 20, 8, NULL, '2021-08-22 04:46:11'),
+(53, '2021-08-22', '', 124, NULL, NULL, 3, '2021-08-22 05:21:07');
 
 -- --------------------------------------------------------
 
@@ -412,9 +411,7 @@ ALTER TABLE `data_prestasi`
 -- Indexes for table `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  ADD PRIMARY KEY (`id_siswa`),
-  ADD KEY `id_kelas` (`id_kelas`),
-  ADD KEY `id_agama` (`id_agama`);
+  ADD PRIMARY KEY (`id_siswa`);
 
 --
 -- Indexes for table `data_treatment`
@@ -427,7 +424,8 @@ ALTER TABLE `data_treatment`
 --
 ALTER TABLE `data_user`
   ADD PRIMARY KEY (`id_user`),
-  ADD KEY `id_guru` (`id_guru`);
+  ADD KEY `id_guru` (`id_guru`),
+  ADD KEY `id_siswa` (`id_siswa`);
 
 --
 -- Indexes for table `riwayat_pelanggaran`
@@ -479,7 +477,7 @@ ALTER TABLE `data_jurusan`
 -- AUTO_INCREMENT for table `data_kelas`
 --
 ALTER TABLE `data_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `data_pelanggaran`
@@ -509,7 +507,7 @@ ALTER TABLE `data_prestasi`
 -- AUTO_INCREMENT for table `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `data_treatment`
@@ -521,7 +519,7 @@ ALTER TABLE `data_treatment`
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- AUTO_INCREMENT for table `riwayat_pelanggaran`
@@ -533,7 +531,7 @@ ALTER TABLE `riwayat_pelanggaran`
 -- AUTO_INCREMENT for table `riwayat_treatment`
 --
 ALTER TABLE `riwayat_treatment`
-  MODIFY `id_riwayat_treatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_riwayat_treatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tb_login`
