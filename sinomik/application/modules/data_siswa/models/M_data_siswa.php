@@ -6,6 +6,9 @@ class M_data_siswa extends CI_Model {
 	function tampil($limit, $start)
 	{
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->order_by("data_siswa.id_siswa", "DESC");
 		$query = $this->db->get('data_siswa', $limit, $start);
 		return $query->result();
@@ -17,6 +20,9 @@ class M_data_siswa extends CI_Model {
 		
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->like('nama_siswa',$st);
 		$query = $this->db->get('data_siswa',$limit, $start);
 		return $query->result();
@@ -27,6 +33,9 @@ class M_data_siswa extends CI_Model {
 
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->like('nama_siswa',$st);
 		$query = $this->db->get('data_siswa');
 		return $query->num_rows();
@@ -131,6 +140,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get();
 		return $query->result();
@@ -165,6 +177,7 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
@@ -300,6 +313,7 @@ class M_data_siswa extends CI_Model {
 		$tanggal_lahir_siswa 		= $this->input->post('tanggal_lahir_siswa');
 		$alamat_siswa				= $this->input->post('alamat_siswa');
 		$jenis_kelamin_siswa 		= $this->input->post('jenis_kelamin_siswa');
+		$status_siswa				= $this->input->post('status_siswa');
 		$kelas 						= $this->input->post('kelas');
 		$jurusan 					= $this->input->post('jurusan');
 		$agama 						= $this->input->post('agama');
@@ -328,6 +342,7 @@ class M_data_siswa extends CI_Model {
 						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 						'alamat_siswa'			=> $alamat_siswa,
 						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'status_siswa'			=> $status_siswa,
 						'id_kelas'				=> $kelas,
 						'id_jurusan'			=> $jurusan,
 						'id_agama'				=> $agama,
@@ -343,6 +358,7 @@ class M_data_siswa extends CI_Model {
 						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 						'alamat_siswa'			=> $alamat_siswa,
 						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'status_siswa'			=> $status_siswa,
 						'id_kelas'				=> $kelas,
 						'id_jurusan'			=> $jurusan,
 						'id_agama'				=> $agama,
@@ -361,6 +377,7 @@ class M_data_siswa extends CI_Model {
 				'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 				'alamat_siswa'			=> $alamat_siswa,
 				'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+				'status_siswa'			=> $status_siswa,
 				'id_kelas'				=> $kelas,
 				'id_jurusan'			=> $jurusan,
 				'id_agama'				=> $agama,
@@ -375,6 +392,7 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->where('id_siswa', $id)->delete('riwayat_pelanggaran');
 		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
+		$this->db->where('id_siswa', $id)->delete('data_user');
 
 		$this->db->where('id_siswa', $id);
 		$query = $this->db->get('data_siswa');
@@ -573,6 +591,7 @@ class M_data_siswa extends CI_Model {
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
 		$id_pelanggaran				= $this->input->post('id_pelanggaran');
 		$id_siswa 					= $this->input->post('id_siswa');
+		$id_guru 					= $this->input->post('id_guru');
 
 
 		$data = array(
@@ -580,6 +599,7 @@ class M_data_siswa extends CI_Model {
 			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
 			'id_pelanggaran'			=> $id_pelanggaran,
 			'id_siswa'					=> $id_siswa,
+			'id_guru'					=> $id_guru,
 
 
 		);
@@ -594,6 +614,7 @@ class M_data_siswa extends CI_Model {
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
 		$id_pelanggaran_kerapian	= $this->input->post('id_pelanggaran_kerapian');
 		$id_siswa 					= $this->input->post('id_siswa');
+		$id_guru 					= $this->input->post('id_guru');
 
 
 		$data = array(
@@ -601,6 +622,7 @@ class M_data_siswa extends CI_Model {
 			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
 			'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
 			'id_siswa'					=> $id_siswa,
+			'id_guru'					=> $id_guru,
 
 
 		);
@@ -615,6 +637,8 @@ class M_data_siswa extends CI_Model {
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
 		$id_pelanggaran_berat       = $this->input->post('id_pelanggaran_berat');
 		$id_siswa 					= $this->input->post('id_siswa');
+		$id_guru 					= $this->input->post('id_guru');
+
 
 
 		$data = array(
@@ -622,6 +646,7 @@ class M_data_siswa extends CI_Model {
 			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
 			'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
 			'id_siswa'					=> $id_siswa,
+			'id_guru'					=> $id_guru,
 
 
 		);

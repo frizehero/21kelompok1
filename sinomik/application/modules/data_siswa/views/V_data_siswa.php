@@ -245,12 +245,17 @@
       <select name="jurusan" id="jurusan" class="form-control" required="">
        <option value="">Jurusan</option>
        <option value="1">RPL</option>
-       <option value="2">TKJ</option>
-       <option value="3">TPM</option>
+       <option value="2">TKJ 1</option>
+       <option value="3">TKJ 2</option>
        <option value="4">TITL</option>
-       <option value="5">TIPK</option>
-       <option value="6">TB</option>
-       <option value="7">TKR</option>
+       <option value="5">TIPK 1</option>
+       <option value="6">TIPK 2</option>
+       <option value="7">TKR 1</option>
+       <option value="8">TKR 2</option>
+       <option value="9">TKR 3</option>
+       <option value="10">TB</option>
+       <option value="11">TPM 1</option>
+       <option value="12">TPM 2</option>
      </select>
    </div>
    <div class="col-md-6" style="margin-top: 2%">
@@ -259,11 +264,15 @@
   </div>
   <div class="col-md-6" style="margin-top: 2%">
     <label for="" class="control-label">Password</label>
-    <input type="text" name="password" placeholder="Password" class="form-control" required="">
+    <input type="password" name="password" placeholder="Password" class="form-control" required="" id="password1">
   </div>
   <div class="col-md-6" >
     <label for="" class="control-label">Gambar siswa</label>
     <input type="file" name="foto_siswa" placeholder="Gambar Siswa" class="form-control"  onchange="tampilkanPreview(this,'preview')">
+  </div>
+  <div class="col-md-6" style="margin-top: 2%">
+    <label for="" class="control-label">Kosnfirmasi Password</label>
+    <input type="password" name="password" placeholder="Password" class="form-control" required="" id="password2">
   </div>
   <div class="col-md-6 " style="margin-top: 2%">
     <label for="" class="control-label">Preview Foto Profile</label>
@@ -278,7 +287,7 @@
 <!--Modal footer-->
 <div class="modal-footer">
   <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-  <button class="btn btn-primary" type="submit">Simpan</button>
+  <button class="btn btn-primary" id="btnsubmit" type="submit">Simpan</button>
 </div>
 <?= form_close(); ?>
 
@@ -288,8 +297,20 @@
 <!-- end tambah -->
 
 
-
-
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $(btnsubmit).click(function () {
+                var password = $(password1).val();
+                var confirmPassword = $(password2).val();
+                if (password != confirmPassword) {
+                    alert("Password Salah Harap Masukan Ulang Password.");
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 

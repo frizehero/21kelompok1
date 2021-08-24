@@ -69,6 +69,26 @@
                     <div class="panel panel-danger panel-colorful media middle pad-all ">
                     <?php } ?>
 
+                    <?php if ($res->id_jurusan=='8') { ?>
+                    <div class="panel panel-danger panel-colorful media middle pad-all ">
+                    <?php } ?>
+
+                    <?php if ($res->id_jurusan=='9') { ?>
+                    <div class="panel panel-danger panel-colorful media middle pad-all ">
+                    <?php } ?>
+
+                    <?php if ($res->id_jurusan=='10') { ?>
+                    <div class="panel panel-danger panel-colorful media middle pad-all ">
+                    <?php } ?>
+
+                    <?php if ($res->id_jurusan=='11') { ?>
+                    <div class="panel panel-danger panel-colorful media middle pad-all ">
+                    <?php } ?>
+
+                    <?php if ($res->id_jurusan=='12') { ?>
+                    <div class="panel panel-danger panel-colorful media middle pad-all ">
+                    <?php } ?>
+
                     <div class="media-left">
                       <?php if ($res->id_jurusan == '1') { ?>
                         <div class="pad-hor">
