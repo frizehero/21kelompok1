@@ -23,7 +23,8 @@
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
-        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import Siswa</a>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import Tambah</a>
+        <a class="btn btn-warning text-left "   data-toggle="modal" data-target="#demo-default-naik">Import Kenaikan</a>
       </div>
       <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px">
@@ -139,6 +140,47 @@
 <!--===================================================-->
 <!--End page content-->	
 <!-- tambah -->
+
+
+<!-- import -->
+<div class="modal fade" id="demo-default-naik" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!--Modal Update-->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+        <h4 class="modal-title">Udate Kelas Siswa</h4>
+      </div>
+      <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_siswa/importkenaikan/') ?>">
+        <div class="modal-body">
+
+        <div class="panel-body">
+
+          <div class="col-md-6">
+            <label for="" class="control-label">Pilih File</label>
+            <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+          </div>
+
+        </div>
+
+
+      </div>
+
+      <!--Modal footer-->
+      <div class="modal-footer">
+        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+      </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>
+<!-- end import -->
+
+
 
 
 <!-- import -->
