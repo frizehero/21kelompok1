@@ -42,6 +42,7 @@ public function importFile(){
 					$kelas 					= $worksheet->getCellByColumnAndRow(11, $row)->getValue();
 					$agama 					= $worksheet->getCellByColumnAndRow(12, $row)->getValue();
 					$jurusan 				= $worksheet->getCellByColumnAndRow(13, $row)->getValue();
+					$status 				= $worksheet->getCellByColumnAndRow(14, $row)->getValue();
 
 					$tanggal_lahir_siswa 	= \PHPExcel_Style_NumberFormat::toFormattedString($tanggal_lahir, 'YYYY-MM-DD');
 					
@@ -58,6 +59,7 @@ public function importFile(){
 							'id_kelas'				=> $kelas,
 							'id_jurusan'			=> $jurusan,
 							'id_agama'				=> $agama,
+							'status_siswa'			=> $status,
 							'foto_siswa' 			=> "kosong1.png",
 						);
 
@@ -134,6 +136,7 @@ public function importFile(){
 
 					$nis 					= $worksheet->getCellByColumnAndRow(1, $row)->getValue();
 					$kelas 					= $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+					$status 				= $worksheet->getCellByColumnAndRow(7, $row)->getValue();
 
 					if ($nis == NULL) {
 
@@ -141,6 +144,7 @@ public function importFile(){
 
 						$data = array(
 							'id_kelas'				=> $kelas,
+							'status_siswa'			=> $status,
 						);
 
 						$this->db->where('nis',$nis)->update('data_siswa', $data);
