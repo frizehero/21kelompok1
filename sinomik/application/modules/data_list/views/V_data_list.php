@@ -30,8 +30,28 @@
 
       <div class="panel-body">
         <div class="panel-heading">
-          <h4 class="panel-title">List Pelanggaran Hari Ini</h4>
+          <h4 class="panel-title">List Pelanggaran</h4>
         </div>
+        <div class="row pad-btm">
+          <?= form_open_multipart('data_list/index/'); ?>
+          <div style="margin-right: -40px">
+            <div class="col-md-10">
+              <div class="input-daterange input-group" id="datepicker">
+                <input type="date" name="awal" class="form-control">
+                <div class="input-group-addon">to</div>
+                <input type="date" name="akhir" class="form-control" >
+                <!-- <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid"> -->
+
+
+              </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">Cari</button>
+          </div>
+
+          <?= form_close(); ?>
+        </div>
+
         <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
@@ -76,10 +96,30 @@
     </div>
   </div>
   <div class="panel">
-    <div class="panel-heading">
-      <h4 class="panel-title">List treatment Hari Ini</h4>
-    </div>
     <div class="panel-body">
+    <div class="panel-heading">
+      <h4 class="panel-title">List treatment</h4>
+    </div>
+    
+      <div class="row pad-btm">
+        <?= form_open_multipart('data_list/index/'); ?>
+        <div style="margin-right: -40px">
+          <div class="col-md-10">
+            <div class="input-daterange input-group" id="datepicker">
+              <input type="date" name="awl" class="form-control">
+              <div class="input-group-addon">to</div>
+              <input type="date" name="akr" class="form-control" >
+              <!-- <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid"> -->
+
+
+            </div>
+
+          </div>
+          <button type="submit" class="btn btn-primary">Cari</button>
+        </div>
+
+        <?= form_close(); ?>
+      </div>
       <table id="demo-dt-selection" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
           <tr>

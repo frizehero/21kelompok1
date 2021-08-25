@@ -15,11 +15,16 @@ class Data_list extends MX_Controller {
 	// index
 	function index()
 	{
+		$awal						= $this->input->post('awal');
+		$akhir						= $this->input->post('akhir');
+		$awl						= $this->input->post('awl');
+		$akr						= $this->input->post('akr');
+
 		$data = array(
 			'namamodule' 			=> "data_list",
 			'namafileview' 			=> "V_data_list",
-			'tampil'				=> $this->m_data_list->tampil(),
-			'tampil_treatment'		=> $this->m_data_list->tampil_treatment(),
+			'tampil'				=> $this->m_data_list->tampil($awal, $akhir),
+			'tampil_treatment'		=> $this->m_data_list->tampil_treatment($awl, $akr),
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}

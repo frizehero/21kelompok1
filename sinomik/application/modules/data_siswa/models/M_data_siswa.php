@@ -472,6 +472,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_treatment');
 		return $query->result();
@@ -482,6 +485,9 @@ class M_data_siswa extends CI_Model {
 		$carit 	= $this->input->post('caritreatment');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id)
 		->like('nama_treatment',$carit);
 		$query = $this->db->get('data_treatment');
@@ -523,6 +529,9 @@ class M_data_siswa extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran',$carip);
 		$query = $this->db->get('data_pelanggaran');
@@ -534,6 +543,9 @@ class M_data_siswa extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran_kerapian',$carip1);
 		$query = $this->db->get('data_pelanggaran_kerapian');
@@ -545,6 +557,9 @@ class M_data_siswa extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran_berat',$carip2);
 		$query = $this->db->get('data_pelanggaran_berat');
@@ -561,6 +576,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran');
 		return $query->result();
@@ -570,6 +588,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_kerapian');
 		return $query->result();
@@ -579,6 +600,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
@@ -660,6 +684,9 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_prestasi');
 		return $query->result();
@@ -693,6 +720,9 @@ class M_data_siswa extends CI_Model {
 		$carit 	= $this->input->post('cariprestasi');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
+		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
+		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
 		->where('id_siswa',$id)
 		->like('nama_prestasi',$carit);
 		$query = $this->db->get('data_prestasi');

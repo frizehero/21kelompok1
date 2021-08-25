@@ -549,7 +549,7 @@
                              </li>
                          <?php } ?>
 
-                         <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' || $this->uri->segment(1) == 'data_kelas'  ? "active-sub" : ''?>">
+                         <li class=" <?=$this->uri->segment('1') == 'data_siswa' || $this->uri->segment(1) == 'data_guru' ? "active-sub" : ''?>">
                             <a href="">
                              <i class="demo-pli-receipt-4"></i>
                              <span class="menu-title">Data</span>
@@ -557,7 +557,7 @@
                          </a>
                          <ul class="collapse">
                             <li class="<?php if ( $this->uri->segment(1) == 'data_siswa' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_siswa'); ?>">Data Siswa</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li>
+                            <!-- <li class="<?php if ( $this->uri->segment(1) == 'data_kelas' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas'); ?>">Data Kelas</a></li> -->
                             <li class="<?php if ( $this->uri->segment(1) == 'data_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_guru'); ?>">Data User</a></li>
                         </ul>
                     </li>
@@ -579,7 +579,7 @@
                         </ul>
                     </li>
 
-                     <li class=" <?=$this->uri->segment('1') == 'data_laporan' || $this->uri->segment(1) == 'data_list' ? "active-sub" : ''?>">
+                     <li class=" <?=$this->uri->segment('1') == 'data_kelas' || $this->uri->segment(1) == 'data_list' ? "active-sub" : ''?>">
                         <a href="#">
                             <i class="demo-pli-file-html "></i>
                             <span class="menu-title">Laporan</span>
@@ -589,7 +589,7 @@
                         <!--Submenu-->
 
                         <ul class="collapse">
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_laporan' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_laporan'); ?>">Laporan</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas'); ?>">Laporan</a></li>
                             <li class="<?php if ( $this->uri->segment(1) == 'data_list' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_list'); ?>">List</a></li>
                         </ul>
                     </li>
