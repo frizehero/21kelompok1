@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Agu 2021 pada 08.26
+-- Waktu pembuatan: 25 Agu 2021 pada 11.36
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 7.3.26
 
@@ -68,8 +68,7 @@ CREATE TABLE `data_guru` (
 INSERT INTO `data_guru` (`id_guru`, `nama_guru`, `foto_guru`, `nip`, `tgl_lahir_guru`, `alamat_guru`, `jenis_kelamin_guru`, `created_at`) VALUES
 (20, 'admin1', 'file_1623658580.jpg', '3242567', '2021-04-12', 'asefgcd', 'Laki-Laki', '2021-06-14 08:16:21'),
 (21, 'budiman', 'file_1619584356.png', '7362674', '2021-04-14', 'qwedf', 'Laki-Laki', '2021-04-28 04:32:36'),
-(23, 'reza', 'file_1622604820.png', '23567', '2021-06-21', 'tuban', 'Laki-Laki', '2021-06-02 03:33:40'),
-(25, 'kaka', 'file_1629340798.jpg', '1234567', '2021-08-01', 'jakarta', 'Laki-Laki', '2021-08-19 02:39:58');
+(23, 'reza', 'file_1622604820.png', '23567', '2021-06-21', 'tuban', 'Laki-Laki', '2021-06-02 03:33:40');
 
 -- --------------------------------------------------------
 
@@ -89,12 +88,17 @@ CREATE TABLE `data_jurusan` (
 
 INSERT INTO `data_jurusan` (`id_jurusan`, `jurusan`, `create_at`) VALUES
 (1, 'RPL', '2021-03-01 03:51:11'),
-(2, 'TKJ', '2021-03-03 04:07:46'),
-(3, 'TPM', '2021-03-03 04:21:20'),
+(2, 'TKJ 1', '2021-08-24 07:13:06'),
+(3, 'TKJ 2', '2021-08-24 07:13:21'),
 (4, 'TITL', '2021-03-03 04:21:20'),
-(5, 'TIPK', '2021-03-03 04:21:20'),
-(6, 'TB', '2021-03-03 04:21:20'),
-(7, 'TKR', '2021-03-03 04:21:20');
+(5, 'TIPK 1', '2021-08-24 07:14:11'),
+(6, 'TIPK 2', '2021-08-24 07:14:20'),
+(7, 'TKR 1', '2021-08-24 07:12:57'),
+(8, 'TKR 2', '2021-08-24 07:13:44'),
+(9, 'TKR 3', '2021-08-24 07:13:44'),
+(10, 'TB', '2021-08-24 07:14:51'),
+(11, 'TPM 1', '2021-08-24 07:14:51'),
+(12, 'TPM 2', '2021-08-24 07:14:51');
 
 -- --------------------------------------------------------
 
@@ -114,9 +118,9 @@ CREATE TABLE `data_kelas` (
 --
 
 INSERT INTO `data_kelas` (`id_kelas`, `kelas`, `id_jurusan`, `create_at`) VALUES
-(1, 'X', NULL, '2021-04-07 07:17:59'),
-(2, 'XI', NULL, '2021-03-03 04:11:53'),
-(3, 'XII', NULL, '2021-03-03 04:12:00');
+(1, 'X', NULL, '2021-08-24 07:46:25'),
+(2, 'XI', NULL, '2021-08-24 07:46:29'),
+(3, 'XII', NULL, '2021-08-24 07:46:32');
 
 -- --------------------------------------------------------
 
@@ -138,27 +142,7 @@ CREATE TABLE `data_pelanggaran` (
 INSERT INTO `data_pelanggaran` (`id_pelanggaran`, `nama_pelanggaran`, `point`, `create_at`) VALUES
 (9, 'Tidak Membawa Buku Sesuai Jadwal', '2', '2021-08-18 02:45:12'),
 (10, 'Membuat Kegaduhan Dikelas Atau Disekolah', '5', '2021-08-18 02:46:00'),
-(12, 'Memparkir sepedah/motor tidak pada tempatnya', '5', '2021-08-19 04:43:59'),
-(13, 'Menyontek', '10', '2021-08-19 04:44:39'),
-(14, 'Sepeda motor tidak standart dan tidak memakai helm', '10', '2021-08-19 04:44:54'),
-(15, 'Mencoret-coret atau mengotori dinding, pintu, meja, kursi, pagar sekolah', '20', '2021-08-19 04:45:30'),
-(16, 'Membawa atau bermain kartu remi dan domino di sekolah', '20', '2021-08-19 04:46:30'),
-(17, 'Melindungi teman yang bersalah', '20', '2021-08-19 04:49:24'),
-(18, 'Menggunakan handphone tanpa ijin guru waktu KBM', '20', '2021-08-19 04:51:57'),
-(19, 'Berpacaran disekolah', '20', '2021-08-19 04:52:19'),
-(20, 'Merayakan ulang tahun berlebihan', '20', '2021-08-19 04:52:48'),
-(21, 'Membuat surat ijin palsu', '20', '2021-08-19 04:53:13'),
-(22, 'Bermain bola di koridor dan di dalam kelas', '25', '2021-08-19 04:54:01'),
-(23, 'Menyalahgunakan uang SPP atau uang sekolah', '25', '2021-08-19 04:54:48'),
-(24, 'Meloncat jendela dan pagar sekolah', '25', '2021-08-19 04:55:50'),
-(25, 'Membawa atau menyembunyikan petasan', '30', '2021-08-19 04:56:09'),
-(26, 'Merusak sarana dan rasarana sekolah', '50', '2021-08-19 04:56:33'),
-(27, 'Membawa / merokok saat masih mengenakan seragam sekolah', '50', '2021-08-19 04:56:55'),
-(28, 'Mengancam/ mengintimidasi teman sekelas / teman sekolah', '75', '2021-08-19 04:57:20'),
-(29, 'Berperilaku jorok atau asusila baik dalam maupun diluar sekolah', '100', '2021-08-19 04:58:14'),
-(30, 'Bertindak tidak sopan/melecehkan Kepala Sekolah, Guru dan Karyawan Sekolah', '100', '2021-08-19 04:58:59'),
-(31, 'Mengancam/ mengintimidasi Kepala Sekolah, Guru dan Karyawan', '100', '2021-08-19 04:59:46'),
-(32, 'Mengikuti aliran/ perkumpulan / geng terlarang/ komunitas LGBT dan radikalisme', '100', '2021-08-19 05:00:09');
+(11, 'Menyontek', '10', '2021-08-18 02:46:22');
 
 -- --------------------------------------------------------
 
@@ -235,14 +219,15 @@ INSERT INTO `data_prestasi` (`id_prestasi`, `nama_prestasi`, `point`, `create_at
 CREATE TABLE `data_siswa` (
   `id_siswa` int(11) NOT NULL,
   `foto_siswa` varchar(300) DEFAULT NULL,
-  `nis` varchar(12) DEFAULT NULL,
+  `nis` varchar(20) DEFAULT NULL,
   `nama_siswa` varchar(100) DEFAULT NULL,
   `tanggal_lahir_siswa` date DEFAULT NULL,
   `alamat_siswa` varchar(200) DEFAULT NULL,
   `jenis_kelamin_siswa` varchar(10) DEFAULT NULL,
+  `status_siswa` varchar(100) DEFAULT NULL,
   `id_kelas` int(11) DEFAULT NULL,
+  `id_jurusan` int(11) DEFAULT NULL,
   `id_agama` int(11) DEFAULT NULL,
-  `id_jurusan` int(11) NOT NULL,
   `create_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -250,12 +235,13 @@ CREATE TABLE `data_siswa` (
 -- Dumping data untuk tabel `data_siswa`
 --
 
-INSERT INTO `data_siswa` (`id_siswa`, `foto_siswa`, `nis`, `nama_siswa`, `tanggal_lahir_siswa`, `alamat_siswa`, `jenis_kelamin_siswa`, `id_kelas`, `id_agama`, `id_jurusan`, `create_at`) VALUES
-(43, 'kosong1.png', '324523', 'vino', '2021-08-03', 'tby', 'Laki-Laki', 3, 1, 1, '2021-08-16 05:07:31'),
-(44, 'kosong1.png', '086322', 'satria', '2021-08-01', 'tuban', 'Laki-Laki', 1, 1, 1, '2021-08-18 18:27:57'),
-(45, 'file_1629340300.png', '0987643', 'sara aplrilia', '2021-08-01', 'Ds. Sobontoro, kec. Tambakboyo, Kab. Tuban', 'Perempuan', 1, 1, 1, '2021-08-19 02:31:40'),
-(46, 'kosong1.png', '13245678', 'yudi', '2021-08-04', 'tuban', 'Laki-Laki', 1, 1, 1, '2021-08-19 03:10:14'),
-(47, 'kosong1.png', '126731731878', 'yaza', '2021-08-01', 'tuban', 'Laki-Laki', 3, 5, 3, '2021-08-19 05:10:13');
+INSERT INTO `data_siswa` (`id_siswa`, `foto_siswa`, `nis`, `nama_siswa`, `tanggal_lahir_siswa`, `alamat_siswa`, `jenis_kelamin_siswa`, `status_siswa`, `id_kelas`, `id_jurusan`, `id_agama`, `create_at`) VALUES
+(145, 'kosong1.png', '293468714672', 'Ahmad Barjo', '2001-12-31', 'tambakboyo', 'Laki-Laki', NULL, 2, 1, 1, '2021-08-24 07:05:33'),
+(146, 'kosong1.png', '98275r823161', 'vino bin asmodeus', '2002-01-01', 'tambakboyo', 'Perempuan', NULL, 1, 2, 2, '2021-08-24 07:05:35'),
+(147, 'kosong1.png', '245254254', 'wiluyo', '2002-01-02', 'tambakboyo', 'Laki-Laki', NULL, 3, 3, 3, '2021-08-24 07:05:37'),
+(148, 'kosong1.png', '236772625225', 'sugeng rino', '2002-01-03', 'tambakboyo', 'Laki-Laki', NULL, 3, 4, 4, '2021-08-24 07:05:39'),
+(149, 'kosong1.png', '967362437589', 'bandu prayitno', '2002-01-04', 'tambakboyo', 'Laki-Laki', NULL, 2, 5, 5, '2021-08-24 07:05:42'),
+(152, 'kosong1.png', '238973', 'tono', '2021-08-05', 'gresik', 'Laki-Laki', 'Alumni', 3, 4, 1, '2021-08-24 08:04:32');
 
 -- --------------------------------------------------------
 
@@ -304,12 +290,12 @@ CREATE TABLE `data_user` (
 INSERT INTO `data_user` (`id_user`, `username`, `password`, `level`, `id_guru`, `id_siswa`, `create_at`) VALUES
 (21, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', '1', 20, NULL, '2021-06-16 01:37:34'),
 (22, 'guru', 'a1872e333d0e52644f6125da2276530f7ebe5e77', '2', 21, NULL, '2021-05-31 07:25:38'),
-(24, 'mereza', 'ecc9d0b390b82b9ecaf332a4daad37ff77ecb413', '2', 23, NULL, '2021-08-18 03:28:09'),
-(26, 'satria', 'e7a73b1a1bb6328e80305273219a8e048e33de8b', '3', NULL, 44, '2021-08-18 18:27:57'),
-(27, 'sara', 'dea04453c249149b5fc772d9528fe61afaf7441c', '3', NULL, 45, '2021-08-19 02:31:40'),
-(28, 'kaka', '513d74946327c04cb6f0b0190b460dd9821db726', '2', 25, NULL, '2021-08-19 02:39:58'),
-(29, 'yudi', '4a33aa96f303c8690d291da017790ea573086954', '3', NULL, 46, '2021-08-19 03:10:15'),
-(30, 'yaza', '92a5b4635f2a0b0fb5d886c8099126887280bd50', '3', NULL, 47, '2021-08-19 05:10:13');
+(82, 'fw', '8def4372cd160453bb0cf48b1211fe06f9e74f9b', '3', NULL, 145, '2021-08-23 02:04:33'),
+(83, 'er', '78991a547c4f0765c224e8cdc0b7b67b21fe21da', '3', NULL, 146, '2021-08-23 02:04:33'),
+(84, 'ef', 'f822051471957b7bbebb8ab088fe9bd6d14f4261', '3', NULL, 147, '2021-08-23 02:04:33'),
+(85, 'gf', '8eff122bd434b4b3641b6f41d64956af2106169b', '3', NULL, 148, '2021-08-23 02:04:33'),
+(86, 'fe', 'ad45205a471752ff1e17b788c3e52521e319899e', '3', NULL, 149, '2021-08-23 02:04:33'),
+(89, 'tono', 'dea04453c249149b5fc772d9528fe61afaf7441c', '3', NULL, 152, '2021-08-24 07:35:07');
 
 -- --------------------------------------------------------
 
@@ -321,8 +307,8 @@ CREATE TABLE `riwayat_pelanggaran` (
   `id_riwayat_pelanggaran` int(11) NOT NULL,
   `tanggal_pelanggaran` date DEFAULT NULL,
   `keterangan_pelanggaran` text DEFAULT NULL,
-  `id_siswa` int(11) DEFAULT NULL,
   `id_guru` int(11) DEFAULT NULL,
+  `id_siswa` int(11) DEFAULT NULL,
   `id_pelanggaran` int(11) DEFAULT NULL,
   `id_pelanggaran_kerapian` int(11) DEFAULT NULL,
   `id_pelanggaran_berat` int(11) DEFAULT NULL,
@@ -333,18 +319,9 @@ CREATE TABLE `riwayat_pelanggaran` (
 -- Dumping data untuk tabel `riwayat_pelanggaran`
 --
 
-INSERT INTO `riwayat_pelanggaran` (`id_riwayat_pelanggaran`, `tanggal_pelanggaran`, `keterangan_pelanggaran`, `id_siswa`, `id_guru`, `id_pelanggaran`, `id_pelanggaran_kerapian`, `id_pelanggaran_berat`, `create_at`) VALUES
-(65, NULL, 'mabokan', NULL, NULL, NULL, NULL, 1, '2021-05-31 09:44:14'),
-(66, NULL, 'mabokan', NULL, NULL, NULL, NULL, 1, '2021-05-31 09:54:28'),
-(68, NULL, 't', NULL, NULL, NULL, NULL, 1, '2021-05-31 09:58:41'),
-(69, NULL, 'ers', NULL, NULL, NULL, NULL, 1, '2021-06-01 05:07:32'),
-(71, NULL, '', NULL, NULL, NULL, 4, NULL, '2021-06-01 05:09:19'),
-(72, NULL, '', NULL, NULL, NULL, 3, NULL, '2021-06-01 05:13:00'),
-(77, '2021-08-18', 'Rusuh Sendiri Dikelas', 43, NULL, 10, NULL, NULL, '2021-08-18 02:59:29'),
-(78, '2021-08-19', 'sering sekali', 43, NULL, 10, NULL, NULL, '2021-08-18 18:05:33'),
-(79, '2021-08-19', 'sering', 44, 21, 11, NULL, NULL, '2021-08-19 01:57:17'),
-(80, '2021-08-19', 'Menyontek Ketika UTS', 45, NULL, 11, NULL, NULL, '2021-08-19 02:47:17'),
-(81, '2021-08-19', 'Nikah Sirih', 43, 25, NULL, NULL, 7, '2021-08-19 02:54:36');
+INSERT INTO `riwayat_pelanggaran` (`id_riwayat_pelanggaran`, `tanggal_pelanggaran`, `keterangan_pelanggaran`, `id_guru`, `id_siswa`, `id_pelanggaran`, `id_pelanggaran_kerapian`, `id_pelanggaran_berat`, `create_at`) VALUES
+(78, '2021-08-24', '', 21, 152, 9, NULL, NULL, '2021-08-24 08:21:23'),
+(79, '2021-08-25', '', 20, 152, 10, NULL, NULL, '2021-08-25 09:03:00');
 
 -- --------------------------------------------------------
 
@@ -370,9 +347,9 @@ CREATE TABLE `riwayat_treatment` (
 INSERT INTO `riwayat_treatment` (`id_riwayat_treatment`, `tanggal_treatment`, `keterangan_treatment`, `id_siswa`, `id_guru`, `id_treatment`, `id_prestasi`, `create_at`) VALUES
 (49, '2021-08-16', 'mendapat teguran', 43, 20, 8, NULL, '2021-08-16 06:02:45'),
 (51, '2021-08-18', 'Dikarenakan Point Siswa Sudah Tinggi', 43, 23, 13, NULL, '2021-08-18 03:54:08'),
-(52, '2021-08-19', 'Teguran Oleh Guru Jurusan', 45, 20, 8, NULL, '2021-08-19 02:47:47'),
-(53, '2021-08-19', 'Juara 1 LKS', 43, NULL, NULL, 4, '2021-08-19 02:55:15'),
-(54, '2021-08-19', 'LKS juara1', 46, NULL, NULL, 4, '2021-08-19 03:10:33');
+(52, '2021-08-22', '', 124, 20, 8, NULL, '2021-08-22 04:46:11'),
+(53, '2021-08-22', '', 124, NULL, NULL, 3, '2021-08-22 05:21:07'),
+(54, '2021-08-25', '', 149, 20, 10, NULL, '2021-08-25 09:12:59');
 
 -- --------------------------------------------------------
 
@@ -453,6 +430,7 @@ ALTER TABLE `data_prestasi`
 ALTER TABLE `data_siswa`
   ADD PRIMARY KEY (`id_siswa`),
   ADD KEY `id_kelas` (`id_kelas`),
+  ADD KEY `id_jurusan` (`id_jurusan`),
   ADD KEY `id_agama` (`id_agama`);
 
 --
@@ -508,25 +486,25 @@ ALTER TABLE `data_agama`
 -- AUTO_INCREMENT untuk tabel `data_guru`
 --
 ALTER TABLE `data_guru`
-  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_guru` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_jurusan`
 --
 ALTER TABLE `data_jurusan`
-  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_jurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_kelas`
 --
 ALTER TABLE `data_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_pelanggaran`
 --
 ALTER TABLE `data_pelanggaran`
-  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_pelanggaran_berat`
@@ -550,25 +528,25 @@ ALTER TABLE `data_prestasi`
 -- AUTO_INCREMENT untuk tabel `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_treatment`
 --
 ALTER TABLE `data_treatment`
-  MODIFY `id_treatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_treatment` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_pelanggaran`
 --
 ALTER TABLE `riwayat_pelanggaran`
-  MODIFY `id_riwayat_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `id_riwayat_pelanggaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_treatment`
