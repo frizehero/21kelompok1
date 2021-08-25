@@ -51,6 +51,12 @@
 
           <?= form_close(); ?>
         </div>
+              <?= form_open_multipart('data_list/export/'); ?>
+               <button type="submit" class="btn btn-primary">export</button>
+               <?= form_close(); ?>
+        <div>
+
+        </div>
 
         <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
