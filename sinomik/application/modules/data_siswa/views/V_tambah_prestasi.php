@@ -149,7 +149,8 @@
                                     <div class="panel-body">
                                       <input type="hidden" name="id_siswa" value="<?php echo $res->id_siswa ?>">
                                       <input type="hidden" name="id_prestasi" value="<?php echo $res->id_prestasi ?>">
-                                      <input type="hidden" name="tanggal_prestasi" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="tanggal_traetment" value="<?php echo date('y-m-d') ?>">
+                                      <input type="hidden" name="id_guru" value="<?php echo $nama->id_guru ?>">
 
                                       <div><h5>Penjelasan Menu :</h5>
                                         <p></p>

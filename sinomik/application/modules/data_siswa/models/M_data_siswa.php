@@ -153,8 +153,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru','left')
-		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment','left')
+		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru')
+		->join('data_treatment','data_treatment.id_treatment = riwayat_treatment.id_treatment')
 		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();
@@ -177,8 +177,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
-		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran','left')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
+		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -223,8 +223,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
-		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian','left')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
+		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -238,8 +238,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
-		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat','left')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
+		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -831,6 +831,7 @@ class M_data_siswa extends CI_Model {
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_prestasi				= $this->input->post('id_prestasi');
 		$id_siswa 					= $this->input->post('id_siswa');
+		$id_guru 					= $this->input->post('id_guru');
 		
 
 		$this->load->library('upload');
@@ -844,9 +845,9 @@ class M_data_siswa extends CI_Model {
 		
 		$this->upload->initialize($config);
 		
-		if($_FILES['foto_treatment']['name'])
+		if($_FILES['foto_prestasi']['name'])
 		{
-			if ($this->upload->do_upload('foto_treatment'))
+			if ($this->upload->do_upload('foto_prestasi'))
 			{
 				$gbr = $this->upload->data();
 				$data = array(
@@ -854,6 +855,7 @@ class M_data_siswa extends CI_Model {
 					'tanggal_treatment'				=> $tanggal_treatment,
 					'id_prestasi'					=> $id_prestasi,
 					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
 					'foto_prestasi' 				=> $gbr['file_name'],
 					
 					
@@ -898,7 +900,8 @@ class M_data_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
-		->join('data_prestasi','data_prestasi.id_prestasi = riwayat_treatment.id_prestasi','left')
+		->join('data_prestasi','data_prestasi.id_prestasi = riwayat_treatment.id_prestasi')
+		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru')
 		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();

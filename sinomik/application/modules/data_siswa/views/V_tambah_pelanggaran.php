@@ -263,7 +263,7 @@
                                         <textarea type="text" disabled name="nama_pelanggaran"  placeholder="<?= $res->nama_pelanggaran ?>" class="form-control"></textarea>
                                       </div>
                                       <div class="col-md-6">
-                                        <label for="" class="control-label"><b>Point/b></label>
+                                        <label for="" class="control-label"><b>Point</b></label>
                                         <textarea type="text" disabled name="point"  placeholder="<?= $res->point ?>" class="form-control"></textarea>
                                       </div>
                                       <div class="col-md-6">
