@@ -1,27 +1,27 @@
   <!--CONTENT CONTAINER-->
   <!--===================================================-->
   <div id="page-head">
-  	<!--Page Title-->
-  	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  	<div id="page-title">
-  		<h1 class="page-header text-overflow">Data Kelas</h1>
-  	</div>
-  	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  	<!--End page title-->
+    <!--Page Title-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="page-title">
+      <h1 class="page-header text-overflow">Data Kelas</h1>
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End page title-->
 
 
-  	<!--Breadcrumb-->
-  	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  	<ol class="breadcrumb">
-  		<li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
-  		<li><a href="#">Data</a></li>
-  		<li class="active">Data Kelas</li>
-  	</ol>
-  	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-  	<!--End breadcrumb-->
+    <!--Breadcrumb-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <ol class="breadcrumb">
+      <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
+      <li><a href="#">Data</a></li>
+      <li class="active">Data Kelas</li>
+    </ol>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End breadcrumb-->
 
-  	<div class="text-right breadcrumb">
-  		<div id="demo-custom-toolbar5" class="table-toolbar-left">
+    <div class="text-right breadcrumb">
+      <div id="demo-custom-toolbar5" class="table-toolbar-left">
         <a class="btn btn-default text-left form-control" style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">Kembali</a>
       </div>
       <form action="<?php echo site_url('data_kelas/carik/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
@@ -104,12 +104,12 @@
                   $jpelanggaran1          = $this->m_data_kelas->jumlahpelanggaran1($id);
                   $jpelanggaran2          = $this->m_data_kelas->jumlahpelanggaran2($id);
                   $jpelanggaran3          = $this->m_data_kelas->jumlahpelanggaran3($id);
-                  $jumlahpointprestasi   = $this->m_data_kelas->jumlahpointprestasi($id);
+                  $jumlahpointtreatment   = $this->m_data_kelas->jumlahpointtreatment($id);
 
 
                   $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                  $total_prestasi        = $jumlahpointprestasi['point'];
-                  $total_point            = $total_pelanggaran - $total_prestasi;
+                  $total_treatment        = $jumlahpointtreatment['point'];
+                  $total_point            = $total_pelanggaran - $total_treatment;
 
                   echo $total_point;
                   ?>
@@ -136,25 +136,25 @@
 
 <script type="text/javascript">
 
-	function tampilkanPreview(userfile,idpreview)
-	{
-		var gb = userfile.files;
-		for (var i = 0; i < gb.length; i++)
-		{
-			var gbPreview = gb[i];
-			var imageType = /image.*/;
-			var preview=document.getElementById(idpreview);
-			var reader = new FileReader();
-			if (gbPreview.type.match(imageType))
-			{
+  function tampilkanPreview(userfile,idpreview)
+  {
+    var gb = userfile.files;
+    for (var i = 0; i < gb.length; i++)
+    {
+      var gbPreview = gb[i];
+      var imageType = /image.*/;
+      var preview=document.getElementById(idpreview);
+      var reader = new FileReader();
+      if (gbPreview.type.match(imageType))
+      {
       //jika tipe data sesuai
       preview.file = gbPreview;
       reader.onload = (function(element)
       {
-      	return function(e)
-      	{
-      		element.src = e.target.result;
-      	};
+        return function(e)
+        {
+          element.src = e.target.result;
+        };
       })(preview);
       //membaca data URL gambar
       reader.readAsDataURL(gbPreview);
@@ -181,10 +181,10 @@
       preview1.file = gbPreview1;
       reader.onload = (function(element)
       {
-      	return function(e)
-      	{
-      		element.src = e.target.result;
-      	};
+        return function(e)
+        {
+          element.src = e.target.result;
+        };
       })(preview1);
       //membaca data URL gambar
       reader.readAsDataURL(gbPreview1);

@@ -67,7 +67,7 @@ class M_data_kelas extends CI_Model {
 		return $query->num_rows();
 	}
 
-	function jml_siswatkj()
+	function jml_siswatkja()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
@@ -75,8 +75,7 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
-
-	function jml_siswatpm()
+	function jml_siswatkjb()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
@@ -92,7 +91,7 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
-	function jml_siswatipk()
+	function jml_siswatipka()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
@@ -100,7 +99,8 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
-	function jml_siswatb()
+
+	function jml_siswatipkb()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
@@ -108,11 +108,51 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
-	function jml_siswatkr()
+	function jml_siswatkra()
 	{
 		$this->db->select('*')
 		->from('data_siswa')
 		->where('id_jurusan',"7");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatkrb()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"8");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatkrc()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"9");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatb()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"10");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatpma()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"11");
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	function jml_siswatpmb()
+	{
+		$this->db->select('*')
+		->from('data_siswa')
+		->where('id_jurusan',"12");
 		$query = $this->db->get();
 		return $query->num_rows();
 	}
@@ -198,17 +238,6 @@ class M_data_kelas extends CI_Model {
 		$query = $this->db->select_sum("data_treatment.point")
 		->from("data_treatment")
 		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
-		->where("riwayat_treatment.id_siswa",$id);
-		$query = $this->db->get();
-		return $query->row_array();
-	}
-
-	function jumlahpointprestasi($id)
-	{
-		
-		$query = $this->db->select_sum("data_prestasi.point")
-		->from("data_prestasi")
-		->join("riwayat_treatment","data_prestasi.id_prestasi = riwayat_treatment.id_prestasi","left")
 		->where("riwayat_treatment.id_siswa",$id);
 		$query = $this->db->get();
 		return $query->row_array();

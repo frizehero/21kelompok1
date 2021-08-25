@@ -21,18 +21,23 @@ class Data_kelas extends MX_Controller {
 	{
 
 		$data = array(
-			'namamodule' 	=> "data_kelas",
-			'namafileview' 	=> "V_data_kelas",
-			'filter_jur'	=> $this->m_data_kelas->filter_jur(),
-			'filter_kel'	=> $this->m_data_kelas->filter_kel(),
-			'row'			=> $this->m_data_kelas->tampil(),
-			'jml_siswarpl'	=> $this->m_data_kelas->jml_siswarpl(),
-			'jml_siswatkj'	=> $this->m_data_kelas->jml_siswatkj(),
-			'jml_siswatpm'	=> $this->m_data_kelas->jml_siswatpm(),
-			'jml_siswatitl'	=> $this->m_data_kelas->jml_siswatitl(),
-			'jml_siswatipk'	=> $this->m_data_kelas->jml_siswatipk(),
-			'jml_siswatb'	=> $this->m_data_kelas->jml_siswatb(),
-			'jml_siswatkr'	=> $this->m_data_kelas->jml_siswatkr(),
+			'namamodule' 		=> "data_kelas",
+			'namafileview' 		=> "V_data_kelas",
+			'filter_jur'		=> $this->m_data_kelas->filter_jur(),
+			'filter_kel'		=> $this->m_data_kelas->filter_kel(),
+			'row'				=> $this->m_data_kelas->tampil(),
+			'jml_siswarpl'		=> $this->m_data_kelas->jml_siswarpl(),
+			'jml_siswatkja'		=> $this->m_data_kelas->jml_siswatkja(),
+			'jml_siswatkjb'		=> $this->m_data_kelas->jml_siswatkjb(),
+			'jml_siswatitl'		=> $this->m_data_kelas->jml_siswatitl(),
+			'jml_siswatipka'	=> $this->m_data_kelas->jml_siswatipka(),
+			'jml_siswatipkb'	=> $this->m_data_kelas->jml_siswatipkb(),
+			'jml_siswatkra'		=> $this->m_data_kelas->jml_siswatkra(),
+			'jml_siswatkrb'		=> $this->m_data_kelas->jml_siswatkrb(),
+			'jml_siswatkrc'		=> $this->m_data_kelas->jml_siswatkrc(),
+			'jml_siswatb'		=> $this->m_data_kelas->jml_siswatb(),
+			'jml_siswatpma'		=> $this->m_data_kelas->jml_siswatpma(),
+			'jml_siswatpmb'		=> $this->m_data_kelas->jml_siswatpmb(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);
