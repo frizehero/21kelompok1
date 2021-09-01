@@ -61,22 +61,6 @@
             <div class="pad-all text-left">
               <span class="pull-right">- <?php echo $res->point ?> Point</span><br>
               <p><?php echo $res->nama_prestasi ?></p>
-
-              <div class="btn-group btn-group-justified pad-top">
-
-               <span>
-                <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_prestasi?>" class=" btn btn-warning btn-sm">
-                  <span class="fa fa-edit"></span>
-                  &nbsp;Edit
-                </a>
-              </span>
-              <span>
-               <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_prestasi?>" class=" btn btn-danger btn-sm">
-                <span class="fa fa-trash"></span>
-                &nbsp;Hapus
-              </a>
-            </span> 
-          </div>
         </div>
       </div>
     </div> 
