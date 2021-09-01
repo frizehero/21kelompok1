@@ -51,12 +51,23 @@
 
           <?= form_close(); ?>
         </div>
-        <div>
-              <?= form_open_multipart('data_list/export/'); ?>
-               <button type="submit" class="btn btn-primary">export</button>
-               <?= form_close(); ?>
-        
+        <div class="row pad-btm">
+          <?= form_open_multipart('data_list/fpdf/'); ?>
+          <div style="margin-right: -40px">
+            <div class="col-md-10">
+              <div class="input-daterange input-group" id="datepicker" >
+                <input type="hidden" name="awal" class="form-control" value=" <?php echo$awal ?>">
+              
+                <input type="hidden" name="akhir" class="form-control" value=" <?php echo $akhir ?>" >
+                <!-- <input type="hidden" value="<?php echo $tampil_detail['id_siswa']?>" name="idid"> -->
 
+
+              </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary">export</button>
+          </div>
+          <?= form_close(); ?>
         </div>
 
         <table id="demo-dt-basic" class="table table-striped table-bordered" cellspacing="0" width="100%">
