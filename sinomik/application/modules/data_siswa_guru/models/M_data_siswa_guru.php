@@ -828,7 +828,7 @@ class M_data_siswa_guru extends CI_Model {
 	function tambah_prestasi($id)
 	{
 		
-		$Keterangan_treatment		= $this->input->post('Keterangan');
+		$Keterangan_treatment		= $this->input->post('Keterangan_treatment');
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_prestasi				= $this->input->post('id_prestasi');
 		$id_siswa 					= $this->input->post('id_siswa');

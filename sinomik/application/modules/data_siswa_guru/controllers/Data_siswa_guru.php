@@ -178,7 +178,7 @@ public function importFile(){
 	function index()
 	{
 		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_siswa/index'); //site url
+        $config['base_url'] 		= site_url('data_siswa_guru/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_siswa'); //total row
         $config['per_page'] 		= 12;  //show record per halaman
 		$config["uri_segment"] 		= 3;  // uri parameter
@@ -308,8 +308,8 @@ public function importFile(){
 
 
 		$data = array(
-			'namamodule' 					=> "data_siswa",
-			'namafileview' 					=> "V_detail_siswa",
+			'namamodule' 					=> "data_siswa_guru",
+			'namafileview' 					=> "V_detail_siswa_guru",
 			'tampil'						=> $this->m_data_siswa_guru->tampildetail($id),
 			'terbaru'						=> $this->m_data_siswa_guru->pterbaru($id),
 			'tampil_treatment'				=> $this->m_data_siswa_guru->tampilriwayat_treatment($id),
@@ -367,7 +367,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
-			'namafileview' 	=> "V_tambah_treatment",
+			'namafileview' 	=> "V_tambah_treatment_guru",
 			'tampil'		=> $this->m_data_siswa_guru->tampiltreatment($id),
 			'id'			=> $id,
 			'total_point'	=> $total_pelanggaran - $total_treatment,
@@ -391,7 +391,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
-			'namafileview' 	=> "V_cari_treatment",
+			'namafileview' 	=> "V_cari_treatment_guru",
 			'tampil'		=> $this->m_data_siswa_guru->caritreatment($carit,$id),
 			'tampilt'		=> $this->m_data_siswa_guru->tampiltreatment($id),
 			'id'			=> $id,
@@ -429,7 +429,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 			=> "data_siswa_guru",
-			'namafileview' 			=> "V_tambah_pelanggaran",
+			'namafileview' 			=> "V_tambah_pelanggaran_guru",
 			'tampil'				=> $this->m_data_siswa_guru->tampilpelanggaran($id),
 			'tampil1'				=> $this->m_data_siswa_guru->tampil1($id),
 			'tampil2'				=> $this->m_data_siswa_guru->tampil2($id),
@@ -454,7 +454,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 					=> "data_siswa_guru",
-			'namafileview' 					=> "caripelanggaran",
+			'namafileview' 					=> "caripelanggaran_guru",
 			'tampil'						=> $this->m_data_siswa_guru->caripelanggaran($carip,$id),
 			'tampilp'						=> $this->m_data_siswa_guru->tampilpelanggaran($id),
 			'tampil1'						=> $this->m_data_siswa_guru->caripelanggaran1($carip1,$id),
@@ -498,7 +498,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
-			'namafileview' 	=> "V_tambah_prestasi",
+			'namafileview' 	=> "V_tambah_prestasi_guru",
 			'tampil'		=> $this->m_data_siswa_guru->tampilprestasi($id),
 			'id'			=> $id,
 			'total_point'	=> $total_pelanggaran - $total_treatment,
@@ -526,7 +526,7 @@ public function importFile(){
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
-			'namafileview' 	=> "V_cari_prestasi",
+			'namafileview' 	=> "V_cari_prestasi_guru",
 			'tampil'		=> $this->m_data_siswa_guru->cariprestasi($carit,$id),
 			'tampilp'		=> $this->m_data_siswa_guru->tampilprestasi($id),
 			'id'			=> $id,

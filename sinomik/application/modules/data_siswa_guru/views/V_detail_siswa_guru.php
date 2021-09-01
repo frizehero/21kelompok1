@@ -126,9 +126,9 @@
               <p><b>NIS : </b><?php echo $res->nis?></p>
             </div><hr>
             <div class="text-center">
-              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
-              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
-              <p width="50"><a class="btn btn-sm bg-primary" href="<?php echo base_url('data_siswa/prestasi/'.$res->id_siswa); ?>">Tambah Prestasi Siswa</a></p>
+              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa_guru/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
+              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa_guru/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
+              <p width="50"><a class="btn btn-sm bg-primary" href="<?php echo base_url('data_siswa_guru/prestasi/'.$res->id_siswa); ?>">Tambah Prestasi Siswa</a></p>
             </div>
             <hr>
 
@@ -203,14 +203,6 @@
                       <p class="mar-no">Point</p>
                     </div>
                   </div>
-                </div>
-                <div class="text-right">
-                  <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>" class="btn btn-sm btn-danger">
-                    <span class="fa fa-trash"></span>
-                  &nbsp;Hapus</a>
-                  <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
-                    <span class="fa fa-edit"></span>
-                  &nbsp;Edit</a>
                 </div>
                 <br><br><br>
 
