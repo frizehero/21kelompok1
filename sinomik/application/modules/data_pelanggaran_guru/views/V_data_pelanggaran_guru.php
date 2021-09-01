@@ -22,6 +22,7 @@
     <!--End breadcrumb-->
 
     <div class="text-right breadcrumb">
+     
       <form action="<?php echo site_url('data_pelanggaran_guru/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px"s>
           <?php if($this->uri->segment(2) != 'cari'){?>
@@ -49,13 +50,13 @@
   <div class="tab-base">
     <ul class="nav nav-tabs tabs-right">
       <li class="active">
-        <a href="<?php echo base_url('data_pelanggaran_guru/index/'); ?>">Etika</a>
+        <a href="<?php echo base_url('data_pelanggaran_guru/index/'); ?>">Sikap Perilaku</a>
       </li>
       <li>
         <a href="<?php echo base_url('data_pelanggaran_guru/tampil1/'); ?>">Kerapian</a>
       </li>
       <li>
-        <a  href="<?php echo base_url('data_pelanggaran_guru/tampil2/'); ?>">Pelanggaran Berat</a>
+        <a  href="<?php echo base_url('data_pelanggaran_guru/tampil2/'); ?>">Kerajinan</a>
       </li>
     </ul>
     <div class="tab-content">
@@ -72,7 +73,7 @@
 
                 <!--Profile Widget-->
                 <!--===================================================-->
-                <div class="panel panel-info panel-colorful" style="height: 150px ">
+                <div class="panel panel-info panel-colorful" style="height: 200px ">
                   <div class="pad-all text-left"><br>
                     <span class="pull-right">+ <?php echo $res->point ?> point</span><br>
                     <p><?php echo $res->nama_pelanggaran ?></p>
@@ -88,7 +89,7 @@
                   <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                   <h4 class="modal-title">Update</h4>
                 </div>
-                <?= form_open_multipart('data_pelanggaran/edit'); ?>
+                <?= form_open_multipart('data_pelanggaran_guru/edit'); ?>
                 <input type="hidden" name="id_pelanggaran" value="<?php echo $res->id_pelanggaran?>">
 
                 <!--Modal body--> 
@@ -145,7 +146,7 @@
                 <!--Modal footer-->
                 <div class="modal-footer">
                   <button data-dismiss="modal" class="btn btn-default" type="button">Batal</button>
-                  <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran/hapus/'. $res->id_pelanggaran) ?>">Hapus pelanggaran</a>
+                  <a class="btn btn-danger" href="<?php echo base_url('data_pelanggaran_guru/hapus/'. $res->id_pelanggaran) ?>">Hapus pelanggaran</a>
                 </div>
               </div>
             </div>
@@ -160,6 +161,8 @@
 
 </div>
 
+
+
 <!-- tambah -->
 <div class="modal fade" id="demo-default-tambah" role="dialog" tabindex="-1" aria-labelledby="demo-default-modal" aria-hidden="true">
   <div class="modal-dialog">
@@ -171,7 +174,7 @@
         <h4 class="modal-title">Tambah</h4>
       </div>
 
-      <?= form_open_multipart('data_pelanggaran/tambah'); ?>
+      <?= form_open_multipart('data_pelanggaran_guru/tambah'); ?>
       <!--Modal body--> 
       <div class="modal-body">
 
