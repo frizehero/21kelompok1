@@ -29,6 +29,16 @@ class Data_list extends MX_Controller {
 		echo Modules::run('template/tampilCore', $data);
 	}
 
+  public function export(){
+    // Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excel
+    header("Content-type: application/vnd-ms-excel");
+    header("Content-Disposition: attachment; filename=Data_Siswa.xls");
+    
+    // $data['data_siswa'] = $this->m_data_list->tampil();
+    // $this->load->model('tampil', $data);
+  }
+
+
 	// public function export(){
  //    // Load plugin PHPExcel nya
  //    include APPPATH.'third_party/PHPExcel.php';
