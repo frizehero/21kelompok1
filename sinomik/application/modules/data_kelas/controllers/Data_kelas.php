@@ -38,6 +38,18 @@ class Data_kelas extends MX_Controller {
 			'jml_siswatb'		=> $this->m_data_kelas->jml_siswatb(),
 			'jml_siswatpma'		=> $this->m_data_kelas->jml_siswatpma(),
 			'jml_siswatpmb'		=> $this->m_data_kelas->jml_siswatpmb(),
+			'januari'			=> $this->m_data_kelas->januari(),
+			'februari'			=> $this->m_data_kelas->februari(),
+			'maret'				=> $this->m_data_kelas->maret(),
+			'april'				=> $this->m_data_kelas->april(),
+			'mei'				=> $this->m_data_kelas->mei(),
+			'juni'				=> $this->m_data_kelas->juni(),
+			'juli'				=> $this->m_data_kelas->juli(),
+			'agustus'			=> $this->m_data_kelas->agustus(),
+			'september'			=> $this->m_data_kelas->september(),
+			'oktober'			=> $this->m_data_kelas->oktober(),
+			'november'			=> $this->m_data_kelas->november(),
+			'desember'			=> $this->m_data_kelas->desember(),
 
 		);
 		echo Modules::run('template/tampilCore', $data);

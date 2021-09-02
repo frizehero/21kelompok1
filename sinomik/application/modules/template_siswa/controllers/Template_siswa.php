@@ -35,4 +35,9 @@ class Template_siswa extends MX_Controller {
 		$this->load->view('view_template_core_siswa',$data);
 	}
 
+	// public function tampil_data_login()
+	// {
+	// 	$this->load->model('m_template/tampil_pengguna_kesiswaan');
+	// }
+
 }

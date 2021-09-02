@@ -9,9 +9,9 @@ class M_template_siswa extends CI_Model {
 	}
 	public function tampil_pengguna_kesiswaan($username){
 
-		$query = "SELECT username FROM tb_login where username='$username' AND status='1'";
+		$query = "SELECT username FROM data_user where username='$username' AND status='1'";
 		$result = $this->db->query($query);
-		$nama = '';
+		$nama = 'username';
 
 		foreach($result->result_array() as $row)
 		{
@@ -25,7 +25,7 @@ class M_template_siswa extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_user')
-		->join('data_siswa','data_siswa.id_siswa = data_siswa.id_siswa')
+		->join('data_siswa','data_siswa.id_siswa = data_user.id_siswa')
 		->where('id_user',$id);
 		$query = $this->db->get();
 		return $query->row();

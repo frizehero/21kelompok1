@@ -64,7 +64,7 @@ class Login extends MX_Controller {
 			}
 			elseif ($getData->level==3)
 			{
-				redirect('siswa');
+				redirect('nyoba');
 			}
 			
 
