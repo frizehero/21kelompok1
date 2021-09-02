@@ -9,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BK 2021 - Admin</title>
+    <title>SINOMIK - Admin</title>
 
 
     <!--STYLESHEET-->
     <!--=================================================-->
 
     <!--Open Sans Font [ OPTIONAL ]-->
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -154,7 +155,7 @@
                     <a href="#" class="navbar-brand">
                         <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
                         <div class="brand-title">
-                            <span class="brand-text">BK - ADMIN</span>
+                            <span class="brand-text">SINOMIK</span>
                         </div>
                     </a>
                 </div>

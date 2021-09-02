@@ -9,14 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>BK 2021 - Siswa</title>
+    <title>SINOMIK - Siswa</title>
 
 
     <!--STYLESHEET-->
     <!--=================================================-->
 
     <!--Open Sans Font [ OPTIONAL ]-->
+    <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
 
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
@@ -145,297 +153,297 @@
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="#" class="navbar-brand">
-                       <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
-                       <div class="brand-title">
-                        <span class="brand-text">BK - SISWA</span>
-                    </div>
-                </a>
+                        <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text">SINOMIK</span>
+                        </div>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content">
+                    <ul class="nav navbar-top-links">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="demo-pli-list-view"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+
+
+                    </ul>
+                    <ul class="nav navbar-top-links">
+
+
+
+
+
+
+
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="ic-user pull-right">
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <!--You can use an image instead of an icon.-->
+                                    <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <i class="demo-pli-male"></i>
+                                </span>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--You can also display a user name in the navbar.-->
+                                <!--<div class="username hidden-xs">Aaron Chavez</div>-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
+                                <ul class="head-list">
+
+                                    <li>
+                                        <a href="<?php echo base_url('login/logoutApp') ?>"><i class="demo-pli-unlock icon-lg icon-fw"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
             </div>
-            <!--================================-->
-            <!--End brand logo & name-->
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="content-container">
 
 
-            <!--Navbar Dropdown-->
-            <!--================================-->
-            <div class="navbar-content">
-                <ul class="nav navbar-top-links">
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content">
 
-                    <!--Navigation toogle button-->
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <li class="tgl-menu-btn">
-                        <a class="mainnav-toggle" href="#">
-                            <i class="demo-pli-list-view"></i>
-                        </a>
-                    </li>
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <!--End Navigation toogle button-->
+                    <?php
+                    $this->load->view($namamodule .'/'.$namafileview);
+                    ?>
 
+                </div>
+                <!--===================================================-->
+                <!--End page content-->
 
-
-
-
-                </ul>
-                <ul class="nav navbar-top-links">
-
-
-
-
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
 
 
 
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
 
-
-
-                    <!--User dropdown-->
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <li id="dropdown-user" class="dropdown">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
-                            <span class="ic-user pull-right">
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <!--You can use an image instead of an icon.-->
-                                <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
-                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                                <i class="demo-pli-male"></i>
-                            </span>
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <!--You can also display a user name in the navbar.-->
-                            <!--<div class="username hidden-xs">Aaron Chavez</div>-->
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        </a>
-
-
-                        <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
-                            <ul class="head-list">
-
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active">
+                                    <a href="#demo-asd-tab-1" data-toggle="tab">
+                                        <i class="demo-pli-speech-bubble-7 icon-lg"></i>
+                                    </a>
+                                </li>
                                 <li>
-                                    <a href="<?php echo base_url('login/logoutApp') ?>"><i class="demo-pli-unlock icon-lg icon-fw"></i> Logout</a>
+                                    <a href="#demo-asd-tab-2" data-toggle="tab">
+                                        <i class="demo-pli-information icon-lg icon-fw"></i> Report
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-3" data-toggle="tab">
+                                        <i class="demo-pli-wrench icon-lg icon-fw"></i> Settings
+                                    </a>
                                 </li>
                             </ul>
-                        </div>
-                    </li>
-                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                    <!--End user dropdown-->
+                            <!--================================-->
+                            <!--End nav tabs-->
 
 
 
-                </ul>
-            </div>
-            <!--================================-->
-            <!--End Navbar Dropdown-->
-
-        </div>
-    </header>
-    <!--===================================================-->
-    <!--END NAVBAR-->
-
-    <div class="boxed">
-
-        <!--CONTENT CONTAINER-->
-        <!--===================================================-->
-        <div id="content-container">
-
-
-            <!--Page content-->
-            <!--===================================================-->
-            <div id="page-content">
-
-                <?php
-                $this->load->view($namamodule .'/'.$namafileview);
-                ?>
-
-            </div>
-            <!--===================================================-->
-            <!--End page content-->
-
-        </div>
-        <!--===================================================-->
-        <!--END CONTENT CONTAINER-->
+                            <!-- Tabs Content -->
+                            <!--================================-->
+                            <div class="tab-content">
 
 
 
-        <!--ASIDE-->
-        <!--===================================================-->
-        <aside id="aside-container">
-            <div id="aside">
-                <div class="nano">
-                    <div class="nano-content">
+                                <!--Second tab (Custom layout)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade" id="demo-asd-tab-2">
 
-                        <!--Nav tabs-->
-                        <!--================================-->
-                        <ul class="nav nav-tabs nav-justified">
-                            <li class="active">
-                                <a href="#demo-asd-tab-1" data-toggle="tab">
-                                    <i class="demo-pli-speech-bubble-7 icon-lg"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#demo-asd-tab-2" data-toggle="tab">
-                                    <i class="demo-pli-information icon-lg icon-fw"></i> Report
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#demo-asd-tab-3" data-toggle="tab">
-                                    <i class="demo-pli-wrench icon-lg icon-fw"></i> Settings
-                                </a>
-                            </li>
-                        </ul>
-                        <!--================================-->
-                        <!--End nav tabs-->
-
-
-
-                        <!-- Tabs Content -->
-                        <!--================================-->
-                        <div class="tab-content">
-
-
-
-                            <!--Second tab (Custom layout)-->
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <div class="tab-pane fade" id="demo-asd-tab-2">
-
-                                <!--Monthly billing-->
-                                <div class="pad-all">
-                                    <p class="pad-ver text-main text-sm text-uppercase text-bold">Billing &amp; reports</p>
-                                    <p>Get <strong class="text-main">$5.00</strong> off your next bill by making sure your full payment reaches us before August 5, 2018.</p>
-                                </div>
-                                <hr class="new-section-xs">
-                                <div class="pad-all">
-                                    <span class="pad-ver text-main text-sm text-uppercase text-bold">Amount Due On</span>
-                                    <p class="text-sm">August 17, 2018</p>
-                                    <p class="text-2x text-thin text-main">$83.09</p>
-                                    <button class="btn btn-block btn-success mar-top">Pay Now</button>
-                                </div>
-
-
-                                <hr>
-
-                                <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
-
-                                <!--Simple Menu-->
-                                <div class="list-group bg-trans">
-                                    <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i> Service Information</a>
-                                    <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i> Usage Profile</a>
-                                    <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
-                                    <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i> Message Center</a>
-                                </div>
-
-
-                                <hr>
-
-                                <div class="text-center">
-                                    <div><i class="demo-pli-old-telephone icon-3x"></i></div>
-                                    Questions?
-                                    <p class="text-lg text-semibold text-main"> (415) 234-53454 </p>
-                                    <small><em>We are here 24/7</em></small>
-                                </div>
-                            </div>
-                            <!--End second tab (Custom layout)-->
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
-
-                            <!--Third tab (Settings)-->
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <div class="tab-pane fade" id="demo-asd-tab-3">
-                                <ul class="list-group bg-trans">
-                                    <li class="pad-top list-header">
-                                        <p class="text-main text-sm text-uppercase text-bold mar-no">Account Settings</p>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-1" type="checkbox" checked>
-                                            <label for="demo-switch-1"></label>
-                                        </div>
-                                        <p class="mar-no text-main">Show my personal status</p>
-                                        <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-2" type="checkbox" checked>
-                                            <label for="demo-switch-2"></label>
-                                        </div>
-                                        <p class="mar-no text-main">Show offline contact</p>
-                                        <small class="text-muted">Aenean commodo ligula eget dolor. Aenean massa.</small>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-3" type="checkbox">
-                                            <label for="demo-switch-3"></label>
-                                        </div>
-                                        <p class="mar-no text-main">Invisible mode </p>
-                                        <small class="text-muted">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </small>
-                                    </li>
-                                </ul>
-
-
-                                <hr>
-
-                                <ul class="list-group pad-btm bg-trans">
-                                    <li class="list-header"><p class="text-main text-sm text-uppercase text-bold mar-no">Public Settings</p></li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-4" type="checkbox" checked>
-                                            <label for="demo-switch-4"></label>
-                                        </div>
-                                        Online status
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-5" type="checkbox" checked>
-                                            <label for="demo-switch-5"></label>
-                                        </div>
-                                        Show offline contact
-                                    </li>
-                                    <li class="list-group-item">
-                                        <div class="pull-right">
-                                            <input class="toggle-switch" id="demo-switch-6" type="checkbox" checked>
-                                            <label for="demo-switch-6"></label>
-                                        </div>
-                                        Show my device icon
-                                    </li>
-                                </ul>
-
-
-
-                                <hr>
-
-                                <p class="pad-hor text-main text-sm text-uppercase text-bold mar-no">Task Progress</p>
-                                <div class="pad-all">
-                                    <p class="text-main">Upgrade Progress</p>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar progress-bar-success" style="width: 15%;"><span class="sr-only">15%</span></div>
+                                    <!--Monthly billing-->
+                                    <div class="pad-all">
+                                        <p class="pad-ver text-main text-sm text-uppercase text-bold">Billing &amp; reports</p>
+                                        <p>Get <strong class="text-main">$5.00</strong> off your next bill by making sure your full payment reaches us before August 5, 2018.</p>
                                     </div>
-                                    <small>15% Completed</small>
-                                </div>
-                                <div class="pad-hor">
-                                    <p class="text-main">Database</p>
-                                    <div class="progress progress-sm">
-                                        <div class="progress-bar progress-bar-danger" style="width: 75%;"><span class="sr-only">75%</span></div>
+                                    <hr class="new-section-xs">
+                                    <div class="pad-all">
+                                        <span class="pad-ver text-main text-sm text-uppercase text-bold">Amount Due On</span>
+                                        <p class="text-sm">August 17, 2018</p>
+                                        <p class="text-2x text-thin text-main">$83.09</p>
+                                        <button class="btn btn-block btn-success mar-top">Pay Now</button>
                                     </div>
-                                    <small>17/23 Database</small>
+
+
+                                    <hr>
+
+                                    <p class="pad-all text-main text-sm text-uppercase text-bold">Additional Actions</p>
+
+                                    <!--Simple Menu-->
+                                    <div class="list-group bg-trans">
+                                        <a href="#" class="list-group-item"><i class="demo-pli-information icon-lg icon-fw"></i> Service Information</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-mine icon-lg icon-fw"></i> Usage Profile</a>
+                                        <a href="#" class="list-group-item"><span class="label label-info pull-right">New</span><i class="demo-pli-credit-card-2 icon-lg icon-fw"></i> Payment Options</a>
+                                        <a href="#" class="list-group-item"><i class="demo-pli-support icon-lg icon-fw"></i> Message Center</a>
+                                    </div>
+
+
+                                    <hr>
+
+                                    <div class="text-center">
+                                        <div><i class="demo-pli-old-telephone icon-3x"></i></div>
+                                        Questions?
+                                        <p class="text-lg text-semibold text-main"> (415) 234-53454 </p>
+                                        <small><em>We are here 24/7</em></small>
+                                    </div>
                                 </div>
+                                <!--End second tab (Custom layout)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+
+                                <!--Third tab (Settings)-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <div class="tab-pane fade" id="demo-asd-tab-3">
+                                    <ul class="list-group bg-trans">
+                                        <li class="pad-top list-header">
+                                            <p class="text-main text-sm text-uppercase text-bold mar-no">Account Settings</p>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-1" type="checkbox" checked>
+                                                <label for="demo-switch-1"></label>
+                                            </div>
+                                            <p class="mar-no text-main">Show my personal status</p>
+                                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</small>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-2" type="checkbox" checked>
+                                                <label for="demo-switch-2"></label>
+                                            </div>
+                                            <p class="mar-no text-main">Show offline contact</p>
+                                            <small class="text-muted">Aenean commodo ligula eget dolor. Aenean massa.</small>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-3" type="checkbox">
+                                                <label for="demo-switch-3"></label>
+                                            </div>
+                                            <p class="mar-no text-main">Invisible mode </p>
+                                            <small class="text-muted">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </small>
+                                        </li>
+                                    </ul>
+
+
+                                    <hr>
+
+                                    <ul class="list-group pad-btm bg-trans">
+                                        <li class="list-header"><p class="text-main text-sm text-uppercase text-bold mar-no">Public Settings</p></li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-4" type="checkbox" checked>
+                                                <label for="demo-switch-4"></label>
+                                            </div>
+                                            Online status
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-5" type="checkbox" checked>
+                                                <label for="demo-switch-5"></label>
+                                            </div>
+                                            Show offline contact
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="pull-right">
+                                                <input class="toggle-switch" id="demo-switch-6" type="checkbox" checked>
+                                                <label for="demo-switch-6"></label>
+                                            </div>
+                                            Show my device icon
+                                        </li>
+                                    </ul>
+
+
+
+                                    <hr>
+
+                                    <p class="pad-hor text-main text-sm text-uppercase text-bold mar-no">Task Progress</p>
+                                    <div class="pad-all">
+                                        <p class="text-main">Upgrade Progress</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 15%;"><span class="sr-only">15%</span></div>
+                                        </div>
+                                        <small>15% Completed</small>
+                                    </div>
+                                    <div class="pad-hor">
+                                        <p class="text-main">Database</p>
+                                        <div class="progress progress-sm">
+                                            <div class="progress-bar progress-bar-danger" style="width: 75%;"><span class="sr-only">75%</span></div>
+                                        </div>
+                                        <small>17/23 Database</small>
+                                    </div>
+
+                                </div>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--Third tab (Settings)-->
 
                             </div>
-                            <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                            <!--Third tab (Settings)-->
-
                         </div>
                     </div>
                 </div>
-            </div>
-        </aside>
-        <!--===================================================-->
-        <!--END ASIDE-->
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
 
 
-        <!--MAIN NAVIGATION-->
-        <!--===================================================-->
-        <nav id="mainnav-container">
-            <div id="mainnav">
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
 
 
-                <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
-                <!--It will only appear on small screen devices.-->
+                    <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+                    <!--It will only appear on small screen devices.-->
                     <!--================================
                     <div class="mainnav-brand">
                         <a href="index.html" class="brand">
@@ -524,27 +532,25 @@
                         <ul id="mainnav-menu" class="list-group">
                             <li class="list-header">MENU</li>
 
-                            <?php if($this->uri->segment('1') == 'siswa'){ ?>
+                            <?php if($this->uri->segment('1') == 'nyoba'){ ?>
                                 <li class="active-sub">
-                                    <a href="<?php echo base_url('siswa'); ?>">
+                                    <a href="<?php echo base_url('nyoba'); ?>">
                                         <i class="demo-pli-home"></i>
-                                        <span class="menu-title">Beranda</span>
+                                        <span class="menu-title">Detail</span>
                                     </a>
                                     <!--Submenu-->
                                 </li>
                             <?php } else{ ?>
                                 <li>
-                                    <a href="<?php echo base_url('siswa'); ?>">
+                                    <a href="<?php echo base_url('nyoba'); ?>">
                                      <i class="demo-pli-home"></i>
-                                     <span class="menu-title">Beranda</span>
+                                     <span class="menu-title">Detail</span>
                                  </a>
                                  <!--Submenu-->
                              </li>
-                            <?php } ?>
+                         <?php } ?>
 
-
-
-                        </ul>
+                </ul>
 
 
                 <!--Widget-->

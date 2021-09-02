@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_treatment_guru extends MX_Controller {
 
-  function __construct()
+    function __construct()
     {
         parent::__construct();
         // model
@@ -112,6 +112,85 @@ class Data_treatment_guru extends MX_Controller {
         
         echo Modules::run('template_guru/tampilCore', $data);
     }
+
+    // import excel
+     public function importFile(){
+
+      if ($this->input->post('submit')) {
+
+        $path = 'assets/';
+        require_once APPPATH . "/third_party/PHPExcel.php";
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'xlsx|xls|csv';
+        $config['remove_spaces'] = TRUE;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);            
+        if (!$this->upload->do_upload('uploadFile')) {
+            $error = array('error' => $this->upload->display_errors());
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+        }
+        if(empty($error)){
+          if (!empty($data['upload_data']['file_name'])) {
+            $import_xls_file = $data['upload_data']['file_name'];
+        } else {
+            $import_xls_file = 0;
+        }
+        $inputFileName = $path . $import_xls_file;
+
+        try {
+            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+            $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+            $flag = true;
+            $i=0;
+            foreach ($allDataInSheet as $value) {
+              if($flag){
+                $flag =false;
+                continue;
+            }
+            $inserdata[$i]['nama_treatment'] = $value['B'];
+            $i++;
+        }               
+        $result = $this->m_data_treatment_guru->importData($inserdata);   
+        if($result){
+          redirect('data_treatment');
+      }else{
+          echo "ERROR !";
+      }             
+      
+  } catch (Exception $e) {
+     die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+        . '": ' .$e->getMessage());
+ }
+}else{
+  echo $error['error'];
+}
+
+
+}
+
+}
+// end import
+
+    function tambah()
+    {
+      $this->m_data_treatment_guru->tambah();
+      redirect('data_treatment');
+  }
+
+  function edit()
+  {
+      $this->m_data_treatment_guru->edit();
+      redirect('data_treatment');
+  }
+
+  function hapus($id)
+  {
+      $this->m_data_treatment_guru->hapus($id);
+      redirect('data_treatment');
+  }
 
 
 

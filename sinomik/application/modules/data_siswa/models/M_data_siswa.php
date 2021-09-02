@@ -648,6 +648,7 @@ class M_data_siswa extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$foto_pelanggaran			= $this->input->post('foto_pelanggaran');
 		$id_pelanggaran				= $this->input->post('id_pelanggaran');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
@@ -703,6 +704,7 @@ class M_data_siswa extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$foto_pelanggaran			= $this->input->post('foto_pelanggaran');
 		$id_pelanggaran_kerapian	= $this->input->post('id_pelanggaran_kerapian');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
@@ -758,6 +760,7 @@ class M_data_siswa extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
+		$foto_pelanggaran			= $this->input->post('foto_pelanggaran');
 		$id_pelanggaran_berat		= $this->input->post('id_pelanggaran_berat');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');

@@ -101,3 +101,56 @@
 </div>
 
 </div>
+
+
+<div class="panel-body">
+
+
+  <div  class="panel">
+    <div class="panel-heading">
+      <h3 class="panel-title">Pelanggaran Dalam 1 Bulan</h3>
+  </div>
+
+  <div>
+      <canvas id="yo" style="width:100%;max-width:1200px"></canvas>
+
+      <script>
+        var yValues = [
+        <?php echo $januari; ?>,
+        <?php echo $februari; ?>,
+        <?php echo $maret; ?>,
+        <?php echo $april; ?>,
+        <?php echo $mei; ?>,
+        <?php echo $juni; ?>,
+        <?php echo $juli; ?>,
+        <?php echo $agustus; ?>,
+        <?php echo $september; ?>,
+        <?php echo $oktober; ?>,
+        <?php echo $november; ?>,
+        <?php echo $desember; ?>
+        ];
+        var xValues = ["January","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+
+        new Chart("yo", {
+          type: "line",
+          data: {
+            labels: xValues,
+            datasets: [{
+              fill: false,
+              lineTension: 0,
+              backgroundColor: "rgba(0,0,255,1.0)",
+              borderColor: "rgba(0,0,255,0.1)",
+              data: yValues
+          }]
+      },
+      options: {
+        legend: {display: false},
+    }
+});
+</script>
+</div>
+
+</div>
+</div>
+
+

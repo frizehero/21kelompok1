@@ -3,30 +3,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_pelanggaran_guru extends MX_Controller {
 
-	function __construct()
-	{
-		parent::__construct();
-		// model
-		 $this->load->model('m_data_pelanggaran_guru');
-		 $this->load->model('login/m_session');
-		 $this->load->library('pagination');
-		 $this->load->library('session');
-	}
+    function __construct()
+    {
+        parent::__construct();
+        // model
+       $this->load->model('m_data_pelanggaran_guru');
+       $this->load->model('login/m_session');
+       $this->load->library('pagination');
+       $this->load->library('session');
+   }
 
-	
-	// index
-	function index()
-	{
-		//konfigurasi pagination
-        $config['base_url'] 		= site_url('Data_pelanggaran_guru/index'); //site url
-        $config['total_rows'] 		= $this->db->count_all('data_pelanggaran'); //total row
-        $config['per_page'] 		= 2;  //show record per halaman
-		$config["uri_segment"] 		= 3;  // uri parameter
+
+    // index
+   function index()
+   {
+        //konfigurasi pagination
+        $config['base_url']         = site_url('data_pelanggaran_guru/index'); //site url
+        $config['total_rows']       = $this->db->count_all('data_pelanggaran'); //total row
+        $config['per_page']         = 2;  //show record per halaman
+        $config["uri_segment"]      = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"]		= floor($choice);
+        $config["num_links"]        = floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -45,21 +45,21 @@ class Data_pelanggaran_guru extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran_guru",
-			'namafileview' 	=> "V_data_pelanggaran_guru",
-			'row'			=> $this->m_data_pelanggaran_guru->tampil($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule'     => "data_pelanggaran_guru",
+           'namafileview'   => "V_data_pelanggaran_guru",
+           'row'            => $this->m_data_pelanggaran_guru->tampil($config["per_page"], $data['page']),
+           'pagination'     => $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template_guru/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template_guru/tampilCore', $data);
+    }
 
-	function cariku()
+    function cariku()
     {
 
         $nyari = $this->input->post("cari");
@@ -111,18 +111,18 @@ class Data_pelanggaran_guru extends MX_Controller {
         echo Modules::run('template_guru/tampilCore', $data);
     }
 
-	function tampil1()
-	{
-		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_pelanggaran_kerapian_guru/tampil1'); //site url
-        $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_kerapian'); //total row
-        $config['per_page'] 		= 2;  //show record per halaman
-		$config["uri_segment"] 		= 3;  // uri parameter
+    function tampil1()
+    {
+        //konfigurasi pagination
+        $config['base_url']         = site_url('data_pelanggaran_kerapian_guru/tampil1'); //site url
+        $config['total_rows']       = $this->db->count_all('data_pelanggaran_kerapian'); //total row
+        $config['per_page']         = 2;  //show record per halaman
+        $config["uri_segment"]      = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"]		= floor($choice);
+        $config["num_links"]        = floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -141,21 +141,21 @@ class Data_pelanggaran_guru extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran_guru",
-			'namafileview' 	=> "V_data_pelanggaran_kerapian_guru",
-			'row'			=> $this->m_data_pelanggaran_guru->tampil1($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule'     => "data_pelanggaran_guru",
+           'namafileview'   => "V_data_pelanggaran_kerapian_guru",
+           'row'            => $this->m_data_pelanggaran_guru->tampil1($config["per_page"], $data['page']),
+           'pagination'     => $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template_guru/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template_guru/tampilCore', $data);
+    }
 
-	function cariku1()
+    function cariku1()
     {
 
         $nyari = $this->input->post("cari1");
@@ -202,25 +202,25 @@ class Data_pelanggaran_guru extends MX_Controller {
             'namafileview'  => "V_data_pelanggaran_kerapian_guru",
             'row'           => $this->m_data_pelanggaran_guru->get_pelanggaran_kerapian($config["per_page"], $data['page'],$search),
             'pagination'    => $this->pagination->create_links(),
-            'cari'          => $nyari,
+            'cari1'          => $nyari,
         );
         echo Modules::run('template_guru/tampilCore', $data);
     }
 
 
 
-	function tampil2()
-	{
-		//konfigurasi pagination
-        $config['base_url'] 		= site_url('data_pelanggaran_berat_guru/tampil2'); //site url
-        $config['total_rows'] 		= $this->db->count_all('data_pelanggaran_berat'); //total row
-        $config['per_page'] 		= 2;  //show record per halaman
-		$config["uri_segment"] 		= 3;  // uri parameter
+    function tampil2()
+    {
+        //konfigurasi pagination
+        $config['base_url']         = site_url('data_pelanggaran_berat_guru/tampil2'); //site url
+        $config['total_rows']       = $this->db->count_all('data_pelanggaran_berat'); //total row
+        $config['per_page']         = 2;  //show record per halaman
+        $config["uri_segment"]      = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
-        $config["num_links"]		= floor($choice);
+        $config["num_links"]        = floor($choice);
 
 
-		$config['first_link']       = 'First';
+        $config['first_link']       = 'First';
         $config['last_link']        = 'Last';
         $config['next_link']        = 'Next';
         $config['prev_link']        = 'Prev';
@@ -239,21 +239,21 @@ class Data_pelanggaran_guru extends MX_Controller {
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
-		$this->pagination->initialize($config);
+        $this->pagination->initialize($config);
 
-		$data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
-		$data = array(
-			'namamodule' 	=> "Data_pelanggaran_guru",
-			'namafileview' 	=> "V_data_pelanggaran_berat_guru",
-			'row2'			=> $this->m_data_pelanggaran_guru->tampil2($config["per_page"], $data['page']),
-			'pagination' 	=> $this->pagination->create_links(),
+        $data = array(
+           'namamodule'     => "data_pelanggaran_guru",
+           'namafileview'   => "V_data_pelanggaran_berat_guru",
+           'row2'           => $this->m_data_pelanggaran_guru->tampil2($config["per_page"], $data['page']),
+           'pagination'     => $this->pagination->create_links(),
 
-		);
-		echo Modules::run('template_guru/tampilCore', $data);
-	}
+       );
+        echo Modules::run('template_guru/tampilCore', $data);
+    }
 
-	function cariku2()
+    function cariku2()
     {
 
         $nyari = $this->input->post("cari2");
@@ -306,84 +306,266 @@ class Data_pelanggaran_guru extends MX_Controller {
     }
 
 
+    public function importFile(){
 
-	function tambah()
-	{
-		$this->m_data_pelanggaran->tambah();
-		redirect('data_pelanggaran');
-	}
-	function tambah1()
-	{
-		$this->m_data_pelanggaran->tambah1();
-		redirect('data_pelanggaran/tampil1');
-	}
-	function tambah2()
-	{
-		$this->m_data_pelanggaran->tambah2();
-		redirect('data_pelanggaran/tampil2');
-	}
+      if ($this->input->post('submit')) {
 
-	function edit()
-	{
-		$this->m_data_pelanggaran->edit();
-		redirect('data_pelanggaran');
-	}
-	function edit1()
-	{
-		$this->m_data_pelanggaran->edit1();
-		redirect('data_pelanggaran/tampil1');
-	}
-	function edit2()
-	{
-		$this->m_data_pelanggaran->edit2();
-		redirect('data_pelanggaran/tampil2');
-	}
+        $path = 'assets/';
+        require_once APPPATH . "/third_party/PHPExcel.php";
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'xlsx|xls|csv';
+        $config['remove_spaces'] = TRUE;
+        $this->load->library('upload', $config);
+        $this->upload->initialize($config);            
+        if (!$this->upload->do_upload('uploadFile')) {
+            $error = array('error' => $this->upload->display_errors());
+        } else {
+            $data = array('upload_data' => $this->upload->data());
+        }
+        if(empty($error)){
+          if (!empty($data['upload_data']['file_name'])) {
+            $import_xls_file = $data['upload_data']['file_name'];
+        } else {
+            $import_xls_file = 0;
+        }
+        $inputFileName = $path . $import_xls_file;
 
-	function hapus($id)
-	{
-		$this->m_data_pelanggaran->hapus($id);
-		redirect('data_pelanggaran');
-	}
-	function hapus1($id)
-	{
-		$this->m_data_pelanggaran->hapus1($id);
-		redirect('data_pelanggaran/tampil1');
-	}
-	function hapus2($id)
-	{
-		$this->m_data_pelanggaran->hapus2($id);
-		redirect('data_pelanggaran/tampil2');
-	}
-
-	function cari()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran",
-			'tampil'		=> $this->m_data_pelanggaran->cari(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	function cari1()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_kerapian",
-			'tampil1'		=> $this->m_data_pelanggaran->cari1(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-	function cari2()
-	{
-		$data = array(
-			'namamodule' 	=> "data_pelanggaran",
-			'namafileview' 	=> "V_data_pelanggaran_berat",
-			'tampil2'		=> $this->m_data_pelanggaran->cari2(),
-		);
-		echo Modules::run('template/tampilCore', $data);
-	}
-
-
-	
+        try {
+            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+            $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+            $objPHPExcel = $objReader->load($inputFileName);
+            $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+            $flag = true;
+            $i=0;
+            foreach ($allDataInSheet as $value) {
+              if($flag){
+                $flag =false;
+                continue;
+            }
+            $inserdata[$i]['nama_pelanggaran'] = $value['B'];
+            $inserdata[$i]['point'] = $value['C'];
+            $i++;
+        }               
+        $result = $this->m_data_pelanggaran_guru->importData($inserdata);   
+        if($result){
+          redirect('data_pelanggaran');
+      }else{
+          echo "ERROR !";
+      }             
+      
+  } catch (Exception $e) {
+     die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+        . '": ' .$e->getMessage());
+ }
+}else{
+  echo $error['error'];
 }
- 
+
+
+}
+
+}
+    // import excel pelanggaran kerapian
+public function importFileKerapian(){
+
+  if ($this->input->post('submit')) {
+
+    $path = 'assets/';
+    require_once APPPATH . "/third_party/PHPExcel.php";
+    $config['upload_path'] = $path;
+    $config['allowed_types'] = 'xlsx|xls|csv';
+    $config['remove_spaces'] = TRUE;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);            
+    if (!$this->upload->do_upload('uploadFile')) {
+        $error = array('error' => $this->upload->display_errors());
+    } else {
+        $data = array('upload_data' => $this->upload->data());
+    }
+    if(empty($error)){
+      if (!empty($data['upload_data']['file_name'])) {
+        $import_xls_file = $data['upload_data']['file_name'];
+    } else {
+        $import_xls_file = 0;
+    }
+    $inputFileName = $path . $import_xls_file;
+
+    try {
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+        $flag = true;
+        $i=0;
+        foreach ($allDataInSheet as $value) {
+          if($flag){
+            $flag =false;
+            continue;
+        }
+        $inserdata[$i]['nama_pelanggaran_kerapian'] = $value['B'];
+        $inserdata[$i]['point'] = $value['C'];
+        $i++;
+    }               
+    $result = $this->m_data_pelanggaran_guru->importDataKerapian($inserdata);   
+    if($result){
+      redirect('data_pelanggaran');
+  }else{
+      echo "ERROR !";
+  }             
+
+} catch (Exception $e) {
+ die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+    . '": ' .$e->getMessage());
+}
+}else{
+  echo $error['error'];
+}
+
+
+}
+
+}
+
+//     // import excel pelanggaran Berat
+public function importFileBerat(){
+
+  if ($this->input->post('submit')) {
+
+    $path = 'assets/';
+    require_once APPPATH . "/third_party/PHPExcel.php";
+    $config['upload_path'] = $path;
+    $config['allowed_types'] = 'xlsx|xls|csv';
+    $config['remove_spaces'] = TRUE;
+    $this->load->library('upload', $config);
+    $this->upload->initialize($config);            
+    if (!$this->upload->do_upload('uploadFile')) {
+        $error = array('error' => $this->upload->display_errors());
+    } else {
+        $data = array('upload_data' => $this->upload->data());
+    }
+    if(empty($error)){
+      if (!empty($data['upload_data']['file_name'])) {
+        $import_xls_file = $data['upload_data']['file_name'];
+    } else {
+        $import_xls_file = 0;
+    }
+    $inputFileName = $path . $import_xls_file;
+
+    try {
+        $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+        $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+        $objPHPExcel = $objReader->load($inputFileName);
+        $allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+        $flag = true;
+        $i=0;
+        foreach ($allDataInSheet as $value) {
+          if($flag){
+            $flag =false;
+            continue;
+        }
+        $inserdata[$i]['nama_pelanggaran_berat'] = $value['B'];
+        $inserdata[$i]['point'] = $value['C'];
+        $i++;
+    }               
+    $result = $this->m_data_pelanggaran_guru->importDataberat($inserdata);   
+    if($result){
+      redirect('data_pelanggaran');
+  }else{
+      echo "ERROR !";
+  }             
+
+} catch (Exception $e) {
+ die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+    . '": ' .$e->getMessage());
+}
+}else{
+  echo $error['error'];
+}
+
+
+}
+
+}
+
+
+
+
+function tambah()
+{
+  $this->m_data_pelanggaran_guru->tambah();
+  redirect('data_pelanggaran');
+}
+function tambah1()
+{
+  $this->m_data_pelanggaran_guru->tambah1();
+  redirect('data_pelanggaran/tampil1');
+}
+function tambah2()
+{
+  $this->m_data_pelanggaran_guru->tambah2();
+  redirect('data_pelanggaran/tampil2');
+}
+
+function edit()
+{
+  $this->m_data_pelanggaran_guru->edit();
+  redirect('data_pelanggaran');
+}
+function edit1()
+{
+  $this->m_data_pelanggaran_guru->edit1();
+  redirect('data_pelanggaran/tampil1');
+}
+function edit2()
+{
+  $this->m_data_pelanggaran_guru->edit2();
+  redirect('data_pelanggaran/tampil2');
+}
+
+function hapus($id)
+{
+  $this->m_data_pelanggaran_guru->hapus($id);
+  redirect('data_pelanggaran');
+}
+function hapus1($id)
+{
+  $this->m_data_pelanggaran_guru->hapus1($id);
+  redirect('data_pelanggaran/tampil1');
+}
+function hapus2($id)
+{
+  $this->m_data_pelanggaran_guru->hapus2($id);
+  redirect('data_pelanggaran/tampil2');
+}
+
+function cari()
+{
+  $data = array(
+   'namamodule'     => "data_pelanggaran",
+   'namafileview'   => "V_data_pelanggaran_guru",
+   'tampil'     => $this->m_data_pelanggaran_guru->cari(),
+);
+  echo Modules::run('template_guru/tampilCore', $data);
+}
+function cari1()
+{
+  $data = array(
+   'namamodule'     => "data_pelanggaran",
+   'namafileview'   => "V_data_pelanggaran_kerapian_guru",
+   'tampil1'        => $this->m_data_pelanggaran_guru->cari1(),
+);
+  echo Modules::run('template_guru/tampilCore', $data);
+}
+function cari2()
+{
+  $data = array(
+   'namamodule'     => "data_pelanggaran",
+   'namafileview'   => "V_data_pelanggaran_berat_guru",
+   'tampil2'        => $this->m_data_pelanggaran_guru->cari2(),
+);
+  echo Modules::run('template_guru/tampilCore', $data);
+}
+
+
+
+}

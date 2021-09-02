@@ -23,6 +23,18 @@ class Data_beranda_guru extends MX_Controller {
 			'pelanggar_hariini' => $this->m_data_beranda_guru->pelanggar_hariini(),
 			'pterbaru' 			=> $this->m_data_beranda_guru->pterbaru(),
 			'tterbaru' 			=> $this->m_data_beranda_guru->tterbaru(),
+			'januari'			=> $this->m_data_beranda_guru->januari(),
+			'februari'			=> $this->m_data_beranda_guru->februari(),
+			'maret'				=> $this->m_data_beranda_guru->maret(),
+			'april'				=> $this->m_data_beranda_guru->april(),
+			'mei'				=> $this->m_data_beranda_guru->mei(),
+			'juni'				=> $this->m_data_beranda_guru->juni(),
+			'juli'				=> $this->m_data_beranda_guru->juli(),
+			'agustus'			=> $this->m_data_beranda_guru->agustus(),
+			'september'			=> $this->m_data_beranda_guru->september(),
+			'oktober'			=> $this->m_data_beranda_guru->oktober(),
+			'november'			=> $this->m_data_beranda_guru->november(),
+			'desember'			=> $this->m_data_beranda_guru->desember(),
 		);
 		echo Modules::run('template_guru/tampilCore', $data);
 	}

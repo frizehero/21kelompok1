@@ -6,10 +6,10 @@ class M_data_siswa_guru extends CI_Model {
 	function tampil($limit, $start)
 	{
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
-		->order_by("id_siswa", "DESC");
+		->order_by("data_siswa.id_siswa", "DESC");
 		$query = $this->db->get('data_siswa', $limit, $start);
 		return $query->result();
 
@@ -20,9 +20,9 @@ class M_data_siswa_guru extends CI_Model {
 		
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->like('nama_siswa',$st);
 		$query = $this->db->get('data_siswa',$limit, $start);
 		return $query->result();
@@ -33,15 +33,24 @@ class M_data_siswa_guru extends CI_Model {
 
 		if ($st == "NIL") $st = "";
 		$this->db->select('*')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->like('nama_siswa',$st);
 		$query = $this->db->get('data_siswa');
 		return $query->num_rows();
 	}
 
-
+	public function importData($data) {
+  
+            $res = $this->db->insert_batch('data_siswa',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
 	
 
 	function tambah()
@@ -103,14 +112,26 @@ class M_data_siswa_guru extends CI_Model {
 			);
 			$this->db->insert('data_siswa', $data);
 		}
+
+		$insert_id = $this->db->insert_id();
+ 		$id_user					= $this->input->post('id_user');
+ 		$username					= $this->input->post('username');
+ 		$password 					= $this->input->post('password');
+ 		$password1 					= sha1($password);
+ 		$level 						= $this->input->post('level');
+
+ 		$data = array(
+ 			'id_user'				=> $id_user,
+ 			'id_siswa'				=> $insert_id,
+ 			'username'				=> $username,
+ 			'password'				=> $password1,
+ 			'level'					=> $level,
+
+ 		);
+
+ 		$this->db->insert('data_user', $data);
+ 		$insert_id = $this->db->insert_id();
 	}
-
-
-
-	
-
-
-
 
 
 	/*bagian view detail*/
@@ -119,9 +140,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get();
 		return $query->result();
@@ -141,6 +162,7 @@ class M_data_siswa_guru extends CI_Model {
 
 
 
+
 	function count_jtreatment($id)
 	{
 		$this->db->select('*')
@@ -156,8 +178,8 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
 		->join('data_pelanggaran','data_pelanggaran.id_pelanggaran = riwayat_pelanggaran.id_pelanggaran')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -202,8 +224,8 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
 		->join('data_pelanggaran_kerapian','data_pelanggaran_kerapian.id_pelanggaran_kerapian = riwayat_pelanggaran.id_pelanggaran_kerapian')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -217,8 +239,8 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_pelanggaran.id_siswa')
+		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru')
 		->join('data_pelanggaran_berat','data_pelanggaran_berat.id_pelanggaran_berat = riwayat_pelanggaran.id_pelanggaran_berat')
-		->join('data_guru','data_guru.id_guru = riwayat_pelanggaran.id_guru','left')
 		->where('riwayat_pelanggaran.id_siswa',$id);
 		$query = $this->db->get('riwayat_pelanggaran');
 		return $query->result();
@@ -294,6 +316,7 @@ class M_data_siswa_guru extends CI_Model {
 		$tanggal_lahir_siswa 		= $this->input->post('tanggal_lahir_siswa');
 		$alamat_siswa				= $this->input->post('alamat_siswa');
 		$jenis_kelamin_siswa 		= $this->input->post('jenis_kelamin_siswa');
+		$status_siswa				= $this->input->post('status_siswa');
 		$kelas 						= $this->input->post('kelas');
 		$jurusan 					= $this->input->post('jurusan');
 		$agama 						= $this->input->post('agama');
@@ -322,6 +345,7 @@ class M_data_siswa_guru extends CI_Model {
 						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 						'alamat_siswa'			=> $alamat_siswa,
 						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'status_siswa'			=> $status_siswa,
 						'id_kelas'				=> $kelas,
 						'id_jurusan'			=> $jurusan,
 						'id_agama'				=> $agama,
@@ -337,6 +361,7 @@ class M_data_siswa_guru extends CI_Model {
 						'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 						'alamat_siswa'			=> $alamat_siswa,
 						'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+						'status_siswa'			=> $status_siswa,
 						'id_kelas'				=> $kelas,
 						'id_jurusan'			=> $jurusan,
 						'id_agama'				=> $agama,
@@ -355,6 +380,7 @@ class M_data_siswa_guru extends CI_Model {
 				'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
 				'alamat_siswa'			=> $alamat_siswa,
 				'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+				'status_siswa'			=> $status_siswa,
 				'id_kelas'				=> $kelas,
 				'id_jurusan'			=> $jurusan,
 				'id_agama'				=> $agama,
@@ -369,6 +395,7 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->where('id_siswa', $id)->delete('riwayat_pelanggaran');
 		$this->db->where('id_siswa', $id)->delete('riwayat_treatment');
+		$this->db->where('id_siswa', $id)->delete('data_user');
 
 		$this->db->where('id_siswa', $id);
 		$query = $this->db->get('data_siswa');
@@ -448,9 +475,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_treatment');
 		return $query->result();
@@ -461,9 +488,9 @@ class M_data_siswa_guru extends CI_Model {
 		$carit 	= $this->input->post('caritreatment');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
 		->like('nama_treatment',$carit);
 		$query = $this->db->get('data_treatment');
@@ -474,24 +501,57 @@ class M_data_siswa_guru extends CI_Model {
 
 	function tambah_treatment($id)
 	{
-		
+
 		$Keterangan_treatment 		= $this->input->post('Keterangan');
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_treatment				= $this->input->post('id_treatment');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
 
-		$data = array(
-			'Keterangan_treatment'	=> $Keterangan_treatment,
-			'tanggal_treatment'		=> $tanggal_treatment,
-			'id_treatment'			=> $id_treatment,
-			'id_siswa'				=> $id_siswa,
-			'id_guru'				=> $id_guru,
+		$this->upload->initialize($config);
 
-		);
-		$this->db->insert('riwayat_treatment', $data);
+		if($_FILES['foto_treatment']['name'])
+		{
+			if ($this->upload->do_upload('foto_treatment'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_treatment'	=> $Keterangan_treatment,
+					'tanggal_treatment'		=> $tanggal_treatment,
+					'id_treatment'			=> $id_treatment,
+					'id_siswa'				=> $id_siswa,
+					'id_guru'				=> $id_guru,
+					'foto_treatment' 				=> $gbr['file_name'],
 
+
+				);
+				$this->db->insert('riwayat_treatment', $data); 
+
+			}	 
+		}
+
+		else
+		{ 
+			$data = array(
+				'Keterangan_treatment'	=> $Keterangan_treatment,
+				'tanggal_treatment'		=> $tanggal_treatment,
+				'id_treatment'			=> $id_treatment,
+				'id_siswa'				=> $id_siswa,
+				'id_guru'				=> $id_guru,
+				'foto_treatment' 		=> 'kosong1.png',
+
+			);
+			$this->db->insert('riwayat_treatment', $data);
+		}
 	}
 	// akhir model penambahan treatment siswa
 
@@ -505,9 +565,9 @@ class M_data_siswa_guru extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran',$carip);
 		$query = $this->db->get('data_pelanggaran');
@@ -519,9 +579,9 @@ class M_data_siswa_guru extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran_kerapian',$carip1);
 		$query = $this->db->get('data_pelanggaran_kerapian');
@@ -533,9 +593,9 @@ class M_data_siswa_guru extends CI_Model {
 		$carip 	= $this->input->post('caripelanggaran');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
 		->like('nama_pelanggaran_berat',$carip2);
 		$query = $this->db->get('data_pelanggaran_berat');
@@ -552,9 +612,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran');
 		return $query->result();
@@ -564,9 +624,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_kerapian');
 		return $query->result();
@@ -576,9 +636,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_pelanggaran_berat');
 		return $query->result();
@@ -593,18 +653,50 @@ class M_data_siswa_guru extends CI_Model {
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran'				=> $id_pelanggaran,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran'			=> $id_pelanggaran,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran'			=> $id_pelanggaran,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'						=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
-
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 	function tambah_pelanggaran_kerapian($id)
@@ -616,18 +708,50 @@ class M_data_siswa_guru extends CI_Model {
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran_kerapian'		=> $id_pelanggaran_kerapian,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran_kerapian'	=> $id_pelanggaran_kerapian,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'						=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
-
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 	function tambah_pelanggaran_berat($id)
@@ -635,22 +759,55 @@ class M_data_siswa_guru extends CI_Model {
 		
 		$Keterangan_pelanggaran		= $this->input->post('Keterangan');
 		$tanggal_pelanggaran		= $this->input->post('tanggal_pelanggaran');
-		$id_pelanggaran_berat       = $this->input->post('id_pelanggaran_berat');
+		$id_pelanggaran_berat		= $this->input->post('id_pelanggaran_berat');
 		$id_siswa 					= $this->input->post('id_siswa');
 		$id_guru 					= $this->input->post('id_guru');
 
 
-		$data = array(
-			'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
-			'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
-			'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
-			'id_siswa'					=> $id_siswa,
-			'id_guru'					=> $id_guru,
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_pelanggaran']['name'])
+		{
+			if ($this->upload->do_upload('foto_pelanggaran'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_pelanggaran'		=> $Keterangan_pelanggaran,
+					'tanggal_pelanggaran'			=> $tanggal_pelanggaran,
+					'id_pelanggaran_berat'			=> $id_pelanggaran_berat,
+					'id_siswa'						=> $id_siswa,
+					'id_guru'						=> $id_guru,
+					'foto_pelanggaran' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_pelanggaran', $data); 
 
+			}	 
+		}
 
-		);
-		$this->db->insert('riwayat_pelanggaran', $data);
+		else
+		{ 
+			$data = array(
+				'Keterangan_pelanggaran'	=> $Keterangan_pelanggaran,
+				'tanggal_pelanggaran'		=> $tanggal_pelanggaran,
+				'id_pelanggaran_berat'		=> $id_pelanggaran_berat,
+				'id_siswa'					=> $id_siswa,
+				'id_guru'					=> $id_guru,
+				'foto_pelanggaran' 			=> 'kosong1.png',
 
+			);
+			$this->db->insert('riwayat_pelanggaran', $data);
+		}
 	}
 
 
@@ -659,9 +816,9 @@ class M_data_siswa_guru extends CI_Model {
 	{
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id);
 		$query = $this->db->get('data_prestasi');
 		return $query->result();
@@ -671,23 +828,56 @@ class M_data_siswa_guru extends CI_Model {
 	function tambah_prestasi($id)
 	{
 		
-		$Keterangan_treatment 		= $this->input->post('Keterangan');
+		$Keterangan_treatment		= $this->input->post('Keterangan_treatment');
 		$tanggal_treatment			= $this->input->post('tanggal_treatment');
 		$id_prestasi				= $this->input->post('id_prestasi');
 		$id_siswa 					= $this->input->post('id_siswa');
+		
 
+		$this->load->library('upload');
+		$nmfile = "file_".time();
+		$config['upload_path']		= 'assets/img/';
+		$config['allowed_types']	= 'gif|jpg|png|jpeg';
+		$config['max_size']			= 5120;
+		$config['max_width']		= 4300;
+		$config['max_height']		= 4300;
+		$config['file_name'] 		= $nmfile;
+		
+		$this->upload->initialize($config);
+		
+		if($_FILES['foto_treatment']['name'])
+		{
+			if ($this->upload->do_upload('foto_treatment'))
+			{
+				$gbr = $this->upload->data();
+				$data = array(
+					'Keterangan_treatment'			=> $Keterangan_treatment,
+					'tanggal_treatment'				=> $tanggal_treatment,
+					'id_prestasi'					=> $id_prestasi,
+					'id_siswa'						=> $id_siswa,
+					'foto_prestasi' 				=> $gbr['file_name'],
+					
+					
+				);
+				$this->db->insert('riwayat_treatment', $data); 
 
-		$data = array(
-			'Keterangan_treatment'	=> $Keterangan_treatment,
-			'tanggal_treatment'		=> $tanggal_treatment,
-			'id_prestasi'			=> $id_prestasi,
-			'id_siswa'				=> $id_siswa,
+			}	 
+		}
 
+		else
+		{ 
+			$data = array(
+				'Keterangan_treatment'		=> $Keterangan_treatment,
+				'tanggal_treatment'			=> $tanggal_treatment,
+				'id_prestasi'				=> $id_prestasi,
+				'id_siswa'					=> $id_siswa,
+				'foto_prestasi' 			=> 'kosong1.png',
 
-		);
-		$this->db->insert('riwayat_treatment', $data);
-
+			);
+			$this->db->insert('riwayat_treatment', $data);
+		}
 	}
+
 
 
 	function cariprestasi($carit,$id)
@@ -695,9 +885,9 @@ class M_data_siswa_guru extends CI_Model {
 		$carit 	= $this->input->post('cariprestasi');
 		$this->db->select('*')
 		->from('data_siswa')
+		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->join('data_kelas','data_kelas.id_kelas = data_siswa.id_kelas')
 		->join('data_jurusan','data_jurusan.id_jurusan = data_siswa.id_jurusan')
-		->join('data_agama','data_agama.id_agama = data_siswa.id_agama')
 		->where('id_siswa',$id)
 		->like('nama_prestasi',$carit);
 		$query = $this->db->get('data_prestasi');
@@ -710,6 +900,7 @@ class M_data_siswa_guru extends CI_Model {
 		$this->db->select('*')
 		->join('data_siswa','data_siswa.id_siswa = riwayat_treatment.id_siswa')
 		->join('data_prestasi','data_prestasi.id_prestasi = riwayat_treatment.id_prestasi')
+		->join('data_guru','data_guru.id_guru = riwayat_treatment.id_guru')
 		->where('riwayat_treatment.id_siswa',$id);
 		$query = $this->db->get('riwayat_treatment');
 		return $query->result();

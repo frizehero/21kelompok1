@@ -71,4 +71,17 @@ class M_data_prestasi_guru extends CI_Model {
 		$cari 		= $this->input->post('cari');
 		return $this->db->like('nama_prestasi',$cari)->get('data_prestasi')->result();
 	}
+
+	// import
+	public function importData($data) 
+	{
+  
+            $res = $this->db->insert_batch('data_prestasi',$data);
+            if($res){
+                return TRUE;
+            }else{
+                return FALSE;
+            }
+      
+        }
 }

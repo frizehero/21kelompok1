@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_siswa_guru extends MX_Controller {
+class data_siswa_guru extends MX_Controller {
 
 
 	function __construct()
@@ -12,8 +12,165 @@ class Data_siswa_guru extends MX_Controller {
 		$this->load->model('login/m_session');
 		$this->load->library('pagination');
 		$this->load->library('session');
+		$this->load->library('excel');
 		$this->load->helper('file');
 	}
+
+public function importFile(){
+
+		if(isset($_FILES["file"]["name"])){
+                  // upload
+			$file_tmp = $_FILES['file']['tmp_name'];
+			$file_name = $_FILES['file']['name'];
+			$file_size =$_FILES['file']['size'];
+			$file_type=$_FILES['file']['type'];
+
+			$object = PHPExcel_IOFactory::load($file_tmp);
+
+			foreach($object->getWorksheetIterator() as $worksheet){
+
+				$highestRow = $worksheet->getHighestRow();
+				$highestColumn = $worksheet->getHighestColumn();
+
+				for($row=4; $row<=$highestRow; $row++){
+
+					$nis 					= $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$nama_siswa 			= $worksheet->getCellByColumnAndRow(2, $row)->getValue();
+					$tanggal_lahir			= $worksheet->getCellByColumnAndRow(3, $row)->getValue();
+					$alamat_siswa 			= $worksheet->getCellByColumnAndRow(4, $row)->getValue();
+					$jenis_kelamin_siswa 	= $worksheet->getCellByColumnAndRow(5, $row)->getValue();
+					$kelas 					= $worksheet->getCellByColumnAndRow(11, $row)->getValue();
+					$agama 					= $worksheet->getCellByColumnAndRow(12, $row)->getValue();
+					$jurusan 				= $worksheet->getCellByColumnAndRow(13, $row)->getValue();
+					$status 				= $worksheet->getCellByColumnAndRow(14, $row)->getValue();
+
+					$tanggal_lahir_siswa 	= \PHPExcel_Style_NumberFormat::toFormattedString($tanggal_lahir, 'YYYY-MM-DD');
+					
+					if ($jurusan == NULL) {
+
+					} else {
+
+						$data = array(
+							'nis'					=> $nis,
+							'nama_siswa'			=> $nama_siswa,
+							'tanggal_lahir_siswa'	=> $tanggal_lahir_siswa,
+							'alamat_siswa'			=> $alamat_siswa,
+							'jenis_kelamin_siswa'	=> $jenis_kelamin_siswa,
+							'id_kelas'				=> $kelas,
+							'id_jurusan'			=> $jurusan,
+							'id_agama'				=> $agama,
+							'status_siswa'			=> $status,
+							'foto_siswa' 			=> "kosong1.png",
+						);
+
+						$this->db->insert('data_siswa', $data);
+					}
+					
+					
+
+					$insert_id = $this->db->insert_id();
+					$username		= $worksheet->getCellByColumnAndRow(9, $row)->getValue();
+					$password 		= $worksheet->getCellByColumnAndRow(10, $row)->getValue();
+					$password1 		= sha1($password);
+
+
+					if ($username == NULL) {
+						
+					} else {
+
+						$data = array(
+							'id_siswa'				=> $insert_id,
+							'username'				=> $username,
+							'password'				=> $password1,
+							'level'					=> "3",
+
+						);
+
+
+						$this->db->insert('data_user', $data);
+						$insert_id = $this->db->insert_id();
+					}
+
+				} 
+
+			}
+			$message = array(
+				'message'=>'<div class="alert alert-success">Import file excel berhasil disimpan di database</div>',
+			);
+
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
+		}
+		else
+		{
+			$message = array(
+				'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
+			);
+
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
+		}
+	}
+
+
+
+
+
+	public function importkenaikan(){
+
+		if(isset($_FILES["file"]["name"])){
+                  // upload
+			$file_tmp = $_FILES['file']['tmp_name'];
+			$file_name = $_FILES['file']['name'];
+			$file_size =$_FILES['file']['size'];
+			$file_type=$_FILES['file']['type'];
+
+			$object = PHPExcel_IOFactory::load($file_tmp);
+
+			foreach($object->getWorksheetIterator() as $worksheet){
+
+				$highestRow = $worksheet->getHighestRow();
+				$highestColumn = $worksheet->getHighestColumn();
+
+				for($row=4; $row<=$highestRow; $row++){
+
+					$nis 					= $worksheet->getCellByColumnAndRow(1, $row)->getValue();
+					$kelas 					= $worksheet->getCellByColumnAndRow(6, $row)->getValue();
+					$status 				= $worksheet->getCellByColumnAndRow(7, $row)->getValue();
+
+					if ($nis == NULL) {
+
+					} else {
+
+						$data = array(
+							'id_kelas'				=> $kelas,
+							'status_siswa'			=> $status,
+						);
+
+						$this->db->where('nis',$nis)->update('data_siswa', $data);
+					}
+
+				} 
+
+			}
+			$message = array(
+				'message'=>'<div class="alert alert-success">Import file excel berhasil disimpan di database</div>',
+			);
+
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
+		}
+		else
+		{
+			$message = array(
+				'message'=>'<div class="alert alert-danger">Import file gagal, coba lagi</div>',
+			);
+
+			$this->session->set_flashdata($message);
+			redirect('data_siswa');
+		}
+	}
+
 
 
 	
@@ -119,6 +276,11 @@ class Data_siswa_guru extends MX_Controller {
 
 
 
+	function tambah()
+	{
+		$this->m_data_siswa_guru->tambah();
+		redirect('data_siswa_guru');
+	}
 
 
 
@@ -142,7 +304,7 @@ class Data_siswa_guru extends MX_Controller {
 		$jpelanggaran3					= $this->m_data_siswa_guru->jumlahpelanggaran3($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointprestasi['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
 
 
 		$data = array(
@@ -150,13 +312,13 @@ class Data_siswa_guru extends MX_Controller {
 			'namafileview' 					=> "V_detail_siswa_guru",
 			'tampil'						=> $this->m_data_siswa_guru->tampildetail($id),
 			'terbaru'						=> $this->m_data_siswa_guru->pterbaru($id),
-			'tampil_prestasi'				=> $this->m_data_siswa_guru->tampilriwayat_prestasi($id),
 			'tampil_treatment'				=> $this->m_data_siswa_guru->tampilriwayat_treatment($id),
+			'tampil_prestasi'				=> $this->m_data_siswa_guru->tampilriwayat_prestasi($id),
 			'jumlah_treatment'				=> $this->m_data_siswa_guru->count_jtreatment($id),
 			'tampil_pelanggaran'			=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran($id),
 			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_kerapian($id),
 			'tampil_pelanggaran_berat'		=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_berat($id),
-			'tampil_pelanggaran_samping'			=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_samping($id),
+			'tampil_pelanggaran_samping'	=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_samping($id),
 			'tampil_pelanggaran_kerapian_samping' 	=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_kerapian_samping($id),
 			'tampil_pelanggaran_berat_samping'		=> $this->m_data_siswa_guru->tampilriwayat_pelanggaran_berat_samping($id),
 			'jumlah_pelanggaran'			=> $total,
@@ -169,6 +331,22 @@ class Data_siswa_guru extends MX_Controller {
 	}
 
 
+	function edit($id)
+	{
+		$this->m_data_siswa_guru->edit($id);
+		redirect('data_siswa_guru/details/'. $id);
+	}
+
+
+
+	function hapus($id)
+	{
+		$this->m_data_siswa_guru->hapus($id);
+		redirect('data_siswa_guru');
+	}
+
+	/*akhir controler detail siswa*/
+
 
 
 
@@ -179,12 +357,13 @@ class Data_siswa_guru extends MX_Controller {
 	/*controler tambah treatment*/
 	function tampiltreatment($id)
 	{
+
 		$jpelanggaran1					= $this->m_data_siswa_guru->jumlahpelanggaran1($id);
 		$jpelanggaran2					= $this->m_data_siswa_guru->jumlahpelanggaran2($id);
 		$jpelanggaran3					= $this->m_data_siswa_guru->jumlahpelanggaran3($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointprestasi['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
@@ -206,16 +385,16 @@ class Data_siswa_guru extends MX_Controller {
 		$jpelanggaran1					= $this->m_data_siswa_guru->jumlahpelanggaran1($id);
 		$jpelanggaran2					= $this->m_data_siswa_guru->jumlahpelanggaran2($id);
 		$jpelanggaran3					= $this->m_data_siswa_guru->jumlahpelanggaran3($id);
-		$jumlahpointtreatment			= $this->m_data_siswa_guru->jumlahpointtreatment($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointtreatment['point'] + $jumlahpointprestasi['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
 			'namafileview' 	=> "V_cari_treatment_guru",
 			'tampil'		=> $this->m_data_siswa_guru->caritreatment($carit,$id),
 			'tampilt'		=> $this->m_data_siswa_guru->tampiltreatment($id),
+			'id'			=> $id,
 			'total_point'	=> $total_pelanggaran - $total_treatment,
 		);
 		echo Modules::run('template_guru/tampilCore', $data);
@@ -267,8 +446,7 @@ class Data_siswa_guru extends MX_Controller {
 		$jumlahpointtreatment			= $this->m_data_siswa_guru->jumlahpointtreatment($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointtreatment['point'] + $jumlahpointprestasi['point'];
-
+		$total_treatment				= $jumlahpointtreatment['point'] + $jumlahpointprestasi['point'] ;
 
 		$carip			= $this->input->post('caripelanggaran');
 		$carip1			= $this->input->post('caripelanggaran');
@@ -308,7 +486,7 @@ class Data_siswa_guru extends MX_Controller {
 	}
 
 
-	// data tambah prestasi
+	// data prestasi siswa
 	function prestasi($id)
 	{
 		$jpelanggaran1					= $this->m_data_siswa_guru->jumlahpelanggaran1($id);
@@ -316,7 +494,7 @@ class Data_siswa_guru extends MX_Controller {
 		$jpelanggaran3					= $this->m_data_siswa_guru->jumlahpelanggaran3($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointprestasi['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
 
 		$data = array(
 			'namamodule' 	=> "data_siswa_guru",
@@ -342,14 +520,13 @@ class Data_siswa_guru extends MX_Controller {
 		$jpelanggaran1					= $this->m_data_siswa_guru->jumlahpelanggaran1($id);
 		$jpelanggaran2					= $this->m_data_siswa_guru->jumlahpelanggaran2($id);
 		$jpelanggaran3					= $this->m_data_siswa_guru->jumlahpelanggaran3($id);
-		$jumlahpointtreatment			= $this->m_data_siswa_guru->jumlahpointtreatment($id);
 		$jumlahpointprestasi			= $this->m_data_siswa_guru->jumlahpointprestasi($id);
 		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-		$total_treatment				= $jumlahpointtreatment['point'] + $jumlahpointprestasi['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
 
 		$data = array(
-			'namamodule' 	=> "data_siswa",
-			'namafileview' 	=> "V_cari_prestasi",
+			'namamodule' 	=> "data_siswa_guru",
+			'namafileview' 	=> "V_cari_prestasi_guru",
 			'tampil'		=> $this->m_data_siswa_guru->cariprestasi($carit,$id),
 			'tampilp'		=> $this->m_data_siswa_guru->tampilprestasi($id),
 			'id'			=> $id,

@@ -21,12 +21,6 @@
   </ol>
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <!--End breadcrumb-->
-  <div class="text-left breadcrumb">
-    <div id="demo-custom-toolbar5" class="table-toolbar-left">
-      <a class="btn btn-default text-left" type="button" href="javascript:window.history.go(-1);">Kembali</a>
-    </div>  
-  </div><br>
-
 </div>
 <!--===================================================-->
 <div class="effect aside-float aside-bright mainnav-sm page-fixedbar page-fixedbar-right">
@@ -125,12 +119,6 @@
               <p><h4 class="text-lg text-overflow"><?php echo $res->nama_siswa?></h4></p>
               <p><b>NIS : </b><?php echo $res->nis?></p>
             </div><hr>
-            <div class="text-center">
-              <p width="50"><a class="btn btn-sm bg-danger" href="<?php echo base_url('data_siswa/tampilpelanggaran/'.$res->id_siswa); ?>">Tambah Pelanggaran</a></p>
-              <p width="50"><a class="btn btn-sm bg-info" href="<?php echo base_url('data_siswa/tampiltreatment/'.$res->id_siswa); ?>">Tambah Treatment</a></p>
-              <p width="50"><a class="btn btn-sm bg-primary" href="<?php echo base_url('data_siswa/prestasi/'.$res->id_siswa); ?>">Tambah Prestasi Siswa</a></p>
-            </div>
-            <hr>
 
             <!-- Profile Details -->
             <p class="pad-ver text-main text-sm text-uppercase text-bold">Data Siswa</p>
@@ -204,16 +192,6 @@
                     </div>
                   </div>
                 </div>
-                <div class="text-right">
-                  <a data-toggle="modal" data-target="#demo-default-modal2<?php echo $res->id_siswa?>" class="btn btn-sm btn-danger">
-                    <span class="fa fa-trash"></span>
-                  &nbsp;Hapus</a>
-                  <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
-                    <span class="fa fa-edit"></span>
-                  &nbsp;Edit</a>
-                </div>
-                <br>
-
                 <hr>
 
 
