@@ -19,6 +19,7 @@
     <link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png"/>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <!--Bootstrap Stylesheet [ REQUIRED ]-->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
@@ -146,8 +147,8 @@
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="#" class="navbar-brand">
-                       <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
-                       <div class="brand-title">
+                     <img src="<?php echo base_url(); ?>assets/login/pages/img/login/smk.png" style="height: 60px; width: 50px; " alt="Nifty Logo" class="brand-icon">
+                     <div class="brand-title">
                         <span class="brand-text">SINOMIK</span>
                     </div>
                 </a>
@@ -460,7 +461,7 @@
                             <div id="mainnav-profile" class="mainnav-profile">
 
 
-                             <div class="profile-wrap text-center">
+                               <div class="profile-wrap text-center">
                                 <div class="pad-btm">
                                     <img class="img-circle img-md" src="<?php echo base_url ()?>assets/img/<?php echo $nama->foto_guru; ?>" alt="Profile Picture">
                                 </div>
@@ -536,26 +537,32 @@
                             <?php } else{ ?>
                                 <li>
                                     <a href="<?php echo base_url('data_beranda_guru'); ?>">
-                                     <i class="demo-pli-home"></i>
-                                     <span class="menu-title">Beranda</span>
-                                 </a>
-                                 <!--Submenu-->
-                             </li>
-                         <?php } ?>
+                                       <i class="demo-pli-home"></i>
+                                       <span class="menu-title">Beranda</span>
+                                   </a>
+                                   <!--Submenu-->
+                               </li>
+                           <?php } ?>
 
-                         <li class=" <?=$this->uri->segment('1') == 'data_siswa_guru' || $this->uri->segment(1) == 'data_kelas_guru'   ? "active-sub" : ''?>">
-                            <a href="">
-                               <i class="demo-pli-receipt-4"></i>
-                               <span class="menu-title">Data</span>
-                               <i class="arrow"></i>
-                           </a>
-                           <ul class="collapse">
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_siswa_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_siswa_guru'); ?>">Data Siswa</a></li>
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas_guru'); ?>">Data Kelas</a></li>
-                        </ul>
-                    </li>
+                           <?php if($this->uri->segment('1') == 'data_siswa_guru'){ ?>
+                            <li class="active-sub">
+                                <a href="<?php echo base_url('data_siswa_guru'); ?>">
+                                    <i class="demo-pli-receipt-4"></i>
+                                    <span class="menu-title">Data Siswa</span>
+                                </a>
+                                <!--Submenu-->
+                            </li>
+                        <?php } else{ ?>
+                            <li>
+                                <a href="<?php echo base_url('data_siswa_guru'); ?>">
+                                   <i class="demo-pli-receipt-4"></i>
+                                   <span class="menu-title">Data Siswa</span>
+                               </a>
+                               <!--Submenu-->
+                           </li>
+                       <?php } ?>
 
-                    <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment_guru' || $this->uri->segment(1) == 'data_prestasi_guru' ? "active-sub" : ''?>">
+                       <li class=" <?=$this->uri->segment('1') == 'data_pelanggaran_guru' || $this->uri->segment(1) == 'data_treatment_guru' || $this->uri->segment(1) == 'data_prestasi_guru' ? "active-sub" : ''?>">
                         <a href="#">
                             <i class="demo-pli-warning-window"></i>
                             <span class="menu-title">Peraturan</span>
@@ -571,7 +578,7 @@
                         </ul>
                     </li>
                     
-                    <li class=" <?=$this->uri->segment('1') == 'data_laporan_guru' || $this->uri->segment(1) == 'data_list_guru' ? "active-sub" : ''?>">
+                    <li class=" <?=$this->uri->segment('1') == 'data_kelas_guru' || $this->uri->segment(1) == 'data_list_guru' ? "active-sub" : ''?>">
                         <a href="#">
                             <i class="demo-pli-file-html"></i>
                             <span class="menu-title">Laporan</span>
@@ -581,7 +588,7 @@
                         <!--Submenu-->
 
                         <ul class="collapse">
-                            <li class="<?php if ( $this->uri->segment(1) == 'data_laporan_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_laporan_guru'); ?>">Laporan</a></li>
+                            <li class="<?php if ( $this->uri->segment(1) == 'data_kelas_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_kelas_guru'); ?>">Laporan</a></li>
                             <li class="<?php if ( $this->uri->segment(1) == 'data_list_guru' ) echo 'active-link'; ?>"><a href="<?php echo base_url('data_list_guru'); ?>">List</a></li>
                         </ul>
                     </li>
@@ -627,16 +634,16 @@
     <!-- Visible when footer positions are static -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="hide-fixed pull-right pad-rgt">
-       SMKN 1 TAMBAKBOYO
-   </div>
+     SMKN 1 TAMBAKBOYO
+ </div>
 
 
 
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-   <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
-   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+ <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
 
-   <p class="pad-lft">&#0169; 2021 BK</p>
+ <p class="pad-lft">&#0169; 2021 BK</p>
 
 
 
