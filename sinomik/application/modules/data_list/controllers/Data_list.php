@@ -27,6 +27,8 @@ class Data_list extends MX_Controller {
 			'tampil_treatment'		=> $this->m_data_list->tampil_treatment($awl, $akr),
 			'awal'					=> $awal,
 			'akhir'					=> $akhir,
+			'awl'					=> $awl,
+			'akr'					=> $akr,
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
@@ -45,6 +47,25 @@ class Data_list extends MX_Controller {
 		);
 
 		$data = $this->load->view('V_export',$hasil,TRUE);
+		$nama = "DATA SISWA";
+		$mpdf->WriteHTML($data);
+		$mpdf->output($nama.'.pdf','I');
+
+	}
+	function fpdf1(){
+		$mpdf = new\Mpdf\Mpdf();
+
+		$awl						= $this->input->post('awl');
+		$akr						= $this->input->post('akr');
+
+		$hasil = array(
+			'namamodule' 			=> "data_list",
+			'tampil_treatment'		=> $this->m_data_list->tampil_treatment($awl, $akr),
+			'awl'					=> $awl,
+			'akr'					=> $akr,
+		);
+
+		$data = $this->load->view('export',$hasil,TRUE);
 		$nama = "DATA SISWA";
 		$mpdf->WriteHTML($data);
 		$mpdf->output($nama.'.pdf','I');
