@@ -12,14 +12,22 @@ class Data_list_guru extends MX_Controller {
 	}
 
 	
-	// index
 	function index()
 	{
+		$awal						= $this->input->post('awal');
+		$akhir						= $this->input->post('akhir');
+		$awl						= $this->input->post('awl');
+		$akr						= $this->input->post('akr');
+
 		$data = array(
 			'namamodule' 			=> "data_list_guru",
 			'namafileview' 			=> "V_data_list_guru",
-			'tampil'				=> $this->m_data_list_guru->tampil(),
-			'tampil_treatment'		=> $this->m_data_list_guru->tampil_treatment(),
+			'tampil'				=> $this->m_data_list_guru->tampil($awal, $akhir),
+			'tampil_treatment'		=> $this->m_data_list_guru->tampil_treatment($awl, $akr),
+			'awal'					=> $awal,
+			'akhir'					=> $akhir,
+			'awl'					=> $awl,
+			'akr'					=> $akr,
 		);
 		echo Modules::run('template_guru/tampilCore', $data);
 	}

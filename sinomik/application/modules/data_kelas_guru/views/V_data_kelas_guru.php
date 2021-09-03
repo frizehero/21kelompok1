@@ -13,8 +13,8 @@
     <!--Breadcrumb-->
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <ol class="breadcrumb">
-      <li><a href="<?php echo base_url('data_beranda') ?>"><i class="demo-pli-home"></i></a></li>
-      <li><a href="#">Data</a></li>
+      <li><a href="<?php echo base_url('data_beranda_guru') ?>"><i class="demo-pli-home"></i></a></li>
+      <li><a href="#">Laporan</a></li>
       <li class="active">Data Kelas</li>
     </ol><br>
     <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
@@ -181,7 +181,7 @@
                                         <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                                         <p class="modal-title text-2x text-semibold">Pilih Kelas untuk melihat detail</p>
                                       </div>
-                                      <?= form_open_multipart('data_kelas/filter/'); ?>
+                                      <?= form_open_multipart('data_kelas_guru/filter/'); ?>
 
 
                                       <!--Modal body--> 

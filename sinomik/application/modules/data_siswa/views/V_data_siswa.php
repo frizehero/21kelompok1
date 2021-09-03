@@ -243,7 +243,7 @@
 
          <div class="col-md-6">
           <label for="" class="control-label">NIS</label>
-          <input type="text" name="nis" placeholder="NIS" class="form-control" required="">
+          <input type="text" name="nis" placeholder="NIS" class="form-control" maxlength="20" required="">
         </div>
         <div class="col-md-6">
           <label for="" class="control-label">Nama siswa</label>
