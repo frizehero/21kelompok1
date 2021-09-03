@@ -20,14 +20,17 @@
   	<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   	<!--End breadcrumb-->
 
+
   	<div class="text-right breadcrumb">
   		<div id="demo-custom-toolbar5" class="table-toolbar-left">
   			<a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah Siswa</a>
-        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import Tambah</a>
-        <a class="btn btn-warning text-left "   data-toggle="modal" data-target="#demo-default-naik">Import Kenaikan</a>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import"><span class="ion-upload"></span>Import Tambah</a>
+        <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-naik"><span class="ion-upload">Import Kenaikan</a>
+        <a href="<?php echo site_url('data_siswa/downloadtambah/') ?>" class="btn btn-warning text-right "><span class="ion-archive"></span> Template Tambah</a>
+        <a href="<?php echo site_url('data_siswa/downloadkenaikan/') ?>" class="btn btn-warning text-right "><span class="ion-archive"></span>Template Kenaikan</a>
       </div>
       <form action="<?php echo site_url('data_siswa/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
-        <div class="input-group text-right"  style="padding-left: : 5px">
+        <div class="input-group text-right"  style="padding-left: : 20px">
           <?php if($this->uri->segment(2) != 'cari'){
            $cari = $this->input->post('cari');?>
            <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
@@ -43,93 +46,93 @@
           <i class="fa fa-refresh" ></i>
         </a>
       </div> 
-    </center>
 
-  </form>
-</div>
-
-<div id="page-content text-black"><br><br><br><br>
-
-  <div class="row">
-   <div class="col-sm-12">
-    <div class="row">
-     <?php foreach($row as $res) {
-      $id = $res->id_siswa;
-      $gambar = $res->foto_siswa;
-      ?>
-
-      <div class="col-sm-3" >
-        <div class="panel" style="height: 295px;">
-          <div class="panel-body text-center">
-            <a href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
-              <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
-              <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
-            </a>
-            <p class="text-muted"><?= $res->nis ?></p>
-            <p class="text-muted mar-no">
-              KELAS : <?= $res->kelas ?> <br>
-              JURUSAN : <?= $res->jurusan ?> <br>
-            </p>
-            <ul class="list-unstyled text-center bord-top pad-top mar-no row">
-              <li class="col-xs-5">
-                <span class="text-muted mar-no">
-                  <?php 
-                  $id = $res->id_siswa;
-
-                  $jumlah_pelanggaranku      = $this->m_data_siswa->count_jpelanggaran($id);
-                  $jumlah_pelanggaran_kerapian  = $this->m_data_siswa->count_jpelanggaran_kerapian($id);
-                  $jumlah_pelanggaran_berat   = $this->m_data_siswa->count_jpelanggaran_berat($id);
-
-                  $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
-
-                  echo $total;
-                  ?>
-                </span>
-                <p class="text-muted mar-no">Pelanggaran</p>
-              </li>
-              <li class="col-xs-4">
-                <span class="text-muted mar-no">
-                  <?php 
-                  $id = $res->id_siswa;
-
-                  $jumlah_treatment    = $this->m_data_siswa->count_jtreatment($id);
-
-                  echo $jumlah_treatment;
-                  ?>
-                </span>
-                <p class="text-muted mar-no">Treatment</p>
-              </li>
-              <li class="col-xs-3">
-                <span class="text-muted mar-no">
-                  <?php 
-                  $jpelanggaran1          = $this->m_data_siswa->jumlahpelanggaran1($id);
-                  $jpelanggaran2          = $this->m_data_siswa->jumlahpelanggaran2($id);
-                  $jpelanggaran3          = $this->m_data_siswa->jumlahpelanggaran3($id);
-                  $jumlahpointprestasi      = $this->m_data_siswa->jumlahpointprestasi($id);
-
-
-                  $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                  $total_treatment        = $jumlahpointprestasi['point'];
-                  $total_point            = $total_pelanggaran - $total_treatment;
-
-                  if ($total_point <= 0) {
-                    echo "0";
-                  } else {
-                    echo $total_point;
-                  }
-                  ?>
-                </span>
-                <p class="text-muted mar-no">Point</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    <?php }?>
-
+    </form>
+    <br>
   </div>
-</div>
+
+  <div id="page-content text-black"><br><br><br><br>
+
+    <div class="row">
+     <div class="col-sm-12">
+      <div class="row">
+       <?php foreach($row as $res) {
+        $id = $res->id_siswa;
+        $gambar = $res->foto_siswa;
+        ?>
+
+        <div class="col-sm-3" >
+          <div class="panel" style="height: 295px;">
+            <div class="panel-body text-center">
+              <a href="<?php echo base_url('data_siswa/details/'.$res->id_siswa); ?>">
+                <img alt="Profile Picture" class="img-md img-circle mar-btm" src="<?php echo base_url ()?>assets/img/<?php echo $res->foto_siswa ?>">
+                <p class="text-lg text-semibold mar-no "><b><?= $res->nama_siswa ?></b></p>
+              </a>
+              <p class="text-muted"><?= $res->nis ?></p>
+              <p class="text-muted mar-no">
+                KELAS : <?= $res->kelas ?> <br>
+                JURUSAN : <?= $res->jurusan ?> <br>
+              </p>
+              <ul class="list-unstyled text-center bord-top pad-top mar-no row">
+                <li class="col-xs-5">
+                  <span class="text-muted mar-no">
+                    <?php 
+                    $id = $res->id_siswa;
+
+                    $jumlah_pelanggaranku      = $this->m_data_siswa->count_jpelanggaran($id);
+                    $jumlah_pelanggaran_kerapian  = $this->m_data_siswa->count_jpelanggaran_kerapian($id);
+                    $jumlah_pelanggaran_berat   = $this->m_data_siswa->count_jpelanggaran_berat($id);
+
+                    $total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
+                    echo $total;
+                    ?>
+                  </span>
+                  <p class="text-muted mar-no">Pelanggaran</p>
+                </li>
+                <li class="col-xs-4">
+                  <span class="text-muted mar-no">
+                    <?php 
+                    $id = $res->id_siswa;
+
+                    $jumlah_treatment    = $this->m_data_siswa->count_jtreatment($id);
+
+                    echo $jumlah_treatment;
+                    ?>
+                  </span>
+                  <p class="text-muted mar-no">Treatment</p>
+                </li>
+                <li class="col-xs-3">
+                  <span class="text-muted mar-no">
+                    <?php 
+                    $jpelanggaran1          = $this->m_data_siswa->jumlahpelanggaran1($id);
+                    $jpelanggaran2          = $this->m_data_siswa->jumlahpelanggaran2($id);
+                    $jpelanggaran3          = $this->m_data_siswa->jumlahpelanggaran3($id);
+                    $jumlahpointprestasi      = $this->m_data_siswa->jumlahpointprestasi($id);
+
+
+                    $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                    $total_treatment        = $jumlahpointprestasi['point'];
+                    $total_point            = $total_pelanggaran - $total_treatment;
+
+                    if ($total_point <= 0) {
+                      echo "0";
+                    } else {
+                      echo $total_point;
+                    }
+                    ?>
+                  </span>
+                  <p class="text-muted mar-no">Point</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      <?php }?>
+
+    </div>
+  </div>
 </div>
 </div>
 </div>
@@ -155,23 +158,23 @@
       <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_siswa/importkenaikan/') ?>">
         <div class="modal-body">
 
-        <div class="panel-body">
+          <div class="panel-body">
 
-          <div class="col-md-6">
-            <label for="" class="control-label">Pilih File</label>
-            <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+            <div class="col-md-6">
+              <label for="" class="control-label">Pilih File</label>
+              <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+            </div>
+
           </div>
+
 
         </div>
 
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
-      </div>
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+        </div>
       </form>
 
     </div>
@@ -196,23 +199,23 @@
       <form method="post" enctype="multipart/form-data" action="<?php echo site_url('data_siswa/importfile/') ?>">
         <div class="modal-body">
 
-        <div class="panel-body">
+          <div class="panel-body">
 
-          <div class="col-md-6">
-            <label for="" class="control-label">Pilih File</label>
-            <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+            <div class="col-md-6">
+              <label for="" class="control-label">Pilih File</label>
+              <input type="file" name="file" class="form-control" accept=".xlsx, .xls" value="" required="">
+            </div>
+
           </div>
+
 
         </div>
 
-
-      </div>
-
-      <!--Modal footer-->
-      <div class="modal-footer">
-        <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-        <input type="submit" name="submit" class="btn btn-primary" value="Upload">
-      </div>
+        <!--Modal footer-->
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+          <input type="submit" name="submit" class="btn btn-primary" value="Upload">
+        </div>
       </form>
 
     </div>
@@ -341,18 +344,18 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-        $(function () {
-            $(btnsubmit).click(function () {
-                var password = $(password1).val();
-                var confirmPassword = $(password2).val();
-                if (password != confirmPassword) {
-                    alert("Password Salah Harap Masukan Ulang Password.");
-                    return false;
-                }
-                return true;
-            });
-        });
-    </script>
+  $(function () {
+    $(btnsubmit).click(function () {
+      var password = $(password1).val();
+      var confirmPassword = $(password2).val();
+      if (password != confirmPassword) {
+        alert("Password Salah Harap Masukan Ulang Password.");
+        return false;
+      }
+      return true;
+    });
+  });
+</script>
 <!--jQuery [ REQUIRED ]-->
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
