@@ -4,7 +4,7 @@
   <title>Data Siswa</title>
 </head>
 <body>
-  <center><h3>LAPORAN PELANGGARAN SISWA</h3></center>
+  <center><h3 align="center">LAPORAN TREATMENT SISWA</h3></center>
   
           <table border="1" cellspacing="0" width="100%">
           <thead>

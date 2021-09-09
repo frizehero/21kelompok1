@@ -211,7 +211,18 @@
                   <a data-toggle="modal" data-target="#demo-default-modal1<?php echo $res->id_siswa?>" class="btn btn-sm btn-success">
                     <span class="fa fa-edit"></span>
                   &nbsp;Edit</a>
+
                 </div>
+                <div class="row pad-btm">
+                <?= form_open_multipart('data_siswa/fpdf3/'.$res->id_siswa); ?>
+                <div style="margin-right: -40px">
+                <div class="col-md-10">
+
+            </div>
+            <button type="submit" class="btn btn-primary">export</button>
+          </div>
+          <?= form_close(); ?>
+        </div>
                 <br>
 
                 <hr>
