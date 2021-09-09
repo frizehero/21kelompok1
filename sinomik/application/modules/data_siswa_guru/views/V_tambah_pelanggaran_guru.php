@@ -12,7 +12,7 @@
   <!--Breadcrumb-->
   <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
   <ol class="breadcrumb">
-    <li><a href="<?php echo base_url('data_beranda_gutu') ?>"><i class="demo-pli-home"></i></a></li>
+    <li><a href="<?php echo base_url('data_beranda_guru') ?>"><i class="demo-pli-home"></i></a></li>
     <li><a href="#">Data</a></li>
     <li>Data Siswa</li>
     <li>Detail Siswa</li>
@@ -316,7 +316,7 @@
                                     <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
                                     <h4 class="modal-title">pelanggaran Siswa Berat</h4>
                                   </div>
-                                  <?= form_open_multipart('data_siswa/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
+                                  <?= form_open_multipart('data_siswa_guru/tambah_pelanggaran_berat/'.$res->id_siswa); ?>
 
                                   <!--Modal body--> 
                                   <div class="modal-body">

@@ -14,7 +14,10 @@ class Data_siswa extends MX_Controller {
 		$this->load->library('session');
 		$this->load->library('excel');
 		$this->load->helper('file');
+		$this->load->helper(array('url','download'));
 	}
+
+
 
 public function importFile(){
 
@@ -172,6 +175,19 @@ public function importFile(){
 	}
 
 
+	function downloadtambah()
+	{
+
+		force_download('template/Template_tambah_siswa.xlsx',NULL);
+		redirect('data_siswa');
+		
+	}
+
+	function downloadkenaikan()
+	{
+		force_download('template/Template_kenaikan_kelas.xlsx',NULL);
+		redirect('data_siswa');
+	}
 
 	
 	// index

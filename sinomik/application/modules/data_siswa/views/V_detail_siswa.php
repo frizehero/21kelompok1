@@ -410,7 +410,7 @@
 
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label">NIS</label>
-            <input type="text" name="nis" placeholder="NIS" class="form-control" required="" value="<?php echo $res->nis?>">
+            <input type="text" name="nis" placeholder="NIS" class="form-control" maxlength="20"> required="" value="<?php echo $res->nis?>">
           </div>
           <div class="col-md-6" style="margin-top: 2%">
             <label for="" class="control-label">Nama siswa</label>

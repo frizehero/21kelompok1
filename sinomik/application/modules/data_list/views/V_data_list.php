@@ -116,7 +116,7 @@
   <div class="panel">
     <div class="panel-body">
     <div class="panel-heading">
-      <h4 class="panel-title">List treatment</h4>
+      <h4 class="panel-title">List Treatment</h4>
     </div>
     
       <div class="row pad-btm">

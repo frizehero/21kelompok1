@@ -159,7 +159,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <div class="panel panel-info panel-colorful media middle pad-all">
                 <div class="media-left">
                   <div class="pad-hor ion-ios-paper-outline icon-3x">
@@ -171,7 +171,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
               <?php if ($total_point <= 80) { ?>
 
                 <?php if ($total_point <= 160) { ?>

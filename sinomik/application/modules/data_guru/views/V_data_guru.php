@@ -156,7 +156,7 @@
 
                       <div class="col-md-6" style="margin-top: 2%">
                         <label for="" class="control-label text-muted mar-no">NIP</label>
-                        <input type="text" name="nip" placeholder="NIP" class="form-control" value="<?= $res->nip?>" required="">
+                        <input type="text" name="nip" placeholder="NIP" class="form-control" maxlength="20"> value="<?= $res->nip?>" required="">
                       </div>
                       <div class="col-md-6" style="margin-top: 2%">
                         <label for="" class="control-label text-muted mar-no">Nama Guru</label>
@@ -277,7 +277,7 @@
 
                 <div class="col-md-6" style="margin-top: 2%">
                   <label for="" class="control-label">NIP</label>
-                  <input type="text" name="nip" placeholder="NIP" class="form-control" required="">
+                  <input type="text" name="nip" placeholder="NIP" maxlength="20" class="form-control" required="">
                 </div>
                 <div class="col-md-6" style="margin-top: 2%">
                   <label for="" class="control-label">Nama Guru</label>
