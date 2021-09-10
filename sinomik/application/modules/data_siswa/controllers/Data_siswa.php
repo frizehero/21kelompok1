@@ -287,7 +287,50 @@ public function importFile(){
 		);
 		echo Modules::run('template/tampilCore', $data);
 	}
+	function fpdf3($id){
+		$mpdf = new\Mpdf\Mpdf();
 
+		$jumlah_pelanggaranku			= $this->m_data_siswa->count_jpelanggaran($id);
+		$jumlah_pelanggaran_kerapian	= $this->m_data_siswa->count_jpelanggaran_kerapian($id);
+		$jumlah_pelanggaran_berat		= $this->m_data_siswa->count_jpelanggaran_berat($id);
+
+		$total = $jumlah_pelanggaranku + $jumlah_pelanggaran_kerapian + $jumlah_pelanggaran_berat;
+
+		$jpelanggaran1					= $this->m_data_siswa->jumlahpelanggaran1($id);
+		$jpelanggaran2					= $this->m_data_siswa->jumlahpelanggaran2($id);
+		$jpelanggaran3					= $this->m_data_siswa->jumlahpelanggaran3($id);
+		$jumlahpointprestasi			= $this->m_data_siswa->jumlahpointprestasi($id);
+		$total_pelanggaran				= $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+		$total_treatment				= $jumlahpointprestasi['point'] ;
+
+
+		$hasil = array(
+			'namamodule' 					=> "data_siswa",
+			'namafileview' 					=> "V_detail_siswa",
+			'tampil'						=> $this->m_data_siswa->tampildetail($id),
+			'terbaru'						=> $this->m_data_siswa->pterbaru($id),
+			'tampil_treatment'				=> $this->m_data_siswa->tampilriwayat_treatment($id),
+			'tampil_prestasi'				=> $this->m_data_siswa->tampilriwayat_prestasi($id),
+			'jumlah_treatment'				=> $this->m_data_siswa->count_jtreatment($id),
+			'tampil_pelanggaran'			=> $this->m_data_siswa->tampilriwayat_pelanggaran($id),
+			'tampil_pelanggaran_kerapian' 	=> $this->m_data_siswa->tampilriwayat_pelanggaran_kerapian($id),
+			'tampil_pelanggaran_berat'		=> $this->m_data_siswa->tampilriwayat_pelanggaran_berat($id),
+			'tampil_pelanggaran_samping'	=> $this->m_data_siswa->tampilriwayat_pelanggaran_samping($id),
+			'tampil_pelanggaran_kerapian_samping' 	=> $this->m_data_siswa->tampilriwayat_pelanggaran_kerapian_samping($id),
+			'tampil_pelanggaran_berat_samping'		=> $this->m_data_siswa->tampilriwayat_pelanggaran_berat_samping($id),
+			'jumlah_pelanggaran'			=> $total,
+			'total_pelanggaran'				=> $total_pelanggaran,
+			'total_prestasi'				=> $total_treatment,
+			'total_point'					=> $total_pelanggaran - $total_treatment,
+
+		);
+
+		$data = $this->load->view('export',$hasil,TRUE);
+		$nama = "DATA SISWA";
+		$mpdf->WriteHTML($data);
+		$mpdf->output($nama.'.pdf','I');
+
+	}
 
 
 
