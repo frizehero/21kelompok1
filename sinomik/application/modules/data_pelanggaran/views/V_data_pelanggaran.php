@@ -25,6 +25,7 @@
      <div id="demo-custom-toolbar5" class="table-toolbar-left">
         <a class="btn btn-default text-left "   data-toggle="modal" data-target="#demo-default-tambah">Tambah</a>
         <a class="btn btn-info text-left "   data-toggle="modal" data-target="#demo-default-import">Import</a>
+        <a href="<?php echo site_url('data_pelanggaran/download/') ?>" class="btn btn-warning text-right "><span class="ion-archive"></span>Template Pelanggaran</a>
       </div>
       <form action="<?php echo site_url('data_pelanggaran/cariku/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
         <div class="input-group text-right"  style="padding-left: : 5px"s>

@@ -172,6 +172,14 @@ class Data_treatment extends MX_Controller {
 }
 
 }
+
+
+function download()
+{
+    force_download('template/treatment.xlsx',NULL);
+    redirect('data_treatment');
+}
+
 // end import
 
     function tambah()

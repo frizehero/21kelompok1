@@ -175,6 +175,13 @@ class Data_prestasi extends MX_Controller {
 }
 // end import
 
+// download prestasi
+function download()
+{
+    force_download('template/prestasi.xlsx',NULL);
+    redirect('data_prestasi');
+}
+
 function tambah()
 {
   $this->m_data_prestasi->tambah();

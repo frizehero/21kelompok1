@@ -7,16 +7,16 @@ class Data_pelanggaran extends MX_Controller {
 	{
 		parent::__construct();
 		// model
-       $this->load->model('m_data_pelanggaran');
-       $this->load->model('login/m_session');
-       $this->load->library('pagination');
-       $this->load->library('session');
-   }
+     $this->load->model('m_data_pelanggaran');
+     $this->load->model('login/m_session');
+     $this->load->library('pagination');
+     $this->load->library('session');
+ }
 
 
 	// index
-   function index()
-   {
+ function index()
+ {
 		//konfigurasi pagination
         $config['base_url'] 		= site_url('data_pelanggaran/index'); //site url
         $config['total_rows'] 		= $this->db->count_all('data_pelanggaran'); //total row
@@ -50,12 +50,12 @@ class Data_pelanggaran extends MX_Controller {
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         $data = array(
-           'namamodule' 	=> "data_pelanggaran",
-           'namafileview' 	=> "V_data_pelanggaran",
-           'row'			=> $this->m_data_pelanggaran->tampil($config["per_page"], $data['page']),
-           'pagination' 	=> $this->pagination->create_links(),
+         'namamodule' 	=> "data_pelanggaran",
+         'namafileview' 	=> "V_data_pelanggaran",
+         'row'			=> $this->m_data_pelanggaran->tampil($config["per_page"], $data['page']),
+         'pagination' 	=> $this->pagination->create_links(),
 
-       );
+     );
         echo Modules::run('template/tampilCore', $data);
     }
 
@@ -146,12 +146,12 @@ class Data_pelanggaran extends MX_Controller {
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         $data = array(
-           'namamodule' 	=> "data_pelanggaran",
-           'namafileview' 	=> "V_data_pelanggaran_kerapian",
-           'row'			=> $this->m_data_pelanggaran->tampil1($config["per_page"], $data['page']),
-           'pagination' 	=> $this->pagination->create_links(),
+         'namamodule' 	=> "data_pelanggaran",
+         'namafileview' 	=> "V_data_pelanggaran_kerapian",
+         'row'			=> $this->m_data_pelanggaran->tampil1($config["per_page"], $data['page']),
+         'pagination' 	=> $this->pagination->create_links(),
 
-       );
+     );
         echo Modules::run('template/tampilCore', $data);
     }
 
@@ -244,12 +244,12 @@ class Data_pelanggaran extends MX_Controller {
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 
         $data = array(
-           'namamodule' 	=> "data_pelanggaran",
-           'namafileview' 	=> "V_data_pelanggaran_berat",
-           'row2'			=> $this->m_data_pelanggaran->tampil2($config["per_page"], $data['page']),
-           'pagination' 	=> $this->pagination->create_links(),
+         'namamodule' 	=> "data_pelanggaran",
+         'namafileview' 	=> "V_data_pelanggaran_berat",
+         'row2'			=> $this->m_data_pelanggaran->tampil2($config["per_page"], $data['page']),
+         'pagination' 	=> $this->pagination->create_links(),
 
-       );
+     );
         echo Modules::run('template/tampilCore', $data);
     }
 
@@ -354,9 +354,9 @@ class Data_pelanggaran extends MX_Controller {
       }             
       
   } catch (Exception $e) {
-     die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-        . '": ' .$e->getMessage());
- }
+   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+    . '": ' .$e->getMessage());
+}
 }else{
   echo $error['error'];
 }
@@ -414,7 +414,7 @@ public function importFileKerapian(){
   }             
 
 } catch (Exception $e) {
- die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
     . '": ' .$e->getMessage());
 }
 }else{
@@ -475,7 +475,7 @@ public function importFileBerat(){
   }             
 
 } catch (Exception $e) {
- die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+   die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
     . '": ' .$e->getMessage());
 }
 }else{
@@ -487,8 +487,24 @@ public function importFileBerat(){
 
 }
 
-
-
+// download pelanggaran
+function download()
+{
+    force_download('template/pelanggaran.xlsx',NULL);
+    redirect('Data_pelanggaran');
+}
+// dowload pelanggaran kerapian
+function download2()
+{
+    force_download('template/pelanggaran_kerapian.xlsx',NULL);
+    redirect('Data_pelanggaran');
+}
+// download pelanggaran berat
+function download1()
+{
+    force_download('template/pelanggaran_berat.xlsx',NULL);
+    redirect('Data_pelanggaran');
+}
 
 function tambah()
 {
@@ -541,28 +557,28 @@ function hapus2($id)
 function cari()
 {
   $data = array(
-   'namamodule' 	=> "data_pelanggaran",
-   'namafileview' 	=> "V_data_pelanggaran",
-   'tampil'		=> $this->m_data_pelanggaran->cari(),
-);
+     'namamodule' 	=> "data_pelanggaran",
+     'namafileview' 	=> "V_data_pelanggaran",
+     'tampil'		=> $this->m_data_pelanggaran->cari(),
+ );
   echo Modules::run('template/tampilCore', $data);
 }
 function cari1()
 {
   $data = array(
-   'namamodule' 	=> "data_pelanggaran",
-   'namafileview' 	=> "V_data_pelanggaran_kerapian",
-   'tampil1'		=> $this->m_data_pelanggaran->cari1(),
-);
+     'namamodule' 	=> "data_pelanggaran",
+     'namafileview' 	=> "V_data_pelanggaran_kerapian",
+     'tampil1'		=> $this->m_data_pelanggaran->cari1(),
+ );
   echo Modules::run('template/tampilCore', $data);
 }
 function cari2()
 {
   $data = array(
-   'namamodule' 	=> "data_pelanggaran",
-   'namafileview' 	=> "V_data_pelanggaran_berat",
-   'tampil2'		=> $this->m_data_pelanggaran->cari2(),
-);
+     'namamodule' 	=> "data_pelanggaran",
+     'namafileview' 	=> "V_data_pelanggaran_berat",
+     'tampil2'		=> $this->m_data_pelanggaran->cari2(),
+ );
   echo Modules::run('template/tampilCore', $data);
 }
 
