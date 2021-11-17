@@ -19,7 +19,6 @@ class Data_laporan extends MX_Controller {
 			'namamodule' 			=> "data_laporan",
 			'namafileview' 			=> "V_data_laporan",
 			'tampil'				=> $this->m_data_laporan->tampil(),
-			'tampil_treatment'		=> $this->m_data_laporan->tampil_treatment(),
 			'jum_sis'				=> $this->m_data_laporan->jum_sis(),
 			'jum_laki'				=> $this->m_data_laporan->jum_laki(),
 			'tampil_jur'			=> $this->m_data_laporan->tampil_jur(),
@@ -70,7 +69,7 @@ class Data_laporan extends MX_Controller {
 
 		$data = array(
 			'namamodule' 			=> "data_laporan",
-			'namafileview' 			=> "V_data_laporan_siswa",
+			'namafileview' 			=> "V_test",
 			// 'filter_kel'			=> $this->m_data_laporan->filter_kel(),
 			// 'filter_tanggal'		=> $this->m_data_laporan->filter_tanggal($awal, $akhir),
 			'tampil_riwayat'		=> $this->m_data_laporan->tampil_riwayat($jurusan, $awal, $akhir),

@@ -406,12 +406,12 @@ class M_data_kelas extends CI_Model {
 		return $query->row_array();
 	}
 
-	function jumlahpointtreatment($id)
+	function jumlahpointprestasi($id)
 	{
 		
-		$query = $this->db->select_sum("data_treatment.point")
-		->from("data_treatment")
-		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
+		$query = $this->db->select_sum("data_prestasi.point")
+		->from("data_prestasi")
+		->join("riwayat_treatment","data_prestasi.id_prestasi = riwayat_treatment.id_prestasi","left")
 		->where("riwayat_treatment.id_siswa",$id);
 		$query = $this->db->get();
 		return $query->row_array();

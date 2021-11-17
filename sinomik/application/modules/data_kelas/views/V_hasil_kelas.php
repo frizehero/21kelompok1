@@ -24,26 +24,7 @@
       <div id="demo-custom-toolbar5" class="table-toolbar-left">
         <a class="btn btn-default text-left form-control" style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">Kembali</a>
       </div>
-      <form action="<?php echo site_url('data_kelas/carik/') ?>" method="post" class="col-xs-8 col-sm-3 text-right">
-        <div class="input-group text-right"  style="padding-left: : 5px">
-          <?php if($this->uri->segment(2) != 'cari'){
-           $cari = $this->input->post('cari');?>
-           <input type="text" autocomplete="off" name="cari" value="<?php echo $cari ?>" class="form-control" placeholder="Cari Siswa" required="">
-         <?php } ?>
-         <?php if($this->uri->segment(2) == 'cari'){
-          $cari = $this->input->post('cari'); ?>
-          <input type="text" autocomplete="off" value="<?php echo $cari ?>" name="cari" class="form-control " placeholder="Cari Siswa" required="">
-        <?php } ?> 
-        <div class="input-group-btn  text-right"  style="padding-left: : 10px">
-          <button class="btn btn-default" name="submit" type="submit">cari</button>
-        </div>
-        <a class="btn btn-success form-control"  style="padding-left: : 10px" href="<?php echo base_url('data_kelas'); ?>">
-          <i class="fa fa-refresh" ></i>
-        </a>
-      </div> 
-    </center>
-
-  </form>
+      
 </div>
 
 
@@ -104,14 +85,18 @@
                   $jpelanggaran1          = $this->m_data_kelas->jumlahpelanggaran1($id);
                   $jpelanggaran2          = $this->m_data_kelas->jumlahpelanggaran2($id);
                   $jpelanggaran3          = $this->m_data_kelas->jumlahpelanggaran3($id);
-                  $jumlahpointtreatment   = $this->m_data_kelas->jumlahpointtreatment($id);
+                  $jumlahpointprestasi      = $this->m_data_kelas->jumlahpointprestasi($id);
 
 
                   $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                  $total_treatment        = $jumlahpointtreatment['point'];
+                  $total_treatment        = $jumlahpointprestasi['point'];
                   $total_point            = $total_pelanggaran - $total_treatment;
 
-                  echo $total_point;
+                  if ($total_point <= 0) {
+                    echo "0";
+                  } else {
+                    echo $total_point;
+                  }
                   ?>
                 </span>
                 <p class="text-muted mar-no">Point</p>

@@ -213,17 +213,6 @@ class M_data_laporan extends CI_Model {
 		return $query->row_array();
 	}
 
-	function jumlahpointtreatment($id)
-	{
-		
-		$query = $this->db->select_sum("data_treatment.point")
-		->from("data_treatment")
-		->join("riwayat_treatment","data_treatment.id_treatment = riwayat_treatment.id_treatment","left") 
-		->where("riwayat_treatment.id_siswa",$id);
-		$query = $this->db->get();
-		return $query->row_array();
-	}
-
 
 	function januari()
 	{

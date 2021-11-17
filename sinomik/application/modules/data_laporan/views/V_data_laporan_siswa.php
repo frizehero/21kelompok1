@@ -65,7 +65,7 @@
       ?>
 
 
-             <div class="col-lg-3">
+      <div class="col-lg-3">
 
         <!--Profile Widget-->
         <!--===================================================-->
@@ -80,23 +80,23 @@
               <p class="pull-right"><?= $res->kelas ?></p>
               <p>Kelas</p>
               <p class="pull-right">
-              <?php 
-                  $jpelanggaran1          = $this->m_data_laporan->jumlahpelanggaran1($id);
-                  $jpelanggaran2          = $this->m_data_laporan->jumlahpelanggaran2($id);
-                  $jpelanggaran3          = $this->m_data_laporan->jumlahpelanggaran3($id);
-                  $jumlahpointprestasi      = $this->m_data_laporan->jumlahpointprestasi($id);
+                <?php 
+                $jpelanggaran1          = $this->m_data_laporan->jumlahpelanggaran1($id);
+                $jpelanggaran2          = $this->m_data_laporan->jumlahpelanggaran2($id);
+                $jpelanggaran3          = $this->m_data_laporan->jumlahpelanggaran3($id);
+                $jumlahpointprestasi      = $this->m_data_laporan->jumlahpointprestasi($id);
 
 
-                  $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
-                  $total_treatment        = $jumlahpointprestasi['point'];
-                  $total_point            = $total_pelanggaran - $total_treatment;
+                $total_pelanggaran      = $jpelanggaran1['point'] + $jpelanggaran2['point'] + $jpelanggaran3['point'];
+                $total_treatment        = $jumlahpointprestasi['point'];
+                $total_point            = $total_pelanggaran - $total_treatment;
 
-                  if ($total_point <= 0) {
-                    echo "0";
-                  } else {
-                    echo $total_point;
-                  }
-                  ?>
+                if ($total_point <= 0) {
+                  echo "0";
+                } else {
+                  echo $total_point;
+                }
+                ?>
                 
               </p>
               <p>Point</p>
@@ -112,7 +112,7 @@
         <!--===================================================-->
 
       </div>
-    
+
 
 
     <?php } ?>
