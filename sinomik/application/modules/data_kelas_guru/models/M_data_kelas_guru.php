@@ -242,5 +242,15 @@ class M_data_kelas_guru extends CI_Model {
 		$query = $this->db->get();
 		return $query->row_array();
 	}
+	function jumlahpointprestasi($id)
+	{
+		
+		$query = $this->db->select_sum("data_prestasi.point")
+		->from("data_prestasi")
+		->join("riwayat_treatment","data_prestasi.id_prestasi = riwayat_treatment.id_prestasi","left")
+		->where("riwayat_treatment.id_siswa",$id);
+		$query = $this->db->get();
+		return $query->row_array();
+	}
 
 }
